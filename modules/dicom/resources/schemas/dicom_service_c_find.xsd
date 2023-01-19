@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:include schemaLocation="dicom_dataset_types.xsd"/>
+
+ <xs:complexType name="Type_C-Find-RQ">
+    <xs:sequence>
+      <xs:element name="Command-group-length" type="Type_Cmd-Group-Length"/>
+      <xs:element name="Affected-SOP-Class-UID" type="Type_DataSet-UI"/>
+      <xs:element name="Command-Field" type="Type_Command-Field-Find-RQ"/>
+      <xs:element name="Message-ID" type="Type_Message-ID"/>
+      <xs:element name="Priority" type="Type_Priority"/>
+      <xs:element name="Command-DataSet-Type" type="Type_Cmd-DataSet-Type"/>
+      <xs:element name="Identifier" type="Type_DataSet" minoccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_Command-Field-Find-RQ">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000100"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort" fixed="2"/>
+      <xs:element name="Value" type="xs:hexBinary" fixed="0020"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_Priority">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000700"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort" fixed="2"/>
+      <xs:element name="Value">
+        <xs:restriction base="xs:hexBinary">
+          <xs:enumeration value="0002"/>
+          <xs:enumeration value="0000"/>
+          <xs:enumeration value="0001"/>
+        </xs:restriction>
+       </xs:element>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_C-Find-RSP">
+    <xs:sequence>
+      <xs:element name="Command-group-length" type="Type_Cmd-Group-Length"/>
+      <xs:element name="Affected-SOP-Class-UID" type="Type_DataSet-UI"/>
+      <xs:element name="Command-Field" type="Type_Command-Field-Find-RSP"/>
+      <xs:element name="Message-ID-Responded-To" type="Type_Message-ID-Responded-To"/>
+      <xs:element name="Command-DataSet-Type" type="Type_Cmd-DataSet-Type"/>
+      <xs:element name="Status" type="Type_Status"/>
+      <xs:element name="Identifier" type="Type_DataSet" minoccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_Command-Field-Find-RSP">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000100"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort" fixed="2"/>
+      <xs:element name="Value" type="xs:hexBinary" fixed="8020"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_C-Cancel-Find">
+    <xs:sequence>
+      <xs:element name="Command-group-length" type="Type_Cmd-Group-Length"/>
+      <xs:element name="Command-Field" type="Type_Command-Field-Cancel-Find"/>
+      <xs:element name="Message-ID-Responded-To" type="Type_Message-ID-Responded-To"/>
+      <xs:element name="Command-DataSet-Type" type="Type_Cmd-DataSet-Type-Empty"/>
+    </xs:sequence>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_Command-Field-Cancel-Find">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000100"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort" fixed="2"/>
+      <xs:element name="Value" type="xs:hexBinary" fixed="0FFF"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+
+</xs:schema>

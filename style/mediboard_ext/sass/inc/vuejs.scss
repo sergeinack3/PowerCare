@@ -1,0 +1,39 @@
+body {
+  /**
+   * Vuetify's impact on MBD patch
+   */
+  *, ::before, ::after {
+    box-sizing: content-box;
+    -moz-osx-font-smoothing: initial !important;
+  }
+
+  .v-application {
+    *, ::before, ::after {
+      box-sizing: border-box;
+      -moz-osx-font-smoothing: grayscale !important;
+    }
+  }
+
+  /**
+   * V-APP
+   */
+  .v-application--wrap {
+    height: 100%;
+    min-height: unset;
+  }
+
+  // Readonly
+  div.v-input {
+    textarea[readonly],
+    textarea[readonly]:focus,
+    input[type=text][readonly],
+    input[type=text][readonly]:focus,
+    input[type=number][readonly],
+    input[type=number][readonly]:focus {
+      @include not-vue {
+        background-color: unset !important;
+        border: unset;
+      }
+    }
+  }
+}

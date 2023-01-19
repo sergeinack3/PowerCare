@@ -1,0 +1,139 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+@import '../../../INUtils';
+
+@mixin button-compact() {
+  transform: scale(0);
+}
+.MenuIcon {
+  $icon-size: 64px;
+
+  width: $icon-size*2;
+  height: 100%;
+  position: relative;
+  @include flex-center();
+
+  &-container {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+
+    &Button {
+      margin: auto;
+      font-size: 32px;
+      line-height: 32px;
+      width: $icon-size;
+      height: $icon-size;
+      border-radius: #{$icon-size};
+      @include flex-center();
+      color: $primary;
+      background: $white;
+      transition: box-shadow .2s, transform .2s;
+      transform: scale(1);
+      box-sizing: border-box;
+      position: relative;
+
+      &Compact{
+        @include button-compact();
+      }
+    }
+    &:hover {
+      &Button {
+        transform: scale(1.1);
+        box-shadow: 0 1px 10px -5px $black;
+        &Compact {
+          @include button-compact();
+        }
+      }
+    }
+  }
+  &-label {
+    @include flex-center();
+    @include font-roboto();
+    margin-top: 8px;
+    color: $white;
+    transition: font-size .2s, margin .2s;
+    user-select: none;
+
+    &Compact {
+      margin-top: -90px;
+      font-size: 18px;
+    }
+  }
+
+  &-indicator {
+    $indicator-size: 32px;
+
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    @include flex-center();
+    height: $indicator-size;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform .2s;
+
+    &::after {
+      content: "";
+      display: block;
+      width: $indicator-size;
+      height: $indicator-size;
+      background: $white;
+      transform: rotate(45deg);
+      box-shadow: -3px -3px 10px -5px #000000;
+    }
+  }
+
+  &.is-selected &-containerButton {
+    animation-name: IconSelectedAnimation;
+    animation-delay: .1s;
+    animation-iteration-count: 1;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    transform: scale(1.1);
+    box-shadow: 0 1px 10px -5px $black;
+
+    &Compact {
+      animation-name: none;
+      @include button-compact();
+    }
+  }
+  &.is-selected &-indicator {
+    transform: scaleY(1);
+  }
+
+  &Flag {
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    @include flex-center();
+    color: $white;
+    font-size: 14px;
+    line-height: 0;
+    background: $grey-500;
+    transition: background .2s;
+
+    &-ok {
+      background: $green;
+    }
+    &-nok {
+      background: $red;
+    }
+  }
+}
+
+@keyframes IconSelectedAnimation {
+  0%   { transform: scale(1.1) translateY(0);}
+  25%  { transform: scale(1.1) translateY(-25px);}
+  50%  { transform: scale(1.1) translateY(0);}
+  75%  { transform: scale(1.1) translateY(-7.5px);}
+  100% { transform: scale(1.1) translateY(0);}
+}

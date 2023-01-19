@@ -1,0 +1,77 @@
+/**
+ * @package Mediboard\Urgences
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.vue_topologique div.patient{
+  padding: 1px;
+  margin: 3px;
+  background-color: rgba(255,255,255,0.8);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#90ffffff,endColorstr=#90ffffff);
+  width: 92%;
+  box-shadow: 0 0 0 1px silver;
+}
+
+.vue_topologique div.grille table{
+  table-layout:fixed; 
+  border-spacing: 13px;
+  border-collapse:separate;/*A ne pas enlever util pr IE!!*/
+}
+
+.vue_topologique div.grille td.chambre, .vue_topologique div.grille td.pas-de-chambre{
+  height:120px;
+}
+
+.vue_topologique div.grille small{
+  border-radius: 2px;
+  padding: 0 3px;
+  text-shadow:  0 0 0 transparent,
+              -1px  0  0 rgba(255,255,255,.7),
+               0   1px 0 rgba(255,255,255,.7),
+               1px  0  0 rgba(255,255,255,.7),
+               0  -1px 0 rgba(255,255,255,.7);
+}
+
+.encart {
+  font-size: 0.8em;
+  padding: 2px;
+  border-radius: 3px;
+  background: white;
+  line-height: 1;
+  text-align: center;
+}
+
+.encart-uhcd {
+  border: 1px solid #006600;
+  color: #006600;
+}
+
+.encart-imagerie {
+  border: 1px solid #e3dc26;
+  color: #e3b009;
+}
+
+div.couleur_rpu {
+  width: 50px;
+  height: 50px;
+  margin: 3px auto 3px;
+  cursor: pointer;
+}
+
+div.couleur_rpu:hover {
+  outline: 2px solid #000;
+}
+
+div.categorie_rpu {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin: 3px auto 3px;
+  text-align: center;
+}
+
+div.categorie_rpu:hover {
+  outline: 2px solid #000;
+}

@@ -1,0 +1,179 @@
+/**
+ * @package Mediboard\Admissions
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+/* TODO ces classes ne sont pas utilisées sur inc_vw_pre_admissions */
+.non-facturable > td::before,
+.non-facturable > td {
+  background-image: url(../../../images/icons/ray_vertical.gif)!important; 
+  background-repeat: repeat!important;
+}
+/** TODO Supprimer ce message plus tard **/
+.refresh-page-message {
+  display: none;
+}
+
+.inform-field {
+  background-color: #fc0 !important;
+}
+
+.valid-field {
+  background-color: #8f8 !important;
+}
+
+.merge-selected {
+  outline: 3px solid #88f;
+}
+
+.merge-possible {
+  outline: 3px solid #ff8;
+}
+
+.merge-probable {
+  outline: 3px solid #8f8;
+}
+
+.mergeable big {
+  font-weight: bold;
+}
+
+.admissionScrollbar {
+  overflow-x: hidden !important;
+  overflow-y : auto !important;
+  -ms-overflow-style: auto;
+}
+
+.admissionScrollbarTooBig {
+  padding-right: 16px;
+}
+
+/**
+ * AccueilPresentation
+ */
+
+/**
+  Vignettes indiquants la page courante
+ */
+#accueil_presentation_vignettes {
+  width: 100%;
+  text-align: center;
+}
+#accueil_presentation_vignettes>div {
+  border-radius: 4px;
+  background-color: #666;
+  opacity: 0.5;
+  display: inline-block;
+  transition: background-color 0.25s;
+  padding: 2px 15px;
+  color: #eee;
+  font-weight: bold;
+}
+#accueil_presentation_vignettes>div.selectionnee {
+  background-color: #abe;
+  opacity: 1;
+}
+
+/**
+  Barre de chargement
+ */
+#bar_loader {
+  width: 100%;
+  background-color: #abe;
+  height: 3px;
+  box-shadow: 0px 0px 2px 1px #abe;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+#bar_loader.animated {
+  animation-name: barLoaderAnimation;
+  animation-timing-function: linear;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes barLoaderAnimation {
+  0%   {width: 100%;}
+  100% {width:   0%;}
+}
+
+/**
+  Bandeau d'informations
+ */
+#bandeau_container {
+  min-height: 20px;
+  width: 100%;
+  overflow-x: hidden;
+  text-align:center;
+}
+#bandeau_container>div{
+  width: 100%;
+  margin-left: 100%;
+}
+#bandeau_container>div>span {
+  background-color: #bb2222;
+  font-size: 15px;
+  line-height: 15px;
+}
+#bandeau_container>div>span::before {
+  display:inline-block;
+  border-radius:50%;
+  background-color:white;
+  color: #bb2222;
+  content:"!";
+  height: 15px;
+  width: 15px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+#bandeau_container>div.defile{
+  animation-name: bandeauAnimation;
+  animation-timing-function: ease-in-out;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bandeauAnimation {
+  0%   {margin-left: 100%;}
+  10%  {margin-left: 0%;}
+  90%  {margin-left: 0%;}
+  100% {margin-left: -100%;}
+}
+
+/**
+  Style spécifique
+ */
+td.accueil-presentation-etat>span,
+#bandeau_container>div>span {
+  display: inline-block;
+  border-radius: 2px;
+  color: #eee;
+  padding: 2px 4px;
+  box-shadow: -2px 2px 2px -2px #111;
+}
+.cleanup-status-ready {
+  background-color: #bb2222;
+}
+.cleanup-status-cleaning {
+  background-color: #2222bb;
+}
+.cleanup-status-assigning {
+  background-color: #227777;
+}
+#admission_presentation_lines {
+  border-bottom-width: 0px;
+}
+tbody.sejour-page>tr>td {
+  text-align: center;
+}
+
+div.filter_pipe {
+  display: inline-block;
+  margin: 0 8px -2px 10px;
+  border-right: 1px solid #BBB;
+  height: 10px;
+  width: 1px;
+}

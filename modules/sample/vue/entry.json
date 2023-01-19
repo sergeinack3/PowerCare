@@ -1,0 +1,14 @@
+{
+  "sampleMovieList": {
+    "entry": "modules/sample/vue/entries/sampleMovieListEntry.js"
+  },
+  "sampleMovieDetails": {
+    "entry": "modules/sample/vue/entries/sampleMovieDetailsEntry.js"
+  },
+  "sampleMovieSettings": {
+    "entry": "modules/sample/vue/entries/sampleMovieSettingsEntry.js"
+  },
+  "sampleLegacyCompat": {
+    "entry": "modules/sample/vue/entries/sampleLegacyCompatEntry.js"
+  }
+}

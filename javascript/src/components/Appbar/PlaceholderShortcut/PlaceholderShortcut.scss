@@ -1,0 +1,60 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.PlaceholderShortcut {
+  @include on-background(medium);
+  align-items: center;
+  background-color: $primary-50;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  height: 26px;
+  transition: all .15s ease-in-out;
+  user-select: none;
+  width: 26px;
+
+  &:hover {
+    @include on-primary(high);
+    background-color: $primary;
+    cursor: pointer;
+    transform: scale(1.2);
+
+    .PlaceholderShortcut-customIcon {
+      path,
+      circle {
+        fill: var(--color-on-primary-high);
+        stroke: var(--color-on-primary-high);
+      }
+    }
+  }
+
+  &-customIcon {
+    height: 16px;
+    width: 16px;
+
+    path,
+    circle {
+      fill: var(--color-on-background-medium);
+      stroke: var(--color-on-background-medium);
+    }
+  }
+
+  &-ecap {
+    background-image: url("~assets/ecap.png");
+    background-position: center;
+    background-size: contain;
+    height: 100%;
+    text-align: center;
+    width: 100%;
+  }
+
+  &-labelNumber {
+    @include button;
+  }
+}

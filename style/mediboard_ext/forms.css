@@ -1,0 +1,1291 @@
+/**
+ * @package Mediboard\Style\Mediboard
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.control {
+  border: none;
+  background: transparent;
+  padding: 0;
+  position: relative;
+  display: inline; /* IE */
+  display: -moz-inline-box;
+  display: inline-block;
+  vertical-align: middle;
+  height: auto;
+}
+
+.control .trigger {
+  cursor: pointer;
+  margin: 1px;
+}
+
+/** Form elements **/
+form {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+button.intermax-result {
+  opacity: .4;
+}
+
+input,
+textarea,
+button,
+textarea,
+.textarea-container {
+  font-size: 1em;
+  vertical-align: middle;
+  font-family: inherit;
+}
+
+input[type=radio],
+input[type=checkbox] {
+  padding: 0;
+}
+
+input[type=image] {
+  margin: 0;
+  border: 0;
+}
+
+.control {
+  margin: 1px !important;
+}
+
+input[type=text],
+input[type=search],
+input[type=tel],
+input[type=number],
+input[type=email],
+input[type=password],
+input[type=image],
+textarea {
+  border-radius: 0;
+  -webkit-appearance: none; /* To remove the "shadow" on iPad" */
+}
+
+/* hides the spin-button for firefox and webkit */
+.numericField input[type=number]::-webkit-inner-spin-button,
+.numericField input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.numericField input[type=number] {
+  -moz-appearance: textfield;
+}
+
+:not([class^="v-"])>input[type=text],
+:not([class^="v-"])>input[type=search],
+:not([class^="v-"])>input[type=tel],
+:not([class^="v-"])>input[type=number],
+:not([class^="v-"])>input[type=email],
+:not([class^="v-"])>input[type=password],
+:not([class^="v-"])>textarea {
+  border: 1px #999 solid;
+  background-color: #fff;
+}
+
+textarea {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #fff;
+
+  /* For IE11, see http://stackoverflow.com/questions/24706698/textarea-wrongly-inheriting-white-space-css-property-from-parent-class */
+  white-space: pre-wrap;
+}
+
+.textarea-container {
+  border: 1px #999 solid;
+}
+
+.textarea-container textarea {
+  margin: 0;
+  width: 100%;
+  border: none;
+  overflow-x: hidden;
+  resize: none;
+}
+
+.textarea-container textarea:focus {
+  outline: none;
+}
+
+input[type=checkbox].disabled {
+  opacity: 0.7;
+}
+
+/** <Two rules required> !! Don't merge them
+ *  http://stackoverflow.com/a/2610741/92315
+ */
+:-moz-placeholder {
+  color: #999 !important;
+}
+
+::-webkit-input-placeholder {
+  color: #999 !important;
+}
+/** </Two rules required> **/
+
+/*select {*/
+/*padding: 0;*/
+/*white-space: nowrap;*/
+/*}*/
+
+optgroup, option {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  font-family: inherit;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+
+option {
+  padding-right: 0.6em;
+}
+
+optgroup {
+  font-weight: bold;
+  padding-left: 1em;
+}
+
+optgroup option {
+  padding-left: 1em;
+}
+
+option.novalue {
+  display:none;
+}
+
+option.checked {
+  background: url(images/buttons/tick.png) no-repeat 12px;
+  padding-left: 30px;
+}
+
+option[value=""] {
+  font-style: italic;
+}
+
+form hr {
+  border-bottom: 1px solid #ddd;
+  margin: 2px;
+}
+
+table.layout td.cancelled {
+  background-color: #f88 !important;
+}
+
+/** On iOS, labels are not clickable, this may help (or not) **/
+/*label {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  display: inline-block;
+}*/
+
+
+
+/** Buttons **/
+
+::-webkit-file-upload-button {
+  font-size: 11px;
+  line-height: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: left;
+  font-weight: normal;
+  white-space: nowrap;
+  display: inline-block;
+
+  background: #eee url(images/buttons/button.png) center center repeat-x;
+
+  border: 1px solid #999;
+  border-radius: 3px;
+
+  vertical-align: middle;
+  height: 20px;
+  padding: 1px 3px;
+  margin: 1px;
+  text-shadow: none;
+  box-sizing: border-box;
+}
+
+button::before,
+a.button::before,
+button img {
+  display: inline-block;
+  line-height: 16px;
+  margin-right: 1px;
+  vertical-align: middle;
+}
+
+button::-moz-focus-inner,
+a.button::-moz-focus-inner {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+button:not([class^="v-"]):focus,
+a.button:focus {
+  outline: 1px dotted #000;
+}
+::-webkit-file-upload-button:focus {
+  outline: 1px dotted #000;
+}
+
+button.notext,
+a.button.notext {
+  font-size: 0 !important;
+  color: rgba(0,0,0,0);
+  overflow: hidden;
+  width: 32px;
+  padding: 1px;
+}
+
+button.fill,
+a.button.fill {
+  width: 100%;
+  text-align: center;
+}
+
+/*button.rtl,*/
+/*a.button.rtl {*/
+/*  padding-left: 2px;*/
+/*  padding-right: 1px;*/
+/*  line-height: 18px;*/
+/*}*/
+
+/*button.rtl::before,*/
+/*a.button.rtl::before {*/
+/*  float: right;*/
+/*  margin-right: 0;*/
+/*  margin-left: 1px;*/
+/*}*/
+
+a.button.disabled,
+button[disabled],
+:not([class^="v-"])>input[disabled],
+textarea[disabled],
+
+button[disabled="disabled"],
+:not([class^="v-"])>input[disabled="disabled"],
+textarea[disabled="disabled"] { /* For IE */
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+input[type=checkbox][disabled],
+input[type=radio][disabled],
+input[type=checkbox][disabled="disabled"],
+input[type=radio][disabled="disabled"] { /* For IE */
+  opacity: 1.0;
+}
+
+button[disabled]:hover,
+a.button.disabled:hover,
+button[disabled="disabled"]:hover { /* For IE */
+  outline: none;
+}
+
+button.none {
+  text-indent: 2px;
+}
+
+button.big,
+a.button.big {
+  font-size: 150%;
+  padding: 0 2px;
+  text-align: center;
+  white-space: normal;
+}
+
+button.big.notext,
+a.button.big.notext {
+  width: 26px;
+  height: 40px;
+  padding-top: 6px;
+}
+
+a.button.notext,
+button.notext {
+  text-align: center;
+}
+a.button.fa.notext::before,
+button.fa.notext::before {
+  font-size: 1rem !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+button.consultation_create::before, a.button.consultation_create::before {
+  content: url(images/buttons/consultation_create.png);
+}
+
+button.sejour_create::before, a.button.sejour_create::before {
+  content: url(images/buttons/sejour_create.png);
+}
+
+button.accouchement_create::before, a.button.accouchement_create::before {
+  content: url(images/buttons/accouchement_create.png);
+}
+
+button.grossesse::before, a.button.grossesse::before {
+  content: url(images/icons/grossesse.png);
+}
+
+button.grossesse_create::before, a.button.grossesse_create::before {
+  content: url(images/buttons/grossesse_create.png);
+}
+
+
+button.carriage_return::before, a.button.carriage_return::before {
+  content: url(images/buttons/carriage_return.png);
+}
+
+
+
+
+
+button.tick_cancel::before, a.button.tick_cancel::before {
+  content: url(images/buttons/tick_cancel.png);
+}
+
+
+
+
+
+
+
+
+button.send-cancel::before, a.button.send-cancel::before {
+  content: url(images/buttons/send-cancel.png);
+}
+
+
+button.send-auto::before, a.button.send-auto::before {
+  content: url(images/buttons/send-auto.png);
+}
+
+
+
+
+
+button.tag::before, a.button.tag::before {
+  content: url(images/buttons/tag.png);
+}
+
+button.tag-edit::before, a.button.tag-edit::before {
+  content: url(images/buttons/tag-edit.png);
+}
+
+button.tag-delete::before, a.button.tag-delete::before {
+  content: url(images/buttons/tag-delete.png);
+}
+
+button.tag-add::before, a.button.tag-add::before {
+  content: url(images/buttons/tag-add.png);
+}
+
+button.tag-arrow::before, a.button.tag-arrow::before {
+  content: url(images/buttons/tag-arrow.png);
+}
+
+button.tag-warning::before, a.button.tag-warning::before {
+  content: url(images/buttons/tag-warning.png);
+}
+
+
+button.sum::before, a.button.sum::before {
+  content: url(images/buttons/sum.png);
+}
+
+
+
+
+
+
+
+button.bistouri::before, a.button.bistouri::before {
+  content: url(images/buttons/bistouri.png);
+}
+
+button.fermeture-plaie::before, a.button.fermeture-plaie::before {
+  content: url(images/buttons/fermeture-plaie.png);
+}
+
+button.intubation::before, a.button.intubation::before {
+  content: url(images/buttons/intubation.png);
+}
+
+button.extubation::before, a.button.extubation::before {
+  content: url(images/buttons/extubation.png);
+}
+
+button.injection::before, a.button.injection::before {
+  content: url(images/buttons/injection.png);
+}
+
+
+
+
+
+
+
+button.modele_etiquette::before, a.modele_etiquette::before {
+  content: url(images/buttons/modele_etiquette.png);
+}
+
+button.sourdine::before, a.sourdine::before {
+  content: url(images/buttons/speaker_mute.png);
+}
+
+button.nosourdine::before, a.nosourdine::before {
+  content: url(images/buttons/volume_lvl_3.png);
+}
+
+
+
+
+
+
+
+/** dossier de soins **/
+
+button.report_magnify::before, a.button.report_magnify::before {
+  content: url(images/buttons/report_magnify.png);
+}
+
+button.gantt::before, a.button.gantt::before {
+  content: url(images/buttons/gantt.png);
+}
+
+
+button.imagerie::before, a.button.imagerie::before {
+  content: url(images/buttons/imagerie.png);
+}
+
+
+
+button.anonyme::before, a.button.anonyme::before {
+  content: url(../../modules/dPpatients/images/anonyme.png);
+}
+
+button.selected {
+  border: 2px solid #000;
+}
+
+button.compact,
+a.button.compact {
+  margin: 0px !important;
+}
+
+button.labo::before, a.button.labo::before {
+  content: url(../../images/icons/labo.png);
+}
+
+optgroup.group {
+  text-align: center;
+  font-variant: small-caps;
+}
+/*
+form label.checkNull {
+  background-image: url(../mediboard/images/icons/checkNull.png);
+}
+*/
+
+form label.error,
+table.form th.category label.error {
+  color: #f00;
+}
+
+textarea[readonly],
+textarea[readonly]:focus,
+:not([class^="v-"])>input[type=text][readonly],
+:not([class^="v-"])>input[type=text][readonly]:focus,
+:not([class^="v-"])>input[type=number][readonly],
+:not([class^="v-"])>input[type=number][readonly]:focus {
+  border: 1px dotted #666;
+  background: none;
+  background: rgba(255,255,255,0.4);
+}
+
+.textarea-container textarea[readonly],
+.textarea-container textarea[readonly]:focus {
+  border: none;
+}
+
+:not([class^="v-"])>input.autocomplete {
+  background-image: url(../../images/icons/throbber.png);
+  background-position: 100% 1px;
+  background-repeat: no-repeat;
+  padding-right: 17px;
+}
+
+:not([class^="v-"])>input.autocomplete:focus {
+  padding-right: 17px;
+}
+
+:not([class^="v-"])>input.autocomplete.throbbing {
+  background-image: url(../../images/icons/throbber.gif?v2);
+}
+
+div.dropdown {
+  border:none;
+  margin:0;
+  padding:0;
+  position:relative;
+  display: -moz-inline-box;
+  display: inline-block;
+  padding-right: 17px;
+}
+
+div.dropdown.fixed-width,
+div.dropdown.fixed-width input {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+div.dropdown-trigger {
+  width: 16px;
+  padding:0;
+  position:absolute;
+  right:0;
+  top:0;
+  bottom:0;
+  margin: 1px;
+  cursor:pointer;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+div.dropdown-trigger div {
+  position:absolute;
+  right:0;
+  top:0;
+  left:0;
+  bottom:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+
+div.dropdown-trigger div::before {
+  content: "\f0d7";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 27px;
+}
+
+:not([class^="v-"])>input.barcode {
+  background-image: url(../../images/icons/barcode.png);
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding-right: 19px;
+}
+
+textarea#htmlarea {
+  width: 99%;
+  height: 100%;
+}
+
+
+.grippie-h {
+  background: #CCC url(../../images/buttons/drag-n.gif) center center no-repeat;
+  height: 5px;
+  margin: -1px;
+  cursor: n-resize;
+}
+
+.grippie-v {
+  background: #CCC url(../../images/buttons/drag-n-v.gif) center center no-repeat;
+  height: 5px;
+  margin: -1px;
+  cursor: ew-resize;
+}
+
+span.highlight {
+  background-color: yellow;
+}
+
+.cursor-highlight {
+  outline: 2px dotted red;
+  z-index: 2000;
+  position: relative;
+}
+
+.autocomplete span.highlight {
+  background-color: transparent;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+select.helper {
+  max-width: 10em;
+}
+
+.color-view {
+  padding: 0 3px;
+  margin: 0 3px;
+  border: 1px solid #aaa;
+}
+
+.ipad textarea {
+  min-height: 5em;
+  resize: vertical;
+}
+
+/** Readonly mode **/
+form.readonly .inputExtension,
+form.readonly .dropdown-trigger,
+form.readonly .numericField .arrows {
+  display: none;
+}
+
+form.readonly .input.autocomplete,
+form.readonly .input.dropdown {
+  background-image: none;
+  padding-right: 0;
+}
+
+form.readonly :not([class^="v-"])>input,
+form.readonly select,
+form.readonly textarea {
+  pointer-events: none;
+}
+
+form.readonly .button.remove, form.readonly button.remove,
+form.readonly .button.add,    form.readonly button.add,
+form.readonly .button.merge,  form.readonly button.merge,
+form.readonly .button.trash,  form.readonly button.trash,
+form.readonly .button.new,    form.readonly button.new,
+form.readonly .button.save,   form.readonly button.save,
+form.readonly .button.submit, form.readonly button.submit,
+form.readonly .button.cancel, form.readonly button.cancel,
+form.readonly .button.modify, form.readonly button.modify {
+  display: none;
+}
+
+.pastable {
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+.pastable.pastable-focus {
+  outline: 2px solid #0d6fab;
+}
+
+/* Inline upload */
+.inline-upload {
+  padding: 2px;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+}
+
+.inline-upload .pastable {
+  border: none;
+}
+
+.inline-upload-header {
+  margin: 0;
+  padding: 0.2em;
+  height: 3em;
+  position: relative;
+}
+
+.inline-upload-input,
+.inline-upload-pastearea {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right: 50%;
+  border-radius: 3px;
+  margin: 2px;
+  background: rgba(30,30,30,0.1);
+  line-height: 3em;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.inline-upload-input:hover,
+.inline-upload-pastearea:hover {
+  background: rgba(30,30,30,0.05);
+}
+
+.inline-upload-single {
+  right: 0;
+}
+
+.inline-upload-progress {
+  width: 20%;
+  min-width: 150px;
+  height: 1.1em;
+}
+
+.inline-upload-progress::before {
+  content: attr(data-pct);
+}
+
+.inline-upload-pastearea {
+  right:0;
+  left: 50%;
+  padding: 0;
+}
+
+.inline-upload-input-text,
+.inline-upload-input input {
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  width: 100%;
+  cursor: pointer;
+  line-height: 32px;
+}
+
+.inline-upload-input input {
+  /**
+  Pas zéro à cause des tests fonctionnels sous Chrome
+  https://github.com/seleniumhq/selenium-google-code-issue-archive/issues/1610
+  */
+  opacity: 0.01;
+}
+
+.inline-upload-input.inline-upload-drag {
+  outline: 2px solid rgba(255, 0, 0, 0.5);
+}
+
+.inline-upload * {
+  box-sizing: border-box;
+}
+
+.inline-upload-files {
+  text-align: left;
+  white-space: normal;
+}
+
+.inline-upload-file {
+  display: inline-block;
+  width: 240px;
+  height: 100px;
+  margin: 2px;
+  vertical-align: top;
+  position: relative;
+  background: rgba(0,0,0,0.04);
+  white-space: normal;
+  border-radius: 3px;
+}
+
+.inline-upload-thumbnail {
+  width: 100px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  padding: 3px;
+  text-align: center;
+  font-size: 40px;
+  line-height: 100%;
+}
+
+.inline-upload-thumbnail i {
+  vertical-align: middle;
+  color: #666;
+  margin: 0.5em;
+  line-height: 90px;
+}
+
+.inline-upload-thumbnail img {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: middle;
+  line-height: 100px;
+}
+
+.inline-upload-info {
+  height: 100%;
+  left: 100px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  padding: 0.4em;
+}
+
+.inline-upload-info input[type=text] {
+  width: 100%;
+}
+
+.inline-upload-info > div {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.inline-upload-info > .inline-upload-filename {
+  font-weight: bold;
+}
+
+.inline-upload-info .inline-upload-trash {
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+}
+
+/* Custom color picker */
+.sp-replacer {
+  padding: 0;
+  margin: 1px;
+  background: white;
+  position: relative;
+  float: none;
+}
+.sp-preview {
+  height: 15px;
+  width: 32px;
+  border: none;
+  margin: 0;
+}
+.sp-dd {
+  position: absolute;
+  right: 0;
+  font-size: 9px;
+  height: 10px;
+  line-height: 10px;
+  padding: 2px 4px;
+}
+
+.form-icon {
+  background-color: white;
+  font-size: 1.4em;
+}
+
+
+
+/**
+  Overwrite
+ */
+
+/** Pagination **/
+
+/*.pagination .page:hover {*/
+/*  text-decoration: none;*/
+/*  background-image: url(images/buttons/button-over.png);*/
+/*}*/
+/*.pagination .page {*/
+/*  text-align: center;*/
+/*  background: none;*/
+/*  min-width: 32px;*/
+/*  min-height: 32px;*/
+/*  border-radius: 16px;*/
+/*  padding: 0;*/
+/*  line-height: 32px;*/
+/*  display: inline-block;*/
+/*  box-shadow: none;*/
+/*  transition: background 0.25s, color 0.25s;*/
+/*}*/
+
+/*.pagination .page:hover {*/
+/*  text-decoration: inherit;*/
+/*  background : rgba(3, 155, 229, 0.32);*/
+/*  color: #EEEEEE !important;*/
+/*}*/
+/*.pagination .page.active,*/
+/*.pagination .page.active:hover {*/
+/*  cursor: default;*/
+/*  border: 1px solid #039BE5;*/
+/*  background: none;*/
+/*}*/
+
+/*.pagination .page.disabled,*/
+/*.pagination .page.disabled:hover {*/
+/*  cursor: default;*/
+/*  opacity: 0.3 !important;*/
+/*}*/
+
+/*.pagination .page.active,*/
+/*.pagination .page.active:hover {*/
+/*  background: none;*/
+/*  color: #039BE5 !important;*/
+/*}*/
+/*.pagination .page.disabled {*/
+/*  opacity: 0.3;*/
+/*}*/
+
+/*body .pagination select {*/
+/*  height: 32px;*/
+/*  border-radius: 16px;*/
+/*  margin-top: -26px;*/
+/*}*/
+
+/**
+  Ripple Effect
+ */
+
+div.main-content#main-content>ul.control_tabs>li>a,
+div.main-content#main-content table ul.control_tabs>li>a,
+div.nav-subtabs>ul>li>span
+{
+  overflow: hidden;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+}
+
+div.main-content#main-content>ul.control_tabs>li>a::after,
+div.main-content#main-content table ul.control_tabs>li>a::after,
+div.nav-subtabs>ul>li>span::after
+{
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle,#000 10%,transparent 10.01%);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  transform: scale(10,10);
+  opacity: 0;
+  transition: transform .5s,opacity 1s;
+}
+
+div.main-content#main-content>ul.control_tabs>li>a:active::after,
+div.main-content#main-content table ul.control_tabs>li>a:active::after,
+div.nav-subtabs>ul>li>span:active::after
+{
+  transform: scale(0,0);
+  opacity: .2;
+  transition: 0s;
+}
+
+/**
+
+ */
+table.tabview {
+  margin-top: 55px;
+}
+
+/*body textarea,*/
+/*body .textarea-container,*/
+/*body input[type=search],*/
+/*body input[type=text],*/
+/*body #login input[type=text],*/
+/*body input[type=password],*/
+/*body #login input[type=password] {*/
+/*border-radius: 4px;*/
+/*border: 1px solid transparent #DDDDDD;*/
+/*font-family: Roboto;*/
+/*font-style: normal;*/
+/*font-weight: normal;*/
+/*font-size: 16px;*/
+/*line-height: 24px;*/
+/*letter-spacing: 0.15px;*/
+/*transition: border-color 0.25s;*/
+/*}*/
+
+/*body textarea:focus,*/
+/*body .textarea-container.input-focus,*/
+/*body input[type=search]:focus,*/
+/*body input[type=text]:focus,*/
+/*body #login input[type=text]:focus,*/
+/*body input[type=password]:focus,*/
+/*body #login input[type=password]:focus {*/
+/*border-radius: 4px;*/
+/*border-color: rgba(63, 81, 181, 1);*/
+/*outline: none;*/
+/*}*/
+
+/**
+  Main buttons
+ /**!*/
+/*body button,*/
+/*body button[type=button],*/
+/*body button[type=submit],*/
+/*body a.button,*/
+/*.page {*/
+/*  border: 1px solid #3F51B5;*/
+/*  color: #3F51B5 !important;*/
+/*  background-color: #FFFFFF;*/
+/*  box-shadow: none;*/
+/*  opacity: 1 !important;*/
+
+/*  background-image: none;*/
+/*  font-family: Roboto;*/
+/*  height: 32px;*/
+/*  min-width: 32px;*/
+/*  border-radius: 16px;*/
+/*  cursor: pointer;*/
+/*  font-size: 14px;*/
+/*  line-height: 30px;*/
+/*  transition: background 0.25s, opacity 0.25s;*/
+/*  font-weight: normal;*/
+/*  text-transform: uppercase;*/
+/*}*/
+
+/*body button.notext::before,*/
+/*body a.notext.button::before {*/
+/*  margin-right: auto;*/
+/*  margin-left: auto;*/
+/*}*/
+
+/*body button.notext,*/
+/*body button[type=button].notext,*/
+/*body a.notext.button {*/
+/*  text-align: center;*/
+/*  padding: 0;*/
+/*}*/
+
+/*body button::before,*/
+/*body button[type=button]::before,*/
+/*body button[type=submit]::before,*/
+/*body a.button::before {*/
+/*  margin: 0 8px 2px 7px;*/
+/*}*/
+
+/*body button.notext::before,*/
+/*body button[type=button].notext::before,*/
+/*body button[type=submit].notext::before,*/
+/*body a.button.notext::before {*/
+/*  !*line-height: 0;*!*/
+/*}*/
+
+/*body button:hover,*/
+/*body button[type=button]:hover,*/
+/*body button[type=submit]:hover,*/
+/*body a.button:hover {*/
+/*  background-color: #E7E8FC;*/
+/*  background-image: none;*/
+/*}*/
+
+/*body button > i,*/
+/*body button[type=button] > i,*/
+/*body a.button > i {*/
+/*  width: 100%;*/
+/*  text-align: center;*/
+/*}*/
+
+/*!***/
+/*Secondary buttons*/
+/**!*/
+/*body * button.add,*/
+/*body * button.save,*/
+/*body * button.submit,*/
+/*body * button[type=submit] {*/
+/*  background-color: #3F51B5;*/
+/*  box-shadow: 1px 1px 3px 0px #111;*/
+/*  color: #EEEEEE !important;*/
+/*  border-width: 0px;*/
+/*}*/
+
+/*body * button.add:hover,*/
+/*body * button.save:hover,*/
+/*body * button.submit:hover,*/
+/*body * button[type=submit]:hover {*/
+/*  background-color: #7D89CD;*/
+/*}*/
+
+/*body button:disabled {*/
+/*  opacity: .36 !important;*/
+/*}*/
+
+
+:not([class^="v-"])>input[type=text].date {
+  width: 90px;
+  padding-right: 16px;
+}
+
+:not([class^="v-"])>input[type=text].time {
+  width: 50px;
+}
+
+:not([class^="v-"])>input[type=text].dateTime {
+  width: 130px;
+  padding-right: 16px;
+}
+
+/**
+  Numeric fields
+ */
+
+.numericField {
+  border: none !important;
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: -moz-inline-box;
+  display: inline-block;
+  padding-right: 16px;
+  position: static; /* To allow filter:opacity in IE */
+  white-space: normal; /* To allow full width inputs in the forms module */
+}
+
+.numericField td {
+  padding: 0!important;
+  border: none!important;
+}
+
+/*.numericField .arrows {
+  width: 1%;
+}*/
+
+.numericField .arrows div {
+  /*outline: 1px solid #999;*/
+  /*background-color: #eee;*/
+  /*background-repeat: no-repeat;*/
+  /*background-position: center center;*/
+  cursor: pointer;
+  height: 50%;
+  transition: color 0.25s;
+
+}
+
+.numericField .arrows div.up::before {
+  content: "\f0d8";
+}
+
+.numericField .arrows div.down::before {
+  content: "\f0d7";
+}
+
+.desktop .numericField .arrows div:hover {
+  background-color: #FFF;
+}
+
+.numericField .fraction {
+  color: #666;
+  padding: 0 3px !important;
+  line-height: 18px;
+  background: none;
+}
+
+.numericField input {
+  margin: 0;
+}
+
+.numericField.big-buttons button::before {
+  line-height: 14px;
+  vertical-align: top;
+}
+
+.numericField.big-buttons button.down::before {
+  content: "-";
+}
+
+.numericField.big-buttons button.up::before {
+  content: "+";
+}
+
+.numericField.big-buttons button.down {
+  margin-right: -1px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.numericField.big-buttons button.up {
+  margin-left: -1px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.numericField.big-buttons button {
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  padding: 1px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+/**
+  Icon overwrite
+ */
+
+/*button::before, a.button::before,*/
+.numericField .arrows div,
+input[type=checkbox]::after{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.img-fa {
+  width: 16px;
+  height: 16px;
+  opacity: 0.9;
+  filter: grayscale(0.1);
+  transition: opacity 0.25s, filter 0.25s;
+}
+.img-fa:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+
+/**
+  Required inputs style
+ */
+
+form label.notNull,
+form label.canNull,
+form label.notNullOK {
+  padding-right: 8px;
+  font-weight: bold;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+form label.notNull {
+  color: #895C5C;
+  /*background-image: url(../mediboard/images/icons/notNull.png);*/
+}
+
+form label.notNull::after {
+  content: "*";
+  font-weight: normal;
+  color: red;
+}
+
+/*form label.canNull::after {*/
+/*background-image: url(../mediboard/images/icons/canNull.png);*/
+/*}*/
+
+form label.notNullOK {
+  color: #496D49;
+  /*background-image: url(../mediboard/images/icons/notNullOK.png);*/
+}
+

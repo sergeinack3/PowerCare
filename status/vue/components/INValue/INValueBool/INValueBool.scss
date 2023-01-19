@@ -1,0 +1,25 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+@import '../../INUtils';
+
+.INValueBool {
+  $input-size: 24px;
+  &-icon {
+    @include flex-center();
+    width: $input-size;
+    height: $input-size;
+    line-height: 0;
+    border-radius: 50%;
+    color: $white;
+    margin: auto;
+    &.true {
+      background: $green;
+    }
+    &.false {
+      background: $red;
+    }
+  }
+}

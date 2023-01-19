@@ -1,0 +1,106 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.NavTab {
+  display: flex;
+  flex-flow: row nowrap;
+  flex-shrink: 1;
+  min-width: 80px;
+  position: relative;
+  transition: flex-shrink 0.15s;
+
+  &.active {
+    flex-shrink: 0;
+  }
+
+  &.standard {
+    margin-left: $space*4;
+
+    &.lonely {
+      margin-left: 0;
+    }
+
+    &.round {
+      .NavTab-content {
+        border-bottom-right-radius: 4px;
+        border-right: 1px solid $primary-300;
+        border-top-right-radius: 4px;
+      }
+    }
+
+    .NavTab-content {
+      border-bottom-right-radius: 0;
+      border-right: none;
+      border-top-right-radius: 0;
+    }
+  }
+
+  &:hover {
+    flex-shrink: 0;
+  }
+
+  &.animated {
+    animation: 0.36s bounce;
+
+    &.standard {
+      animation: none;
+    }
+  }
+
+  &-content {
+    @include subtitle1;
+    @include on-background(medium, true);
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: block;
+    height: 42px;
+    line-height: 40px;
+    overflow: hidden;
+    padding: 0 $space*3;
+    text-align: center;
+    text-overflow: ellipsis;
+    transition: all 0.1s ease-out;
+    user-select: none;
+    white-space: nowrap;
+    width: 100%;
+
+    &:hover {
+      @include primary-opacity($hover);
+      cursor: pointer;
+    }
+
+    &.active {
+      @include primary-opacity($active);
+      @include on-background(high, true);
+      border: 1px solid $primary-300;
+    }
+  }
+
+  &-badge {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    transform: scale3D(0.9, 0.9, 1);
+  }
+  25% {
+    transform: scale3D(1.03, 1.03, 1);
+  }
+  50% {
+    transform: scale3D(0.98, 0.98, 1);
+  }
+  100% {
+    transform: scale3D(1, 1, 1);
+  }
+}

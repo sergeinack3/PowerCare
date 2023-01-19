@@ -1,0 +1,101 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.TabShortcut {
+  align-items: flex-start;
+  border: $border;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: $space*2;
+  padding: $space*2;
+  position: relative;
+  width: auto;
+
+  &:hover {
+    @include primary-opacity($hover);
+    cursor: pointer;
+  }
+
+  &:focus {
+    @include primary-opacity($active);
+  }
+
+  &-badge {
+    align-self: center;
+  }
+
+  &-icon {
+    flex-shrink: 0;
+    height: 26px;
+    width: 26px;
+  }
+
+  &-content {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &-module {
+    @include subtitle2;
+    @include on-background(high);
+    line-height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space: nowrap;
+  }
+
+  &-name {
+    @include body2;
+    @include on-background(medium);
+    overflow: hidden;
+    text-align: start;
+    text-overflow: ellipsis;
+    user-select: none;
+    white-space: nowrap;
+    width: inherit;
+  }
+
+  &-badge {
+    align-self: center;
+  }
+}
+
+@include screenSmallerThan($screenSmall, "300") {
+  .TabShortcut {
+    align-items: center;
+    flex-direction: column;
+    gap: $space;
+
+    &-icon {
+      height: 32px;
+      width: 32px;
+    }
+
+    &-badge {
+      left: calc(50% + #{$space*4});
+      position: absolute;
+      top: $space;
+      transform: translateX(-50%);
+    }
+
+    &-content {
+      align-items: center;
+    }
+
+    &-name {
+      text-align: center;
+    }
+  }
+}

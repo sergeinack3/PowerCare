@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>ZTG</name>
+    <description>TAMM - GALAXIE (OX-IS)</description>
+    <elements>
+        <field minOccurs="0">
+            <name>ZTG.1</name>
+            <description>Identifiant agenda</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0">
+            <name>ZTG.2</name>
+            <description>Identifiant de connexion</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded">
+            <name>ZTG.3</name>
+            <description>Statut séropositif</description>
+            <datatype>CE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded">
+            <name>ZTG.4</name>
+            <description>Statut diabète</description>
+            <datatype>CE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded">
+            <name>ZTG.5</name>
+            <description>Autres diagnostics</description>
+            <datatype>CE</datatype>
+        </field>
+        <field minOccurs="0">
+            <name>ZTG.6</name>
+            <description>Créatinémie</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0">
+            <name>ZTG.7</name>
+            <description>Période de grossesse</description>
+            <datatype>DR</datatype>
+        </field>
+        <field minOccurs="0">
+            <name>ZTG.8</name>
+            <description>Période allaitement</description>
+            <datatype>DR</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded">
+            <name>ZTG.9</name>
+            <description>Handicap</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="1" table="0136">
+            <name>ZTG.10</name>
+            <description>Consultation facturée</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="1" table="0136">
+            <name>ZTG.11</name>
+            <description>Forfait PEPS</description>
+            <datatype>ID</datatype>
+        </field>
+    </elements>
+</segment>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>ZFM</name>
+    <description>Mouvement PMSI</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="1" length="1">
+            <name>ZFM.1</name>
+            <description>Mode d'entree PMSI</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="1">
+            <name>ZFM.2</name>
+            <description>Mode de sortie PMSI</description>
+            <datatype>IS</datatype>
+        </field> 
+        <field minOccurs="0" maxOccurs="1" length="1">
+            <name>ZFM.3</name>
+            <description>Mode de provenance PMSI</description>
+            <datatype>IS</datatype>
+        </field> 
+        <field minOccurs="0" maxOccurs="1" length="1">
+            <name>ZFM.4</name>
+            <description>Mode de destination PMSI</description>
+            <datatype>IS</datatype>
+        </field> 
+    </elements>
+</segment>

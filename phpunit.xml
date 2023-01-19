@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd" bootstrap="tests/bootstrap.php"
+         backupGlobals="false" backupStaticAttributes="false" colors="true" processIsolation="false" stopOnError="false"
+         stopOnFailure="false" stopOnIncomplete="false" stopOnSkipped="false" verbose="true">
+  <php>
+    <server name="KERNEL_CLASS" value="Ox\Core\Kernel\Kernel"/>
+    <server name="APP_ENV" value="test" force="true"/>
+    <server name="SHELL_VERBOSITY" value="-1" />
+    <server name="SYMFONY_PHPUNIT_REMOVE" value="" />
+    <server name="SYMFONY_PHPUNIT_VERSION" value="9.5" />
+  </php>
+  <testsuites>
+    <testsuite name="MpmTestSuite">
+      <file>modules/mpm/tests/Unit/CPrescriptionLineAnyTest.php</file>
+      <file>modules/mpm/tests/Unit/MPMPriseTest.php</file>
+    </testsuite>
+    <testsuite name="UnitTestSuite">
+      <directory>cli/tests/Unit/</directory>
+      <directory>core/tests/Unit/</directory>
+      <directory>modules/*/tests/Unit/</directory>
+    </testsuite>
+    <testsuite name="WebTestSuite">
+      <directory>core/tests/Functional/</directory>
+      <directory>modules/*/tests/Functional/</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

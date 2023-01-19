@@ -1,0 +1,24 @@
+admin_identicate:
+  path: api/identicate
+  controller: Ox\Mediboard\Admin\Controllers\PermissionController::identicate
+  methods: GET
+  defaults:
+    public: true
+    permission: none
+  options:
+    description: Check login identification
+    parameters:
+      login: '\w+'
+    accept:
+      - application/json
+
+admin_get_token:
+  path: api/tokens
+  controller: Ox\Mediboard\Admin\Controllers\PermissionController::getTokens
+  methods: GET
+  defaults:
+    permission: none
+  options:
+    description: Get token
+    parameters:
+      filter: '\w+'

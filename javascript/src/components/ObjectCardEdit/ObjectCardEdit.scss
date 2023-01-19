@@ -1,0 +1,58 @@
+@import '~oxify/src/styles/utils';
+
+.ObjectCardEdit {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &-actions {
+    border-top: $border;
+  }
+
+  &-actions,
+  &-body,
+  &-head {
+    box-sizing: border-box;
+    padding: $space*3;
+  }
+
+  &-body {
+    background-color: $background-default-light;
+    border-radius: 12px 12px 0 0;
+  }
+
+  &-head {
+    background-color: $primary;
+    border-radius: 6px 6px 0 0;
+    margin-bottom: -12px;
+    padding-bottom: 25px;
+  }
+
+  &-iconContainer {
+    align-items: center;
+    background-color: $background-default-light;
+    border-radius: 50%;
+    display: flex;
+    height: 28px;
+    justify-content: center;
+    width: 28px;
+
+    > ObjectCardEdit-icon{
+      color: $primary;
+    }
+  }
+
+  &-titleContainer {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: $space*3;
+  }
+
+  &-title {
+    @include h6;
+
+    color: $white;
+    margin-left: 16px;
+  }
+}

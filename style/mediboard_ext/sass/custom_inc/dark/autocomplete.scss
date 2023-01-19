@@ -1,0 +1,60 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+div.autocomplete {
+  background-color: $elevation-12;
+  @include shadow16();
+
+  ul {
+    li {
+      background-color: $elevation-16;
+
+      @mixin autocomplete-icon($list-size, $icon-size, $icon) {
+        padding: $small-space;
+        border-width: 0 !important;
+        > div:first-of-type {
+          margin-right: $space;
+          &::before {
+            display: inline-block;
+            width: $list-size;
+            height: $list-size;
+            content: "";
+            background: rgba(255, 255, 255, .38);
+          }
+          &::after {
+            display: inline-block;
+            width: #{$list-size - 2};
+            margin-top: 1px;
+            margin-left: -#{$list-size - 1};
+            height: #{$list-size - 2};
+            text-align: center;
+            @include fontawesome($icon-size, #{$list-size - 2});
+            @include special-content($icon);
+            @include border-radius(50%);
+            color: $elevation-16;
+            overflow: hidden;
+          }
+          @include border-radius(50%);
+          height: $list-size;
+          width: $list-size;
+          float: left;
+          overflow: hidden;
+        }
+      }
+
+      div.me-autocomplete-mediusers {
+        @include autocomplete-icon(20px, 14px, "f007");
+      }
+
+      div.me-autocomplete-functions {
+        @include autocomplete-icon(20px, 14px, "f0c0");
+        line-height: 20px;
+        font-size: 12px;
+      }
+    }
+  }
+}

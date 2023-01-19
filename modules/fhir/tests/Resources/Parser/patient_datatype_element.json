@@ -1,0 +1,13 @@
+{
+  "resourceType": "Patient",
+  "active": true,
+  "_active": {
+    "id": 1,
+    "extension": [
+      {
+        "url": "extension",
+        "valueString": "value"
+      }
+    ]
+  }
+}

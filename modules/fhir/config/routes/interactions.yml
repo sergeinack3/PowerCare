@@ -1,0 +1,115 @@
+fhir_history:
+  path: api/fhir/{resource}/_history
+  controller: Ox\Interop\Fhir\Controllers\CFHIRInteractionsController::history
+  defaults:
+    object_class: Ox\Interop\Fhir\Interactions\CFHIRInteractionHistory
+    permission: none
+  requirements:
+    resource:  '^[A-Z]{1}[a-zA-Z]+'
+  methods:    GET
+  options:
+    openapi: false
+
+fhir_history_id:
+  path: api/fhir/{resource}/{resource_id}/_history
+  controller: Ox\Interop\Fhir\Controllers\CFHIRInteractionsController::history
+  defaults:
+    permission: none
+    object_class: Ox\Interop\Fhir\Interactions\CFHIRInteractionHistory
+  requirements:
+    resource:  '^[A-Z]{1}[a-zA-Z]+'
+    resource_id: '(?:\-|\w|\=|\%)+'
+  methods:    GET
+  options:
+    openapi: false
+
+fhir_history_id_version:
+  path: api/fhir/{resource}/{resource_id}/_history/{version_id}
+  controller: Ox\Interop\Fhir\Controllers\CFHIRInteractionsController::history
+  defaults:
+    permission: none
+    object_class: Ox\Interop\Fhir\Interactions\CFHIRInteractionHistory
+  requirements:
+    resource:  '^[A-Z]{1}[a-zA-Z]+'
+    resource_id: '(?:\-|\w|\=|\%)+'
+    version_id: '\d+'
+  methods:    GET
+  options:
+    openapi: false
+
+fhir_read:
+  path: api/fhir/{resource}/{resource_id}
+  controller: Ox\Interop\Fhir\Controllers\CFHIRInteractionsController::read
+  defaults:
+    permission: none
+    object_class: Ox\Interop\Fhir\Interactions\CFHIRInteractionRead
+  requirements:
+    resource:  '^[A-Z]{1}[a-zA-Z]+'
+    resource_id: '(?:\-|\w|\=|\%)+'
+  methods:    GET
+  options:
+    openapi: false
+
+fhir_metadata:
+  path: api/fhir/metadata
+  controller: Ox\Interop\Fhir\Controllers\CFHIRInteractionsController::metadata
+  defaults:
+    object_class: Ox\Interop\Fhir\Interactions\CFHIRInteractionCapabilities
+    permission: none
+  methods: GET
+  options:
+    openapi: false
+
+fhir_search:
+  path: api/fhir/{resource}
+  controller: Ox\Interop\Fhir\Controllers\CFHIRInteractionsController::search
+  defaults:
+    object_class: Ox\Interop\Fhir\Interactions\CFHIRInteractionSearch
+    permission: none
+  requirements:
+    resource:  '^[A-Z]{1}[a-zA-Z]+'
+  methods: GET
+  options:
+    description: List resources collection.
+    responses:
+      200: OK
+      206: Partial response
+    accept:
+      - application/fhir+xml
+      - application/fhir+json
+
+fhir_create:
+  path: api/fhir/{resource}
+  controller: Ox\Interop\Fhir\Controllers\CFHIRInteractionsController::create
+  defaults:
+    permission: none
+    object_class: Ox\Interop\Fhir\Interactions\CFHIRInteractionCreate
+  requirements:
+    resource:  '^[A-Z]{1}[a-zA-Z]+'
+  methods:    POST
+  options:
+    openapi: false
+
+fhir_update:
+  path: api/fhir/{resource}/{resource_id}
+  controller: Ox\Interop\Fhir\Controllers\CFHIRInteractionsController::update
+  defaults:
+    permission: none
+  requirements:
+    resource:  '^[A-Z]{1}[a-zA-Z]+'
+    resource_id: '(?:\-|\w|\=|\%)+'
+  methods:    PUT
+  options:
+    openapi: false
+
+fhir_delete:
+  path: api/fhir/{resource}/{resource_id}
+  controller: Ox\Interop\Fhir\Controllers\CFHIRInteractionsController::delete
+  defaults:
+    permission: none
+  requirements:
+    resource:  '^[A-Z]{1}[a-zA-Z]+'
+    resource_id: '(?:\-|\w|\=|\%)+'
+  methods:    DELETE
+  options:
+    openapi: false

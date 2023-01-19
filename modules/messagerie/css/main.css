@@ -1,0 +1,501 @@
+/**
+ * @package Mediboard\Messagerie
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.tag_head {
+  font-weight: bold;
+  font-size: 0.95em;
+  border-radius: 3px;
+  text-shadow: 1px 1px 3px black;
+  padding: 1px 4px;
+  margin: 1px;
+}
+
+.tag_head_fwd{
+  background-color: #5299cb;
+  color:white;
+}
+
+.tag_head_re {
+  color:white;
+  background-color: limegreen;
+}
+
+ul#listUser li {
+  display: inline;
+}
+
+ul.list-folders:before {
+  content: '';
+  position: absolute;
+  display: block;
+  border-top: 1px solid #7fa5a2;
+  width : 75%;
+  top: -5px;
+  left: 12.5%;
+}
+
+ul.list-folders:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-right: 1px solid #7fa5a2;
+  height: 75%;
+  top: 12.5%;
+  right: -5px;
+}
+
+i.msgicon {
+  color: #4d535f;
+}
+
+tr.message.unread {
+  font-weight: bold;
+}
+
+span.count {
+  float: right;
+  background-color: #73918e;
+  border-color: #4a6461;
+  color: #fff
+}
+
+#message_content {
+  overflow: auto;
+  height: 70%;
+  width: 100%;
+}
+
+i.connected-user {
+  color: forestgreen;
+}
+
+i.disconnected-user {
+  color: firebrick;
+}
+
+span.msg-counter {
+  border-radius: 50%;
+  background-color: #ff0000;
+  padding: 1px 3px;
+  font-size: 0.8em;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  right: 5px;
+  bottom: 5px;
+}
+
+/**
+* Smarty
+*/
+.MessagingLink {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.MessagingLink-search {
+  border-right: 1px solid #E8E8E8;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 30%;
+}
+.MessagingLink-searchMenu {
+  display: flex;
+  flex-direction: column;
+}
+.MessagingLink-searchTitle {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 16px 16px 20px 16px;
+}
+.MessagingLink-searchField {
+  border-bottom: 1px solid #E8E8E8;
+  padding: 0 16px;
+}
+.MessagingLink-searchLabel {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.MessagingLink-searchInput {
+  margin: 4px 0 32px 0;
+}
+.MessagingLink-searchResult {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow: scroll;
+}
+.MessagingLink-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-top: 40px;
+}
+.MessagingLink-emptyTitle {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+.MessagingLink-emptyImage img {
+  width: 130px;
+}
+
+.MessagingLinkList {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  width: 70%;
+}
+.MessagingLinkList-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px 0 16px 5px;
+}
+.MessagingLinkList-preaction {
+  margin: 0 10px;
+}
+.MessagingLinkList-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 32px;
+}
+.MessagingLinkList-title > strong {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 24px;
+  font-style: normal;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.87);
+}
+.MessagingLinkList-title > span {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+.MessagingLinkList-action {
+  display: flex;
+  justify-content: end;
+  flex: 1 1 auto;
+}
+.MessagingLinkList-content {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 4px;
+}
+.MessagingLinkList-contentField {
+  display: flex;
+  flex-direction: column;
+  flex: 0;
+  height: 100%;
+}
+.MessagingLinkList-contentField.scrollFlex {
+  flex: 1 1 auto;
+}
+.MessagingLinkList-contentTitle {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.87);
+  padding-bottom: 10px;
+}
+.MessagingLinkList-contentResult {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  height: 100%;
+}
+.MessagingLinkList-empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 40px;
+  height: 100%;
+}
+.MessagingLinkList-emptyTitle {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+.MessagingLinkList-emptyImage img {
+  width: 200px;
+}
+
+.MessagingLinkAutocomplete {
+  padding: 4px 0;
+}
+.MessagingLinkAutocomplete-content {
+  display: flex;
+  flex-direction: column;
+}
+.MessagingLinkAutocomplete-title {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 16px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.MessagingLinkAutocomplete-badge {
+  float: right;
+}
+.MessagingLinkAutocomplete-infos {
+  display: flex;
+  flex-direction: column;
+}
+.MessagingLinkAutocomplete-infos > span {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 10px;
+  font-style: normal;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.MessagingLinkContext {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  overflow: auto;
+}
+.MessagingLinkContext-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 16px;
+}
+.MessagingLinkContext-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+}
+.MessagingLinkContext-sectionTitle {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: rgba(0, 0, 0, 0.87);
+}
+.MessagingLinkContext-sectionRoot {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 8px;
+  padding: 8px 0 0 8px;
+}
+.MessagingLinkContext-sectionChild {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 8px;
+  padding: 8px 0 0 32px;
+}
+.MessagingLinkContext-sectionRoot label,
+.MessagingLinkContext-sectionChild label {
+  display: flex;
+  flex-direction: column;
+}
+.MessagingLinkContext-sectionRoot label > strong,
+.MessagingLinkContext-sectionChild label > strong {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.87);
+}
+.MessagingLinkContext-sectionRoot label > span,
+.MessagingLinkContext-sectionChild label > span {
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.MessagingLinkContext-sectionAction {
+  padding: 8px 0;
+}
+.MessagingLinkContext-sectionAction.loaded {
+  padding: unset;
+}
+
+.MessagingLinkContextCard {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  align-items: center;
+}
+.MessagingLinkContextCard-content {
+  display: flex;
+  flex-direction: column;
+}
+.MessagingLinkContextCard-content strong {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 16px;
+  font-style: normal;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #000000;
+}
+.MessagingLinkContextCard-content span {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 12px;
+  font-style: normal;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  color: #000000;
+}
+.MessagingLinkContextCard-content span > span {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.MessagingLinkCard {
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.MessagingLinkCard-view:hover {
+  background-color: #3F51B515;
+  transition: background-color 0.2s ease-in;
+}
+.MessagingLinkCard-view:hover .MessagingLinkCard-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10px;
+}
+.MessagingLinkCard-view.selected {
+  background-color: #3F51B529;
+  transition: background-color 0.2s ease-in;
+}
+.MessagingLinkCard-view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 10px;
+  padding: 0 5px;
+  flex: 1 1 auto;
+  min-height: 60px;
+}
+.MessagingLinkCard-preaction {
+  margin: 0 10px;
+}
+.MessagingLinkCard-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1 1 auto;
+  cursor: pointer;
+}
+.MessagingLinkCard-title {
+  display: flex;
+  flex-direction: row;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 0.25px;
+  color: rgba(0, 0, 0, 0.87);
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.MessagingLinkCard-action {
+  display: none;
+}
+.MessagingLinkCard-edit {
+  height: 0;
+  transition: all 0.5s ease;
+}
+.MessagingLinkCard-edit.show {
+  height: 70px;
+  transition: all 0.5s ease;
+}
+.MessagingLinkCard-edit.show .MessagingLinkCard-editForm {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  height: inherit;
+}
+.MessagingLinkCard-editForm {
+  border-top: 1px solid #E8E8E8;
+  display: none;
+}
+.MessagingLinkCard-editField {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.MessagingLinkCard-editAction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.MessagingIcon.mdi-text-box,
+.MessagingIcon.mdi-file-word-box {
+  color: #3F51B5;
+}
+.MessagingIcon.mdi-file {
+  color: #0288D1;
+}
+.MessagingIcon.mdi-image {
+  color: #F61919;
+}
+.MessagingIcon.mdi-file-pdf-box {
+  color: #EA4335;
+}
+.MessagingIcon.mdi-file-excel-box {
+  color: #0F9D58;
+}

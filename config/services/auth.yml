@@ -1,0 +1,22 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  # Authentication
+  Ox\Core\Auth\:
+    resource: '../../core/classes/Auth/'
+    exclude:
+      - '../../core/classes/Auth/*.php' # Legacy classes + User (implementing UserInterface)
+      - '../../core/classes/Auth/Exception/'
+      - '../../core/classes/Auth/Traits/'
+
+  Ox\Core\Auth\Authenticators\BasicHeaderAuthenticator:
+    arguments:
+      $credentials_checker: '@Ox\Core\Auth\Checkers\ChainCredentialsChecker'
+
+  Ox\Core\Auth\Checkers\ChainCredentialsChecker:
+    arguments:
+      $checkers:
+        - '@Ox\Core\Auth\Checkers\LdapCredentialsChecker'
+        - '@Ox\Core\Auth\Checkers\BasicCredentialsChecker'

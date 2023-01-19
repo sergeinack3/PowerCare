@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "b71882c4-96f4-496d-8527-f70bd15f22bf",
+		"name": "fhir",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API - Fixtures",
+			"item": [
+				{
+					"name": "PDqm",
+					"item": [
+						{
+							"name": "Search (Patients)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"PDQm request should contains Bundle resource\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(jsonData).has.property('resourceType').eq('Bundle')\r",
+											"    pm.expect(jsonData).has.property('total').to.be.an('number')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"PDQm request should contains entries in bundle resource\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"\r",
+											"    const total = jsonData.total;\r",
+											"    const entries = jsonData.entry;\r",
+											"    if (total > 0) {\r",
+											"        pm.expect(entries.length).to.be.at.most(total)\r",
+											"        entries[0].resource\r",
+											"    } else {\r",
+											"        const condition = entries === undefined || entries.length === 0\r",
+											"        pm.expect(condition).equal(true,'Bundle entries sould be empty or undefined')\r",
+											"    }\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-OXAPI-KEY",
+										"value": "{{fhir_token}}",
+										"type": "text"
+									},
+									{
+										"key": "Accept",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{Host}}/api/fhir/Patient?_format=json",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"api",
+										"fhir",
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "_format",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search (Patient with parameters)",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"PDQm request should contains Bundle resource\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"\r",
+											"    pm.expect(jsonData).has.property('resourceType').eq('Bundle')\r",
+											"    pm.expect(jsonData).has.property('total').to.be.an('number')\r",
+											"});\r",
+											"\r",
+											"pm.test(\"PDQm request should contains entries in bundle resource\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"\r",
+											"    const total = jsonData.total;\r",
+											"    const entries = jsonData.entry;\r",
+											"    pm.expect(total).equal(1)\r",
+											"    pm.expect(entries[0]).has.property('resource').to.be.an('object')\r",
+											"    pm.expect(entries[0].resource.resourceType).equal('Patient')\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"accept": true
+								}
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-OXAPI-KEY",
+										"value": "{{fhir_token}}",
+										"type": "text"
+									},
+									{
+										"key": "ox-devtools",
+										"value": "3",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{Host}}/api/fhir/Patient?_format=json&family=fhir patient fixtur&given=FHIR PATIENT&birthdate=2000/01/01",
+									"host": [
+										"{{Host}}"
+									],
+									"path": [
+										"api",
+										"fhir",
+										"Patient"
+									],
+									"query": [
+										{
+											"key": "_format",
+											"value": "json"
+										},
+										{
+											"key": "family",
+											"value": "fhir patient fixtur"
+										},
+										{
+											"key": "given",
+											"value": "FHIR PATIENT"
+										},
+										{
+											"key": "birthdate",
+											"value": "2000/01/01"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Authentication : api/tokens",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Authentication successful with fhir user\", function () {\r",
+									"    const json = pm.response.json();\r",
+									"    pm.expect(json.data).to.an('object').that.has.property('attributes');\r",
+									"    const attributes = json.data.attributes;\r",
+									"    pm.expect(attributes).to.an('object').that.has.property('hash');\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "fhir_mdp_1234",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "fhir_api_user_fixture",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "ox-devtools",
+								"value": "3",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Host}}/api/tokens",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"tokens"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const fhir_token = pm.variables.get('fhir_token')",
+							"if (!fhir_token) {",
+							"    console.info({'Actualise tokens' : fhir_token})",
+							"    const user_name = 'fhir_api_user_fixture';",
+							"    const password = 'fhir_mdp_1234';",
+							"    const host = pm.variables.get('Host');",
+							"",
+							"    const request = {",
+							"        url:  host + '/api/tokens',",
+							"        method: 'GET',",
+							"        header: {",
+							"            'Content-Type': 'application/json',",
+							"            'Authorization': 'Basic ' + btoa(user_name + ':' + password)",
+							"        }",
+							"    };",
+							"",
+							"    pm.sendRequest(request, (error, response) => {",
+							"        if (error) {",
+							"            console.log(error);",
+							"            return;",
+							"        }",
+							"",
+							"        response = response.json()",
+							"        if (response.errors) {",
+							"            console.error('You need run fixtures before');",
+							"            return;",
+							"        }",
+							"",
+							"        response = response.data",
+							"        const fhir_token = response.attributes.hash;",
+							"        if (fhir_token) {",
+							"            pm.variables.set('fhir_token', fhir_token)",
+							"        }",
+							"    })",
+							"}"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,26 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.OxCard {
+  display: flex;
+  flex-direction: column;
+
+  &-actions {
+    border: $border;
+    border-top-width: 0;
+    border-radius: 0 0 4px 4px;
+    box-sizing: border-box;
+    padding: 8px;
+  }
+
+  &-content {
+    border: $border;
+    border-top-width: 0;
+  }
+}

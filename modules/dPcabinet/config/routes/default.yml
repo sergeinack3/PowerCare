@@ -1,0 +1,90 @@
+cabinet_update_consultation:
+  path: api/cabinet/consultations/{consultation_id}
+  controller: Ox\Mediboard\Cabinet\Controllers\CConsultationController::updateConsultation
+  methods: PUT
+  defaults:
+    permission: edit
+  requirements:
+    evenement_id: '\d+'
+  options:
+    description: Update CConsultation
+
+cabinet_get_consultations:
+  path: api/cabinet/consultations
+  controller: Ox\Mediboard\Cabinet\Controllers\CConsultationController::listConsultations
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: |
+      List the consultation.
+      Parameter date will return the consultations on this date.
+      Parameter user_id will return the consultations of the user.
+      Parameter unpaid_sum will add the sum of unpaid consultations for each patients in the returned consultations.
+      Parameter count_docs will add the number of forms, presc, reports, files for each returned consultations.
+      Parameter event_reminder_count will add the number of event reminder in the meta.
+      Parameter unsigned_doc_count will add the number of unsigned reports in the meta.
+      Parameter unpaid_consult_count will add the number of unpaid consultations in the meta.
+      Parameter rejected_bill_count will add the number of rejected bills in the meta.
+      Parameter filter_payment will filter on unpaid or partially unpaid consultations or patient having a consultation unpaid (missing).
+    parameters:
+      date: '\w+'
+      user_id: '\d+'
+      unpaid_sum: 0|1
+      filter_payment: entirely|partially|missing
+      count_docs: 0|1
+      event_reminder_count: 0|1
+      unsigned_doc_count: 0|1
+      unpaid_consult_count: 0|1
+      rejected_bill_count: 0|1
+    accept:
+      - application/json
+
+cabinet_patch_consultation:
+  path: api/cabinet/consultations/{consultation_id}
+  controller: Ox\Mediboard\Cabinet\Controllers\CConsultationController::patchConsultation
+  methods: PATCH
+  defaults:
+    permission: edit
+  requirements:
+    consultation_id: '\d+'
+  options:
+    description: Update the given consultation.
+    accept:
+      - application/json
+
+cabinet_show_consultation:
+  path: api/cabinet/consultations/{consultation_id}
+  controller: Ox\Mediboard\Cabinet\Controllers\CConsultationController::getConsultation
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    consultation_id: '\d+'
+  options:
+    description: Get one consultation.
+    accept:
+      - application/json
+
+cabinet_create_consultation:
+  path: api/cabinet/consultations
+  controller: Ox\Mediboard\Cabinet\Controllers\CConsultationController::createConsultation
+  methods: POST
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Creation consultations.
+      Parameter immediate will create a consultation (with shift) for the datetime and user_id given.
+      Parameter datetime is now by default.
+      Parameter user_id is the praticien we want to create a consultation for.
+    accept:
+      - application/json
+    parameters:
+      immediate: 0|1
+      user_id: '\d+'
+      datetime: '\w+'
+    body:
+      required: true
+      content-type:
+        - application/json

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>FNM</name>
+    <description>Numeric Fusion</description>
+    <elements>
+        <field minOccurs="1" maxOccurs="0" length="16">
+            <name>FNM.1</name>
+            <description>Value</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="16">
+            <name>FNM.2</name>
+            <description>Fusion Value</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="16">
+            <name>FNM.3</name>
+            <description>Indicator</description>
+            <datatype>ST</datatype>
+        </field>
+    </elements>
+</segment>

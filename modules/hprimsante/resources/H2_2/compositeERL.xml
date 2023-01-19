@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+  <name>ERL</name>
+  <description>Error Location</description>
+  <elements>
+    <field minOccurs="1" maxOccurs="1" length="50">
+      <name>ERL.1</name>
+      <description>Segment type</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="50">
+      <name>ERL.2</name>
+      <description>Row segment</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="50">
+      <name>ERL.3</name>
+      <description>Identifiers</description>
+      <datatype>IDS</datatype>
+    </field>
+  </elements>
+</segment>

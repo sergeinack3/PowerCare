@@ -1,0 +1,29 @@
+<RetrieveValueSetResponse>
+    <ValueSet displayName="healthcareFacilityTypeCode  values for Connectathon" version="20081214" id="1.3.6.1.4.1.21367.101.5">
+        <ConceptList xml:lang="en-US">
+            <Concept code="1.3.6.1.4.1.21367.2009.9.999" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="XX SVS Connectathon Code"/>
+            <Concept code="Acute-care-hospital" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Acute care hospital"/>
+            <Concept code="Assisted-Living" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Assisted Living"/>
+            <Concept code="Critical-Care-Unit" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Critical Care Unit"/>
+            <Concept code="Emergency-Department" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Emergency Department"/>
+            <Concept code="Home" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Home"/>
+            <Concept code="Home-Health-Care" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Home Health Care"/>
+            <Concept code="Hospital-Setting" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Hospital Setting"/>
+            <Concept code="Hospital-Unit" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Hospital Unit"/>
+            <Concept code="Nursing-Home" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Nursing Home"/>
+            <Concept code="Observation-Ward" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Observation Ward"/>
+            <Concept code="Outpatient" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Outpatient"/>
+            <Concept code="Rehabilitation-hospital" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Rehabilitation hospital"/>
+            <Concept code="Skilled-Nursing-Facility" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Skilled Nursing Facility"/>
+        </ConceptList>
+    </ValueSet>
+</RetrieveValueSetResponse>

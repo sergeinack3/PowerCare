@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>OBR</name>
+    <description>Request analyzes or acts</description>
+    <elements>
+        <field minOccurs="1" maxOccurs="1" length="4">
+            <name>OBR.1</name>
+            <description>Rank segment</description>
+            <datatype>NM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="23">
+          <name>OBR.2</name>
+          <description>Id sample and request for applicant</description>
+          <datatype>CM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="23">
+          <name>OBR.3</name>
+          <description>Id sample and request for executing</description>
+          <datatype>CM</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="unbounded" length="64000">
+          <name>OBR.4</name>
+          <description>Analyzes or acts</description>
+          <datatype>CE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded" length="2">
+          <name>OBR.5</name>
+          <description>Priority</description>
+          <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="26">
+          <name>OBR.6</name>
+          <description>Date and time of consideration</description>
+          <datatype>TS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="26">
+          <name>OBR.7</name>
+          <description>Date and time of the acts (sample)</description>
+          <datatype>TS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="26">
+          <name>OBR.8</name>
+          <description>Date and time of end of the sampling</description>
+          <datatype>TS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20">
+          <name>OBR.9</name>
+          <description>Volume of the collection (and unit)</description>
+          <datatype>CQ</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.10</name>
+          <description>sampler</description>
+          <datatype>CNA</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="1">
+          <name>OBR.11</name>
+          <description>Action code</description>
+          <datatype>CE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.12</name>
+          <description>Risk</description>
+          <datatype>CM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="300">
+          <name>OBR.13</name>
+          <description>Clinical Information</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="26">
+          <name>OBR.14</name>
+          <description>Date and time of receipt of the sample in the executing</description>
+          <datatype>TS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="300">
+          <name>OBR.15</name>
+          <description>Specimen</description>
+          <datatype>CM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.16</name>
+          <description>prescriber</description>
+          <datatype>PRE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded" length="40">
+          <name>OBR.17</name>
+          <description>Phone Prescriber</description>
+          <datatype>TN</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.18</name>
+          <description>Free field one applicant</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.19</name>
+          <description>Free field two applicant</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.20</name>
+          <description>Free field one executing</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.21</name>
+          <description>Free field two executing</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="26">
+          <name>OBR.22</name>
+          <description>Date and time results</description>
+          <datatype>TS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="0">
+          <name>OBR.23</name>
+          <description>Price acts</description>
+          <datatype>CQ</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="10">
+          <name>OBR.24</name>
+          <description>Service executing</description>
+          <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="1">
+          <name>OBR.25</name>
+          <description>Status of actions or results</description>
+          <datatype>ID</datatype>
+            <!--
+                Table ASTM 16 : Statuts des résultats
+                    F : résultat final, demande complète
+                    P : résultats non validés biologiquement (non définitifs)
+                    M : résultats partiels validés biologiquement
+                    I : échantillons reçus, analyses ou actes non effectués
+                    R : résultats non validés techniquement
+                    C : correction de résultats déjà transmis
+                    O : demande reçue, échantillons non reçus (ou partiellement reçus)
+                    D : demande annulée par le demandeur
+                    X : demande annulée par l'exécutant
+            -->
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="0">
+          <name>OBR.26</name>
+          <description>Outcomes</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="0">
+          <name>OBR.27</name>
+          <description>Cycle and functional test</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded" length="150">
+          <name>OBR.28</name>
+          <description>Recipient of the copy</description>
+          <datatype>CNA</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="150">
+          <name>OBR.29</name>
+          <description>related demand</description>
+          <datatype>CM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20">
+          <name>OBR.30</name>
+          <description>Mode of transportation of the patient</description>
+          <datatype>ID</datatype>
+
+            <!--
+                Table ASTM 19 : Codes transport
+                    PORT : non transportable
+                    CART : Brancard
+                    WHLC : Fauteuil roulant
+                    WALK : Le patient se déplace tout seul
+            -->
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded" length="300">
+          <name>OBR.31</name>
+          <description>Reason for request</description>
+          <datatype>CE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.32</name>
+          <description>Main interpreter results</description>
+          <datatype>CNA</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.33</name>
+          <description>Assistant</description>
+          <datatype>CNA</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.34</name>
+          <description>Technician</description>
+          <datatype>CNA</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBR.35</name>
+          <description>Data entry operator</description>
+          <datatype>CNA</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="26">
+          <name>OBR.36</name>
+          <description>Date and time looking rendering tests</description>
+          <datatype>TS</datatype>
+        </field>
+    </elements>
+</segment>

@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    autowire: false
+    autoconfigure: false
+
+  Ox\Mediboard\System\Factories\:
+    resource: '../../classes/Factories/'

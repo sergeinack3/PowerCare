@@ -1,0 +1,1379 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+@use "sass:math";
+
+/**
+  Input
+*/
+body {
+  @include not-vue-container {
+    >input {
+      &[type="text"],
+      &[type="email"],
+      &[type="number"],
+      &[type="password"],
+      &[type="search"],
+      &[type="tel"],
+      &[type="url"] {
+        padding: $space;
+        @include border-radius();
+        @include subtitle1;
+        @include black-emphasis-color($opacity-low-black);
+        background-color: transparent;
+        transition: border-color 0.2s;
+        margin: 1px;
+
+        &:focus {
+          border: 2px solid $primary;
+          outline: none;
+          margin: 0;
+
+          &[readonly] {
+            margin: 1px;
+          }
+        }
+
+        // Size support for all the input type
+        &[size] {
+          @for $i from 1 through 10 {
+            &[size='#{$i}'] {
+              @if $i == 1 {
+                width: unquote(#{$i+1} + 'em');
+              }
+              @else {
+                width: unquote(#{$i} + 'em');
+              }
+            }
+          }
+        }
+
+        &.me-small {
+          @include small-input();
+        }
+      }
+
+      &[type="text"] {
+        &.date,
+        &.time,
+        &.dateTime {
+          width: auto;
+          padding-right: #{$space*2 + 14px};
+          box-sizing: content-box;
+
+          &.me-105 {
+            max-width: 105px;
+          }
+
+          &.me-95 {
+            max-width: 95px;
+          }
+
+        &.opacity-0 {
+          min-width: 0;
+          padding: 0;
+        }
+
+        &[disabled] + .me-icon {
+          opacity: .38;
+        }
+      }
+
+        &.dateTime {
+          min-width: 70px;
+          max-width: 120px;
+        }
+
+        &.date {
+          min-width: 50px;
+          max-width: 76px;
+        }
+
+        &.time {
+          min-width: 40px;
+          max-width: 50px;
+        }
+      }
+
+      &[type="checkbox"] {
+        position: relative;
+        @include checkbox-style();
+        &::after {
+          @include fontawesome(12px, 13px);
+          @include special-content("f00c");
+          color: $white;
+          opacity: 0;
+          width: 100%;
+          text-align: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        &:checked {
+          background: $primary;
+          border-color: $primary;
+          &::after {
+            opacity: 1;
+          }
+        }
+        &.me-small {
+          @include small-checkbox();
+        }
+      }
+      &[type="radio"] {
+        @include checkbox-style();
+        border-radius: 50%;
+        position: relative;
+        transition: opacity .2s, filter .2s, border .18s;
+        &:checked {
+          border: 5px solid $primary;
+        }
+        &.me-small {
+          @include small-radio();
+        }
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  label {
+    line-height: 21px;
+    cursor: pointer;
+
+    &[title]:hover {
+      cursor: help;
+    }
+
+    &.me-success {
+      color: $success-color !important;
+    }
+    &.me-error {
+      color: $error-color !important;
+    }
+  }
+
+  form {
+    label {
+      &.notNull {
+        color: $error-color !important;
+      }
+      &.notNullOK {
+        color: $success-color !important;
+      }
+    }
+  }
+
+  div.inline-upload-pastearea,
+  label.inline-upload-input {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  @include not-vue-container {
+    // Readonly
+    >textarea[readonly],
+    >textarea[readonly]:focus,
+    >input[type=text][readonly],
+    >input[type=text][readonly]:focus,
+    >input[type=number][readonly],
+    >input[type=number][readonly]:focus {
+      @include black-emphasis-color($opacity-low-black);
+      border-style: dotted;
+      opacity: 1;
+    }
+  }
+}
+.me-large-datetime {
+  input[type="text"] {
+    &.time {
+      min-width: 90px;
+      max-width: 100px;
+    }
+  }
+}
+
+/**
+  Textarea
+*/
+body {
+  @include not-vue-container {
+    >textarea {
+      @include me-textarea();
+    }
+
+    .textarea-container {
+      border: none;
+
+      textarea {
+        @include me-textarea();
+      }
+
+      div.grippie-h {
+        width: 100%;
+        height: 8px;
+        margin: -7px auto 0 auto;
+        background: transparent url(images/buttons/drag-n.gif) center center no-repeat;
+
+        @include ie {
+          display: block;
+          margin: 1px;
+          @include black-emphasis-color($opacity-medium-emphasis-black);
+        }
+      }
+    }
+  }
+}
+
+// NumericField
+@include not-vue-container {
+  table.numericField {
+    border: none !important;
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: -moz-inline-box;
+    padding-right: 0;
+    display: inline-block;
+    position: relative;
+    white-space: normal;
+    tr {
+      td {
+        input {
+          padding-right: $small-space*9;
+        }
+      }
+    }
+    >thead,
+    >tbody {
+      > tr {
+        td.arrows {
+          position: absolute;
+          right: 5px;
+          text-align: left;
+          color: $primary;
+
+          div:hover {
+            background-color: transparent !important;
+          }
+        }
+      }
+    }
+
+    &.me-small {
+      @include small-numeric-field(false);
+    }
+  }
+
+}
+
+/**
+  Select
+ */
+body select {
+  outline: 0;
+  margin: 1px;
+  border-radius: 4px;
+  moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align: middle;
+  padding: #{$space} #{$small-space*6 + 10px} #{$space} #{$space};
+  transition: border-color 0.2s;
+  @include subtitle1;
+  @include border-radius();
+  @include black-emphasis-color($opacity-low-black);
+  background: transparent;
+  background: url('images/icons/caret-down-solid.svg');
+  background-size: 10px;
+  background-position: center right #{$small-space*3};
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  &:disabled {
+    @include black-emphasis-color(0.32);
+    opacity: .36;
+  }
+  &:focus {
+    border: 2px solid $primary;
+    margin: 0;
+  }
+  option {
+    @include subtitle1();
+
+  }
+  &:disabled {
+    opacity: .36;
+  }
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+
+  &.me-small {
+    @include small-select();
+  }
+
+  &[multiple] {
+    @include me-select-multiple;
+  }
+}
+
+/**
+  Autocomplete
+*/
+@include not-vue-container {
+  div.dropdown {
+    position: relative;
+    padding-right: 0 !important;
+
+    &.dropdown-group {
+
+      input.autocomplete {
+        position: relative;
+        padding-right: #{$space*10};
+        background: none;
+      }
+
+      &::before {
+        right: 22px;
+      }
+
+      &.throbbing {
+        &::after {
+          right: 22px;
+        }
+      }
+
+      div.autocomplete::after {
+        content: "";
+        display: block;
+        height: 4px;
+      }
+    }
+
+
+    input.autocomplete {
+      min-width: 50px;
+      position: relative;
+      padding-right: #{$space*6};
+      background: none;
+    }
+
+    div.dropdown-trigger {
+      border: solid 1px transparent !important;
+      padding-right: #{$small-space*3};
+      background: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 16px;
+
+      div {
+        background: none;
+      }
+    }
+
+    &::before {
+      content: "";
+      z-index: 1;
+      display:inline-block;
+      border: 2px solid alpha($black, $opacity-very-low-black);
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      background: transparent;
+      position: absolute;
+      top: 50%;
+      margin-top: -8px;
+      right: 6px;
+    }
+
+    &.throbbing {
+      &::before,
+      &::after{
+        content: "";
+        border: 2px solid alpha($black, $opacity-very-low-black);
+        animation-name: inputLoadingAnimation;
+        animation-duration: 1s;
+        animation-timing-function: cubic-bezier(0, 0.2, 0.8, 1);
+        animation-iteration-count: infinite;
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0;
+        display: inline-block;
+      }
+
+      &::after {
+        animation-delay: .5s;
+        right: 6px;
+        top: 50%;
+      }
+    }
+  }
+}
+
+.desktop div.dropdown-trigger:hover,
+.dropdown input:focus + * + div.dropdown-trigger{
+  border-color: $primary;
+}
+
+div.dropdown-trigger div:hover::before,
+.dropdown input:focus + * + div.dropdown-trigger div::before {
+  color: $primary;
+}
+
+table.form td.me-form-group-container {
+  padding: #{$space + $small-space} $space $space $space;
+
+  &.warning {
+    background-color: transparent !important;
+    div.me-form-group {
+      input,
+      select,
+      textarea {
+        border: 1px solid $warning-color;
+      }
+
+      label {
+        color: $warning-color;
+      }
+    }
+  }
+
+  &.error {
+    background-color: transparent !important;
+    div.me-form-group {
+      input,
+      select,
+      textarea {
+        border: 1px solid $error-color;
+      }
+
+      label {
+        color: $error-color;
+      }
+    }
+  }
+}
+
+body {
+  @include not-vue-container {
+    div.me-form-group {
+      $max-width: 350px;
+      max-width: $max-width;
+      min-width: 75px;
+      &,
+      &-layout {
+        position: relative;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        box-sizing: border-box;
+        min-height: 31px;
+
+        // Gestion ds differentes tailles
+        @each $size in (200, 175, 150, 133, 100, 75, 50, 33, 25, 0) {
+          &.me-field-max-w#{$size} {
+            max-width: $max-width*math.div($size, 100);
+          }
+          &.me-input-field-max-w#{$size} {
+            input {
+              max-width: $max-width*math.div($size, 100);
+            }
+          }
+        }
+      }
+
+      &-layout,
+      &-layout.inanimate{
+        @include border-radius();
+        @include black-emphasis-color($opacity-low-black);
+        margin: 1px;
+        padding: #{$space + 2px} #{$space} #{$space} #{$space*2};
+        max-width: $max-width - 2px;
+
+        > label {
+          @include label-small(1px);
+          height: 15px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+          & ~ label {
+            margin-right: $space*2;
+          }
+
+          &:disabled ~ label {
+            cursor: not-allowed;
+          }
+        }
+
+        &.readonly {
+          // Same style than [readonly] field
+          border: 1px dotted #666;
+        }
+      }
+
+      // Version sans limite de largeur
+      &.me-form-group_fullw {
+        max-width: unset;
+      }
+
+      // Gestion du dirty
+      &.dirty {
+        input,
+        textarea,
+        .textarea-container + textarea,
+        div.dropdown + input {
+          @include black-emphasis-color($opacity-low-black);
+          margin: 1px;
+        }
+
+        label,
+        .textarea-container ~ label,
+        div.dropdown ~ label {
+          @include label-small();
+        }
+      }
+
+      // Gestion de la couleur de fond
+      &.me-label-bg-light {
+        label {
+          background: $light !important;
+        }
+      }
+
+      // Gestion des champs large (e. textarea)
+      &.me-form-group-large {
+        max-width: #{$max-width * 2};
+      }
+      // Gestion du label
+      ::-webkit-input-placeholder {
+        color: transparent !important;
+      }
+      ::-moz-placeholder {
+        color: transparent !important;
+      }
+      :-ms-input-placeholder {
+        color: transparent !important;
+      }
+      input {
+        &.me-placeholder {
+          &::placeholder {
+            @include black-emphasis($opacity-low-black, true);
+          }
+        }
+        &::placeholder {
+          color: transparent !important;
+        }
+      }
+      textarea {
+        &::-webkit-input-placeholder,
+        &::-moz-placeholder,
+        &::placeholder,
+        &:-ms-input-placeholder {
+          color: transparent !important;
+        }
+
+        &.me-placeholder {
+          &::-webkit-input-placeholder,
+          &::-moz-placeholder,
+          &::placeholder,
+          &:-ms-input-placeholder {
+            @include black-emphasis($opacity-low-black, true);
+          }
+        }
+
+      }
+      textarea::-moz-placeholder {
+        color: transparent !important;
+      }
+      textarea:-ms-input-placeholder {
+        color: transparent !important;
+      }
+      textarea::placeholder {
+        color: transparent !important;
+      }
+      input,
+      textarea,
+      div.textarea-container,
+      div.dropdown {
+        & ~ label {
+          @include label-placeholder();
+        }
+        label,
+        &:focus ~ label,
+        &.input-focus ~ label {
+          @include label-small();
+        }
+        &:-webkit-autofill ~ label {
+          @include label-small();
+        }
+        &:focus ~ label,
+        &.input-focus ~ label {
+          color: $primary;
+        }
+        &[readonly] ~ label,
+        &[readonly]:focus ~ label {
+          @include label-small();
+        }
+        &:disabled ~ label {
+          @include disabled-label();
+        }
+      }
+      &.inanimate > label {
+        @include label-small();
+      }
+      > label {
+        @include label-small();
+
+        &.error {
+          color: $error-color !important;
+        }
+      }
+
+      div.textarea-container {
+        .grippie-h {
+          @include ie {
+            display: block;
+            width: 100%;
+          }
+        }
+      }
+
+
+      // Gestion du inline
+      &.me-form-group-inline {
+        display: inline-block;
+      }
+
+      // Infos
+      .small-info,
+      .small-warning,
+      .small-error,
+      .small-success,
+      .small-mail {
+        margin-top: #{$space*2}
+      }
+
+      // Assistive text
+      .me-input-info {
+        margin: #{$small-space} 0 0 #{$small-space*5};
+        @include caption;
+
+        &.me-info {
+          color: $primary;
+        }
+      }
+
+      // Suppression du style par default nul de Chrome
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover,
+      textarea:-webkit-autofill:focus,
+      select:-webkit-autofill,
+      select:-webkit-autofill:hover,
+      select:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0px 1000px #FFF inset;
+      }
+
+      // Input Text
+      input {
+        min-width: 50px;
+        flex-grow: 1;
+        transition: border-color 0.2s;
+        height: 21px;
+        box-sizing: content-box;
+        @include subtitle1;
+        @include border-radius();
+        @include black-emphasis-color($opacity-low-black);
+        padding: #{$space} #{$space} #{$space} #{$space*2};
+        background: transparent;
+        margin: 1px;
+
+        &:focus {
+          border: 2px solid $primary !important;
+          margin: 0;
+
+          &[readonly] {
+            margin: 1px;
+            border: 1px dotted #666 !important;
+          }
+
+          & + label {
+            color: $primary;
+          }
+        }
+
+        &[readonly] {
+          border: 1px dotted #666;
+        }
+      }
+
+      // Dropdown (autocomplete)
+      div.dropdown {
+        display: flex;
+        flex-grow: 1;
+      }
+
+      // Textarea
+      div.textarea-container {
+        display: flex;
+        flex-grow: 1;
+        position: relative;
+        flex-wrap: wrap;
+
+        &.input-focus {
+          textarea {
+            border: 2px solid $primary !important;
+            margin: 0;
+          }
+        }
+
+        textarea {
+          @include me-textarea();
+          flex-grow: 1;
+        }
+      }
+      textarea {
+        @include me-textarea();
+        flex-grow: 1;
+      }
+
+      // Select
+      select {
+        outline: 0;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+        padding: #{$space} #{$small-space*6 + 10px} #{$space} #{$space};
+        flex-grow: 1;
+        transition: border-color 0.2s;
+        @include subtitle1;
+        @include border-radius();
+        @include black-emphasis-color($opacity-low-black);
+        background-color: transparent;
+        box-sizing: content-box;
+
+        background-image: url('images/icons/caret-down-solid.svg');
+        background-size: 10px;
+        background-position: center right #{$space*2};
+        background-repeat: no-repeat;
+        margin: 1px;
+
+        & ~ label {
+          @include label-small();
+        }
+
+        &:focus {
+          border: 2px solid $primary !important;
+          margin: 0;
+          outline: 0;
+          box-shadow: none;
+
+          & ~ label {
+            color: $primary;
+          }
+        }
+
+        &:disabled {
+          @include black-emphasis-color(0.32);
+
+          & ~ label {
+            @include disabled-label();
+          }
+        }
+
+        &[multiple] {
+          @include me-select-multiple;
+        }
+      }
+
+      // Color picker
+      div.sp-replacer {
+        min-width: 50px;
+        flex-grow: 1;
+        transition: border-color 0.2s;
+        height: 21px;
+        box-sizing: content-box;
+        @include border-radius();
+        @include black-emphasis-color($opacity-low-black);
+        padding: #{$space} #{$space} #{$space} #{$space*2} !important;
+        background: transparent;
+        position: relative;
+        margin: 1px;
+        display: flex;
+        align-items: center;
+
+        &::after {
+          $icon-size: 16px;
+          @include special-content('f53f');
+          @include black-emphasis($opacity-medium-emphasis-black);
+          @include fontawesome($icon-size, $icon-size);
+          position: absolute;
+          right: $space*2;
+          top: 50%;
+          margin-top: -#{math.div($icon-size, 2)};
+        }
+
+        &.sp-active {
+          border: 2px solid $primary !important;
+          margin: 0;
+
+          & ~ label {
+            color: $primary;
+          }
+        }
+
+        & ~ label {
+          @include label-small();
+        }
+
+        div.sp-preview {
+          @include border-radius();
+          float: none;
+          height: 12px;
+          width: auto;
+          margin: 0;
+          max-width: 80px;
+          border: none;
+          position: relative;
+          flex-grow: 1;
+
+          div.sp-preview-inner {
+            @include border-radius();
+            &.sp-clear-display {
+              background: none;
+            }
+          }
+        }
+        div.sp-dd {
+          display: none;
+        }
+      }
+
+
+
+      // Gestion des contenus additionnels
+      div.me-field-content {
+        @include subtitle1;
+        @include black-emphasis($opacity-high-emphasis-black);
+        @include border-radius();
+        flex-grow: 1;
+        margin: 1px;
+        border: 1px dotted #666;
+        padding: #{$space} #{$space} #{$space} #{$space*2};
+        min-height: 21px;
+
+        & ~ label {
+          @include label-small();
+        }
+
+
+        &.me-big-field {
+          margin-right : -100%;
+        }
+      }
+
+      // Gestion des icones
+      &.me-form-icon {
+        input,
+        select,
+        textarea {
+          background-image: none;
+          padding: #{$space} #{$space*2} #{$space} #{$space*6 + 2px} !important;
+        }
+
+        &.dirty {
+          label,
+          .textarea-container + label,
+          div.dropdown + label {
+            left: ($space*2 - $small-space);
+          }
+        }
+
+        input,
+        textarea,
+        div.textarea-container,
+        div.dropdown {
+          & ~ label {
+            left: #{$space*6 + 2px};
+          }
+          &:focus ~ label,
+          &.input-focus ~ label {
+            left: ($space*2 - $small-space);
+          }
+        }
+
+        &::before {
+          @include fontawesome(14px, 21px);
+          @include black-emphasis($opacity-medium-emphasis-black);
+          position: absolute;
+          top: $small-space*3;
+          left: $space*2;
+        }
+
+        @include icons();
+      }
+
+      // Inline Upload Info
+      .inline-upload-info input[type=text] {
+        width: 85%;
+      }
+    }
+  }
+}
+
+div.me-form-bool {
+  position: relative;
+  margin: 0;
+  display: flex;
+  padding: $small-space $small-space #{$space + 2px} #{18px + $space*2};
+
+  // Gestion du inline
+  &.me-form-group-inline {
+    display: inline-block;
+  }
+
+  // Gestion du label
+  label {
+    @include subtitle1;
+    @include black-emphasis($opacity-high-emphasis-black);
+    line-height: 14px;
+    cursor: pointer;
+    clear: both;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 1px;
+      top: 0;
+      @include checkbox-style();
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 2px;
+    }
+  }
+  &.me-no-label-checkbox {
+    padding-left: 0;
+    input[type="checkbox"] {
+      border: 2px solid rgba(0, 0, 0, $opacity-low-black * (1 + $opacity-low-black));
+      &:checked {
+        border: 2px solid $primary;
+      }
+      margin-right: 6px;
+    }
+
+    label {
+      line-height: 18px;
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  // Gestion de la checkbox
+  .me-checkbox {
+    outline: 0;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    display: block;
+    position: absolute !important;
+    top: 0;
+    left: 1px;
+    z-index: 2;
+    background: transparent !important;
+    box-shadow: none;
+    box-sizing: border-box;
+
+
+    &::after {
+      content: none;
+    }
+
+    &:checked {
+      + label {
+        &::before {
+          background: $primary;
+          border-color: $primary;
+        }
+        &::after {
+          @include fontawesome(10px, 12px);
+          @include special-content("f00c");
+          color: $white;
+        }
+      }
+    }
+
+    &:disabled {
+      + label::before {
+        border-color: $grey-100;
+      }
+
+      &:checked {
+        + label::before {
+          background: $grey-100;
+        }
+      }
+    }
+  }
+
+  .me-old-input {
+    display: none;
+  }
+}
+
+/**
+  Fieldset
+ */
+body fieldset {
+  @include not-vue {
+    @include border-radius();
+    @include card-border();
+    border-width: 0;
+    background: $white;
+    padding: 22px 0 $space 0;
+    margin: $space;
+    position: relative;
+    white-space: initial;
+
+    &[style*="inline"] {
+      width: auto;
+    }
+
+    > legend {
+      @include h6();
+      @include note-light();
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      padding: 0 0 0 $space !important;
+      white-space: nowrap;
+      width: calc(100% - #{$space});
+      background-color: $primary-300;
+      border-radius: 4px 4px 0 0;
+      @include white-emphasis($opacity-high-emphasis-white);
+      line-height: 22px;
+
+      @include not-vue {
+        @include white-context;
+      }
+
+      &.me-small-input {
+        select {
+          @include small-select;
+        }
+        input[type="radio"] {
+          @include small-radio();
+        }
+      }
+
+      &.pack_lines {
+        color: $green-light;
+      }
+
+      @include not-vue {
+        button,
+        button[type=button],
+        button[type=submit],
+        a.button,
+        a.me-button {
+          @include not-vue {
+            vertical-align: top;
+            @include me-form-btn-small();
+          }
+        }
+      }
+    }
+
+    // Gestion des control tabs dans les fieldset
+    ul.control_tabs {
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+      border-top: none;
+
+      > li:first-of-type,
+      > li:last-of-type {
+        > a {
+          border-radius: 0;
+        }
+      }
+    }
+
+    .tab-container {
+      border: none !important;
+
+      &.layout {
+        border: none !important;
+      }
+
+      &.form {
+        box-shadow: none;
+      }
+    }
+
+    &.me-no-align {
+      padding: 22px 0 2px 0 !important;
+    }
+
+    &.me-small {
+      padding: 16px 0 $space 0;
+      margin: $small-space;
+
+      > legend {
+        @include subtitle1;
+        line-height: 16px;
+        top: 0;
+
+        label {
+          line-height: 16px;
+        }
+      }
+    }
+
+    &.me-wrapped-fieldset {
+      padding-top: 44px;
+
+      legend {
+        white-space: normal;
+      }
+    }
+  }
+}
+
+/**
+  TEXTAREA TOOLBAR
+ */
+table.tbl .textarea-helped a {
+  display: inline;
+}
+.textarea-helped,
+.toolbar-container {
+  position: relative;
+
+  &.textarea-helped {
+    .toolbar {
+      position: absolute;
+      bottom: 0;
+      right: 1px;
+      margin: 2px 1px;
+      padding: 4px;
+      vertical-align: middle;
+      text-align: right;
+      background-color: $white;
+      @include shadow4();
+      z-index: 2;
+      opacity: 1;
+      border-radius: 3px;
+      &.left {
+        right: auto;
+        left: 1px;
+        .throbber {
+          left: auto;
+          right: -20px;
+        }
+      }
+
+      button {
+        margin-top: -4px;
+      }
+    }
+
+    .sub-toolbar {
+      position: absolute;
+      top: 24px;
+      background-color: $white;
+      @include shadow4();
+      margin-left: -8px;
+      padding: 2px;
+      border-top: none;
+      border-radius: 3px;
+    }
+
+    .toolbar,
+    .sub-toolbar {
+      > a,
+      > span {
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        margin: 0 2px;
+        padding: 2px;
+        border-radius: 4px;
+        text-align: center;
+        &:hover {
+          background-color: alpha($primary-50, .7);
+        }
+      }
+    }
+
+    .throbber {
+      position: absolute;
+      height: 13px;
+      width: 13px;
+      left: -20px;
+      margin: 4px;
+      background: no-repeat url(../../images/icons/throbber.gif?v2);
+      background-position: center;
+    }
+  }
+  &.toolbar-container {
+    .toolbar {
+      position: absolute;
+      bottom: 0px;
+      right: -2px;
+      vertical-align: middle;
+      text-align: right;
+      opacity: 1;
+    }
+    .sub-toolbar {
+      position: absolute;
+      top: 22px;
+      background-color: $white;
+      @include shadow4();
+      padding: 2px;
+      border-top: none;
+      border-radius: 3px;
+      z-index: 100;
+    }
+  }
+  .toolbar {
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .sub-toolbar {
+    img {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.me-form-group .textarea-container > .textarea-helped {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+/**
+  FIN TEXTAREA TOOLBAR
+ */
+
+
+// Color picker
+div.sp-container {
+  background: $white;
+  @include shadow16();
+  @include border-radius();
+  border: none;
+
+  .sp-palette-container {
+    border-right: solid 1px $grey-50;
+    .sp-thumb-el {
+      border-radius: 50%;
+      width: 18px;
+      height: 18px;
+      @include black-emphasis-color($opacity-very-low-black);
+      transition: all .2s ease-in-out;
+      margin: 2px 1px;
+
+      &:hover {
+        @include shadow1();
+        border: solid 1px $grey-100;
+      }
+      &.sp-thumb-active {
+        @include shadow1();
+        border: 2px solid $grey-700;
+        margin: 1px 0;
+
+        .sp-thumb-inner {
+          background-image: none;
+        }
+      }
+      .sp-thumb-inner {
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .sp-picker-container {
+    .sp-button-container {
+      a.sp-cancel {
+        @include tertiary-button();
+      }
+
+      button.sp-choose {
+        @include primary-button();
+        text-shadow: none;
+      }
+    }
+  }
+}
+
+
+.mb-pwd {
+  &-container {
+    display: flex;
+    position: relative;
+
+    > input {
+      flex: 1;
+    }
+  }
+
+  &-icon {
+    $size: 33px;
+    align-items: center;
+    color: $black;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    opacity: .5;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transition: opacity .25s;
+    transform: translateY(-50%);
+    width: $size;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.displayed {
+      display: inline-flex;
+    }
+
+    &::after {
+      @include fontawesome(14px, $size);
+      display: block;
+    }
+
+    &-on {
+      &::after {
+        @include special-content('f06e');
+      }
+    }
+
+    &-off {
+      &::after {
+        @include special-content('f070');
+      }
+    }
+  }
+}

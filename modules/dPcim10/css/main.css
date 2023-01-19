@@ -1,0 +1,253 @@
+/**
+ * @package Mediboard\Cim10
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+/* Cim10 Style */
+div#quick_search_container {
+  margin: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+div#quick_search_container input {
+  width: 400px;
+}
+
+/* Styling the summary of th e Cim10 */
+div#summary_placeholder {
+  display: inline-block;
+  width: 400px;
+}
+
+ul#summary_cim,
+ul.cim10_subcategories {
+  list-style-type: none;
+  overflow-y: auto;
+}
+
+ul#summary_cim {
+  padding: 0;
+  border: 1px solid #bbb;
+  font-size: 1.2em;
+}
+
+ul.cim10_subcategories {
+  font-size: 11px;
+}
+
+ul#summary_cim li div.chapter-container,
+ul.cim10_subcategories li {
+  text-align: left;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 5px;
+}
+
+ul#summary_cim li:nth-of-type(odd) div.chapter-container,
+ul.cim10_subcategories li:nth-of-type(odd) {
+  background-color: rgba(168, 183, 235, 0.10);
+}
+
+ul#summary_cim li div.chapter-container:hover,
+ul.cim10_subcategories li:hover {
+  background-color: rgba(168, 183, 235, 0.30);
+}
+
+ul#summary_cim li.selected div.chapter-container,
+ul.cim10_subcategories li.selected {
+  background-color: rgba(165, 182, 235, 0.60);
+}
+
+ul#summary_cim li.selected div.chapter-container:hover,
+ul.cim10_subcategories li.selected:hover {
+  background-color: rgba(167, 184, 235, 0.90);
+}
+
+span.fold {
+  float: left;
+  margin-right: 5px;
+}
+
+span.cim10-code,
+a.cim10-code {
+  font-family: "Times New Roman", "Times", serif;
+  font-weight: bold;
+}
+
+a.cim10-code {
+  min-width: 5em;
+  display: inline-block!important;
+}
+
+/* Styling the display of the code */
+div#cim10_details_placeholder {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+div#cim10_details_placeholder fieldset {
+  overflow-y: auto;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+div#cim10_details {
+  vertical-align: top;
+  text-align: center;
+}
+
+h2.code-title {
+  font-size: 1.5em;
+  border-bottom: 1px dimgrey solid;
+  height: 25px;
+}
+
+table.cim10-note,
+div.cim10-note {
+  width: 100%;
+  text-align: left;
+}
+
+div.cim10-note table {
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+div.cim10-note table td {
+  border: 1px solid #ABE;
+  border-radius: 3px;
+  padding: 0 5px 0 5px;
+  width: 250px;
+}
+
+.cim10-note p {
+  line-height: 1.3em;
+}
+
+table.cim10-note td {
+  vertical-align: top;
+}
+
+dl.cim10-note dt {
+  width: 150px;
+  font-weight: bold;
+  font-style: italic;
+  font-size : 1.1em;
+  text-align: left;
+  float: left;
+}
+
+dl.cim10-note.wide dt {
+  width: 250px;
+}
+
+dl.cim10-note dd {
+  margin-left: 150px;
+  text-align: left;
+}
+
+dl.cim10-note.wide dd {
+  margin-left: 250px;
+}
+
+dl.cim10-note dd ul {
+  /*list-style-type: none;*/
+}
+
+dl.cim10-note-half dt {
+  font-weight: bold;
+  font-style: italic;
+  font-size : 1.1em;
+  text-align: left;
+}
+
+dl.cim10-note-half dd ul {
+  text-align: left;
+}
+
+dl.cim10-note table th {
+  text-align: left;
+}
+
+table.cim10-data th {
+  font-size: 1.1em;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+table.cim10-data td {
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+table.cim10-data table.sub-data th,
+table.cim10-data table.sub-data td {
+  font-size: 1em;
+  text-align: left;
+  vertical-align: middle;
+}
+
+span.cim10-rare-disease,
+span.cim10-infectious {
+  float: left;
+  font-size: 12px;
+  padding: 2px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+span.cim10-rare-disease {
+  color: orange;
+  border-color: orange;
+}
+
+span.cim10-infectious {
+  color: darkred;
+  border-color: darkred;
+}
+
+span.cim10-favori {
+  box-sizing: border-box;
+  display: inline-block;
+  border: none;
+  vertical-align: middle;
+  padding: 2px;
+  width: 45px;
+  font-size: 16px;
+  height: 22px;
+}
+
+span.cim10-favori:hover {
+  border: 1px solid goldenrod;
+  border-radius: 3px;
+  padding: 1px;
+}
+
+span.cim10-favori span.button {
+  display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 15px;
+  font-size: 12px;
+}
+
+span.cim10-favori span.button i {
+  display: none;
+}
+
+span.cim10-favori:hover span.button i {
+  display: inline;
+}
+
+span.cim10-occurrence {
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 2px;
+  font-size: 12px;
+  height: 22px;
+}

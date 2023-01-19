@@ -1,0 +1,56 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+
+.modal {
+  background-color: $elevation-1;
+
+  h1 {
+    background: $elevation-8;
+  }
+
+  &.popup {
+    > .title {
+      background: $elevation-16;
+      span {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+    }
+  }
+}
+
+/**************************
+  TOOLTIP
+ **************************/
+
+div.tooltip {
+  @include shadow6();
+
+  &.postit {
+    @include shadow6();
+
+    table.note {
+      tr {
+        th {
+          &.low,
+          &.medium,
+          &.high {
+            background-color: transparent;
+          }
+        }
+        button {
+          @include not-vue {
+            @include tertiary-button();
+            &::before {
+              color: $grey-400;
+            }
+          }
+        }
+      }
+    }
+  }
+}

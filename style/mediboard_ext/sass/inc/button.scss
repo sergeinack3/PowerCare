@@ -1,0 +1,303 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+a.me-button {
+  display: inline-block !important;
+}
+
+//body,
+//body div.main-container {
+body {
+  @include not-vue-container {
+    > button,
+    > a.button,
+    > a.me-button {
+      @include not-vue {
+        @include secondary-button();
+        @include ripple-effect();
+        line-height: 24px !important;
+        vertical-align: middle;
+        box-sizing: border-box;
+        display: inline-block;
+
+        &::before {
+          @include fontawesome(12px, 24px);
+        }
+        &::before {
+          margin: 0 $space 0 0;
+        }
+
+        @include dmp-existence-secondary;
+
+        &.notext,
+        &.me-notext,
+        &.me-tertiary.notext,
+        &.me-tertiary.me-notext {
+          letter-spacing: 0 !important;
+          text-align: center;
+          padding: 0;
+          font-size: 0 !important;
+          width: 26px;
+
+          &::before {
+            margin-right: auto;
+            margin-left: auto;
+          }
+        }
+
+        &.me-btn-small {
+          @include me-btn-small();
+        }
+
+        &.rtl {
+          @include ripple-effect-before();
+          @include ripple-effect-undo();
+
+          &::after {
+            @include fontawesome(12px, normal);
+            margin: 0 0 0 $space;
+          }
+
+          @include ie {
+            padding-right: 10px;
+            line-height: 30px;
+            &::after {
+              float: right;
+            }
+          }
+        }
+
+        &[type=submit],
+        &.add,
+        &.save,
+        &.submit,
+        &.me-primary {
+          @include primary-button();
+
+          &.me-secondary {
+            @include secondary-button();
+          }
+        }
+
+        &.me-tertiary {
+          @include tertiary-button();
+          @include button-text();
+          @include dmp-existence-tertiary();
+        }
+
+        &.me-dark {
+          @include tertiary-button-dark();
+        }
+
+        &.me-success {
+          color: $green !important;
+          border-color: $green !important;
+
+          &::before {
+            color: $green !important;
+          }
+        }
+
+        &.me-noicon {
+          &::before {
+            content: none !important;
+          }
+        }
+
+        &.selected {
+          border-width: 2px;
+        }
+
+        &.text-button {
+          font-weight: bold;
+          width: auto;
+          height: auto;
+          text-align: center;
+        }
+
+        &.me-small {
+          @include me-form-btn-small();
+        }
+
+        &.me-notify-btn {
+          overflow: visible;
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            top: -2px;
+            right: -4px;
+            left: unset;
+            background-image: none;
+            background-position: center;
+            transform: none;
+            border-radius: 50%;
+            background-color: $secondary-200;
+            opacity: 1;
+            transition: none;
+            @include shadow1;
+          }
+        }
+
+        &[disabled],
+        &.disabled,
+        &.left-disabled,
+        &.right-disabled {
+          opacity: .5 !important;
+        }
+
+        > i {
+          text-align: center;
+          font-size: 12px;
+          max-width: 13px;
+          margin-left: 1px;
+        }
+
+        &.big {
+          height: 50px;
+          border-width: 2px;
+          border-radius: 6px;
+          margin: 4px 8px;
+
+          i {
+            max-width: none;
+          }
+
+        }
+
+        @include icons();
+        @include icons_image();
+
+        &.me-color-care {
+          &[style*="forestgreen"] {
+            color: $green !important;
+            border-color: $green !important;
+
+            &::before {
+              color: $green !important;
+            }
+          }
+
+          &[style*="firebrick"] {
+            color: $red !important;
+            border-color: $red !important;
+
+            &::before {
+              color: $red !important;
+            }
+          }
+        }
+
+        &.me-icon {
+          @include me-form-btn-small();
+          border: none !important;
+          padding: 0 !important;
+          margin: 0 $small-space !important;
+          height: 17px !important;
+          border-radius: 0 !important;
+
+          &::before {
+            font-size: 14px !important;
+            line-height: normal !important;
+          }
+
+          &.me-white::before {
+            color: #FFFFFF !important;
+          }
+        }
+      }
+    }
+
+    &.me-white {
+      @include white-button;
+    }
+  }
+}
+
+i.me-icon {
+  &::before {
+    @include fontawesome(14px, 14px);
+  }
+
+  @include icons();
+}
+
+.pagination {
+  text-align: center;
+  margin: 1px;
+  word-spacing: -2px;
+
+  &.me-no-min-height {
+    min-height: 0 !important;
+  }
+
+  > div {
+    margin-right: $space*2;
+    word-spacing: 0px;
+  }
+
+  .page {
+    @include tertiary-button();
+    font-size: 16px;
+    font-weight: 400;
+    color: $grey-600 !important;
+    display: inline-block;
+    line-height: 26px;
+    letter-spacing: inherit;
+    text-align: center;
+    min-width: #{26 - ($space * 2)};
+    padding: 0 $space;
+    text-decoration: none;
+
+    &.active {
+      border-radius: 0;
+      background-color: $primary-50;
+      border-bottom: 2px solid $primary;
+      color: $primary !important;
+    }
+
+    &.page-lt,
+    &.page-gt {
+      font-size: 0;
+
+      &::before {
+        @include fontawesome(14px, 26px);
+        color: $grey-600 !important;
+      }
+    }
+
+    &.page-lt::before {
+      @include special-content("f053");
+    }
+
+    &.page-gt::before {
+      @include special-content("f054");
+    }
+  }
+
+  div {
+    line-height: normal;
+    color: $grey-600;
+  }
+}
+
+.me-small-pagination .pagination {
+  .page {
+    min-width: #{20px - ($space * 2)};
+    padding: 0 $small-space;
+    line-height: 20px;
+    font-size: 14px;
+
+    &.page-lt,
+    &.page-gt {
+      font-size: 0;
+    }
+  }
+}

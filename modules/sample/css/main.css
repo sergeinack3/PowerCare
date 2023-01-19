@@ -1,0 +1,12 @@
+div.sample-configure {
+  margin: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+div.sample-configure-import {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}

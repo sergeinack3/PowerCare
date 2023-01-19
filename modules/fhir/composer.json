@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Interop\\Fhir\\": "classes",
+      "Ox\\Interop\\Fhir\\Tests\\": "tests"
+    }
+  }
+}

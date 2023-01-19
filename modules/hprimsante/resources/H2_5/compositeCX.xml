@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>CX</name>
+    <description>Extended Composite ID with Check Digit</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0" length="64">
+            <name>CX.1</name>
+            <description>ID Number</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="64">
+            <name>CX.2</name>
+            <description>ID Number Merge</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="64">
+            <name>CX.3</name>
+            <description>Check Digit Scheme</description>
+            <datatype>ST</datatype>
+        </field>
+    </elements>
+</segment>

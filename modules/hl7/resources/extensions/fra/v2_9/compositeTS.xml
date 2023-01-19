@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>TS</name>
+    <description>Time Stamp</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0" length="24">
+            <name>TS.1</name>
+            <description>Time</description>
+            <datatype>DTM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="1" table="0529">
+            <name>TS.2</name>
+            <description>Degree of Precision</description>
+            <datatype>ID</datatype>
+        </field>
+    </elements>
+</segment>

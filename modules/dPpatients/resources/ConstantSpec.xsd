@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.openxtrem.com" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           targetNamespace="http://www.openxtrem.com" xmlns:ox="http://www.openxtrem.com">
+
+  <xs:element name="constantSpec">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="constants">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="constant" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+          <xs:unique name="uniqueConstantId">
+            <xs:selector xpath="ox:constant"/>
+            <xs:field xpath="@id"/>
+          </xs:unique>
+          <xs:unique name="uniqueConstantCode">
+            <xs:selector xpath="ox:constant"/>
+            <xs:field xpath="@code"/>
+          </xs:unique>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="constant">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="typeNameConstant"/>
+        <xs:element name="unit" type="xs:string"/>
+        <xs:element name="value_class" type="typeValueClass"/>
+        <xs:element name="category" type="typeCategory"/>
+        <xs:element name="min_value" type="xs:string" minOccurs="0"/>
+        <xs:element name="max_value" type="xs:string" minOccurs="0"/>
+        <xs:element name="alterable" type="xs:boolean" minOccurs="0"/>
+        <xs:element name="alerts" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="alert" type="typeAlert" maxOccurs="3" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="list" type="typeList" minOccurs="0"/>
+        <xs:element name="formule" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+      <xs:attribute name="code" type="xs:string"/>
+      <xs:attribute name="id" type="typeIdConstant"/>
+      <xs:attribute name="period" type="xs:int"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="typeNameConstant">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-z]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeValueClass">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CValueInt"/>
+      <xs:enumeration value="CValueInterval"/>
+      <xs:enumeration value="CValueText"/>
+      <xs:enumeration value="CValueEnum"/>
+      <xs:enumeration value="CValueFloat"/>
+      <xs:enumeration value="CStateInterval"/>
+      <xs:enumeration value="CDateTimeInterval"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeCategory">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="physio"/>
+      <xs:enumeration value="biolo"/>
+      <xs:enumeration value="activity"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:complexType name="typeAlert">
+    <xs:sequence>
+      <xs:group ref="alert_seuil_bas" minOccurs="0"/>
+      <xs:group ref="alert_seuil_haut" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="id" type="typeIdAlerte"/>
+  </xs:complexType>
+
+  <xs:group name="alert_seuil_bas">
+    <xs:sequence>
+      <xs:element name="seuil_bas" type="xs:string"/>
+      <xs:element name="text_bas" type="xs:string"/>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:group name="alert_seuil_haut">
+    <xs:sequence>
+      <xs:element name="seuil_haut" type="xs:string"/>
+      <xs:element name="text_haut" type="xs:string"/>
+    </xs:sequence>
+  </xs:group>
+
+  <xs:simpleType name="typeList">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="(\w|)+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="typeIdConstant">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="typeIdAlerte">
+    <xs:restriction base="typeIdConstant">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

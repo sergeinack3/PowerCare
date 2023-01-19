@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- by Alexis Granger (openXtrem) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+        <xs:element name="catalogue">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element name="bilan" maxOccurs="unbounded" minOccurs="1">
+                                        <xs:complexType>
+                                                <xs:sequence>
+                                                        <xs:element name="code" type="codeType" />
+                                                        <xs:element name="libelle" type="xs:string" />
+                                                        <xs:element name="applicablesexe"  type="xs:string" />
+                            <xs:element name="analyses">
+                                                                <xs:complexType>
+                                                                  <xs:sequence>
+                                                                        <xs:element name="cana" type="canaType" maxOccurs="unbounded" minOccurs="1" />
+                                                                  </xs:sequence>
+                                                                </xs:complexType>
+                                                        </xs:element>
+                                                </xs:sequence>
+                                        </xs:complexType>
+                                </xs:element>
+                        </xs:sequence>
+                </xs:complexType>
+        </xs:element>
+
+        <xs:simpleType name="codeType">
+                <xs:restriction base="xs:string">
+                        <xs:pattern value=".{5}"></xs:pattern>
+                </xs:restriction>
+        </xs:simpleType>
+
+        <xs:simpleType name="canaType">
+                <xs:restriction base="xs:string">
+                        <xs:pattern value=".{3,5}"></xs:pattern>
+                </xs:restriction>
+        </xs:simpleType>
+</xs:schema>

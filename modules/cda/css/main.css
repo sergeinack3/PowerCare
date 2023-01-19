@@ -1,0 +1,26 @@
+/**
+ * @package Mediboard\Cda
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+/**
+* Couleur pour la structure du document
+*/
+/*Noeud racine*/
+.rootname {
+  color: green;
+}
+/*Noeud fil*/
+.child {
+  color: #276cd8;
+}
+/*Attribut du noeud*/
+.attribute {
+  color: maroon;
+}
+/*Données du noeud*/
+.data {
+  color: #e17c41;
+}

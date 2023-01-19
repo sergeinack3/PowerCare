@@ -1,0 +1,101 @@
+sample_persons_list:
+  path: /api/sample/persons
+  controller: Ox\Mediboard\Sample\Controllers\SamplePersonsController::listPersons
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: |
+      List the persons.
+      Available relations are 'nationality', 'moviesPlayed' and 'profilePicture'.
+      Using the parameter search will make a global search on multiple fields of the person.
+    parameters:
+      search: '\w+'
+    accept:
+      - application/json
+    responses:
+      200: The response's body contains the list of persons in json_api format.
+      default: 403 or 500 on error.
+
+sample_persons_show:
+  path: /api/sample/persons/{sample_person_id}
+  controller: Ox\Mediboard\Sample\Controllers\SamplePersonsController::getPerson
+  methods: GET
+  requirements:
+    sample_movie_id: '\d+'
+  defaults:
+    permission: read
+  options:
+    description: |
+      Get a person identified by sample_person_id.
+      Available relations are 'nationality', 'moviesPlayed' and 'profilePicture'.
+    accept:
+      - application/json
+    responses:
+      200: The response's body contains the person identified by {sample_person_id} in json_api format.
+      default: 403, 404 or 500 on error.
+
+sample_persons_create:
+  path: /api/sample/persons
+  controller: Ox\Mediboard\Sample\Controllers\SamplePersonsController::createPerson
+  methods: POST
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Create a list of persons.
+      Available fields are last_name (*), first_name (*), birthdate, sex, activity_start, is_director.
+      Available relation is nationality (sample_nationality).
+      Calling this route with the relations=profilePicture will also return the profile picture for each created person.
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+    responses:
+      201: |
+        All the persons have been created.
+        The response's body contains contains the list of the created persons in json_api format.
+      default: 403 or 500 on error.
+
+sample_persons_update:
+  path: /api/sample/persons/{sample_person_id}
+  controller: Ox\Mediboard\Sample\Controllers\SamplePersonsController::updatePerson
+  methods: PATCH
+  requirements:
+    sample_person_id: '\d+'
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Update a person identified by sample_person_id.
+      Updatable fields are last_name, first_name, birthdate, sex, activity_start, is_director.
+      Updatable relation is nationality (sample_nationality).
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+    responses:
+      200: |
+        The person identified by {sample_person_id} have been updated.
+        The response's body contains the updated person in json_api format.
+      default: 403, 404 or 500 on error.
+
+sample_persons_delete:
+  path: /api/sample/persons/{sample_person_id}
+  controller: Ox\Mediboard\Sample\Controllers\SamplePersonsController::deletePerson
+  methods: DELETE
+  requirements:
+    sample_person_id: '\d+'
+  defaults:
+    permission: edit
+  options:
+    description: Delete a person identified by sample_person_id
+    accept:
+      - application/json
+    responses:
+      204: The person have been deleted.
+      default: 403, 404 or 500 on error.

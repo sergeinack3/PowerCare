@@ -1,0 +1,39 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+@import "../../../INUtils";
+
+$button-size: 36px;
+$icon-size: 20px;
+$lib-size: 16px;
+
+.Deconnexion {
+  min-width: $button-size;
+  height: $button-size;
+  box-sizing: border-box;
+  font-size: $icon-size;
+  padding: #{($button-size - $icon-size) / 2};
+  border-radius: #{$button-size / 2};
+  @include flex-center();
+  @include font-roboto();
+  color: $red;
+  background: $white;
+  cursor: pointer;
+
+  &-label {
+    max-width: 0;
+    font-size: $lib-size;
+    overflow: hidden;
+    text-align: left;
+    transition: max-width .2s, padding-right .2s;
+    padding-right: 0;
+    white-space: nowrap;
+  }
+
+  &:hover &-label {
+    max-width: 200px;
+    padding-right: 4px;
+  }
+}

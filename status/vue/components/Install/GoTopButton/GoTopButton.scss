@@ -1,0 +1,27 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+@import '../../INUtils';
+
+$icon-size: 64px;
+.GoTopButton {
+  width: $icon-size;
+  height: $icon-size;
+
+  border-radius: 50%;
+  border: 2px solid $primary;
+  color: $primary;
+  font-size: #{$icon-size / 2};
+  cursor: pointer;
+  line-height: 0;
+
+  @include flex-center();
+  opacity: .33;
+  transition: opacity .2s;
+  &:hover {
+    opacity: 1;
+  }
+}

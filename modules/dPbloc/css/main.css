@@ -1,0 +1,170 @@
+/**
+ * @package Mediboard\Bloc
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+div.planning_ressource {
+  margin-top: -0.8em;
+  margin-left: 10%;
+}
+
+div.planning_ressource.interv {
+  outline: 2px solid black;
+}
+
+div.planning_ressource.usage {
+  background: #fd7;
+  height: 1.5em;
+}
+
+div.planning_ressource.usage_selected {
+  background: #fb0;
+  height: 1.5em;
+}
+
+div.planning_ressource.indispo {
+  background: #f88;
+  height: 1.5em;
+}
+
+div.planning_ressource.besoin {
+  background: #ffb;
+  outline: 1px solid #000;
+}
+
+table.planningBloc {
+  width: 100%;
+  border-spacing: 1px;
+}
+
+table.planningBloc th {
+  background-color: #888;
+  padding: 2px;
+  color: #fff;
+  border: outset #ccc 1px;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+table.planningBloc th a {
+  color: #fff;
+}
+
+table.planningBloc th.heure {
+  text-align: left;
+  width: 6%;
+}
+
+table.planningBloc td.salle {
+  background-color: #eee;
+  text-align: center;
+}
+
+table.planningBloc td {
+  vertical-align: middle;
+  background-color: #888;
+}
+
+table.planningBloc td.empty {
+  background: #eee;
+  width: 1.5%;
+}
+
+table.planningBloc td.firsthour {
+  background: #ccc;
+}
+
+table.planningBloc td.plageop {
+  background: #ddd;
+  vertical-align: top;
+  text-align: center;
+  white-space: normal;
+  text-shadow:  0   0   0 rgba(0, 0, 0, 0),
+  -1px 0   0 rgba(255,255,255,.3),
+  0   1px 0 rgba(255,255,255,.3),
+  1px 0   0 rgba(255,255,255,.3),
+  0  -1px 0 rgba(255,255,255,.3);
+}
+
+select.toggle_rank {
+  float: left;
+  font-size: 1.3em;
+  font-weight: bold;
+  min-width: 1.3em;
+  height: 1.3em;
+  margin: 2px;
+}
+
+/* Floor plan */
+div#plan_etage_blocs td.conteneur_salles_non_places {
+  width: 150px;
+}
+
+div#plan_etage_blocs table#table_grille {
+  table-layout: fixed;
+}
+
+div#plan_etage_blocs #grille td.conteneur-salle {
+  background-color: white;
+  height: 60px;
+}
+
+div#plan_etage_blocs .salle {
+  text-align: center;
+  height: 60px;
+  padding: 1px;
+  box-shadow: 0 0 0 1px silver;
+}
+
+div#plan_etage_blocs .salle a {
+  text-shadow: 0 0 0 transparent,
+  -1px 0 .0px rgba(255, 255, 255, .7),
+  0 1px .0px rgba(255, 255, 255, .7),
+  1px 0 .0px rgba(255, 255, 255, .7),
+  0 -1px .0px rgba(255, 255, 255, .7);
+}
+
+div#plan_etage_blocs #list-salles-non-placees {
+  min-height: 200px;
+}
+
+div#plan_etage_blocs #list-salles-non-placees div.salle {
+  height: 20px;
+  width: 150px;
+  margin-top: 2px;
+  background-color: #DDDDDD;
+}
+
+.vue_topologique {
+  padding-bottom: 256px !important;
+}
+.vue_topologique div.patient{
+  padding: 1px;
+  margin: 3px;
+  background-color: rgba(255,255,255,0.8);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#90ffffff,endColorstr=#90ffffff);
+  width: 92%;
+  box-shadow: 0 0 0 1px silver;
+}
+
+.vue_topologique div.grille table{
+  table-layout:fixed;
+  border-spacing: 13px;
+  border-collapse:separate;/*A ne pas enlever util pr IE!!*/
+}
+
+.vue_topologique div.grille td.salle, .vue_topologique div.grille td.pas-de-salle{
+  height:120px;
+}
+
+.vue_topologique div.grille small{
+  border-radius: 2px;
+  padding: 0 3px;
+  text-shadow:  0 0 0 transparent,
+  -1px  0  0 rgba(255,255,255,.7),
+  0   1px 0 rgba(255,255,255,.7),
+  1px  0  0 rgba(255,255,255,.7),
+  0  -1px 0 rgba(255,255,255,.7);
+}

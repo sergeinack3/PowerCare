@@ -1,0 +1,23 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import '~oxify/src/styles/utils';
+
+.OxNotify {
+  bottom: 16px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  left: 16px;
+  max-width: 640px;
+  position: fixed;
+
+  &-content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space*4;
+  }
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mediboard-export date="" root="">
+  <object class="CMediusers" id="CMediusers-1" function_id="CFunctions-1" user_id="CUser-1">
+    <field name="remote">1</field>
+    <field name="actif">1</field>
+  </object>
+  <object class="CUser" id="CUser-1" profile_id="CUser-2">
+    <field name="user_username">BATMAN</field>
+    <field name="user_password">YMoeJ5j5</field>
+    <field name="user_type">10</field>
+    <field name="user_first_name">Bruce</field>
+    <field name="user_last_name">WAYNE</field>
+  </object>
+  <object class="CUser" id="CUser-2">
+    <field name="user_username">superhero</field>
+    <field name="user_last_name">superhero</field>
+    <field name="user_type">10</field>
+    <field name="template">1</field>
+  </object>
+  <object class="CFunctions" id="CFunctions-1" group_id="CGroups-1">
+    <field name="type">cabinet</field>
+    <field name="text">Secretariat</field>
+    <field name="color">FFFFFF</field>
+  </object>
+  <object class="CGroups" id="CGroups-1">
+    <field name="text">Clinique</field>
+  </object>
+  <object class="CPermModule" id="CPermModule-1" user_id="CUser-2">
+    <field name="permission">2</field>
+    <field name="view">2</field>
+  </object>
+</mediboard-export>

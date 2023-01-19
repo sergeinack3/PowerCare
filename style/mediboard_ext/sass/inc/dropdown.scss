@@ -1,0 +1,129 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+/**
+  Dropdown-button
+ */
+body .me-dropdown-content {
+  @include border-radius();
+  @include shadow1();
+  display: none;
+  position: absolute;
+  width: auto;
+  flex-direction: column;
+  background: $white;
+  padding-top: $space;
+  padding-bottom: $space;
+  z-index: 500;
+
+  > button[type="button"] {
+    @include not-vue {
+      &::before {
+        vertical-align: initial;
+        color: $primary !important;
+      }
+
+      @include border-radius();
+      color: $primary !important;
+      border-width: 0;
+      padding: 0 4px;
+      text-align: left;
+
+      &:hover {
+        background-color: alpha($primary, .1) !important;
+      }
+
+      &.compact {
+        margin: 0 $space !important;
+      }
+    }
+  }
+
+  > .separator {
+    height: 1px;
+    border-top: 1px solid $grey-100;
+    width: 100%;
+    margin: $space 0;
+  }
+}
+
+body .me-dropdown-button {
+  display: inline-block;
+  position: relative;
+  button[type="button"] {
+    @include not-vue {
+      i.me-dropdown-arrow {
+        margin: auto;
+        &::before {
+          @include fontawesome(13px, 13px);
+          @include special-content("f078");
+          display: block;
+          height: 16px;
+          width: 16px;
+          margin: auto;
+          margin-top: -10px;
+          opacity: .5;
+          transition: opacity 0.25s;
+          animation-play-state: paused;
+          animation-name: dropDownArrowAnimation;
+          animation-duration: 1s;
+          animation-timing-function: linear;
+          animation-iteration-count: infinite;
+        }
+      }
+    }
+  }
+
+  @include not-vue {
+    &:hover > button,
+    > button.toggled {
+      &:not(.notext):not(.no-anim)::before {
+        animation-name: dropDownArrowAnimation;
+        animation-duration: .125s;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+        opacity: 1;
+        @include special-content("f078");
+      }
+    }
+  }
+
+  >.toggled+.me-dropdown-content {
+    display: flex;
+    animation-name: dropDownContentAnimation;
+    animation-duration: 0.25s;
+    animation-iteration-count: 1;
+  }
+
+  &.me-dropdown-button-right {
+    .me-dropdown-content {
+      right: 0;
+    }
+  }
+
+  &.me-dropdown-button-top {
+    .me-dropdown-content {
+      bottom: 27px;
+    }
+  }
+
+}
+
+.me-dropdown-wrapped div.autocomplete > ul > li{
+  white-space: normal;
+}
+
+
+@keyframes dropDownContentAnimation {
+  0% {margin-top: -5px; opacity: 0}
+  100% {margin-top: 0; opacity: 1}
+}
+
+@keyframes dropDownArrowAnimation {
+  0%   {transform: rotate(-90deg); opacity: 0;}
+  100% {transform: rotate(0deg); opacity: 1;}
+}

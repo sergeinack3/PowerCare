@@ -1,0 +1,16 @@
+messagerie_get_mails:
+  path: /api/messagerie/mails
+  controller: Ox\Mediboard\Messagerie\Controllers\MailController::getMails
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: | 
+      List mails.
+      Parameter user_id will filter the list on the giver user.
+      Parameter count will return the number of mails.
+    accept:
+      - application/json
+    parameters:
+      user_id: '\d+'
+      count: 0|1

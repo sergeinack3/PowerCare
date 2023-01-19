@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Mediboard\\Livi\\": "classes",
+      "Ox\\Mediboard\\Livi\\Tests\\": "tests"
+    }
+  }
+}

@@ -1,0 +1,122 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+@import '../INUtils';
+
+.INTable {
+  &,
+  &-grid {
+    @include font-roboto();
+    width: 100%;
+    height: auto;
+  }
+
+  &-grid {
+    border-spacing: 0;
+    border-radius: $border-radius;
+    border: 1px solid $grey-50;
+
+    tbody>tr:last-of-type>td {
+      border-bottom-width: 0;
+    }
+  }
+
+  &-tableHeader,
+  &-tableCell {
+    text-align: left;
+    height: 56px;
+    vertical-align: center;
+    box-sizing: border-box;
+    padding: $large-space $xlarge-space;
+    border-bottom: 1px solid $grey-50;
+  }
+
+  &-tableHeader {
+    @include table-header-text();
+    position: relative;
+    &.clickable {
+      cursor: pointer;
+    }
+
+    /**
+      FOREVOARSSA
+     */
+    //.install-table-local-filter {
+    //  position: absolute;
+    //  height: 100%;
+    //  top: 0;
+    //  right: 0;
+    //  padding: 0 $large-space;
+    //  display: flex;
+    //  align-items: center;
+    //  justify-content: center;
+    //  cursor: default;
+    //  opacity: 0;
+    //  transition: opacity .1s;
+    //}
+    //
+    //&:hover {
+    //  >.label.clickable>span {
+    //    opacity: .3;
+    //    &.install-table-sort.active {
+    //      opacity: .7;
+    //    }
+    //  }
+    //
+    //  >.install-table-local-filter {
+    //    opacity: .33;
+    //    &:hover {
+    //      opacity: 1;
+    //    }
+    //  }
+    //}
+  }
+
+  &-row:hover>&-tableCell {
+    background-color: alpha($grey-50, .45);
+  }
+
+  &-tableCell {
+    @include table-body-text();
+    background-color: $white;
+    transition: background-color .1s linear;
+  }
+
+  &-label {
+    display: inline-block;
+    position: relative;
+    padding-right: $xlarge-space;
+    white-space: nowrap;
+    &-sortIcon {
+      display: none;
+    }
+    &.isClickable {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    &.isClickable &-sortIcon {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      opacity: 0;
+      transition: opacity .2s;
+      &.active {
+        opacity: .5;
+      }
+    }
+  }
+
+  &Pagination {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &-page {
+      padding: 0 $xlarge-space;
+    }
+  }
+}

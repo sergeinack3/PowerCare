@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>ZDS</name>
+    <description>Custom segment</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0">
+            <name>ZDS.1</name>
+            <description>Study Instance UID</description>
+            <datatype>RP</datatype>
+        </field>
+    </elements>
+</segment>

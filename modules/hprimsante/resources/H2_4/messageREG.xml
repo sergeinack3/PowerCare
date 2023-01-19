@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message>
+  <name>REG</name>
+  <description>Payment</description>
+  <segments>
+    <segment>H</segment>
+    <group minOccurs="1" maxOccurs="unbounded" name="PATIENT">
+      <segment>P</segment>
+      <segment minOccurs="1" maxOccurs="unbounded">REG</segment>
+    </group>
+    <segment>L</segment>
+  </segments>
+</message>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>H</name>
+    <description>Message Header</description>
+    <elements>
+        <field minOccurs="1" maxOccurs="0" length="5">
+            <name>H.1</name>
+            <description>Field Separator</description>
+            <datatype>ST</datatype>
+        </field>
+        <!-- a ne pas tenir compte (pour le parseur) !-->
+        <field minOccurs="1" maxOccurs="0">
+            <name>H.1</name>
+            <description>Encoding Characters</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="12">
+            <name>H.2</name>
+            <description>Message ID</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="12">
+            <name>H.3</name>
+            <description>Password</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="0" length="40">
+            <name>H.4</name>
+            <description>Sender ID</description>
+            <datatype>HD</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="100">
+            <name>H.5</name>
+            <description>Sender address</description>
+            <datatype>AD</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="0" length="7">
+            <name>H.6</name>
+            <description>Context</description>
+            <datatype>CM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded" length="40">
+            <name>H.7</name>
+            <description>Sender phone</description>
+            <datatype>TN</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="40">
+            <name>H.8</name>
+            <description>Transmission characteristics</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="0" length="40">
+            <name>H.9</name>
+            <description>Receiver ID</description>
+            <datatype>HD</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="80">
+            <name>H.10</name>
+            <description>Comment</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="1">
+            <name>H.11</name>
+            <description>Processing ID</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="0" length="10">
+            <name>H.12</name>
+            <description>Version and Type</description>
+            <datatype>HD</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="0" length="26">
+            <name>H.13</name>
+            <description>Date/Time of Message</description>
+            <datatype>TS</datatype>
+        </field>
+    </elements>
+</segment>

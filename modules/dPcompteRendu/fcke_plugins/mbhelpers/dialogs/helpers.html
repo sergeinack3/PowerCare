@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <script src="../../../../../lib/scriptaculous/lib/prototype.js"></script>
+    <script>
+      var CKEDITOR = window.parent.CKEDITOR;
+      var arrayHelperIndex = [];
+      var arrayHelperStyle = [];
+      var arrayHelperContent = [];
+      var noHelpers = 0;
+      if (window.parent.parent.helpers[0] != null)
+        helpers = window.parent.parent.helpers[0].options;
+
+      // Au chargement, on initialise la liste déroulante avec les aide à la saisie
+      window.onload = function () {
+        var list = $("helper");
+        var i = 0;
+
+        $H(helpers).each(function(category) {
+          if (category.value.length == 0) {
+            noHelpers ++;
+          }
+          if (typeof category.value != "function") {
+            for(var helper in category.value) {
+              if (typeof category.value[helper] != "function") {
+                var style="";
+                if (category.key.indexOf("utilisateur") != -1)
+                  style = "url(../../../../../style/mediboard_ext/images/icons/user.png) no-repeat";
+                else if (category.key.indexOf("fonction") != -1)
+                  style = "url(../../../../../style/mediboard_ext/images/icons/user-function.png) no-repeat";
+                else
+                  style = "url(../../../../../style/mediboard_ext/images/icons/group.png) no-repeat";
+                arrayHelperIndex[i] = helper;
+                arrayHelperStyle[i] = style;
+                arrayHelperContent[i] = category.value[helper];
+                i++;
+              }
+            }
+          }
+        });
+        if (noHelpers == 3)
+          list.insert("<option value='0'>Aucune aide à la saisie</option>");
+        else
+          arrayHelperIndex.each(function(item, iterator) {
+            list.insert("<option value='" + iterator + "'>" + item + "</option>");
+          });
+        list.selectedIndex = -1;
+      };
+
+      function insertHTML(index) {
+        var editor = CKEDITOR.instances.htmlarea;
+        var string = arrayHelperContent[index];
+        var sHtml = "<span class='field'>" + string.replace(/\n/g, "<br/>") + "</span>";
+        var elt = CKEDITOR.dom.element.createFromHtml(sHtml, editor.document);
+        editor.focus();
+        editor.insertElement(elt);
+        editor.insertText(" ");
+        CKEDITOR.dialog.getCurrent().hide();
+        return true ;
+      }
+
+      function previewHelper(helper) {
+        $("preview").innerHTML = (arrayHelperContent[helper]).replace(/\n/g, "<br/>");
+        $("category_helper").setStyle({background: arrayHelperStyle[helper]});
+      }
+    </script>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <select id="helper" size="10" style="width: 200px; height: 100%;" onchange="if (noHelpers != 3) previewHelper(this.value);"
+                  ondblclick="if (noHelpers != 3) insertHTML(this.value)">
+          </select>
+        </td>
+        <td style="vertical-align: top;">
+          <div id="category_helper" style="width: 16px; height: 16px;"></div>
+          <div id="preview" style="overflow: auto; max-height: 180px;"></div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

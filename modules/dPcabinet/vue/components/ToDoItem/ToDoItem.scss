@@ -1,0 +1,26 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.ToDoItem {
+  @include hoverable;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: $space*3 $space*2 0 0;
+  padding: $space*2 $space*2 $space*2 0;
+  width: 100%;
+
+  &-hoverActions {
+    visibility: hidden;
+  }
+
+  &:hover &-hoverActions {
+    visibility: visible;
+  }
+}

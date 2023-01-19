@@ -1,0 +1,59 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+$timeline-orange : #ea9738;
+@mixin timeline-color-orange {
+  background: $timeline-orange !important;
+}
+$timeline-violet: #ab47bc;
+@mixin timeline-color-violet {
+  background: $timeline-violet !important;
+}
+$timeline-green : #1abc9c;
+@mixin timeline-color-green {
+  background: $timeline-green !important;
+}
+@mixin timeline-color-forestgreen {
+  background: forestgreen !important;
+}
+$timeline-blue : #229fd8;
+@mixin timeline-color-blue {
+  background: $timeline-blue !important;
+}
+$timeline-red : #d53d2a;
+@mixin timeline-color-red {
+  background: $timeline-red !important;
+}
+$timeline-color-pink: palevioletred;
+@mixin timeline-color-pink {
+  background: palevioletred !important;
+}
+$timeline-color-firebrick: firebrick;
+@mixin timeline-color-firebrick {
+  background: firebrick !important;
+}
+@mixin timeline-actions-container ($color) {
+  background-color: $white;
+  border: 1px solid $color;
+  padding: 10px;
+  right: 0;
+  @include shadow1();
+}
+@mixin timeline-button-size {
+  padding: 2px;
+  button {
+    text-align: left;
+    height: 25px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+$timeline-label-color: $primary-50;
+$timeline-label-content-color: #EAEAEA;
+$timeline-label-color-hover: alpha($primary-50, 52%);
+
+@import "timeline_content";

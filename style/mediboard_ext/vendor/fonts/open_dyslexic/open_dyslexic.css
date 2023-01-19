@@ -1,0 +1,32 @@
+@font-face {
+  font-family: opendyslexic;
+  src: url(eot/OpenDyslexic-Regular.eot?)  format('eot'),
+  url(woff/OpenDyslexic-Regular.woff) format('woff'),
+  url(otf/OpenDyslexic-Regular.otf)   format('opentype');
+}
+
+@font-face {
+  font-family: opendyslexic;
+  font-weight: bold;
+  src: url(eot/OpenDyslexic-Bold.eot?)  format('eot'),
+  url(woff/OpenDyslexic-Bold.woff) format('woff'),
+  url(otf/OpenDyslexic-Bold.otf)   format('opentype');
+}
+
+@font-face {
+  font-family: opendyslexic;
+  font-weight: normal;
+  font-style: italic;
+  src: url(eot/OpenDyslexic-Italic.eot?)  format('eot'),
+  url(woff/OpenDyslexic-Italic.woff) format('woff'),
+  url(otf/OpenDyslexic-Italic.otf)   format('opentype');
+}
+
+@font-face {
+  font-family: opendyslexic;
+  font-weight: bold;
+  font-style: italic;
+  src: url(eot/OpenDyslexic-BoldItalic.eot?)  format('eot'),
+  url(woff/OpenDyslexic-BoldItalic.woff) format('woff'),
+  url(otf/OpenDyslexic-BoldItalic.otf)   format('opentype');
+}

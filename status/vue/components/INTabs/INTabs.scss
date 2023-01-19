@@ -1,0 +1,38 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+@import '../INUtils';
+
+.INTabs {
+  &-tabs {
+    padding-top: 32px;
+    width: 100%;
+    border-bottom: 1px solid $grey-50;
+    display: flex;
+    box-sizing: border-box;
+  }
+
+  &-tab {
+    cursor: pointer;
+    @include body();
+    letter-spacing: 0.1px;
+    padding: $large-space $xlarge-space;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom-color .2s;
+    margin-bottom: -1px;
+
+    &:hover {
+      border-bottom-color: $primary-50;
+    }
+    &.active {
+      border-bottom-color: $primary;
+      font-weight: 500;
+    }
+  }
+  &-content {
+    width: 100%;
+
+  }
+}

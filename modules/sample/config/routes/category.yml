@@ -1,0 +1,13 @@
+sample_categories_list:
+  path: /api/sample/categories
+  controller: Ox\Mediboard\Sample\Controllers\SampleCategoriesController::listCategories
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: List the categories
+    accept:
+      - application/json
+    responses:
+      200: The response's body contains the list of categories in json_api format.
+      default: 403 or 500 on error.

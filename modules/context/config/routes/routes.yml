@@ -1,0 +1,39 @@
+context_tokenize:
+  path: /api/context/tokenize
+  controller: Ox\Mediboard\Context\Controllers\ContextController::tokenize
+  methods: GET
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Create a token for a contextual call for the given user.
+    parameters:
+      ipp: '\w+'
+      nda: '\w+'
+      name: '\w+'
+      firstname: '\w+'
+      birthdate: '\d{4}-\d{2}-\d{2}'
+      admit_date: '\d{4}-\d{2}-\d{2}'
+      group_tag: '\w+'
+      group_idex: '\w+'
+      sejour_tag: '\w+'
+      sejour_idex: '\w+'
+      view: '\w+'
+      show_menu: 'bool'
+      token_username: '\w+'
+      RetourURL: '[\w\.\/\-\_]+'
+      rpps: '\w+'
+      cabinet_id: '\d+'
+      ext_patient_id: '\w+'
+      context_guid: '[a-Z]+\-\d+'
+      g: '\d+'
+      consultation_id: '\d+'
+      patient_id: '\d+'
+      rpps_praticien: '\w+'
+      numero_finess: '\w+'
+      tabs: '\w+'
+    accept:
+      - application/json
+    responses:
+      200: The returned resource represent the newly created token.
+      default: 403 or 500 on error.

@@ -1,0 +1,88 @@
+#vendor/symfony/monolog-bundle/DependencyInjection/Configuration.php
+parameters:
+  application_log.file_path.value: !php/const Ox\Core\Logger\Wrapper\ApplicationLoggerWrapper::FILE_PATH
+  application_log.buffer_limit.value: !php/const Ox\Core\Logger\Wrapper\ApplicationLoggerWrapper::BUFFER_LIMIT
+
+services:
+  # Processor for the error_buffer to add extra data
+  Ox\Core\Logger\Processor\ErrorProcessor:
+    tags:
+      - { name: monolog.processor, handler: error_buffer }
+  # Processor for the app_buffer handler to encode context and add extra data.
+  Ox\Core\Logger\Processor\ApplicationProcessor:
+    tags:
+      - { name: monolog.processor, handler: app_buffer }
+
+  # Formatter that allow to custom line and date format.
+  Ox\Core\Logger\Formatter\ApplicationLineFormatter: ~
+
+  # Elastic handler for Application log
+  Ox\Core\Logger\Handler\ApplicationElasticHandler: ~
+
+  # Elastic handler for Error log
+  Ox\Core\Logger\Handler\ErrorElasticHandler: ~
+  # MySQL handler to write errors
+  Ox\Core\Logger\Handler\ErrorMySQLHandler: ~
+  # Fallback to application log
+  Ox\Core\Logger\Handler\ErrorLastChanceHandler: ~
+
+  # FallbackGroup that ensure the write in only one handler.
+  error_group_handler:
+    class: 'Monolog\Handler\FallbackGroupHandler'
+    arguments:
+      $handlers:
+        - '@Ox\Core\Logger\Handler\ErrorElasticHandler'
+        - '@Ox\Core\Logger\Handler\ErrorMySQLHandler'
+        - '@Ox\Core\Logger\Handler\ErrorLastChanceHandler'
+
+  # Buffer for errors
+  Ox\Core\Logger\Handler\ErrorBufferHandler:
+    autoconfigure: true
+    arguments:
+      $handler: '@error_group_handler'
+
+monolog:
+  handlers:
+    ###################
+    ## Error logging ##
+    ###################
+
+    # Bufferize errors and send them to its handler.
+    # Channel php for errors
+    # Channel request for exceptions
+    error_buffer:
+      type: service
+      id: 'Ox\Core\Logger\Handler\ErrorBufferHandler'
+      channels: [ 'php', 'request' ]
+      level: info
+
+    #########################
+    ## Application logging ##
+    #########################
+
+    # Bufferize logs and send them to app_group when buffer is reached.
+    app_buffer:
+      type: buffer
+      action_level: debug
+      handler: app_group
+      channels: [ 'app' ]
+      buffer_size: '%application_log.buffer_limit.value%'
+      flush_on_overflow: true
+
+    # Send logs to each member and stop if one handled them.
+    app_group:
+      type: fallbackgroup
+      members:
+        - app_elastic
+        - app_stream
+
+    app_elastic:
+      type: service
+      id: 'Ox\Core\Logger\Handler\ApplicationElasticHandler'
+
+    # Write logs to file system.
+    app_stream:
+      type: stream
+      path: "%kernel.project_dir%%application_log.file_path.value%"
+      level: debug
+      formatter: 'Ox\Core\Logger\Formatter\ApplicationLineFormatter'

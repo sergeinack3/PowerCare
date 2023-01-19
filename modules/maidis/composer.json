@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Import\\Maidis\\": "classes",
+      "Ox\\Import\\Maidis\\Tests\\": "tests"
+    }
+  }
+}

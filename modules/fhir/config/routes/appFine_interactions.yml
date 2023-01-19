@@ -1,0 +1,35 @@
+fhir_search_appFine:
+  path: api/fhir/appFine/{resource}
+  controller: Ox\Interop\Fhir\Controllers\CFHIRInteractionsController::search
+  defaults:
+    object_class: Ox\Interop\Fhir\Interactions\CFHIRInteractionSearch
+    permission: none
+  requirements:
+    resource:  Patient
+  methods: GET
+  options:
+    description: List resources collection of patients.
+    responses:
+      200: OK
+
+fhir_patient_user_appFine:
+  path: api/fhir/appFine/PatientUser
+  controller: Ox\Interop\Fhir\Controllers\CFHIRAppFineController::patient_user_appFine
+  defaults:
+    permission: none
+  methods:    POST
+  options:
+    description: Create patient user
+    responses:
+      200: OK
+
+fhir_preview_form_appfine:
+  path: api/fhir/appFine/Form
+  controller: Ox\Interop\Fhir\Controllers\CFHIRAppFineController::preview_form_appFine
+  defaults:
+    permission: none
+  methods:    POST
+  options:
+    description: Preview form in AppFine
+    responses:
+      200: OK

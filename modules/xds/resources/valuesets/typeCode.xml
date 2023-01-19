@@ -1,0 +1,155 @@
+<RetrieveValueSetResponse>
+    <ValueSet displayName="Type Code values for CDA documents for Connectathon" version="20081214" id="1.3.6.1.4.1.21367.101.11">
+        <ConceptList xml:lang="en-US">
+            <Concept code="1.3.6.1.4.1.21367.2009.9.999" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="XX SVS Connectathon Code"/>
+            <Concept code="11488-4" codeSystem="2.16.840.1.113883.6.1" displayName="Consultation Note"/>
+            <Concept code="11490-0" codeSystem="2.16.840.1.113883.6.1" displayName="Physician Discharge Summarization Note"/>
+            <Concept code="11492-6" codeSystem="2.16.840.1.113883.6.1" displayName="Hospital History and Physical Note"/>
+            <Concept code="11502-2" codeSystem="2.16.840.1.113883.6.1" displayName="LABORATORY REPORT.TOTAL"/>
+            <Concept code="11504-8" codeSystem="2.16.840.1.113883.6.1" displayName="Surgical Operation Note"/>
+            <Concept code="11505-5" codeSystem="2.16.840.1.113883.6.1" displayName="Physician Procedure Note"/>
+            <Concept code="11506-3" codeSystem="2.16.840.1.113883.6.1" displayName="Subsequent Visit Evaluation Note"/>
+            <Concept code="11507-1" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Occupational Therapy Subsequent Visit Evaluation Note"/>
+            <Concept code="11508-9" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Physical Therapy Subsequent Visit Evaluation Note"/>
+            <Concept code="11509-7" codeSystem="2.16.840.1.113883.6.1" displayName="Podiatry Subsequent Visit Evaluation Note"/>
+            <Concept code="11510-5" codeSystem="2.16.840.1.113883.6.1" displayName="Psychology Subsequent Visit Evaluation Note"/>
+            <Concept code="11512-1" codeSystem="2.16.840.1.113883.6.1" displayName="Speech Therapy Subsequent Visit Evaluation Note"/>
+            <Concept code="15507-7" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Emergency Department Subsequent Visit Evaluation Note"/>
+            <Concept code="18717-9" codeSystem="2.16.840.1.113883.6.1" displayName="BLOOD BANK STUDIES"/>
+            <Concept code="18718-7" codeSystem="2.16.840.1.113883.6.1" displayName="CELL MARKER STUDIES"/>
+            <Concept code="18719-5" codeSystem="2.16.840.1.113883.6.1" displayName="CHEMISTRY STUDIES"/>
+            <Concept code="18720-3" codeSystem="2.16.840.1.113883.6.1" displayName="COAGULATION STUDIES"/>
+            <Concept code="18721-1" codeSystem="2.16.840.1.113883.6.1" displayName="THERAPEUTIC DRUG MONITORING STUDIES"/>
+            <Concept code="18722-9" codeSystem="2.16.840.1.113883.6.1" displayName="FERTILITY STUDIES"/>
+            <Concept code="18723-7" codeSystem="2.16.840.1.113883.6.1" displayName="HEMATOLOGY STUDIES"/>
+            <Concept code="18724-5" codeSystem="2.16.840.1.113883.6.1" displayName="HLA STUDIES"/>
+            <Concept code="18725-2" codeSystem="2.16.840.1.113883.6.1" displayName="MICROBIOLOGY STUDIES"/>
+            <Concept code="18727-8" codeSystem="2.16.840.1.113883.6.1" displayName="SEROLOGY STUDIES"/>
+            <Concept code="18728-6" codeSystem="2.16.840.1.113883.6.1" displayName="TOXICOLOGY STUDIES"/>
+            <Concept code="18729-4" codeSystem="2.16.840.1.113883.6.1" displayName="URINALYSIS STUDIES"/>
+            <Concept code="18733-6" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Attending Physician Subsequent Visit Evaluation Note"/>
+            <Concept code="18734-4" codeSystem="2.16.840.1.113883.6.1" displayName="Occupational Therapy Initial Evaluation Note"/>
+            <Concept code="18735-1" codeSystem="2.16.840.1.113883.6.1" displayName="Physical Therapy Initial Evaluation Note"/>
+            <Concept code="18736-9" codeSystem="2.16.840.1.113883.6.1" displayName="Physician Initial Evaluation Note"/>
+            <Concept code="18737-7" codeSystem="2.16.840.1.113883.6.1" displayName="Podiatry Initial Evaluation Note"/>
+            <Concept code="18738-5" codeSystem="2.16.840.1.113883.6.1" displayName="Psychology Initial Evaluation Note"/>
+            <Concept code="18739-3" codeSystem="2.16.840.1.113883.6.1" displayName="Social Service Initial Evaluation Note"/>
+            <Concept code="18740-1" codeSystem="2.16.840.1.113883.6.1" displayName="Speech Therapy Initial Evaluation Note"/>
+            <Concept code="18743-5" codeSystem="2.16.840.1.113883.6.1" displayName="Autopsy Note"/>
+            <Concept code="18748-4" codeSystem="2.16.840.1.113883.6.1" displayName="Diagnostic Imaging Report"/>
+            <Concept code="18761-7" codeSystem="2.16.840.1.113883.6.1" displayName="Transfer Summarization Note"/>
+            <Concept code="18762-5" codeSystem="2.16.840.1.113883.6.1" displayName="Chiropractor Subsequent Visit Evaluation Note"/>
+            <Concept code="18763-3" codeSystem="2.16.840.1.113883.6.1" displayName="Consulting Physician Initial Evaluation Note"/>
+            <Concept code="18764-1" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Nurse Practitioner Subsequent Visit Evaluation Note"/>
+            <Concept code="18767-4" codeSystem="2.16.840.1.113883.6.1" displayName="BLOOD GAS STUDIES"/>
+            <Concept code="18768-2" codeSystem="2.16.840.1.113883.6.1" displayName="CELL COUNTS+DIFFERENTIAL STUDIES"/>
+            <Concept code="18769-0" codeSystem="2.16.840.1.113883.6.1" displayName="MICROBIAL SUSCEPTIBILITY TESTS"/>
+            <Concept code="18842-5" codeSystem="2.16.840.1.113883.6.1" displayName="Discharge Summarization Note"/>
+            <Concept code="24611-6" codeSystem="2.16.840.1.113883.6.1" displayName="Outpatient Confirmatory Consultation Note"/>
+            <Concept code="26435-8" codeSystem="2.16.840.1.113883.6.1" displayName="MOLECULAR PATHOLOGY STUDIES"/>
+            <Concept code="26436-6" codeSystem="2.16.840.1.113883.6.1" displayName="LABORATORY STUDIES"/>
+            <Concept code="26437-4" codeSystem="2.16.840.1.113883.6.1" displayName="CHEMISTRY CHALLENGE STUDIES"/>
+            <Concept code="26438-2" codeSystem="2.16.840.1.113883.6.1" displayName="CYTOLOGY STUDIES"/>
+            <Concept code="28568-4" codeSystem="2.16.840.1.113883.6.1" displayName="Physician Emergency Department Visit Note"/>
+            <Concept code="28569-2" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Consulting Physician Subsequent Visit Evaluation Note"/>
+            <Concept code="28570-0" codeSystem="2.16.840.1.113883.6.1" displayName="Procedure Note"/>
+            <Concept code="28572-6" codeSystem="2.16.840.1.113883.6.1" displayName="Dentistry Initial Evaluation Note"/>
+            <Concept code="28573-4" codeSystem="2.16.840.1.113883.6.1" displayName="Physician Surgical Operation Note"/>
+            <Concept code="28574-2" codeSystem="2.16.840.1.113883.6.1" displayName="Discharge Note"/>
+            <Concept code="28577-5" codeSystem="2.16.840.1.113883.6.1" displayName="Dentistry Procedure Note"/>
+            <Concept code="28579-1" codeSystem="2.16.840.1.113883.6.1" displayName="Physical Therapy Visit Note"/>
+            <Concept code="28581-7" codeSystem="2.16.840.1.113883.6.1" displayName="Chiropractor Initial Evaluation Note"/>
+            <Concept code="28583-3" codeSystem="2.16.840.1.113883.6.1" displayName="Dentistry Surgical Operation Note"/>
+            <Concept code="28616-1" codeSystem="2.16.840.1.113883.6.1" displayName="Physician Transfer Summarization Note"/>
+            <Concept code="28617-9" codeSystem="2.16.840.1.113883.6.1" displayName="Dentistry Subsequent Visit Evaluation Note"/>
+            <Concept code="28618-7" codeSystem="2.16.840.1.113883.6.1" displayName="Dentistry Visit Note"/>
+            <Concept code="28621-1" codeSystem="2.16.840.1.113883.6.1" displayName="Nurse Practitioner Initial Evaluation Note"/>
+            <Concept code="28622-9" codeSystem="2.16.840.1.113883.6.1" displayName="Nursing Discharge Assessment Note"/>
+            <Concept code="28623-7" codeSystem="2.16.840.1.113883.6.1" displayName="Nursing Subsequent Visit Evaluation Note"/>
+            <Concept code="28624-5" codeSystem="2.16.840.1.113883.6.1" displayName="Podiatry Surgical Operation Note"/>
+            <Concept code="28625-2" codeSystem="2.16.840.1.113883.6.1" displayName="Podiatry Procedure Note"/>
+            <Concept code="28626-0" codeSystem="2.16.840.1.113883.6.1" displayName="Physician History and Physical Note"/>
+            <Concept code="28627-8" codeSystem="2.16.840.1.113883.6.1" displayName="Psychiatry Subsequent Visit Evaluation Note"/>
+            <Concept code="28635-1" codeSystem="2.16.840.1.113883.6.1" displayName="Psychiatry Initial Evaluation Note"/>
+            <Concept code="28636-9" codeSystem="2.16.840.1.113883.6.1" displayName="Initial Evaluation Note"/>
+            <Concept code="28651-8" codeSystem="2.16.840.1.113883.6.1" displayName="Nursing Transfer Summarization Note"/>
+            <Concept code="28653-4" codeSystem="2.16.840.1.113883.6.1" displayName="Social Service Visit Note"/>
+            <Concept code="28654-2" codeSystem="2.16.840.1.113883.6.1" displayName="Attending Physician Initial Evaluation Note"/>
+            <Concept code="28655-9" codeSystem="2.16.840.1.113883.6.1" displayName="Attending Physician Discharge Summarization Note"/>
+            <Concept code="28656-7" codeSystem="2.16.840.1.113883.6.1" displayName="Social Service Subsequent Visit Evaluation Note"/>
+            <Concept code="29753-1" codeSystem="2.16.840.1.113883.6.1" displayName="Nursing Initial Evaluation Note"/>
+            <Concept code="29761-4" codeSystem="2.16.840.1.113883.6.1" displayName="Dentistry Discharge Summarization Note"/>
+            <Concept code="34094-3" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Cardiology Hospital Admission History And Physical Note"/>
+            <Concept code="34095-0" codeSystem="2.16.840.1.113883.6.1" displayName="Comprehensive History and Physical Note"/>
+            <Concept code="34096-8" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Nursing Home Comprehensive History and Physical Note"/>
+            <Concept code="34097-6" codeSystem="2.16.840.1.113883.6.1" displayName="Nursing Home Conference Evaluation Note"/>
+            <Concept code="34098-4" codeSystem="2.16.840.1.113883.6.1" displayName="Conference Evaluation Note"/>
+            <Concept code="34099-2" codeSystem="2.16.840.1.113883.6.1" displayName="Cardiology Consultation Note"/>
+            <Concept code="34100-8" codeSystem="2.16.840.1.113883.6.1" displayName="Critical Care Unit Consultation Note"/>
+            <Concept code="34101-6" codeSystem="2.16.840.1.113883.6.1" displayName="General Medicine Outpatient Consultation Note"/>
+            <Concept code="34102-4" codeSystem="2.16.840.1.113883.6.1" displayName="Psychiatry Hospital Consultation Note"/>
+            <Concept code="34103-2" codeSystem="2.16.840.1.113883.6.1" displayName="Pulmonary Consultation Note"/>
+            <Concept code="34104-0" codeSystem="2.16.840.1.113883.6.1" displayName="Hospital Consultation Note"/>
+            <Concept code="34105-7" codeSystem="2.16.840.1.113883.6.1" displayName="Hospital Discharge Summarization Note"/>
+            <Concept code="34106-5" codeSystem="2.16.840.1.113883.6.1" displayName="Physician Hospital Discharge Summarization Note"/>
+            <Concept code="34107-3" codeSystem="2.16.840.1.113883.6.1" displayName="Home Health Education Procedure Note"/>
+            <Concept code="34108-1" codeSystem="2.16.840.1.113883.6.1" displayName="Outpatient Evaluation And Management"/>
+            <Concept code="34109-9" codeSystem="2.16.840.1.113883.6.1" displayName="Evaluation And Management Note"/>
+            <Concept code="34110-7" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Diabetology Outpatient Evaluation And Management Note"/>
+            <Concept code="34111-5" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Emergency Department Evaluation And Management Note"/>
+            <Concept code="34112-3" codeSystem="2.16.840.1.113883.6.1" displayName="Inpatient Evaluation And Management Note"/>
+            <Concept code="34113-1" codeSystem="2.16.840.1.113883.6.1" displayName="Nursing Home Evaluation And Management Note"/>
+            <Concept code="34114-9" codeSystem="2.16.840.1.113883.6.1" displayName="Hospital Group Counseling Note"/>
+            <Concept code="34115-6" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Medical Student Hospital History and Physical Note"/>
+            <Concept code="34116-4" codeSystem="2.16.840.1.113883.6.1" displayName="Physician Nursing Home History and Physical Note"/>
+            <Concept code="34117-2" codeSystem="2.16.840.1.113883.6.1" displayName="History And Physical Note"/>
+            <Concept code="34118-0" codeSystem="2.16.840.1.113883.6.1" displayName="Home Health Initial Evaluation Note"/>
+            <Concept code="34119-8" codeSystem="2.16.840.1.113883.6.1" displayName="Nursing Home Initial Evaluation Note"/>
+            <Concept code="34120-6" codeSystem="2.16.840.1.113883.6.1" displayName="Outpatient Initial Evaluation Note"/>
+            <Concept code="34121-4" codeSystem="2.16.840.1.113883.6.1" displayName="Interventional Procedure Note"/>
+            <Concept code="34122-2" codeSystem="2.16.840.1.113883.6.1" displayName="Pathology Pathology Procedure Note"/>
+            <Concept code="34123-0" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Anesthesia Hospital Pre-Operative Evaluation And Management Note"/>
+            <Concept code="34124-8" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Cardiology Outpatient Subsequent Visit Evaluation Note"/>
+            <Concept code="34125-5" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Case Manager Home Health Care Subsequent Visit Evaluation Note"/>
+            <Concept code="34126-3" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Critical Care Unit Subsequent Visit Evaluation Note"/>
+            <Concept code="34127-1" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Dental Hygienist Outpatient Subsequent Visit Evaluation Note"/>
+            <Concept code="34128-9" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Dentistry Outpatient Subsequent Visit Evaluation Note"/>
+            <Concept code="34129-7" codeSystem="2.16.840.1.113883.6.1" displayName="Home Health Subsequent Visit Evaluation Note"/>
+            <Concept code="34130-5" codeSystem="2.16.840.1.113883.6.1" displayName="Hospital Subsequent Visit Evaluation Note"/>
+            <Concept code="34131-3" codeSystem="2.16.840.1.113883.6.1" displayName="Outpatient Subsequent Visit Evaluation Note"/>
+            <Concept code="34132-1" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Pharmacy Outpatient Subsequent Visit Evaluation Note"/>
+            <Concept code="34133-9" codeSystem="2.16.840.1.113883.6.1" displayName="Summarization of Episode Note"/>
+            <Concept code="34133-9" codeSystem="2.16.840.1.113883.6.1" displayName="SUMMARIZATION OF EPISODE NOTE"/>
+            <Concept code="34134-7" codeSystem="2.16.840.1.113883.6.1" displayName="Attending Physician Outpatient Supervisory Note"/>
+            <Concept code="34135-4" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Attending Physician Cardiology Outpatient Supervisory Note"/>
+            <Concept code="34136-2" codeSystem="2.16.840.1.113883.6.1"
+                     displayName="Attending Physician Gastroenterology Outpatient Supervisory Note"/>
+            <Concept code="34137-0" codeSystem="2.16.840.1.113883.6.1" displayName="Outpatient Surgical Operation Note"/>
+            <Concept code="34138-3" codeSystem="2.16.840.1.113883.6.1" displayName="Remote Health Reading"/>
+            <Concept code="34138-8" codeSystem="2.16.840.1.113883.6.1" displayName="Targeted History And Physical Note"/>
+            <Concept code="34139-6" codeSystem="2.16.840.1.113883.6.1" displayName="Nursing Telephone Encounter Note"/>
+            <Concept code="34140-4" codeSystem="2.16.840.1.113883.6.1" displayName="Transfer of Care Referral Note"/>
+            <Concept code="Laboratory-Report" codeSystem="2.16.840.1.113883.6.1" displayName="Laboratory Report"/>
+        </ConceptList>
+    </ValueSet>
+</RetrieveValueSetResponse>

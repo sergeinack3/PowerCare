@@ -1,0 +1,21 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.TammMenuLink {
+  @include on-background(medium, true);
+  @include subtitle2;
+  border-radius: 4px;
+  padding: $space*2 $space*4;
+  user-select: none;
+
+  &:hover {
+    @include primary-opacity($hover);
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,50 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.theme--light {
+  --ox-module-icon-primary: #{$primary};
+  --ox-module-icon-secondary: #{$secondary};
+}
+
+.theme--dark {
+  --ox-module-icon-primary: #{$primary-200};
+  --ox-module-icon-secondary: #{$secondary-200};
+}
+
+.OxModuleIcon {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding: 3px;
+  width: 100%;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
+  &-icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+  }
+
+  &-primary {
+    fill: var(--ox-module-icon-primary);
+  }
+
+  &-secondary {
+    fill: var(--ox-module-icon-secondary);
+  }
+
+  &-defaultIcon {
+    color: $secondary-700;
+  }
+}

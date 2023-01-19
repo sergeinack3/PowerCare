@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--<db_management>
+  <backup_path>/var/backup</backup_path>
+  <temporary_path>/tmp(not mandatory)</temporary_path>
+  <server_address>localhost</server_address>
+  <ssh_user>root</ssh_user>
+  <encryption_algorithm>aes-256-cbc</encryption_algorithm>
+  <encryption_password>test123</encryption_password>
+
+  <mysqlbackup>
+    <databases_to_backup>
+      <database use_encryption="1" retention_policy="7">base1</database>
+      <database>base2</database>
+    </databases_to_backup>
+    <default_retention_policy>2</default_retention_policy>
+  </mysqlbackup>
+
+  <binlogs_rotation>
+    <binlogs_directory>/var/log/mysql</binlogs_directory>
+    <binlogs_index_filename>mysql-bin.index</binlogs_index_filename>
+    <live_binlogs_retention_policy>24 (in hours)</live_binlogs_retention_policy>
+    <archive_binlogs_retention_policy>7 (in days)</archive_binlogs_retention_policy>
+  </binlogs_rotation>
+</db_management>-->
+
+
+<db_management>
+  <backup_path>/var/backup</backup_path>
+  <temporary_path>/tmp</temporary_path>
+  <server_address>localhost</server_address>
+  <ssh_user>root</ssh_user>
+  <encryption_algorithm>aes-256-cbc</encryption_algorithm>
+  <encryption_password></encryption_password>
+
+  <mysqlbackup>
+    <databases_to_backup>
+      <database use_encryption="1" retention_policy='1'></database>
+    </databases_to_backup>
+    <default_retention_policy>7</default_retention_policy>
+  </mysqlbackup>
+
+  <binlogs_rotation>
+    <binlogs_directory>/var/log/mysql</binlogs_directory>
+    <binlogs_index_filename>mysql-bin.index</binlogs_index_filename>
+    <live_binlogs_retention_policy>-1</live_binlogs_retention_policy> <!-- In hours -->
+    <archive_binlogs_retention_policy>7</archive_binlogs_retention_policy> <!-- in days -->
+  </binlogs_rotation>
+</db_management>

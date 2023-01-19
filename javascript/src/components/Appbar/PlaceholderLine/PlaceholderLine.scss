@@ -1,0 +1,27 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.PlaceholderLine {
+  @include on-background(high);
+  @include body1;
+  align-items: center;
+  display: flex;
+  gap: $space*4;
+  height: 48px;
+  justify-content: flex-start;
+  transition: all .15s ease-in-out;
+  min-width: 313px;
+  padding-left: $space*4;
+  padding-right: $space*2;
+
+  &:hover {
+    background-color: alpha($primary, 0.08);
+    cursor: pointer;
+  }
+}

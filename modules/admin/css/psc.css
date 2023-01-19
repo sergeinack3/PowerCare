@@ -1,0 +1,60 @@
+/**
+ * @package Mediboard\Admin
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.PscCGU {
+  text-align: left;
+}
+
+.PscCGU .cgu_main_container {
+  margin: auto;
+  max-width: 75%;
+}
+
+.PscCGU .cgu_main_container .cgu {
+  margin: 30px 0 0 0;
+}
+
+.PscCGU .cgu_main_container .cgu_version {
+  margin: 0;
+}
+
+.PscCGU .cgu_main_container h1, .PscCGU .cgu_main_container h2, .PscCGU .cgu_main_container h3, .PscCGU .cgu_main_container p, .PscCGU .cgu_main_container li {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #343852;
+}
+
+.PscCGU .cgu_main_container h1 {
+  font-weight: 700 ;
+  line-height: 1.125;
+  font-size: 32px;
+  padding: 0;
+  white-space: normal;
+  background: none;
+  border-radius: unset;
+  text-align: left;
+}
+
+.PscCGU .cgu_main_container h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 20px 0 20px 0;
+}
+
+.PscCGU .cgu_main_container h3 {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 10px 0 10px 0;
+}
+
+.PscCGU .cgu_main_container p, .PscCGU .cgu_main_container li {
+  color: #697097;
+  font-family: futura-pt,Arial,sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  font-size: 16px;
+}

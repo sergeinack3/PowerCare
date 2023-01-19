@@ -1,0 +1,58 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "sourceMap": true,
+    "declaration": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "types": [
+      "webpack-env",
+      "jest"
+    ],
+    "paths": {
+      "@/*": [
+        "javascript/src/*"
+      ],
+      "assets/*": [
+        "images/assets_vue/*"
+      ],
+      "@modules/*": [
+        "modules/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "javascript/src/**/*.ts",
+    "javascript/src/**/*.tsx",
+    "javascript/src/**/*.vue",
+    "javascript/tests/**/*.ts",
+    "javascript/tests/**/*.tsx",
+    "modules/*/vue/**/*.ts",
+    "modules/*/vue/**/*.vue"
+  ],
+  "exclude": [
+    "./modules/offlineMode",
+    "./node_modules",
+    "node_modules",
+    "modules/oxCabinet"
+  ]
+}

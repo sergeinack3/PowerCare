@@ -1,0 +1,117 @@
+div.body, table.body {
+  page-break-after: always;
+}
+
+div.body, table.body,
+div.bodyWithoutPageBreak, table.bodyWithoutPageBreak {
+  padding: 0;
+  font-size: 12px;
+}
+
+li {
+  margin-left: 32px;
+  padding-top: 3px;
+}
+
+div.header,
+div.footer {
+  position: fixed;
+  background: #ddd;
+  border: 0px solid #aaa;
+  width: 100%;
+  opacity: 0.9;
+  overflow: hidden;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  color: black;
+}
+
+h3 {
+  text-align: center;
+  border: 1px dotted #888;
+
+}
+
+td.left {
+  text-align: left;
+  width: 33%
+}
+
+td.right {
+  text-align: right;
+  width: 33%
+}
+
+td.center {
+  text-align: center;
+  width: 33%;
+}
+
+
+div.header {
+  top: 0;
+  border-bottom-width: 1px;
+}
+
+div.footer {
+  bottom: 0;
+  border-top-width: 1px;
+}
+
+div.footer table,
+div.header table {
+  width: 100%;
+}
+
+@media print {
+  div.header,div.footer {
+    opacity: 1;
+    background: #fff;
+  }
+  div.middle {
+    padding-top: 180px;
+    height: 0;
+  }
+}
+
+@media screen {
+  div.body, table.body {
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #888;
+  }
+}
+
+table#mainPane {
+  display:none;
+}
+
+div.body, table.body, div.bodyWithoutPageBreak, table.bodyWithoutPageBreak {
+  padding-top: {{$header}}em;
+  padding-bottom: {{$footer}}em;
+}
+
+/* Partie variable */
+@media print {
+  div.body, table.body,	div.bodyWithoutPageBreak, table.bodyWithoutPageBreak {
+    padding-top: {{$header+3}}em;
+    padding-bottom: {{$footer+3}}em;
+  }
+}
+
+div.header {
+  height: {{$header}}em;
+}
+
+div.footer {
+  height: {{$footer}}em;
+}
+
+input {
+  font-family: dejavu sans;
+  display: inline;
+}

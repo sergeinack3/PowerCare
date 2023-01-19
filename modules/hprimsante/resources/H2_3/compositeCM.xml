@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>CM</name>
+    <description>Identifier</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0">
+            <name>CM.1</name>
+            <description>Identifier</description>
+            <datatype>ST</datatype>
+        </field>
+
+        <field minOccurs="0" maxOccurs="0">
+          <name>CM.2</name>
+          <description>Sub identifier</description>
+          <datatype>ST</datatype>
+        </field>
+    </elements>
+</segment>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <!-- PBP (Patient Birth Place) !-->
+    <name>PBP</name>
+    <description>Birth Place of Patient</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0" length="99">
+            <name>PBP.1</name>
+            <description>Name of Town</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="99">
+            <name>PBP.2</name>
+            <description>Official Geographic Code (COG from INSEE)</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="99">
+            <name>PBP.3</name>
+            <description>Country (Code ISO-3166)</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="12">
+            <name>PBP.4</name>
+            <description>Postal Code</description>
+            <datatype>ST</datatype>
+        </field>
+    </elements>
+</segment>

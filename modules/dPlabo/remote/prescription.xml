@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<Prescription>
+  <numero>00170029</numero>
+  <Patient><nom>NOMPATIENT</nom>
+    <prenom>PrenomPatient</prenom>
+    <titre>5</titre>
+    <sexe>2</sexe>
+    <datenaissance>20000816</datenaissance>
+    <adresseligne1>6 rue de la combe aux bois</adresseligne1>
+    <adresseligne2/>
+    <codepostal>17000</codepostal>
+    <ville>LA ROCHELLE</ville>
+    <pays/>
+    <assurance/>
+  </Patient>
+  <Dossier>
+    <dateprelevement>20070817</dateprelevement>
+    <heureprelevement>12:42:53</heureprelevement>
+    <urgent>1</urgent>
+    <afaxer/>
+    <atelephoner/>
+  </Dossier>
+  <Analyse>
+    <code>POT</code>
+  </Analyse>
+</Prescription>

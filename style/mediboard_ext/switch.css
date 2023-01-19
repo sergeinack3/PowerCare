@@ -1,0 +1,100 @@
+/**
+ * @package Mediboard\Style\Mediboard
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+.me-switch {
+  text-align: left;
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+  position: relative;
+  display: inline;
+}
+.me-switch .me-switch_label {
+  position: static;
+  display: inline-block;
+  cursor: pointer !important;
+  padding-right: 30px;
+}
+.me-switch .me-switch_label::before, .me-switch .me-switch_label::after {
+  content: "";
+  position: absolute;
+  margin: 0;
+  outline: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  transition: all 0.25s ease;
+}
+.me-switch .me-switch_label::before {
+  right: 4px;
+  width: 26px;
+  height: 14px;
+  background-color: rgba(0, 0, 0, 0.13);
+  border-radius: 7px;
+}
+.me-switch .me-switch_label::after {
+  right: 17px;
+  width: 12px;
+  height: 12px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+}
+.me-switch .me-switch_input {
+  display: none;
+}
+.me-switch .me-switch_input:checked + .me-switch_label::before {
+  background-color: #3F51B5;
+}
+.me-switch .me-switch_input:checked + .me-switch_label::after {
+  transform: translate(12px, -50%);
+}
+.me-switch.me-switch_me-enabled {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.15px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.6);
+}
+.me-switch.me-switch_tamm {
+  float: right;
+  width: 140px;
+  margin: 7px 12px 0 0;
+}
+.me-switch.me-switch_tamm .me-switch_label::before {
+  background-color: #282828;
+}
+.me-switch.me-switch_ecap .me-switch_label {
+  color: #FFF;
+}
+.me-switch.me-switch_ecap .me-switch_label::before {
+  background-color: rgba(0, 0, 0, 0.21);
+}
+.me-switch.me-switch_tamm {
+  float: right;
+  width: 140px;
+  margin: 7px 12px 0 0;
+}
+.me-switch.me-switch_tamm .me-switch_label::before {
+  background-color: #282828;
+}
+.me-switch.me-switch_mediboard {
+  margin-right: 14px;
+}
+.me-switch.me-switch_aeroblue {
+  display: block;
+}
+.me-switch.me-switch_pluus {
+  float: right;
+  width: 140px;
+  margin: 7px 12px 0 0;
+}
+.me-switch.me-switch_pluus .me-switch_label::before {
+  background-color: rgba(0, 0, 0, 0.38);
+}
+
+.me-switch_ecap-text {
+  color: white;
+}

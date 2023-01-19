@@ -1,0 +1,63 @@
+<RetrieveValueSetResponse>
+    <ValueSet displayName="practiceSetting values for Connectathon" version="20081214" id="1.3.6.1.4.1.21367.101.6">
+        <ConceptList xml:lang="en-US">
+            <Concept code="1.3.6.1.4.1.21367.2009.9.999" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="XX SVS Connectathon Code"/>
+            <Concept code="Anesthesia" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Anesthesia"/>
+            <Concept code="Cardiology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Cardiology"/>
+            <Concept code="Case-Manager" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Case Manager"/>
+            <Concept code="Chaplain" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Chaplain"/>
+            <Concept code="Chemotherapy" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Chemotherapy"/>
+            <Concept code="Chiropractic" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Chiropractic"/>
+            <Concept code="Critical-Care" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Critical Care"/>
+            <Concept code="Dentistry" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Dentistry"/>
+            <Concept code="Diabetology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Diabetology"/>
+            <Concept code="Dialysis" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Dialysis"/>
+            <Concept code="Dialysis" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Dialysis"/>
+            <Concept code="Emergency" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Emergency"/>
+            <Concept code="Endocrinology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Endocrinology"/>
+            <Concept code="Gastroenterology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Gastroenterology"/>
+            <Concept code="General-Medicine" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="General Medicine"/>
+            <Concept code="General-Surgery" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="General Surgery"/>
+            <Concept code="Gynecology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Gynecology"/>
+            <Concept code="Home" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Home"/>
+            <Concept code="Labor-and-Delivery" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Labor and Delivery"/>
+            <Concept code="Laboratory" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Laboratory"/>
+            <Concept code="Multidisciplinary" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Multidisciplinary"/>
+            <Concept code="Neonatal-Intensive-Care" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Neonatal Intensive Care"/>
+            <Concept code="Neurosurgery" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Neurosurgery"/>
+            <Concept code="Nursery" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Nursery"/>
+            <Concept code="Nursing" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Nursing"/>
+            <Concept code="Obstetrics" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Obstetrics"/>
+            <Concept code="Occupational-Therapy" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Occupational Therapy"/>
+            <Concept code="Ophthalmology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Ophthalmology"/>
+            <Concept code="Optometry" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Optometry"/>
+            <Concept code="Orthopedics" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Orthopedics"/>
+            <Concept code="Otorhinolaryngology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Otorhinolaryngology"/>
+            <Concept code="Pathology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Pathology"/>
+            <Concept code="Perioperative" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Perioperative"/>
+            <Concept code="Pharmacacy" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Pharmacacy"/>
+            <Concept code="Physical-Medicine" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Physical Medicine"/>
+            <Concept code="Plastic-Surgery" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Plastic Surgery"/>
+            <Concept code="Podiatry" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Podiatry"/>
+            <Concept code="Psychiatry" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Psychiatry"/>
+            <Concept code="Pulmonary" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Pulmonary"/>
+            <Concept code="Radiology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Radiology"/>
+            <Concept code="Social-Services" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Social Services"/>
+            <Concept code="Speech-Therapy" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Speech Therapy"/>
+            <Concept code="Thyroidology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Thyroidology"/>
+            <Concept code="Tumor-Board" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Tumor Board"/>
+            <Concept code="Urology" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Urology"/>
+            <Concept code="Veterinary-Medicine" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Veterinary Medicine"/>
+        </ConceptList>
+    </ValueSet>
+</RetrieveValueSetResponse>

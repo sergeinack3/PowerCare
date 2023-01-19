@@ -1,0 +1,77 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+@use "sass:math";
+
+.me-switch {
+  text-align: left;
+  width: 100%;
+  padding: $space;
+  box-sizing: border-box;
+  position: relative;
+  display: inline;
+
+  $rail-width: 26px;
+  $rail-height: 14px;
+  $knob-size: 12px;
+
+  &:hover {
+    background-color: transparent !important;
+  }
+
+  .me-switch_label {
+    position: static;
+    display: inline-block;
+    cursor: pointer !important;
+    padding-right: $rail-width + $space;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      margin: 0;
+      outline: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      transition: all .25s ease;
+    }
+
+    &::before {
+      right: $space;
+      width: $rail-width;
+      height: $rail-height;
+      background-color: alpha(#000000, 13%);
+      border-radius: #{math.div($rail-height, 2)};
+    }
+
+    &::after {
+      right: #{$space + ($rail-width - $knob-size) - 1px};
+      width: $knob-size;
+      height: $knob-size;
+      background-color: #FFFFFF;
+      border-radius: 50%;
+    }
+  }
+
+  .me-switch_input {
+    display: none;
+
+    &:checked {
+      &+ .me-switch_label::before {
+        background-color: $primary;
+      }
+      &+ .me-switch_label::after {
+        transform: translate(#{$rail-width - $knob-size - 2px}, -50%);
+      }
+    }
+  }
+
+  &.me-switch_me-enabled {
+    @include subtitle1();
+    @include black-emphasis($opacity-medium-emphasis-black);
+  }
+}

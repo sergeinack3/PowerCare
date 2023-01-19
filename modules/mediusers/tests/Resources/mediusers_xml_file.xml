@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mediboard-export date="2021-05-26 16:42:34" root="CUser-9">
+  <object class="CUser" id="CUser-9">
+    <field name="user_username">Qualite</field>
+    <field name="user_type">9</field>
+    <field name="user_last_name">Qualite</field>
+    <field name="user_sexe">u</field>
+    <field name="force_change_password">0</field>
+    <field name="allow_change_password">1</field>
+    <field name="user_login_errors">0</field>
+    <field name="template">1</field>
+    <field name="is_robot">0</field>
+    <field name="dont_log_connection">0</field>
+  </object>
+  <hash hash_name="CPermModule" hash_value="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"/>
+  <hash hash_name="CPermObject" hash_value="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"/>
+  <hash hash_name="CPreferences" hash_value="e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"/>
+</mediboard-export>

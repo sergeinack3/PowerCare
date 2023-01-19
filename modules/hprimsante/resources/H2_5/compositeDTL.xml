@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>DTL</name>
+    <description>Lunar Date</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0" length="10">
+            <name>DTL.1</name>
+            <description>Value</description>
+            <datatype>Lunar Date</datatype>
+        </field>
+    </elements>
+</segment>

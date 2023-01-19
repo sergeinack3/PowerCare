@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+  <name>ZFD</name>
+  <description>Complement demographique</description>
+  <elements>
+    <field minOccurs="0" maxOccurs="1" length="8">
+      <name>ZFD.1</name>
+      <description>Date lunaire</description>
+      <datatype>NA</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="16">
+      <name>ZFD.2</name>
+      <description>Nombre de semaines de gestation</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="1">
+      <name>ZFD.3</name>
+      <description>Consentement SMS</description>
+      <datatype>ID</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="1">
+      <name>ZFD.4</name>
+      <description>Indicateur de date de naissance corrigée</description>
+      <datatype>IS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="8" table="9003">
+      <name>ZFD.5</name>
+      <description>Mode obtention de identité</description>
+      <datatype>IS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="26">
+      <name>ZFD.6</name>
+      <description>Date interrogation du téléservice INSi</description>
+      <datatype>TS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="16" table="9004">
+      <name>ZFD.7</name>
+      <description>Type de justificatif identité</description>
+      <datatype>IS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="26">
+      <name>ZFD.8</name>
+      <description>Date de fin de validité du document</description>
+      <datatype>TS</datatype>
+    </field>
+  </elements>
+</segment>

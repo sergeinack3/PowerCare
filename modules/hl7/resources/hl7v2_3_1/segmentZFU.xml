@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>ZFU</name>
+    <description>Custom segment</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0">
+            <name>ZFU.1</name>
+            <description>Nursing #Functional Unit</description>
+            <datatype>XON</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>ZFU.2</name>
+            <description>Nursing Functional Unit Start date/time</description>
+            <datatype>XON</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>ZFU.3</name>
+            <description>Nursing #Functional Unit</description>
+            <datatype>XON</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>ZFU.4</name>
+            <description>Nursing Functional Unit Start date/time</description>
+            <datatype>XON</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>ZFU.5</name>
+            <description>Nursing #Functional Unit</description>
+            <datatype>XON</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>ZFU.6</name>
+            <description>Nursing Functional Unit Start date/time</description>
+            <datatype>XON</datatype>
+        </field>
+    </elements>
+</segment>

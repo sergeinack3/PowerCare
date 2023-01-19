@@ -1,0 +1,43 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.SampleMovieAutocomplete {
+  align-items: center;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: $space*4;
+  padding: $space*3 $space*4;
+
+  &-cover {
+    height: 46px;
+    width: 34px;
+  }
+
+  &-coverImage {
+    border-radius: 4px;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &-content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space/2;
+  }
+
+  &-title {
+    @include body2;
+    @include on-background(high);
+  }
+
+  &-infos {
+    @include caption;
+    @include on-background(medium);
+  }
+}

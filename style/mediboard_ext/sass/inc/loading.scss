@@ -1,0 +1,383 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+#waitingMsgMask {
+  width: 100%;
+  position: absolute;
+  background-color:#333;
+  z-index: 1300;
+}
+
+#waitingMsgText {
+  width: 20%;
+  min-width: 150px;
+  position: fixed;
+  z-index: 1400;
+  font-size: 1.2em;
+  background-color: #fff;
+  color:#000;
+  border: 1px solid #999;
+  padding: 20px 5px;
+  text-align: center;
+  border-radius: 4px;
+  .loading {
+    display: inline;
+  }
+}
+
+div#waitingMsgText,
+div.monSuperchargement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  opacity: 1;
+  background: transparent;
+  border: 0px solid black;
+}
+div#waitingMsgMask {
+  opacity: 0.5 !important;
+  background: #111111;
+}
+
+.nav-loading{
+  width: 64px;
+  height: 64px;
+  &::after {
+    animation-delay: -0.5s;
+  }
+}
+
+.nav-loading::before,
+.nav-loading::after
+//,
+//.ajax-loading::before,
+//.ajax-loading::after
+{
+  content: "";
+  position: absolute;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  animation-name: loadingAnimation;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0, 0.2, 0.8, 1);
+  animation-iteration-count: infinite;
+  margin: auto;
+  opacity: 0;
+}
+
+@keyframes loadingAnimation {
+  0% {
+    margin-top: 28px;
+    margin-left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    margin-top: -1px;
+    margin-left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
+}
+
+/**
+  Ajax loading
+ */
+
+div.ajax-loading {
+  background-image: none;
+  //background-color: #353535;
+  //opacity: 0.3;
+  border-radius: 4px;
+  text-align: center;
+  //animation-name: ajaxLoadingAnimation;
+  //animation-duration: 2s;
+  //animation-iteration-count: 1;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  //&::before,
+  //&::after{
+  //  width: 0;
+  //  height: 0;
+  //  opacity: 1;
+  //  border: 2px solid #fff;
+  //  will-change: width, opacity;
+  //  animation-name: littleLoadingAnimation;
+  //  animation-duration: 1s;
+  //  animation-timing-function: cubic-bezier(0, 0.2, 0.8, 1);
+  //  animation-iteration-count: infinite;
+  //}
+  //&::after {
+  //  animation-delay: -0.5s;
+  //}
+
+  &[style*="height"] {
+    height: auto !important;
+  }
+}
+
+// Suppression de plusieurs chargement a la suite
+.cover-container ~ .cover-container {
+  display: none;
+}
+
+@keyframes littleLoadingAnimation {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    width: 29px;
+    height: 29px;
+    opacity: 0;
+  }
+}
+@keyframes littleLoadingAnimationIE {
+  0% {
+    margin-top: 15px;
+    margin-left: 0;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    margin-top: 0;
+    margin-left: -15px;
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width:0\0) and (min-resolution:+72dpi), \0screen\,screen\9 {
+  div.ajax-loading {
+    &::before,
+    &::after {
+      animation-name: littleLoadingAnimationIE;
+    }
+  }
+}
+
+@keyframes inputLoadingAnimation {
+  0% {
+    margin-top: -2px;
+    margin-right: 6px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    margin-top: -10px;
+    margin-right: -2px;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+  }
+}
+
+@keyframes smallInputLoadingAnimation {
+  0% {
+    margin-top: -2px;
+    margin-right: 2px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    margin-top: -8px;
+    margin-right: -2px;
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+  }
+}
+
+
+@keyframes ajaxLoadingAnimation {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+
+/******************************
+  LOGO WOOWOO
+ ******************************/
+//.displayed .nav-loading,
+////.displayed .nav-loading > div {
+////  animation-play-state: running;
+////}
+////.nav-loading {
+////  position: relative;
+////  width: 64px;
+////  height: 64px;
+////  animation-play-state: paused;
+////  animation-name: logoWoowooAnimation;
+////  animation-duration: 3s;
+////  animation-iteration-count: infinite;
+////  animation-timing-function: cubic-bezier(0,1.23,1,.84);
+////  & > div {
+////    position: absolute;
+////    width: 100%;
+////    height: 100%;
+////    top: 0;
+////    left: 0;
+////    background-repeat: no-repeat;
+////    animation-play-state: paused;
+////    animation-name: logoWoowooElement1Animation;
+////    animation-timing-function: ease-in-out;
+////    animation-duration: 3s;
+////    animation-iteration-count: infinite;
+////    mask-size: cover;
+////    -webkit-mask-size: cover;
+////    mask-image: url(./images/icons/svg2.svg);
+////    -webkit-mask-image: url(./images/icons/svg2.svg);
+////    background-image: radial-gradient(circle, rgba(3,169,244,1) 0%, rgba(1,203,253,1) 70%, rgba(1,204,253,0) 70%, rgba(0,212,255,0) 100%);
+////
+////  }
+////  & > div:first-of-type {
+////    animation-name: logoWoowooElement2Animation;
+////    mask-image: url(./images/icons/svg.svg);
+////    -webkit-mask-image: url(./images/icons/svg.svg);
+////    background-image: radial-gradient(circle, rgba(63,81,181,1) 0%, rgba(63,81,181,1) 70%, rgba(1,204,253,0) 70%, rgba(0,212,255,0) 100%);
+////  }
+////}
+////
+////@keyframes logoWoowooAnimation {
+////  0%  {transform: rotate(0deg);}
+////  100%{transform: rotate(-2160deg);}
+////}
+////
+////@keyframes logoWoowooElement1Animation {
+////  0% {
+////    left: -3px;
+////    top: 3px;
+////    background-position: 0px -20px;
+////  }
+////  20% {
+////    left: -3px;
+////    top: 3px;
+////    background-position: 0px -20px;
+////  }
+////  30%{
+////    left: 0px;
+////    top: 0px;
+////    background-position: 0px 0px;
+////  }
+////  100%  {
+////    left: 0px;
+////    top: 0px;
+////    background-position: 0px 0px;
+////  }
+////}
+////@keyframes logoWoowooElement2Animation {
+////  0% {
+////    left: 3px;
+////    top: -3px;
+////    background-position: 0px 20px;
+////  }
+////  20% {
+////    left: 3px;
+////    top: -3px;
+////    background-position: 0px 20px;
+////  }
+////  30%{
+////    left: 0px;
+////    top: 0px;
+////    background-position: 0px 0px;
+////  }
+////  100%{
+////    left: 0px;
+////    top: 0px;
+////    background-position: 0px 0px;
+////  }
+////}
+
+
+/******************************
+  Material Bars loading
+ ******************************/
+
+
+@keyframes LoadingBarIncreaseAnimation {
+  from { left: -5%; width: 5%; }
+  to { left: 130%; width: 100%;}
+}
+@keyframes LoadingBarDecreaseAnimation {
+  from { left: -80%; width: 80%; }
+  to { left: 110%; width: 10%;}
+}
+
+@keyframes LoadingBarContainerAnimation {
+  0%   {opacity: 0;}
+  25%  {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+div.ajax-loading {
+  position: absolute;
+  overflow: hidden;
+  background: none !important;
+  opacity: 1;
+  z-index: 499;
+  animation-name: LoadingBarContainerAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+
+  &::after,
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 100%;
+    content: " ";
+    display: inline-block;
+    width: 0;
+    height: 4px;
+    border-radius: 2px;
+    opacity: 0.75;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  &::after {
+    background: $primary;
+    animation-name: LoadingBarIncreaseAnimation;
+  }
+
+  &::before {
+    background: $secondary;
+    animation-name: LoadingBarDecreaseAnimation;
+    animation-delay: .5s;
+  }
+}
+
+/**
+  Webkit scintillement fix
+ */
+.modal > .content[data-loaded="0"] {
+  overflow: hidden !important;
+
+  > .cover-container {
+    overflow: visible;
+
+    > div.ajax-loading {
+      animation: none;
+      background: $white !important;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{# @author  SAS OpenXtrem <dev@openxtrem.com> #}
+{# @license https://www.gnu.org/licenses/gpl.html GNU General Public License #}
+{# @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License #}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>OX APIs documentation</title>
+    <link rel="stylesheet" href="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui.css"/>
+    <link rel="icon" type="image/x-icon" href="../style/mediboard_ext/images/icons/favicon.ico"/>
+    <style>
+      html {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        margin: 0;
+        background: #fafafa;
+      }
+
+      #swagger-ui > div > div:nth-child(2) > div.information-container.wrapper {
+        background-image: url('../images/icons/ox.svg');
+        background-repeat: no-repeat;
+        background-position: right;
+        background-size: contain;
+      }
+    </style>
+</head>
+
+<body>
+<div id="swagger-ui"></div>
+
+<script src="https://unpkg.com/swagger-ui-dist@4.5.0/swagger-ui-bundle.js" crossorigin></script>
+
+<script type="text/javascript">
+
+  window.onload = () => {
+    const ui = SwaggerUIBundle({
+      url:         window.location.href + "{{ documentation }}",
+      dom_id:      '#swagger-ui',
+      deepLinking: true,
+      presets:     [
+        SwaggerUIBundle.presets.apis
+      ],
+      filter:      true
+    })
+    window.ui = ui
+  }
+</script>
+</body>
+</html>

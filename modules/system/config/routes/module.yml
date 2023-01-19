@@ -1,0 +1,90 @@
+system_legacy_modules_show:
+  path: api/legacy/modules/{mod_name}
+  controller: Ox\Mediboard\System\Controllers\ModulesController::showModuleLegacy
+  methods: GET
+  defaults:
+    permission: none
+  requirements:
+    mod_name: '\w+'
+  options:
+    description: Show module informations
+    accept:
+      - application/json
+
+system_modules_show:
+  path: api/modules/{mod_name}
+  controller: Ox\Mediboard\System\Controllers\ModulesController::showModule
+  methods: GET
+  defaults:
+    permission: none
+  requirements:
+    mod_name: '\w+'
+  options:
+    description: Show module informations for AppBar
+    accept:
+      - application/json
+
+system_modules_list:
+  path: api/modules
+  controller: Ox\Mediboard\System\Controllers\ModulesController::listModules
+  methods: GET
+  defaults:
+    permission: none
+  options:
+    description: List modules
+    accept:
+      - application/json
+    parameters:
+      state: installed|active|visible
+
+system_modules_tabs_list:
+  path: api/modules/{mod_name}/tabs
+  controller: Ox\Mediboard\System\Controllers\TabController::listModuleTabs
+  methods: GET
+  defaults:
+    permission: none
+  options:
+    description: List tabs for module
+    accept:
+      - application/json
+
+system_modules_routes_list:
+  path: api/modules/{mod_name}/routes
+  controller: Ox\Mediboard\System\Controllers\ModulesController::listModuleRoutes
+  methods: GET
+  defaults:
+    permission: none
+  options:
+    description: List routes for module
+    accept:
+      - application/json
+
+system_modules_pinned_tabs_show:
+  path: api/modules/{mod_name}/pin
+  controller: Ox\Mediboard\System\Controllers\TabController::showPinnedTabs
+  methods: GET
+  defaults:
+    permission: none
+  requirements:
+    mod_name: '\w+'
+  options:
+    description: Show pinned tabs for module informations
+    accept:
+      - application/json
+
+system_modules_pinned_tabs_set:
+  path: api/modules/{mod_name}/tabs
+  controller: Ox\Mediboard\System\Controllers\TabController::setPinnedTab
+  methods: POST
+  defaults:
+    permission: none
+  requirements:
+    mod_name: '\w+'
+  options:
+    description: Remove all pinned tabs for the module and set pinned tabs from request body
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json

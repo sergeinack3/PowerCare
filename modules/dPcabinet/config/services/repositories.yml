@@ -1,0 +1,9 @@
+# @link https://symfony.com/doc/current/service_container.html
+# @link https://symfony.com/doc/current/service_container/calls.html
+services:
+  # Declare all the classes in the namespace Ox\Mediboard\Sample\Repositories as services.
+  # All the repositories inherit the configuration from their parent Ox\Core\Repositories\AbstractRequestApiRepository.
+  # The parent add the call to the method initFromRequest when the repository is autowired.
+  Ox\Mediboard\Cabinet\Repositories\:
+    resource: '../../classes/Repositories/*'
+    parent: Ox\Core\Repositories\AbstractRequestApiRepository

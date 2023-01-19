@@ -1,0 +1,74 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+.Offline-customBackground {
+  @include custom-background-cover;
+}
+
+.OfflineCard {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 860px;
+  height: 530px;
+  background-color: white;
+  box-shadow: 0 11px 15px rgba(0, 0, 0, 0.2), 0 9px 46px rgba(0, 0, 0, 0.12), 0 24px 38px rgba(0, 0, 0, 0.14);
+  border-radius: 12px;
+  padding: 28px;
+
+  &-catchPhrase {
+    @include h3;
+    @include black-emphasis($opacity-high-emphasis-black);
+    margin-bottom: 24px;
+  }
+
+  &-text {
+    text-align: center;
+    margin-top: 32px;
+  }
+
+  &-desc {
+    @include body1;
+    @include black-emphasis(0.6);
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+  }
+
+  &-action {
+    margin-top: 40px;
+  }
+
+  &-primaryButton {
+    font-size: 14px !important;
+    line-height: 16px !important;
+    letter-spacing: 0.75px !important;
+    padding: $space $space*4 !important;
+    height: auto !important;
+    border-radius: 99px !important;
+  }
+
+  &-logo {
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    width: 156px;
+    height: auto;
+  }
+
+  &-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>ZFP</name>
+    <description>Situation professionnelle</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="1" length="1">
+            <name>ZFP.1</name>
+            <description>Activite socio-professionnelle</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="2">
+            <name>ZFP.2</name>
+            <description>Categorie socio-professionnelle</description>
+            <datatype>ID</datatype>
+        </field> 
+    </elements>
+</segment>

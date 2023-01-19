@@ -1,0 +1,211 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+$texticon_colors: (
+  "allergies-ok"      : #007F00,
+  "allergies-warning" : #BA2222,
+  "atcd"              : #fd7d26,
+  "perm-planned"      : #fd7d26,
+  "at"                : #037f48,
+  "cond"              : #8a2be2,
+  "extempo"           : #14c20b,
+  "generique"         : #009866,
+  "perm-finished"     : #009866,
+  "ghs"               : #047f49,
+  "idext"             : #990303,
+  "hopital"           : #0833b5,
+  "perm-progress"     : #0833b5,
+  "isolement"         : #029902,
+  "lt"                : #980000,
+  "ssr"               : #0066cb,
+  "medicament"        : #6698fe,
+  "mutation"          : #0134fe,
+  "back-sas"          : #0066cb,
+  "alert-sas"         : #cb0000,
+  "premed"            : #c49c01,
+  "referents"         : #0066cb,
+  "rpu"               : #aa0000,
+  "stup"              : #ff0000,
+  "timestamp"         : #0066cb,
+  "t2a"               : #027f48,
+  "uf"                : #346701,
+  "uf-warning"        : #fd0101,
+  "lateObjectifSoin"  : #ff6f42,
+  "gray"              : #999999,
+  "grossesse"         : #c961af,
+  "exc"               : #34A848,
+  "derive_sanguin"    : #880000,
+  "ko"                : $error-color
+);
+
+.texticon,
+.me-texticon {
+  @include border-radius();
+  @include caption();
+  font-weight: normal !important;
+  display: inline-block;
+  height: 18px;
+  min-width: 18px;
+  padding: 0 $space;
+  line-height: 17px;
+  @include black-emphasis($opacity-medium-emphasis-black);
+  background: $white;
+  @include black-emphasis-color($opacity-medium-emphasis-black);
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: $small-space;
+  text-align: center;
+  border-radius: 12px;
+
+  &.texticon-stroke,
+  &.texticon-stroke_light {
+    &::after {
+      position: absolute;
+      content: "";
+      left:0;
+      right: 0;
+      width: 95%;
+      height: 4px;
+      top: 4px;
+      margin: auto;
+      transform: rotate(18deg);
+      border-bottom: 1px solid $error-color;
+      opacity: .5;
+    }
+    &.texticon-stroke::after {
+      border-bottom-width: 2px;
+    }
+  }
+  @each $class, $color in $texticon_colors {
+    &.texticon-#{$class} {
+      color: $color;
+      border-color: $color;
+      background-color: alpha($color, 8%);
+    }
+  }
+
+  &.texticon-atnc {
+    background: #425055;
+  }
+
+  &.texticon-archive {
+    background: #929292;
+    font-weight: bold;
+  }
+
+  &.texticon-uhcd {
+    background: #356702;
+  }
+
+  &.texticon-biosim {
+    background: #7f007f;
+    color: $white;
+  }
+
+  &.texticon-lt {
+    letter-spacing: normal;
+    text-align: center;
+
+    &::after {
+      transform: rotate(38deg);
+    }
+  }
+
+  &.texticon-ok {
+    color: $success-color;
+    border-color: $success-color;
+  }
+
+  &.texticon-gray {
+    color: $grey-300;
+    border-color: $grey-300;
+    background: $white;
+  }
+
+
+
+  &.texticon-perop,
+  &.texticon-traitement,
+  &.premedication,
+  &.texticon-highlight_red {
+    color: #212121;
+  }
+  &.texticon-perop {
+    box-shadow: 0px 1px 4px 0px #fcc;
+    background: #fcc;
+  }
+
+  &.texticon-traitement {
+    box-shadow: 0px 1px 4px 0px #bdb;
+    background: #bdb;
+  }
+
+  &.premedication {
+    box-shadow: 0px 1px 4px 0px #ffa;
+    background: #ffa;
+  }
+
+  &.texticon-highlight_red {
+    box-shadow: 0px 1px 4px 0px #f66;
+    background: #f66;
+  }
+
+  &.texticon-sejour-conf {
+    font-weight: bold !important;
+    text-transform: capitalize;
+    color: #795548;
+    background-color: white;
+    letter-spacing: 0.5px;
+  }
+
+  /**
+    BHRe C
+   */
+  &[style*="color: orange; font-weight: bold;"] {
+    background: #fd7d2624;
+    color: #fd7d26 !important;
+    border: 1px solid #fd7d2624;
+    box-shadow: 1px 1px 5px -3px #fd7d26;
+  }
+  /**
+    BHRe R
+   */
+  &[style*="color: hotpink; font-weight: bold;"] {
+    background: #C7158524;
+    color: #C71585 !important;
+    border: 1px solid #C7158524;
+    box-shadow: 1px 1px 5px -3px #C71585;
+  }
+  /**
+    BMR+
+   */
+  &[style*="color: red; font-weight: bold;"] {
+    background: #B2222224;
+    color: #B22222 !important;
+    border: 1px solid #B2222224;
+    box-shadow: 1px 1px 5px -3px #B22222;
+  }
+
+  /**
+    TAMM
+   */
+  &.me-texticon-alert {
+    font-size: 11px !important;
+  }
+}
+
+body .texticon[onmouseover] {
+  border-bottom-style: solid;
+  border-bottom-color: initial;
+}
+
+body div strong {
+  &.texticon,
+  &.me-texticon {
+    line-height: 21px;
+  }
+}

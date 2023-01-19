@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>MSG</name>
+    <description>Message Type</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0" length="3" table="0076">
+            <name>MSG.1</name>
+            <description>Message Code</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="3" table="0003">
+            <name>MSG.2</name>
+            <description>Trigger Event</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="7" table="0354">
+            <name>MSG.3</name>
+            <description>Message Structure</description>
+            <datatype>ID</datatype>
+        </field>
+    </elements>
+</segment>

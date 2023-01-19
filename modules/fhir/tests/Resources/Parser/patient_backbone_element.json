@@ -1,0 +1,15 @@
+{
+  "resourceType": "Patient",
+  "communication" : [
+    {
+      "language" : {
+        "coding" : {
+          "system" : "input system",
+          "code": "fr-Fr",
+          "display": "Fr"
+        }
+      },
+      "preferred": true
+    }
+  ]
+}

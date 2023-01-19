@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>LA2</name>
+    <description>Location with Address Variation 2</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0" length="20" table="0302">
+            <name>LA2.1</name>
+            <description>Point of Care</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20" table="0303">
+            <name>LA2.2</name>
+            <description>Room</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20" table="0304">
+            <name>LA2.3</name>
+            <description>Bed</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="227">
+            <name>LA2.4</name>
+            <description>Facility</description>
+            <datatype>HD</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20" table="0306">
+            <name>LA2.5</name>
+            <description>Location Status</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20" table="0305">
+            <name>LA2.6</name>
+            <description>Patient Location Type</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20" table="0307">
+            <name>LA2.7</name>
+            <description>Building</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20" table="0308">
+            <name>LA2.8</name>
+            <description>Floor</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="120">
+            <name>LA2.9</name>
+            <description>Street Address</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="120">
+            <name>LA2.10</name>
+            <description>Other Designation</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="50">
+            <name>LA2.11</name>
+            <description>City</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="50">
+            <name>LA2.12</name>
+            <description>State or Province</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="12">
+            <name>LA2.13</name>
+            <description>Zip or Postal Code</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="3" table="0399">
+            <name>LA2.14</name>
+            <description>Country</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="3" table="0190">
+            <name>LA2.15</name>
+            <description>Address Type</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="50">
+            <name>LA2.16</name>
+            <description>Other Geographic Designation</description>
+            <datatype>ST</datatype>
+        </field>
+    </elements>
+</segment>

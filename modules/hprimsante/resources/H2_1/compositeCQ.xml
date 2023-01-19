@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>CQ</name>
+    <description>Extended Composite ID with Check Digit</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0" length="64">
+            <name>CQ.1</name>
+            <description>Quantity</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="64">
+            <name>CX.2</name>
+            <description>units</description>
+            <datatype>CE</datatype>
+        </field>
+    </elements>
+</segment>

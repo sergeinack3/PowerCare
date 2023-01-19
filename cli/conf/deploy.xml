@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<groups>
+  <group name="mediboard">
+    <instance path="/var/www/html" shortname="mediboard" />
+  </group>
+</groups>

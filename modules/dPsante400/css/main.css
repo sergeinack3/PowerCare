@@ -1,0 +1,53 @@
+/**
+ * @package Mediboard\Sante400
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.idex-special {
+  font-size: 0.9em;
+  padding: 1px;
+  border-radius: 3px;
+  background: white;
+  line-height: 1;
+}
+
+.idex-special-IPP {
+  border: 1px solid #2D9A00;
+  color: #2D9A00;
+}
+
+.idex-special-NDA {
+  border: 1px solid #0000cc;
+  color: #0000cc;
+}
+
+.idex-special-VN {
+  border: 1px solid #cc8304;
+  color: #cc8304;
+}
+
+.idex-special-software {
+  border: 1px solid #FF0000;
+  color: #FF0000;
+}
+
+.idex-special-transport {
+  border: 1px solid #1abc9c;
+  color: #1abc9c;
+}
+
+.idex-special-LOINC {
+  border: 1px solid #a53232;
+  color: #a53232;
+}
+
+.idex-special-SNOMED {
+  border: 1px solid #00a9e0;
+  color: #00a9e0;
+}
+
+button.ipp_nda:before, a.button.ipp_nda:before {
+  content: url(../../../modules/dPsante400/images/ipp_nda.png);
+}

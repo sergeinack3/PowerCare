@@ -1,0 +1,8 @@
+eai_messages:
+  path: /api/eai/messages
+  controller: Ox\Interop\Eai\Controllers\CEAIController::receiveMessage
+  methods: POST
+  defaults:
+    permission: edit
+  options:
+    description: Receive message

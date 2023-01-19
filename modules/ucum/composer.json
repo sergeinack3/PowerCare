@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Mediboard\\Ucum\\": "classes",
+      "Ox\\Mediboard\\Ucum\\Tests\\": "tests"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message>
+    <name>ADM</name>
+    <description>Admission</description>
+    <segments>
+        <segment>H</segment>
+        <group minOccurs="1" maxOccurs="unbounded" name="PATIENT">
+            <segment>P</segment>
+        </group>
+        <segment>L</segment>
+    </segments>
+</message>

@@ -1,0 +1,20 @@
+build:
+  - composer install --no-dev --optimize-autoloader
+  - bin/console dotenv:dump prod
+  - bin/console cache:clear
+  - npm install --no-save
+  - npm run build
+deploy:
+  rsync:
+    exclude:
+      - cli/conf/deploy.xml
+      - cli/conf/exclude.xml
+      - cli/conf/mysqlbackup.xml
+      - images/pictures/logo_custom.png
+      - includes/config.php
+      - includes/config_overload.php
+      - modules/monitorClient/cli/conf/monitoring.xml
+      - shell/rsyncupdate.conf
+      - shell/rsyncupdate.exclude
+      - files
+      - tmp

@@ -1,0 +1,2739 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+
+body {
+  div.rank {
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+
+  div.progressBar,
+  div.progressBarModern {
+    background: #121212;
+    border: 1px solid #1C1C1C;
+
+    > div.bar {
+      background: repeating-linear-gradient(45deg, $elevation-4, $elevation-4 10px, $elevation-6 10px, $elevation-6 20px);
+      background: $elevation-4;
+
+      &.empty {
+        background: repeating-linear-gradient(45deg,#3d3152,#3d3152 10px, #4b3a61 10px,#4b3a61 20px);
+        border: 1px solid #443958;
+      }
+
+      &.normal,
+      &.bar-ok {
+        background: repeating-linear-gradient(45deg, #1c511c,#1c511c 10px, #236423 10px,#236423 20px);
+        border: 1px solid #1b401b;
+      }
+
+      &.booked,
+      &.bar-warning {
+        border: 1px solid #7b5416;
+        background: repeating-linear-gradient(45deg, #6b4a18,#6b4a18 10px, #81571d 10px,#81571d 20px);
+      }
+
+      &.full,
+      &.bar-error {
+        background: repeating-linear-gradient(45deg, #7c2b25,#7c2b25 10px, #942b23 10px,#942b23 20px);
+        border: 1px solid #722c27;
+      }
+    }
+
+    div.bar.full ~ .text {
+      text-shadow: none;
+      a {
+        &,
+        &:link,
+        &:visited,
+        &:active,
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  div.folder {
+    &:hover {
+      background-color: $primary-50;
+    }
+
+    &.selected,
+    &.selected:hover {
+      background-color: $primary-50;
+      color: $primary;
+    }
+  }
+
+  span.countertip {
+    position: absolute;
+    background-color: $elevation-16;
+    @include black-emphasis($opacity-high-emphasis-black);
+  }
+
+  span.circled,
+  div.circled {
+    border: 1px solid $grey-700;
+    @include black-emphasis($opacity-high-emphasis-black);
+  }
+
+  ul.tags > li.tag button.delete {
+    transition: none;
+    &:hover {
+      filter: brightness(8);
+    }
+  }
+
+  .idex-special {
+    background: transparent;
+  }
+
+  .idex-special-IPP {
+    border: 1px solid #6cb94d;
+    color: #6cb94d;
+  }
+
+  .idex-special-NDA {
+    border: 1px solid #a9a9ef;
+    color: #a9a9ef;
+  }
+
+  .idex-special-VN {
+    border: 1px solid #e7c385;
+    color: #e7c385;
+  }
+
+  .idex-special-software {
+    border: 1px solid #ff8383;
+    color: #ff8383;
+  }
+
+  .idex-special-transport {
+    border: 1px solid #8fdecf;
+    color: #8fdecf;
+  }
+
+  .idex-special-LOINC {
+    border: 1px solid #e1b9b9;
+    color: #e1b9b9;
+  }
+
+  .idex-special-SNOMED {
+    border: 1px solid #83d5f1;
+    color: #83d5f1;
+  }
+
+
+  // Surcharge des couleurs pour theme white
+  td {
+    &[style*="background-color: #ccc"] {
+      background-color: $grey-50 !important;
+    }
+    &[style*="background-color: #fc0"] {
+      background-color: #ffe061 !important;
+
+      strong {
+        @include white-emphasis($opacity-high-emphasis-white);
+      }
+    }
+    &[style*="background-color:Khaki"] {
+      background-color: #4a4836 !important;
+    }
+  }
+
+  .flot-x-axis,
+  .flot-y-axis {
+     div {
+       @include black-emphasis($opacity-medium-emphasis-black, true);
+     }
+  }
+
+  .legendLabel {
+    @include black-emphasis($opacity-medium-emphasis-black, true);
+  }
+
+  ul.tags {
+    li.tag {
+      text-shadow: 0 0 0 transparent,-1px 0 0 rgba(0,0,0,.7),0 1px 0 rgba(0,0,0,.7),1px 0 0 rgba(0,0,0,.7),0 -1px 0 rgba(0,0,0,.7);
+    }
+  }
+
+  /********************************************
+               DOSSIER PATIENT
+  ********************************************/
+  div.me-button-toolbar {
+    @include not-vue {
+      @include add-elevation();
+      border: none;
+    }
+  }
+
+  // Nouvelle page creation / modification patient
+  div.me-poc-container {
+    div.me-list-categories {
+      div.me-categorie-form {
+        border: none;
+        @include add-elevation();
+      }
+    }
+  }
+
+  table.table_icon_fileview:hover {
+    @include add-elevation(3);
+  }
+
+  span.status-prov {
+    color: $red;
+  }
+
+  span.status-recup {
+    color: $blue;
+  }
+
+  /********************************************
+            FIN DOSSIER PATIENT
+  ********************************************/
+
+
+  /********************************************
+               DOSSIER DE SOIN
+  *********************************************/
+  h2.me-change-date-soin {
+    @include black-emphasis($opacity-high-emphasis-black);
+  }
+
+  table.me-patient-banner {
+    .texticon {
+      background-color: $primary-darken !important;
+    }
+    .circled {
+      background-color: $primary-darken !important;
+      border-color: $primary-darken;
+    }
+  }
+
+  div#content-dossier-soins {
+    @include add-elevation();
+    border-left: none;
+    border-right: none;
+  }
+
+  /** Suivi **/
+  div#plan_soins_view {
+    td {
+      &.td_hour_adm:hover,
+      &.curr_hour_plan_soins {
+        background-color: alpha($secondary-50, 50%) !important;
+      }
+
+      &[style*="background-color: rgb(255, 255, 221);"] {
+        background: alpha($secondary-50, 25%) !important;
+        &.curr_hour_plan_soins,
+        &:hover {
+          background-color: alpha($secondary-50, 50%) !important;
+        }
+      }
+      &[style*="background-color: rgb(202, 255, 186);"] {
+        background: rgba(202, 255, 186, .2) !important;
+        &.curr_hour_plan_soins,
+        &:hover {
+          background-color: rgba(202, 255, 186, .28) !important;
+        }
+      }
+      span.hour_adm {
+        top: -16px;
+      }
+    }
+    .texticon.texticon-hopital {
+      border: none;
+    }
+  }
+  .administration {
+    @include black-emphasis(1);
+    &.administration-selected {
+      margin: -1px;
+      border: 2px solid $white !important;
+    }
+  }
+  .a_administrer,
+  .administration_partielle,
+  .administre,
+  .non_administre,
+  .administration_annulee {
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+
+  div.menu_prescription_common,
+  div.menu_prescription_search,
+  div.menu_prescription_print,
+  div.menu_prescription_volume {
+    background-color: $elevation-24 !important;
+    border: none !important;
+  }
+
+  .me-timing-dossier-soin {
+    &[style*="background-color"] {
+      background-color: $primary-darken !important;
+    }
+  }
+
+  table.me-patient-banner {
+    button,
+    button[type=button],
+    button[type=submit],
+    a.button,
+    a.me-button {
+      &.me-tertiary,
+      &.me-tertiary.me-dark,
+      &.me-secondary,
+      &.me-primary {
+        @include not-vue {
+          color: $secondary-900 !important;
+
+          &::before {
+            color: $secondary-900 !important;
+          }
+        }
+      }
+    }
+  }
+
+  div.me-constante-comment {
+    @include add-elevation(3, true);
+    border: none !important;
+  }
+
+
+  tr.already_prescrit {
+    border: 2px solid #da0 !important;
+  }
+
+  td.already_prescrit {
+    background: #5b5b27 !important;
+  }
+
+  td.warning_debut {
+    background: #5b5b27 !important;
+    outline: 1px solid #da0;
+  }
+  table.tbl th.autogestion, table.tbl td.autogestion, table.tbl tr:hover td.autogestion,
+  tr.autogestion th, tr.autogestion:hover th {
+    background-color: #7a6b51 !important;
+  }
+  table.tbl th.traitement, table.tbl td.traitement, table.tbl tr:hover td.traitement,
+  tr.traitement th, tr.traitement:hover th,
+  div.traitement {
+    background-color: #1a481a !important;
+  }
+  table.tbl th.perop, table.tbl td.perop, table.tbl tr:hover td.perop,
+  tr.perop th, tr.perop:hover th {
+    background-color: #452020 !important;
+  }
+  table.tbl th.premedication, table.tbl td.premedication, table.tbl tr:hover td.premedication,
+  tr.premedication th, tr.premedication:hover th {
+    background-color: #5d5d1e !important;
+  }
+  table.tbl th.highlight_red, table.tbl td.highlight_red, table.tbl tr:hover td.highlight_red, table.tbl td span.highlight_red,
+  tr.highlight_red th, tr.highlight_red:hover th {
+    background-color: #643636 !important;
+  }
+
+  div.chapitres-container.selected,
+  div.categories-container.selected,
+  div.gestes-container.selected,
+  div.precisions-container.selected,
+  div.valeurs-container.selected {
+    background-color: #646444 !important;
+  }
+
+  /* Geste perop */
+  ul#chapitres_geste,
+  ul#categories_geste,
+  ul#gestes_geste,
+  ul#precisions_geste,
+  ul#valeurs_geste {
+    border: none;
+  }
+
+  ul#chapitres_geste li div.chapitres-container,
+  ul#categories_geste li div.categories-container,
+  ul#gestes_geste li div.gestes-container,
+  ul#precisions_geste li div.precisions-container,
+  ul#valeurs_geste li div.valeurs-container {
+    @include add-elevation();
+  }
+
+  ul#chapitres_geste li:nth-of-type(odd) div.chapitres-container,
+  ul#categories_geste li:nth-of-type(odd) div.categories-container,
+  ul#gestes_geste li:nth-of-type(odd) div.gestes-container,
+  ul#precisions_geste li:nth-of-type(odd) div.precisions-container,
+  ul#valeurs_geste li:nth-of-type(odd) div.valeurs-container {
+    @include add-elevation(2);
+  }
+
+  ul#chapitres_geste li div.chapitres-container:hover,
+  ul#categories_geste li div.categories-container:hover,
+  ul#gestes_geste li div.gestes-container:hover,
+  ul#precisions_geste li div.precisions-container:hover,
+  ul#valeurs_geste li div.valeurs-container:hover {
+    background-color: rgba(168, 183, 235, 0.30);
+  }
+
+  #div_vue_medecin td, #table_timeline td {
+    @include add-elevation();
+    border-left-color: #424242;
+    border-right-color: #424242;
+  }
+
+  /********************************************
+              FIN DOSSIER DE SOIN
+  *********************************************/
+
+  /********************************************
+              ADMISSIONS
+  *********************************************/
+  .sejour-type-default,
+  .sejour-type-ambu,
+  .sejour-type-comp,
+  .sejour-type-exte,
+  .sejour-type-consult {
+    > td::before {
+      opacity: 0.3;
+    }
+  }
+
+  /********************************************
+                FIN ADMISSIONS
+   *********************************************/
+
+
+  /********************************************
+                     BLOC
+  *********************************************/
+  table.planningBloc {
+    td {
+      &.plageop {
+        text-shadow: none !important;
+      }
+      &.me-plageop {
+        position: relative;
+        text-shadow: 0 0 0 rgba(0, 0, 0, 0), -1px 0 0 rgba(0,0,0), 0 1px 0 rgba(0,0,0), 1px 0 0 rgba(0,0,0), 0 -1px 0 rgba(0,0,0) !important;
+
+        span {
+          text-shadow: none !important;
+        }
+
+        .me-plageop-container {
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .35);
+          }
+
+          div,
+          strong,
+          a {
+            position: relative;
+          }
+        }
+
+        div.progressBar {
+          background-color: alpha($white, 0.2);
+          border-color: alpha($white, 0.2);
+          opacity: .5;
+        }
+
+        div.folder {
+          &:hover {
+            background-color: $primary-50;
+          }
+
+          &.selected,
+          &.selected:hover {
+            background-color: $primary-50;
+            color: $primary;
+          }
+        }
+      }
+      &.salle {
+        @include black-emphasis($opacity-medium-emphasis-black);
+        @include add-elevation();
+      }
+      &.empty {
+        background-color: $elevation-4;
+      }
+      &.firsthour {
+        background-color: $elevation-12;
+      }
+    }
+  }
+
+  .me-color-legend {
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, .35);
+    }
+  }
+
+  div.hover_chir {
+    background-color: transparent;
+  }
+
+  .planning div.event {
+    border: 1px solid $elevation-4;
+    @include white-emphasis($opacity-high-emphasis-white);
+
+    &:not([style*="background-color"]) {
+      @include add-elevation(4);
+
+      strong,
+      span {
+        @include black-emphasis($opacity-high-emphasis-black, true);
+      }
+    }
+
+    strong,
+    span {
+      @include white-emphasis($opacity-high-emphasis-white, true);
+
+      &.compact {
+        @include white-emphasis($opacity-medium-emphasis-white, true);
+      }
+    }
+  }
+
+  .planning .range {
+    position: relative;
+    @include white-emphasis($opacity-high-emphasis-white);
+
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, .4);
+      border-radius: 4px;
+    }
+  }
+
+  .planning td {
+    border: solid 1px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .planning div.minute-30 {
+    border-top: solid 1px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .planning .hours .pause {
+    border-bottom: 3px solid rgba(255, 255, 255, 0.15);
+  }
+
+  #timeline_salle_body td {
+    border: solid 1px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  #timeline_salle_body div.minute-30 {
+    border-top: solid 1px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  #planningWeek .toolbar {
+    background-color: $elevation-16;
+  }
+
+  .week-container {
+    .plage_planning {
+      background-color: $elevation-16 !important;
+    }
+  }
+
+  /********************************************
+                  FIN BLOC
+  *********************************************/
+
+
+  /********************************************
+                  MATERNITE
+  *********************************************/
+  #dossier_mater_dossier_perinatal {
+    span.circled {
+      @include white-emphasis($opacity-high-emphasis-white);
+      &[style*="background-color: transparent"] {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+    }
+  }
+  /********************************************
+                 FIN MATERNITE
+  *********************************************/
+
+
+  /********************************************
+                  SALLE D'OP
+   *********************************************/
+  table.me-header-operation {
+    button,
+    button[type=button],
+    button[type=submit],
+    a.button,
+    a.me-button {
+      @include not-vue {
+        border-color: $secondary-900 !important;
+
+        &:hover {
+          background-color: alpha($secondary-900, 0.2) !important;
+        }
+
+        &::before {
+          color: $secondary-900 !important;
+        }
+
+        &.me-tertiary,
+        &.me-tertiary.me-dark,
+        &.me-secondary,
+        &.me-primary {
+          color: $secondary-900 !important;
+
+          &::before {
+            color: $secondary-900 !important;
+          }
+        }
+      }
+    }
+  }
+
+  table.me-header-prescription {
+    .texticon {
+      background-color: $primary-darken !important;
+    }
+  }
+
+  .supervision {
+    .vis-labelset {
+      @include add-elevation();
+
+      .vis-inner {
+        @include black-emphasis($opacity-medium-emphasis-black);
+      }
+    }
+
+    .vis-group {
+      .tooltip-perop {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+
+      &.bg_chevron {
+        background-color: alpha($grey-900, .07);
+      }
+
+      &.bg_conditionnel {
+        background-image: repeating-linear-gradient(-45deg, $grey-200, $grey-200 2px, transparent 3px, transparent 12px) !important;
+      }
+    }
+
+    .vis-item {
+      &[data-line_type='perf'] {
+        .vis-item-content .perf {
+          background: $primary-300;
+
+          &:nth-child(odd) {
+            background: $primary-400;
+          }
+        }
+      }
+    }
+
+    .timing-container .marking {
+      &[style*="rgb(0, 0, 0)"] {
+        background-color: $primary-900 !important;
+      }
+    }
+  }
+
+  table.supervision th {
+    @include black-emphasis-color($opacity-very-low-black);
+  }
+
+  table.supervision td {
+    @include black-emphasis-color($opacity-very-low-black);
+  }
+
+  .vis-timeline {
+    @include black-emphasis-color($opacity-very-low-black);
+  }
+  .vis-panel.vis-bottom, .vis-panel.vis-center, .vis-panel.vis-left, .vis-panel.vis-right, .vis-panel.vis-top {
+    @include black-emphasis-color($opacity-very-low-black);
+  }
+  .vis-labelset .vis-label {
+    border-bottom: 1px solid alpha($black, $opacity-very-low-black);
+  }
+  .vis-foreground .vis-group {
+    border-bottom: 1px solid alpha($black, $opacity-very-low-black);
+  }
+  .vis-time-axis .vis-grid.vis-major {
+    @include black-emphasis-color($opacity-very-low-black);
+  }
+  .vis-panel.vis-background.vis-horizontal .vis-grid.vis-major {
+    @include black-emphasis-color($opacity-very-low-black);
+  }
+  .vis-time-axis .vis-text {
+    @include black-emphasis($opacity-medium-emphasis-black);
+  }
+  .vis-time-axis .vis-grid.vis-minor {
+    @include black-emphasis-color($opacity-very-low-black);
+  }
+  .vis-time-axis .vis-grid.vis-major {
+    @include black-emphasis-color($opacity-low-black);
+  }
+  .vis-item.vis-background {
+    background-color: alpha($black, .2);
+  }
+
+  .vis-item.vis-point:not(.vis-selected) {
+    @include black-emphasis($opacity-high-emphasis-black);
+  }
+
+  .vis-item.vis-point:hover {
+    color: black;
+  }
+  /********************************************
+                FIN SALLE D'OP
+ *********************************************/
+
+
+  /********************************************
+                  URGENCES
+  *********************************************/
+  table.me-finish-banner {
+    th.title {
+      select {
+        color: rgba(255, 255, 255, $opacity-high-emphasis-white) !important;
+        border-color: rgba(255, 255, 255, $opacity-low-black) !important;
+        background-color: alpha(#000, .1);
+      }
+    }
+    button,
+    button[type=button],
+    button[type=submit],
+    a.button,
+    a.me-button {
+      @include not-vue {
+
+        &.me-tertiary,
+        &.me-tertiary.me-dark {
+          color: $secondary-900 !important;
+
+          &::before {
+            color: $secondary-900 !important;
+          }
+        }
+        &,
+        &.me-secondary {
+          color: $secondary-900 !important;
+          border-color: $secondary-900 !important;
+          background-color: transparent !important;
+
+          &::before {
+            color: $secondary-900 !important;
+          }
+        }
+      }
+    }
+  }
+
+  .vue_topologique div.grille {
+    .chambre {
+      &[style*="221, 221, 221"] {
+        background-color: $elevation-3 !important;
+      }
+    }
+
+    small {
+      background-color: transparent !important;
+      @include black-emphasis($opacity-medium-emphasis-black);
+      text-shadow: none !important;
+    }
+
+    div.patient {
+      background-color: $elevation-12 !important;
+      box-shadow: none !important;
+
+      &:hover {
+        background-color: $elevation-16 !important;
+      }
+    }
+  }
+  /********************************************
+               FIN URGENCES
+  *********************************************/
+
+
+  /********************************************
+                  OXCABINET
+  *********************************************/
+  // vue vaccin
+  #vaccination_calendar {
+    background-color: transparent;
+    th,
+    td {
+      border-color: $light;
+    }
+
+    th.title {
+      color: white;
+    }
+
+    tr.ages th {
+      @include black-emphasis($opacity-medium-emphasis-black);
+    }
+
+    div.injection-mandatory {
+      background-color: #508ea3 !important;
+    }
+
+    .me-color-white {
+      @include black-emphasis($opacity-medium-emphasis-black, true);
+    }
+
+    td.full-cell i {
+      color: #000;
+      opacity: 0.25;
+    }
+  }
+
+  table.me-patient-banner-tamm {
+    button,
+    button[type=button],
+    button[type=submit],
+    a.button,
+    a.me-button {
+      @include not-vue {
+        &.me-tertiary,
+        &.me-tertiary.me-dark {
+          color: $secondary-900 !important;
+
+          &::before {
+            color: $secondary-900 !important;
+          }
+        }
+        &,
+        &.me-secondary {
+          color: $secondary-900 !important;
+          border-color: $secondary-900 !important;
+          background-color: transparent !important;
+
+          &::before {
+            color: $secondary-900 !important;
+          }
+        }
+      }
+    }
+  }
+
+  table.me-patient-consult-banner-tamm {
+    button,
+    button[type=button],
+    button[type=submit],
+    a.button,
+    a.me-button {
+      @include not-vue {
+
+        &.me-tertiary,
+        &.me-tertiary.me-dark {
+          color: $secondary-900 !important;
+
+          &::before {
+            color: $secondary-900 !important;
+          }
+        }
+        &,
+        &.me-secondary {
+          color: $secondary-900 !important;
+          border-color: $secondary-900 !important;
+          background-color: transparent !important;
+
+          &::before {
+            color: $secondary-900 !important;
+          }
+        }
+        &.me-primary {
+          background-color: $secondary-900 !important;
+          color: $primary-50 !important;
+
+          &::before {
+            color: $primary-50 !important;
+          }
+        }
+      }
+    }
+  }
+  /********************************************
+               FIN OXCABINET
+  *********************************************/
+
+  /********************************************
+              MESSAGERIE
+  ********************************************/
+  tr.message {
+    &.unread {
+      td:first-of-type {
+        border-left: 4px solid $info-color;
+      }
+    }
+  }
+
+  /********************************************
+               FIN MESSAGERIE
+  ********************************************/
+
+  /********************************************
+                 BRANCARDAGE
+  ********************************************/
+  button.colored {
+    @include not-vue {
+      border-color: $primary;
+    }
+  }
+  table.tbl td.colored {
+    background-color: #74704c;
+  }
+  table.tbl td.coloredpurple {
+    background-color: #4f416c;
+  }
+
+  table#listebrancards th.selected {
+    background-color: alpha($secondary-50, 31%);
+  }
+  /********************************************
+               FIN BRANCARDAGE
+  ********************************************/
+
+
+  /********************************************
+               ADMINISTRATION
+  ********************************************/
+  .dsn.dsn-dbname {
+    color: #bf6fab;
+  }
+  .dsn.dsn-dbhost {
+    color: #33a773;
+  }
+  .dsn.dsn-dbtype {
+    color: #b86168;
+  }
+  .dsn.dsn-dbuser {
+    color: #54809d;
+  }
+  /********************************************
+               FIN ADMINISTRATION
+  ********************************************/
+
+
+  /********************************************
+               TABLEAU DE BORD
+  ********************************************/
+  .month_calendar {
+    td.month_day {
+      @include add-elevation();
+      @include black-emphasis-color($opacity-very-low-black);
+      @include black-emphasis($opacity-high-emphasis-black);
+      transition: background-color .1s;
+      &:hover {
+        background-color: alpha($secondary-50, 30%);
+      }
+
+      &.ferie {
+        background-color: #4d4d39;
+      }
+
+      &.today {
+        p.day_number {
+          display: inline-block;
+          position: relative;
+          @include white-emphasis($opacity-high-emphasis-white);
+          z-index: 1;
+          &::before {
+            z-index: -1;
+            content: '';
+            display: block;
+            position: absolute;
+            background-color: $secondary;
+            width: 20px;
+            height: 20px;
+            border-radius: 20px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+  div.day_events {
+    @include black-emphasis($opacity-high-emphasis-black);
+  }
+  tr.week_name,
+  tr.week {
+    th {
+      @include black-emphasis($opacity-medium-emphasis-black);
+    }
+  }
+
+  div.CIntervHorsPlage {
+    background-color: #e49b6d;
+
+    &,
+    strong {
+      @include white-emphasis($opacity-high-emphasis-white);
+    }
+  }
+
+  div.CPlageconsult {
+    background-color: #61a53c;
+    &,
+    strong {
+      @include white-emphasis($opacity-high-emphasis-white);
+    }
+  }
+
+  div.CPlageOp {
+    background-color: #6a79d2;
+    &,
+    strong {
+      @include white-emphasis($opacity-high-emphasis-white);
+    }
+  }
+
+  .event {
+    a:link, a:visited, a:active, a:hover {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+  }
+
+  /********************************************
+               FIN TABLEAU DE BORD
+  ********************************************/
+
+
+  /********************************************
+                     HOSPI
+  ********************************************/
+  table.chambrecollapse,
+  table.chambreexpand {
+
+    tr.litdispo {
+      td {
+        &,
+        &:hover {
+          background: #565f56;
+        }
+      }
+    }
+
+    tr.patient {
+      td {
+        @include black-emphasis($opacity-medium-emphasis-black);
+
+        &.action {
+          @include white-emphasis($opacity-high-emphasis-white);
+        }
+        &:not(.action) {
+          @include add-elevation(1, true);
+        }
+      }
+    }
+  }
+
+  table.me-table-hover-on-dark:hover {
+    background-color: alpha($secondary-50, 31%) !important;
+  }
+
+  /* Operations */
+  table.sejourcollapse,
+  table.sejourexpand {
+    background-color: transparent;
+
+    td {
+      &,
+      &.selectsejour,
+      &.patient {
+        @include add-elevation();
+      }
+    }
+  }
+
+  div.clit_bloque {
+    @include add-elevation(3);
+    color: #000;
+    @include black-emphasis-color($opacity-low-black);
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 8px, rgba(255, 255, 255, 0.2) 4px, rgba(255, 255, 255, 0.2) 10px);
+  }
+
+  div.clit {
+    @include add-elevation(4);
+    @include black-emphasis($opacity-high-emphasis-black);
+  }
+
+  div.background_temporel_m {
+    background-color: #27274a;
+    border-color: #17172f !important;
+  }
+
+  div.background_temporel_f {
+    background-color: #452929;
+    border-color: #361414 !important;
+  }
+
+  div.prolongation {
+    background-color: #4d3a1a;
+    border-color: #3a2b14;
+  }
+
+  div.affectation:hover table {
+    outline: 2px solid #354d35;
+  }
+
+  td.current_hour {
+    background-color: #4d3535 !important;
+  }
+
+  table.tbl th.service_externe {
+    background: #2f4a2f !important;
+  }
+
+  .item_egal {
+    background-color: #4b6f45 !important;
+  }
+
+  .item_superior {
+    background-color: #6f454b !important;
+  }
+
+  .item_inferior {
+    background-color: #685331 !important;
+  }
+
+  tr.consultation_entree td {
+    background-color: #6a4819 !important;
+  }
+
+  tr.observation_urgente td {
+    background-color: #651c1c !important;
+  }
+
+  tr.observation_info td {
+    background-color: #212164 !important;
+  }
+
+  tr.transmission_haute td {
+    background-color: #651c1c !important;
+  }
+
+  .grippie-v,
+  .grippie-h {
+    background-color: transparent;
+  }
+
+  div.toolbar_affectation {
+    background-color: $elevation-16;
+    border: 1px solid $elevation-16;
+  }
+
+  tr.lit_hover td {
+    background-color: $elevation-8 !important;
+  }
+
+  div.grille {
+    small {
+      text-shadow: none;
+      @include black-emphasis($opacity-medium-emphasis-black);
+      margin-top: -12px;
+      border-radius: 2px 2px 0 0;
+    }
+
+    .me-patient {
+      @include add-elevation(3);
+      border: none;
+      margin: 6px;
+      border-radius: 4px;
+      padding: 4px;
+      box-sizing: border-box;
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+  }
+
+  tr.transmission_haute td {
+    background-color: #5c2827 !important;
+  }
+
+  #grille {
+    td.conteneur-chambre {
+      background-color: $elevation-1;
+    }
+
+    .chambre {
+      box-shadow: none;
+      background-color: $elevation-2;
+      transition: background-color .2s;
+
+      &:hover {
+        background-color: $elevation-4;
+      }
+
+      &[style*="221, 221, 221"] {
+        background-color: $elevation-3 !important;
+      }
+
+      a {
+        text-shadow: none;
+      }
+    }
+  }
+
+  #list-chambres-non-placees {
+    div.chambre {
+      background-color: $elevation-2;
+      box-shadow: none;
+
+      &:hover {
+        background-color: $elevation-4;
+      }
+    }
+  }
+
+  /********************************************
+                   FIN HOSPI
+  ********************************************/
+
+
+  /********************************************
+                   OUTILS
+  ********************************************/
+  tr.tr_log {
+    &[style*="color:black"] {
+      @include black-emphasis($opacity-medium-emphasis-black, true);
+    }
+
+    &:hover {
+      @include add-elevation();
+    }
+  }
+  /********************************************
+                 FIN OUTILS
+  ********************************************/
+
+
+  /********************************************
+                  MOEBIUS
+  ********************************************/
+  table.table_moebius {
+    @include black-emphasis($opacity-high-emphasis-black);
+  }
+
+  .mallampati-selected, .cormack-selected {
+    background: $primary-50;
+    border-radius: 6px;
+  }
+
+  table.form.moebius_white td,
+  table.form.moebius_white th {
+    @include add-elevation();
+  }
+
+  table.me-moebius-table-clinique {
+    tr.me-moebius-table-clinique_row {
+      &.me-hemo {
+        table,
+        fieldset:not([class^="v-"]),
+        td,
+        th {
+          background-color: #4d2a2a;
+        }
+      }
+      &.me-cardio {
+        table,
+        fieldset:not([class^="v-"]),
+        td,
+        th {
+          background-color: #4a3145;
+        }
+      }
+      &.me-respi {
+        table,
+        fieldset:not([class^="v-"]),
+        td,
+        th {
+          background-color: #3c5664;
+        }
+      }
+      &.me-nutri {
+        table,
+        fieldset:not([class^="v-"]),
+        td,
+        th {
+          background-color: #475e44;
+        }
+      }
+      &.me-douleur {
+        table,
+        fieldset:not([class^="v-"]),
+        td,
+        th {
+          background-color: #212121;
+        }
+      }
+      &.me-neuro {
+        table,
+        fieldset:not([class^="v-"]),
+        td,
+        th {
+          background-color: #63641f;
+        }
+      }
+    }
+  }
+
+  div.consigne_line_time{
+    background-color: #323232;
+  }
+  div.colonne_consigne {
+    background-color: #323232;
+  }
+
+  th.title_modale_moebius {
+    color: rgba(255, 255, 255, $opacity-high-emphasis-black) !important;
+  }
+
+  /********************************************
+                  FIN MOEBIUS
+  ********************************************/
+
+
+  /********************************************
+                     HL7
+  ********************************************/
+  .treeview ul {
+    @include add-elevation();
+
+    .field-description {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+
+    .field-name {
+      color: $info-color;
+    }
+
+    .type,
+    .type-segment {
+      color: $success-color;
+    }
+
+    .table {
+      color: $error-color;
+    }
+
+    .value {
+      @include add-elevation(3);
+    }
+  }
+
+  pre[class*="language-"] > code {
+    background-color: $elevation-3;
+  }
+
+  code[class*="language-"], pre[class*="language-"] {
+    @include black-emphasis($opacity-high-emphasis-black);
+  }
+
+  .token {
+    &.cs {
+      color: $success-color;
+    }
+
+    &.scs {
+      color: $info-color;
+    }
+
+    &.fs {
+      color: $error-color;
+    }
+  }
+
+  .er7 {
+
+    .segment {
+      @include black-emphasis($opacity-high-emphasis-black);
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    .field:hover {
+      background-color: alpha($success-color-background, 0.4);
+    }
+  }
+  /********************************************
+                   FIN HL7
+  ********************************************/
+
+
+  /********************************************
+                 HOTELLERIE
+  ********************************************/
+  .fa-bed {
+    &[style*="red"] {
+      color: $error-color !important;
+    }
+
+    &[style*="gold"] {
+      color: $orange !important;
+    }
+
+    &[style*="green"] {
+      color: $success-color !important;
+    }
+
+    &[style*="black"] {
+      @include black-emphasis($opacity-medium-emphasis-black, true);
+    }
+
+    &[style*="#909090"] {
+      @include black-emphasis($opacity-low-black, true);
+    }
+  }
+  /********************************************
+                 FIN HOTELLERIE
+  ********************************************/
+
+
+  /********************************************
+                 AMBU
+  ********************************************/
+  .event-icon.small_pointer,
+  .event-icon.big_pointer,
+  .me-bar-step,
+  .me-ambu-hour {
+    &[style*="green"],
+    &[style*="#10BA2C"]{
+      background-color: #4c804d !important;
+    }
+
+    &[style*="steelblue"] {
+      background-color: #3e6584 !important;
+    }
+
+    &[style*="grey"],
+    &[style*="gray"] {
+      background-color: #616161 !important;
+    }
+
+    &[style*="blueviolet"] {
+      background-color: #8a4593 !important;
+    }
+
+    &[style*="red"] {
+      background-color: #901212 !important;
+    }
+
+    &[style*="darkorange"] {
+      background-color: #955a13 !important;
+    }
+  }
+
+  .delay_phase {
+    border-color: $error-color-background;
+  }
+  /********************************************
+                 FIN AMBU
+  ********************************************/
+
+
+  /********************************************
+                CONSULTATIONS
+  ********************************************/
+  table#weber tr.moyenne td {
+    background-color: #767676;
+  }
+
+  table#weber tr.moyenne td.aerien {
+    background-color: #5f5f85;
+  }
+
+  table#weber tr.moyenne td.osseux {
+    background-color: #853030;
+  }
+
+  table.tbl td.pause_consult,
+  div.pause_consult {
+    background-color: #74742b;
+  }
+
+  table.tbl td.premiere_consult,
+  div.premiere_consult {
+    background-color: #853030;
+  }
+
+  table.tbl td.derniere_consult,
+  div.derniere_consult {
+    background-color: #853085
+  }
+
+  table.tbl td.consult_sejour,
+  div.consult_sejour {
+    background-color: #56644b;
+  }
+  /********************************************
+              FIN CONSULTATIONS
+  ********************************************/
+
+  /********************************************
+               PLANIF. SEJOUR
+ ********************************************/
+  span.dhe_item {
+    background-color: $secondary-bandeau;
+  }
+  /********************************************
+               FIN PLANIF. SEJOUR
+  ********************************************/
+
+
+  /********************************************
+                  PHARMACIE
+  ********************************************/
+  tr.colored_line td {
+    background-color: #644417;
+  }
+  /********************************************
+               FIN PHARMACIE
+  ********************************************/
+
+
+  /********************************************
+                  ERP
+  ********************************************/
+  .type_management {
+    background-color: #4a6746 !important;
+  }
+
+  .type_owner {
+    background-color: #445a79 !important;
+  }
+
+  .type_closed {
+    background-color: #753838 !important;
+  }
+
+  div.COXERPMessage-container {
+    div.COXAssistanceMessage-log,
+    div.COXAssistanceMessage-log-comment,
+    div.COXImportMessage-log,
+    div.COXImportMessage-log-comment {
+      border-color: #4a323a;
+      background-color: #4a323a;
+    }
+
+    div.COXAssistanceMessage-MOE-1,
+    div.COXImportMessage-MOE-1 {
+      fieldset {
+        background-color: #313e4f !important;
+        border-color: #313e4f !important;
+      }
+    }
+
+    div.COXAssistanceMessage-MOE-0,
+    div.COXImportMessage-MOE-0 {
+      fieldset {
+        background-color: #203520 !important;
+        border-color: #203520 !important;
+      }
+    }
+  }
+
+  #list_status {
+    fieldset {
+      box-shadow: none;
+    }
+    .log {
+      border-color: #4a323a !important;
+      background-color: #4a323a !important;
+      box-shadow: none;
+    }
+    .horo {
+      @include black-emphasis($opacity-low-black);
+      text-shadow: none;
+    }
+  }
+
+  #workflow div.status {
+   background-color: $elevation-16;
+    box-shadow: none;
+    border: none;
+  }
+
+  div.processing_requests_counter {
+    border-color: alpha(#FFF, 0.1);
+  }
+
+  div.COXDemandeAssistance-workflow {
+
+    &.COXAnomalie-workflow {
+      background: url(../../modules/oxSupport/images/anomalie_dark.png?v=14) no-repeat top left;
+    }
+
+    &.COXDemandeInformation-workflow {
+      background: url(../../modules/oxSupport/images/demande_information_dark.png?v=11) no-repeat top left;
+    }
+
+    &.COXDemandeExploitation-workflow {
+      background: url(../../modules/oxSupport/images/demande_exploitation_dark.png?v=11) no-repeat top left;
+    }
+
+    div.status {
+      background: $elevation-12;
+      border-color: alpha(#FFF, 0.1);
+      color: $success-color;
+    }
+
+    div.droppable {
+      border-color: $success-color;
+    }
+  }
+
+  #workflow {
+    background: url(../../modules/tasking/images/transitions_dark.png?v=10) no-repeat top left;
+  }
+
+  #show-user-charging-result {
+    > table {
+      > thead,
+      > tbody {
+        background-color: $elevation-1;
+
+        > tr {
+          &.weekly-completion,
+          &.weekly-progress{
+            background: $background-header-secondary;
+          }
+
+          &.weekly-completion {
+            > td {
+              border-top: 5px solid $background-header-secondary;
+            }
+          }
+
+          &.daily-progress > td {
+            border-bottom: 5px solid $background-header-secondary;
+          }
+
+          > td {
+            &.day-column.day-weekend {
+              border: none;
+              background: repeating-linear-gradient(-45deg, #594821, #594821 20px, #5d4b20 20px, #5d4b20 40px);
+            }
+
+            &.day-column.day-holiday {
+              border: none;
+              background: repeating-linear-gradient(-45deg, #431c1c, #431c1c 20px, #561f1f 20px, #561f1f 40px);
+            }
+          }
+        }
+      }
+    }
+
+    .day-tag{
+      @include add-elevation(2);
+      border: none;
+      color: white;
+    }
+  }
+
+  #show-user-charging-result,
+  #user-charging-legend {
+    .user-charging-item{
+      background-color: $elevation-4;
+    }
+  }
+
+  #billing-search-results > table tr {
+    th {
+      &.real {
+        background-color: #91812b;
+      }
+
+      &.billed {
+        background-color: #246824;
+      }
+
+      &.ratio {
+        background-color: #237971;
+      }
+    }
+
+    td {
+      &.real {
+        background-color: #6f5e06;
+      }
+
+      &.billed {
+        background-color: #105710;
+      }
+
+      &.ratio {
+        background-color: #0b5b53;
+      }
+    }
+
+    &:hover {
+      td {
+        &.real {
+          background-color: #5e5109;
+        }
+
+        &.billed {
+          background-color: #0b4a0b;
+        }
+
+        &.ratio {
+          background-color: #0a4a44;
+        }
+      }
+    }
+  }
+
+  .COXImport-status-waiting {
+    background-color: #f0e210;
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+  
+  .COXImport-status-in_progress {
+    background-color: #f4a30e;
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+
+  .COXImport-status-ended {
+    background-color: #4da0e6;
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+
+  .COXImport-status-billed {
+    background-color: #38cc38;
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+
+  .COXImport-status-aborted {
+    background-color: #ea4848;
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+
+  .me-tag-branch {
+    background-color: #696D7D !important;
+    @include black-emphasis($opacity-high-emphasis-black, true);
+    text-shadow: 0 0 0 transparent,-1px 0 0 rgba(0, 0, 0, 0.7),0 1px 0 rgba(0, 0, 0, 0.7),1px 0 0 rgba(0, 0, 0, 0.7),0 -1px 0 rgba(0, 0, 0, 0.7) !important;
+
+    &.bp-missing {
+      border-color: #d07272 !important;
+    }
+    &.bp-ok {
+      border-color: #68db68 !important;
+    }
+  }
+
+  table.tasks_distribution {
+    @include add-elevation(2);
+  }
+
+  .distribution_ticket {
+    outline: none;
+    @include add-elevation(3);
+    @include black-emphasis($opacity-high-emphasis-black);
+  }
+
+  .dateoverdue {
+    color: $error-color;
+  }
+
+  ul.navigation li:nth-of-type(odd),
+  table.folder_content tbody tr:nth-of-type(odd),
+  table.fses tbody tr:nth-of-type(odd),
+  table.lots tbody tr:nth-of-type(odd) {
+    background-color: rgba(168, 183, 235, 0.2);
+  }
+
+  ul.navigation li:nth-of-type(odd):hover,
+  table.folder_content tbody tr:nth-of-type(odd):hover,
+  table.fses tbody tr:nth-of-type(odd):hover,
+  table.lots tbody tr:nth-of-type(odd):hover {
+    background-color: rgba(168, 183, 235, 0.4);
+  }
+
+  ul.navigation li:nth-of-type(even),
+  table.folder_content tbody tr:nth-of-type(even),
+  table.fses tbody tr:nth-of-type(even),
+  table.lots tbody tr:nth-of-type(even) {
+    @include add-elevation();
+  }
+
+  ul.navigation li:nth-of-type(even):hover,
+  table.folder_content tbody tr:nth-of-type(even):hover,
+  table.fses tbody tr:nth-of-type(even):hover,
+  table.lots tbody tr:nth-of-type(even):hover {
+    @include add-elevation(5);
+  }
+
+  i.pva,
+  span.fa.pva {
+    @include black-emphasis($opacity-medium-emphasis-black);
+  }
+
+  button.me-golden {
+    border-color: #ffc534 !important;
+    color: #ffc534 !important;
+    background: transparent !important;
+
+    &::before {
+      color: #ffc534 !important;
+    }
+  }
+
+  #OXFAC-resources > table thead tr th.current {
+    background-color: #284d91;
+  }
+
+
+  #OXFAC-resources > table tr .internal,
+  #OXFAC-resources-legend .internal{
+    background: #2cb1a7;
+  }
+  #OXFAC-resources-legend .threshold-valid,
+  #OXFAC-resources > table tr .threshold-valid{
+    background: #236223;
+  }
+  #OXFAC-resources-legend .threshold-warning,
+  #OXFAC-resources > table tr .threshold-warning{
+    background: #ab722d;
+  }
+  #OXFAC-resources-legend .threshold-error,
+  #OXFAC-resources > table tr .threshold-error{
+    background: #861b1b;
+  }
+
+  #OXFAC-resources-legend .sur_site,
+  #OXFAC-resources > table tr th[data-type="sur_site"],
+  #OXFAC-resources > table tr:hover td[data-type="sur_site"]{
+    background: #0573a2;
+  }
+  #OXFAC-resources-legend .a_distance,
+  #OXFAC-resources > table tr th[data-type="a_distance"],
+  #OXFAC-resources > table tr:hover td[data-type="a_distance"]{
+    background: #9d2a57;
+  }
+  #OXFAC-resources-legend .assistance_sur_site,
+  #OXFAC-resources > table tr th[data-type="assistance_sur_site"],
+  #OXFAC-resources > table tr:hover td[data-type="assistance_sur_site"]{
+    background: #bea02d;
+  }
+
+  #OXFAC-resources-legend .interne,
+  #OXFAC-resources > table tr th[data-type="interne"],
+  #OXFAC-resources > table tr:hover td[data-type="interne"]{
+    background: #0f883e;
+  }
+
+  #OXFAC-resources > table tr td[data-type="sur_site"]{
+    background: #1d4e66;
+  }
+  #OXFAC-resources > table tr td[data-type="a_distance"]{
+    background: #541e35;
+  }
+  #OXFAC-resources > table tr td[data-type="assistance_sur_site"]{
+    background: #6d5e23;
+  }
+  #OXFAC-resources > table tr td[data-type="interne"]{
+    background: #1c5634;
+  }
+
+  #OXFAC-resources > table thead {
+    background-color: transparent !important;
+  }
+
+  //Default heading cell colors per line type
+  #lines-search-stats-container > table tr th.all{
+    background-color: #645817;
+  }
+  #lines-search-stats-container > table tr th.facturable{
+    background-color: #274b27;
+  }
+  #lines-search-stats-container > table tr th.visible{
+    background-color: #294156;
+  }
+  #lines-search-stats-container > table tr th.masque{
+    background-color: #542121;
+  }
+
+  // Default cell colors per line type
+  #lines-search-stats-container > table tr td.all{
+    background-color: #494212;
+  }
+  #lines-search-stats-container > table tr td.facturable{
+    background-color: #1d361d;
+  }
+  #lines-search-stats-container > table tr td.visible{
+    background-color: #1d2e3b;
+  }
+  #lines-search-stats-container > table tr td.masque{
+    background-color: #3d1818;
+  }
+
+  // Style when hovering line
+  #lines-search-stats-container > table tr:hover td.all{
+    background-color: #574e14;
+  }
+  #lines-search-stats-container > table tr:hover td.facturable{
+    background-color: #274b27;
+  }
+  #lines-search-stats-container > table tr:hover td.visible{
+    background-color: #273d52;
+  }
+  #lines-search-stats-container > table tr:hover td.masque{
+    background-color: #4f1f1f;
+  }
+
+  /********************************************
+                   FIN ERP
+  ********************************************/
+
+
+  /********************************************
+                     PROJET
+  ********************************************/
+  /* The line */
+  .ox_timeline::before {
+    @include add-elevation(2);
+  }
+
+  .ox_timeline > li.ox_timeline_past .ox_timeline_time span {
+    @include black-emphasis($opacity-medium-emphasis-black);
+  }
+
+  .ox_timeline > li.ox_timeline_present .ox_timeline_time span {
+    color: forestgreen;
+  }
+
+  .ox_timeline > li.ox_timeline_futur .ox_timeline_time span {
+    color: steelblue;
+  }
+
+  /* Right content */
+  .ox_timeline > li .ox_timeline_label {
+    @include add-elevation(2);
+    @include black-emphasis($opacity-medium-emphasis-black);
+  }
+
+
+  /* The triangle */
+  .ox_timeline > li .ox_timeline_label::after {
+    border-right-color: $elevation-4;
+  }
+
+  /* The icons */
+  .ox_timeline > li .ox_timeline_icon {
+    background: transparent;
+    box-shadow: 0 0 0 8px $elevation-4;
+  }
+
+  .ox_timeline > li.ox_timeline_past .ox_timeline_icon {
+    background: $elevation-16;
+  }
+
+  .ox_timeline > li.ox_timeline_present .ox_timeline_icon {
+    background: forestgreen;
+  }
+
+  .ox_timeline > li.ox_timeline_futur .ox_timeline_icon {
+    background: steelblue;
+  }
+
+  /* Branches */
+  .ox_timeline > li .ox_timeline_label.branch {
+    background-color: $elevation-2;
+  }
+
+  .ox_timeline > li .ox_timeline_label.branch::after {
+    border-right-color: $elevation-2;
+  }
+
+  /* REQUESTS */
+  .request_to_choose, .request_to_accept, .request_to_check_by_client, .request_to_manage_devis, .request_sleeping_request {
+    color: steelblue;
+  }
+
+  .request_to_check_by_client {
+    color: rebeccapurple;
+  }
+
+  .request_to_analyse {
+    color: rebeccapurple;
+  }
+
+  .request_to_planify, .request_approved {
+    color: forestgreen;
+  }
+
+  .request_in_progress {
+    color: darkgoldenrod;
+  }
+
+  .request_to_precise, .request_not_approved {
+    color: goldenrod;
+  }
+
+  .request_non_applicable,
+  .request_duplicate,
+  .request_information,
+  .request_setting {
+    color: firebrick;
+  }
+  /********************************************
+                  FIN PROJET
+  ********************************************/
+
+
+  /********************************************
+                 EXPLOITATION
+  ********************************************/
+  .operation_type_COXUpdate {
+    color: $info-color !important;
+  }
+  .operation_type_COXProdUpdate {
+    color: $error-color !important;
+  }
+  .operation_type_COXTrainingUpdate {
+    color: #ea7eea !important;
+  }
+  .operation_type_COXTestingUpdate {
+    color: #63d063 !important;
+  }
+  .operation_line:hover {
+    background-color: #000;
+  }
+
+  table.tbl.me-items-grid#vw_items_grid {
+    tbody,
+    thead {
+      tr {
+        th.grid_button {
+          background-color: $grey-200 !important;
+
+          &:hover {
+            background-color: $grey-300 !important;
+          }
+        }
+
+        td.grid_practice_cell {
+
+          &:hover {
+            background-color: $grey-300;
+          }
+
+          &.ok {
+            background-color: #1f482e !important;
+          }
+
+          &.warning {
+            background-color: #5c3e1d !important;
+          }
+
+          &.error {
+            background-color: #5b2519 !important;
+          }
+        }
+      }
+    }
+
+    .progressBarModern {
+      min-width: unset;
+    }
+  }
+
+  img[src*="mb_small.png"] {
+    filter: brightness(2);
+  }
+  /********************************************
+                FIN EXPLOITATION
+  ********************************************/
+
+
+
+  /********************************************
+               NOTES DE VERSION
+  ********************************************/
+
+  #release_notes-tabs {
+    background-color: $elevation-3;
+  }
+
+  .release_notes-container {
+    @include add-elevation();
+
+    hr {
+      border-bottom-color: $grey-100;
+    }
+
+    > .release_notes-menu {
+      background-color: $elevation-4;
+      border-right-color: $grey-100;
+    }
+  }
+
+  .tag-filter-line > .tag-filter-badge {
+    color: $primary;
+    background-color: $grey-300;
+  }
+
+  .release_notes-content {
+    > .release_notes-header {
+      background-color: $elevation-4;
+      padding: 12px 24px;
+      margin: 0;
+    }
+    > .release_notes-body {
+      background-color: $elevation-1;
+    }
+  }
+
+  .release_notes-title > .release_notes-subtitle {
+    @include black-emphasis($opacity-medium-emphasis-black);
+  }
+
+  .release_notes-body > .release_note-card-container {
+    background-color: $elevation-12;
+    border: none;
+  }
+
+  .release_note-user-container > .release_note-user {
+    border-color: $elevation-12;
+  }
+
+  .release_note-header > .release_note-subtitle {
+    @include black-emphasis($opacity-medium-emphasis-black);
+  }
+
+  .release_note-card > .release_note-actions {
+    background-color: $primary-bandeau;
+  }
+
+  .release_note-title > .release_note-version {
+    background-color: $primary-50;
+    color: $primary-900;
+  }
+
+  .release_note-interest > i {
+    @include black-emphasis($opacity-low-black);
+  }
+
+  .release_note-interest > i.selected {
+    color: $primary;
+  }
+
+  .release_note-test {
+    > .release_note-test-ko {
+      @include black-emphasis($opacity-medium-emphasis-black);
+    }
+    > .release_note-test-ok {
+      color: $success-color;
+    }
+  }
+
+  .release_note-context > .release_note-metadata {
+    @include add-elevation(3);
+  }
+  .release_note-metadata > .release_note-metadata-title {
+    @include black-emphasis($opacity-medium-emphasis-black);
+  }
+  .release_note-action .release_note-picture,
+  .release_note-picture-thumbnail > .release_note-picture {
+    border-color: transparent;
+  }
+  /********************************************
+             FIN NOTES DE VERSION
+ ********************************************/
+
+  /********************************************
+                    QUERY
+  ********************************************/
+  .Dashboard {
+    &-search {
+      background-color: $elevation-4;
+      border-right-color: transparent;
+    }
+
+    &-searchTitle,
+    &-searchLabel {
+      @include black-emphasis(0.8);
+    }
+  }
+
+  .QueryLine {
+    border-color: transparent;
+    background-color: $elevation-2;
+
+    &-title {
+      color: $primary;
+    }
+
+    &-versions,
+    &-executionTime,
+    &-statsTitle,
+    &-statsListHeader {
+      @include black-emphasis(0.6);
+    }
+
+    &-stats {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    &-statsListTitle {
+      @include black-emphasis($opacity-low-black);
+    }
+  }
+
+  .Query {
+    &-tabs,
+    &-edition {
+      background-color: $elevation-1;
+    }
+
+    &-tabsTitle {
+      &.active {
+        color: $primary;
+        background-color: alpha($primary, 0.12);
+      }
+    }
+
+    &-editContainer {
+      &::before {
+        background-color: alpha($white, 0.72)
+      }
+
+      &::after {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+    }
+
+    &-versionLine {
+      .Query-tab {
+        &.active {
+          .Query-versionTitle,
+          .Query-versionDesc {
+            border-left-color: $primary;
+          }
+        }
+
+        &::before {
+          background-color: $grey-50 !important;
+        }
+      }
+    }
+  }
+
+  .FromSelection {
+    &-joinLayout {
+      background-color: $grey-100;
+    }
+
+    &-header,
+    &-title,
+    &-joinClassTitle {
+      @include black-emphasis(0.8);
+    }
+
+    &-info {
+      @include black-emphasis(0.6);
+    }
+
+    &-joinClassListEmptyTitle {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+
+    &-joinClassListEmptyInfo {
+      @include black-emphasis(0.6);
+    }
+  }
+
+  .JoinClasses {
+    &-text {
+      @include black-emphasis(0.8);
+    }
+
+    &-dataTable tr {
+      td, th {
+        border-bottom-color: $grey-100;
+      }
+    }
+  }
+
+  .EditQuery {
+    &-step {
+      &::before {
+        background-color: alpha($primary, 0.12);
+      }
+    }
+  }
+
+  .Select {
+    &-selectLine {
+      border-color: transparent;
+      @include add-elevation(2);
+
+      &:hover {
+        .Select-selectLineHandle {
+          @include black-emphasis($opacity-medium-emphasis-black);
+        }
+      }
+    }
+    &-selectedFieldsTitle {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+    &-selectLineTitleFrom {
+      @include black-emphasis(0.6);
+    }
+    &-selectLineHandleDiv {
+      @include add-elevation(1);
+    }
+    &-selectLineHandle {
+      @include black-emphasis($opacity-low-black);
+    }
+    &-selectedFieldEmptyTitle {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+    &-selectedFieldEmptyInfo {
+      @include black-emphasis(0.6);
+    }
+  }
+
+  .Where {
+    &-title {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+  }
+
+  .LogicalOperation {
+    background-color: $elevation-2;
+
+    &.hoverOperation {
+      background-color: alpha($secondary-50, 0.2);
+    }
+
+    &-header {
+      &And,
+      &Or {
+        @include black-emphasis(0.6);
+        border: 1px solid alpha($grey-900, 0.12);
+      }
+    }
+  }
+
+  .WhereLine {
+    &.hover {
+      &::before {
+        background-color: alpha($secondary-50, 0.2);
+      }
+    }
+
+    &-fieldLayout {
+      background-color: alpha($primary, 0.08);
+
+      &ClassName {
+        @include black-emphasis(0.6);
+      }
+
+      &FieldName {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+    }
+  }
+
+  .WhereLineField {
+    background-color: alpha($primary, 0.08);
+
+    &-className {
+      @include black-emphasis(0.6);
+    }
+
+    &-fieldName {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+  }
+
+  .OperandField {
+    &-dateTooltip,
+    &-enumTooltip {
+      &.display {
+        @include shadow16;
+      }
+
+      &DateTitle,
+      &ModifierTitle {
+        @include black-emphasis(0.6);
+      }
+
+      &DateFirstLastOf,
+      &FirstLastChoice,
+      &FirstLastType {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+
+      &DateChoices {
+        &Now,
+        &Fixed {
+          @include black-emphasis($opacity-high-emphasis-black);
+        }
+      }
+    }
+  }
+
+  .OptionsLayout {
+    &-title {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+
+    &-groupLayout,
+    &-orderLayout {
+      border: 1px solid $grey-100;
+    }
+  }
+
+  .GroupLayout {
+    &-actions {
+      border-top: 1px solid $grey-100;
+
+      &:hover {
+        background-color: alpha($secondary-50, 0.2);
+      }
+    }
+
+    &-headerTitle {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+
+
+    &-groupableFieldsLayout {
+      &Header {
+        &Count {
+          @include black-emphasis($opacity-high-emphasis-black);
+        }
+      }
+    }
+
+    &-emptyInfoTitle {
+      @include black-emphasis(0.6);
+    }
+  }
+
+  .OrderLayout {
+    &-actions {
+      border-top: 1px solid $grey-100;
+
+      &:hover {
+        background-color: alpha($secondary-50, 0.2);
+      }
+    }
+
+    &-title {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+
+    &-emptyInfo {
+      @include black-emphasis(0.6);
+    }
+  }
+
+  .OptionRefLine {
+    border: 1px solid $grey-100;
+
+
+    &-layout {
+      &Title {
+        @include black-emphasis(0.6);
+      }
+
+      &Field {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+    }
+  }
+
+  .Option {
+    &-referencesEmpty,
+    &-collectionsEmpty {
+      @include black-emphasis(0.6);
+    }
+
+    &-collectionsTitle,
+    &-referencesTitle {
+      @include black-emphasis(0.6);
+    }
+  }
+
+  .OptionLine {
+    border: 1px solid $grey-100;
+
+    &:hover {
+      .OptionLine-handle {
+        @include black-emphasis(0.6);
+      }
+    }
+
+    &-handleDiv {
+      background-color: rgba(255, 255, 255, 0.03);
+    }
+
+    &-handle {
+      color: rgba(255, 255, 255, 0.38);
+    }
+
+    &-layout {
+      &Title {
+        @include black-emphasis(0.6)
+      }
+
+      &Field {
+        &Name {
+          @include black-emphasis($opacity-high-emphasis-black);
+          background-color: $input-background;
+        }
+      }
+    }
+  }
+
+  .SelectFields {
+    &-fieldsTitle {
+      @include black-emphasis(0.6);
+    }
+
+    &-fieldsSearchInput {
+      background-color: $input-background;
+    }
+  }
+
+  .QueryValidation {
+    &-title {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+
+    &-layout {
+      &Title {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+
+      &ContentTableTh {
+        @include black-emphasis(0.6);
+      }
+
+      &ContentTableTh {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+    }
+  }
+
+  .SaveQuery {
+    &-header {
+      @include black-emphasis(0.6);
+    }
+
+    &-layout {
+      &Create,
+      &Update {
+        border: 1px solid $grey-100;
+
+        &Title {
+          @include black-emphasis($opacity-high-emphasis-black);
+        }
+
+        &Info {
+          @include black-emphasis(0.6);
+        }
+
+        &Form {
+          &Version {
+            @include black-emphasis(0.6);
+          }
+        }
+      }
+    }
+  }
+
+  .MetaHeader {
+    border-bottom: 1px solid $grey-100;
+  }
+
+  .MetaClass {
+    &-title {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+  }
+
+  .MetaVersions {
+    border-bottom: 1px solid $grey-100;
+
+    &-info {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+
+    &-version {
+      border: 1px solid $grey-100;
+
+      &.active {
+        background-color: alpha($primary-400, 0.18);
+        border: 2px solid $primary;
+      }
+
+      &Data {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+
+      &Description {
+        @include black-emphasis(0.6);
+
+        &.empty {
+          @include black-emphasis($opacity-low-black);
+        }
+      }
+    }
+
+    &-layout {
+      &Lock {
+        background-color: rgba(255, 255, 255, 0.03);
+
+        &.locked {
+          background-color: $secondary-50;
+        }
+
+        &InfoLock {
+          color: rgba(0, 0, 0, 0.6);
+        }
+      }
+    }
+  }
+
+  .MetaFormat {
+    border-bottom: 1px solid $grey-100;
+    &-title {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+
+    &-fields {
+      &Separator,
+      &Delimitor {
+        @include black-emphasis(0.6);
+      }
+    }
+
+    &-encoding {
+      @include black-emphasis(0.6);
+    }
+
+    &-name {
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+  }
+
+  .MetaUtilities {
+    &-token,
+    &-view {
+      border: 1px solid $grey-100;
+      &Header {
+        &Title {
+          @include black-emphasis($opacity-high-emphasis-black);
+        }
+      }
+
+      &List {
+        &Empty {
+          @include black-emphasis(0.6);
+        }
+      }
+    }
+  }
+
+  .View,
+  .Token {
+    border-bottom: 1px solid $grey-100;
+
+    &-layout {
+      &Name {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+
+      &Info {
+        &Param {
+          @include black-emphasis(0.6);
+        }
+      }
+    }
+  }
+
+  .QueryResult {
+    &-header {
+      &Title {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+    }
+  }
+
+  /********************************************
+                  FIN QUERY
+  ********************************************/
+}
+
+/********************************************
+               FORMULAIRES
+ ********************************************/
+body .form-picture-trigger {
+  background: #FFF !important;
+}
+
+@include not-vue-container {
+  body .drop-grid,
+  body .out-of-grid,
+  body .ex-form,
+  body .pixel-grid {
+    fieldset {
+      @include add-elevation(1);
+    }
+    input,
+    select,
+    textarea {
+      background-color: $input-background;
+    }
+  }
+
+  body .pixel-grid {
+    background-color: $elevation-0;
+  }
+}
+
+
+

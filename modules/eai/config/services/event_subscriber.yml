@@ -1,0 +1,6 @@
+services:
+  _defaults:
+    autoconfigure: true
+
+  Ox\Interop\Eai\Subscriber\:
+    resource: '../../classes/Subscriber/'

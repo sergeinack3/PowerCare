@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>L</name>
+    <description>Message Footer</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0" length="1">
+            <name>L.1</name>
+            <description>Segment Row</description>
+            <datatype>NM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" forbidden="true" length="12">
+            <name>L.2</name>
+            <description>Not Use</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="4">
+            <name>L.3</name>
+            <description>Number Segment P</description>
+            <datatype>NM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="10">
+            <name>L.4</name>
+            <description>Number Segment of Message</description>
+            <datatype>NM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="12">
+            <name>L.5</name>
+            <description>Lot Number</description>
+            <datatype>ST</datatype>
+        </field>
+    </elements>
+</segment>

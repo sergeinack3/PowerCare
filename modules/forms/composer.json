@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Mediboard\\Forms\\": "classes",
+      "Ox\\Mediboard\\Forms\\Tests\\": "tests"
+    }
+  }
+}

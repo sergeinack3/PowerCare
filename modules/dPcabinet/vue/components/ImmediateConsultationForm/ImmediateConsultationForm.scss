@@ -1,0 +1,24 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.ImmediateConsultationForm {
+  display: flex;
+  flex-direction: column;
+  gap: $space*4;
+
+  &-filterName {
+    @include subtitle2;
+  }
+
+  &-directorDesc {
+    @include caption;
+    @include on-background(medium);
+    display: block;
+    padding-top: $space;
+  }
+}

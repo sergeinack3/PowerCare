@@ -1,0 +1,187 @@
+/**
+ * @package Mediboard\Files
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+img#thumb {
+  box-shadow: 0 6px 10px rgba(0,0,0,0.4);
+}
+
+.preview {
+  border: 1px solid #aaa;
+  background: #fff;
+}
+
+.thumb_mbhost {
+  display: inline-block;
+  width: 160px;
+  height: 180px;
+  border: 1px solid #666;
+  margin: 1px;
+  padding: 2px;
+  vertical-align: top;
+  text-align: center;
+  position: relative;
+}
+
+.thumb_mbhost label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.thumb_mbhost input[type=checkbox] {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.thumb_mbhost input[type=text] {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+}
+
+.thumb_mbhost input:checked + label {
+  background-color: rgba(77, 134, 219, 0.24);
+}
+
+.mbhost-uploader div.file_count {
+  font-weight: bold;
+  text-align: center;
+}
+
+.file-selected {
+  outline: 5px solid #000 !important;
+}
+
+#files_search_results_container table td > span.truncate{
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+  cursor: help;
+}
+
+.tag_selector {
+  border: 3px solid #ccc !important;
+}
+
+.tag_selector:hover {
+  background-color: #ccc !important;
+}
+
+.field_preview {
+  border: 2px solid;
+  border-radius: 3px;
+}
+
+.tag_selector_IPP, .field_preview_IPP {
+  border-color: steelblue !important;
+}
+
+.tag_selector_IPP:hover {
+  background-color: steelblue !important;
+}
+
+.tag_selector_NDA, .field_preview_NDA {
+  border-color: firebrick !important;
+}
+
+.tag_selector_NDA:hover {
+  background-color: firebrick !important;
+}
+
+.tag_selector_lastname, .field_preview_lastname {
+  border-color: forestgreen !important;
+}
+
+.tag_selector_lastname:hover {
+  background-color: forestgreen !important;
+}
+
+.tag_selector_firstname, .field_preview_firstname {
+  border-color: darkgoldenrod !important;
+}
+
+.tag_selector_firstname:hover {
+  background-color: darkgoldenrod !important;
+}
+
+.tag_selector_birthdate, .field_preview_birthdate {
+  border-color: lightcoral !important;
+}
+
+.tag_selector_birthdate:hover {
+  background-color: lightcoral !important;
+}
+
+.tag_selector_sejour, .field_preview_birthdate {
+  border-color: darkred !important;
+}
+
+.tag_selector_sejour:hover {
+  background-color: darkred !important;
+}
+
+.timeline > li .timeline_share_doc_label {
+  margin: -25px 0 10px 145px;
+  background: #ddd;
+  color: #666;
+  padding: 1em 0em 1em 1em;
+  position: relative;
+  border-radius: 5px;
+}
+
+div.timeline_share_doc_label.passed {
+  background: #8db38c;
+  color: black;
+  border: 1px solid green;
+}
+
+div.timeline_share_doc_label.passed::after {
+  content: "\f00c";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  float: right;
+  width: 32px;
+  height: 100%;
+}
+
+div.timeline_share_doc_label.actual {
+  background: #d2986d;
+  color: #ffffff;
+}
+
+div.timeline_share_doc_label.actual::after {
+  content: "\f12a";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  float: right;
+  width: 32px;
+  height: 100%;
+}
+
+div.timeline_share_doc_label.actual_passed {
+  background: #387dd2;
+  color: #ffffff;
+}
+
+div.timeline_share_doc_label.actual_passed::after {
+  content: "\f061";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  float: right;
+  width: 32px;
+  height: 100%;
+}
+
+.file_synchro.unpublished {
+  filter: grayscale(100%);
+}

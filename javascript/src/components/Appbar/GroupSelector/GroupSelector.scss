@@ -1,0 +1,120 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+
+@mixin skeletonLoading {
+  background-color: rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    animation: skeletonEffect 1.5s infinite;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+  }
+}
+
+.GroupSelector {
+  display: flex;
+  flex-flow: column nowrap;
+  overflow-y: auto;
+
+  &-search {
+    margin-bottom: $space*2;
+    padding: 0 $space*2;
+  }
+
+  &-loading {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &-skeletonCard {
+    background: $background-default-light;
+    border: $border;
+    border-radius: $space;
+    display: grid;
+    gap: $space*3;
+    grid-template-columns: 24px 1fr;
+    margin-bottom: $space*2;
+    padding: $space*3 $space*3;
+
+    &Radio {
+      @include skeletonLoading;
+      border-radius:50%;
+      height:24px;
+      width:24px;
+    }
+
+    &Content {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: $space;
+      overflow: hidden;
+    }
+  }
+
+  &-skeleton {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space;
+    padding: $space*3 $space*3;
+
+    &Content {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: $space;
+      overflow: hidden;
+    }
+
+    &Header {
+      @include skeletonLoading;
+      border-radius: 99px;
+      height: 16px;
+      width: 70%;
+
+      &.variantMinWidth {
+        width: 54%;
+      }
+
+      &.variantMaxWidth {
+        width: 86%;
+      }
+    }
+
+    &SubHeader {
+      @include skeletonLoading;
+      border-radius: 99px;
+      height: 12px;
+      opacity: 0.7;
+      width: 40%;
+
+      &.variantMinWidth {
+        width: 28%;
+      }
+
+      &.variantMaxWidth {
+        width: 58%;
+      }
+    }
+  }
+}
+
+@keyframes skeletonEffect {
+  100% {
+    transform: translateX(100%);
+  }
+}

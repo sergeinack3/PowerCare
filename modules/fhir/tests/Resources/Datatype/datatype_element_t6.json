@@ -1,0 +1,26 @@
+{
+  "string": [
+    null,
+    "value"
+  ],
+  "_string": [
+    {
+      "id": "id",
+      "extension": [
+        {
+          "url": "extension url",
+          "valueString": "value"
+        }
+      ]
+    },
+    {
+      "id": "id",
+      "extension": [
+        {
+          "url": "extension url",
+          "valueString": "value"
+        }
+      ]
+    }
+  ]
+}

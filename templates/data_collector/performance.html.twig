@@ -1,0 +1,345 @@
+{# templates/data_collector/template.html.twig #}
+{% extends '@WebProfiler/Profiler/layout.html.twig' %}
+
+{% block menu %}
+    {# This left-hand menu appears when using the full-screen profiler. #}
+    <span class="label">
+    <span class="icon">{{ include('data_collector/ox.svg') }}</span>
+    <strong>OX Performance</strong>
+</span>
+{% endblock %}
+
+{% block panel %}
+    <style>
+      table#table-time th, table#table-time tr, table#table-time td {
+        text-align: center !important;
+      }
+
+      .mkc_circle {
+        animation: mck_progress 1000ms ease-in-out;
+      }
+
+      @keyframes mck_progress {
+        0% {
+          stroke-dasharray: 0, 100;
+        }
+      }
+
+      .grid {
+        display: grid;
+        grid-column-gap: 1em;
+        grid-row-gap: 1em;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      @media (min-width: 31em) {
+        .grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    </style>
+
+    <script>
+      docReady(function () {
+        function createCircleChart(percent, color, size, stroke) {
+          let svg = `<svg class="mkc_circle-chart" viewbox="0 0 36 36" width="${size}" height="${size}" xmlns="http://www.w3.org/2000/svg">
+        <path class="mkc_circle-bg" stroke="#eeeeee" stroke-width="${stroke * 0.5}" fill="none" d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"/>
+        <path class="mkc_circle" stroke="${color}" stroke-width="${stroke}" stroke-dasharray="${percent},100" stroke-linecap="round" fill="none"
+            d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831" />
+        <text class="mkc_info" x="50%" y="50%" alignment-baseline="central" text-anchor="middle" font-size="8">${percent}%</text>
+    </svg>`;
+          return svg;
+        }
+
+        let charts = document.getElementsByClassName('mkCharts');
+
+        for (let i = 0; i < charts.length; i++) {
+          let chart = charts[i];
+          let percent = chart.dataset.percent;
+          let color = ('color' in chart.dataset) ? chart.dataset.color : "#2F4F4F";
+          let size = ('size' in chart.dataset) ? chart.dataset.size : "100";
+          let stroke = ('stroke' in chart.dataset) ? chart.dataset.stroke : "1";
+          charts[i].innerHTML = createCircleChart(percent, color, size, stroke);
+        }
+
+      });
+
+      function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+          // call on next available tick
+          setTimeout(fn, 1);
+        } else {
+          document.addEventListener("DOMContentLoaded", fn);
+        }
+      }
+    </script>
+
+    <div class="sf-tabs">
+        <div class="tab">
+            <h3 class="tab-title">Time</h3>
+            <div class="tab-content">
+                <h3>Metrics</h3>
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="value">{{ collector.time.total }} <span class="unit">ms</span></span>
+                        <span class="label">Total execution time</span>
+                    </div>
+                </div>
+                <h3>Stats</h3>
+                <table id="table-time">
+                    <thead>
+                    <tr>
+                        <th>PHP</th>
+                        <th>SQL</th>
+                        <th>NoSQL</th>
+                        <th>Transport</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            {{ collector.time.php.time }} <span class="unit">ms</span>
+                        </td>
+                        <td>
+                            {{ collector.time.sql.time }} <span class="unit">ms</span>
+                        </td>
+                        <td>
+                            {{ collector.time.nosql.time }} <span class="unit">ms</span>
+                        </td>
+                        <td>
+                            {{ collector.time.transport.time }} <span class="unit">ms</span>
+                        </td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td>
+                            <div class="mkCharts" data-percent="{{ collector.time.php.stat }}"
+                                 data-color="rgb(0, 184, 245)"
+                                 data-size="150"
+                                 data-stroke="2"></div>
+                        </td>
+                        <td>
+                            <div class="mkCharts" data-percent="{{ collector.time.sql.stat }}"
+                                 data-color="rgb(102, 204, 0)"
+                                 data-size="150"
+                                 data-stroke="2"></div>
+                        </td>
+                        <td>
+                            <div class="mkCharts" data-percent="{{ collector.time.nosql.stat }}"
+                                 data-color="rgb(140, 93, 230)"
+                                 data-size="150"
+                                 data-stroke="2"></div>
+                        </td>
+                        <td>
+                            <div class="mkCharts" data-percent="{{ collector.time.transport.stat }}"
+                                 data-color="rgb(255, 102, 51)"
+                                 data-size="150"
+                                 data-stroke="2"></div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div class="tab">
+            <h3 class="tab-title">Cache</h3>
+            <div class="tab-content">
+                <h3>Metrics</h3>
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="value">{{ collector.cache.total }}</span>
+                        <span class="label">TOTAL</span>
+                    </div>
+                    <div class="metric">
+                        <span class="value">{{ collector.cache.none }}</span>
+                        <span class="label">NONE</span>
+                    </div>
+                    <div class="metric">
+                        <span class="value">{{ collector.cache.inner }}</span>
+                        <span class="label">INNER</span>
+                    </div>
+                    <div class="metric">
+                        <span class="value">{{ collector.cache.outer }}</span>
+                        <span class="label">OUTER</span>
+                    </div>
+                    <div class="metric">
+                        <span class="value">{{ collector.cache.distr }}</span>
+                        <span class="label">DISTR</span>
+                    </div>
+                </div>
+
+                <h3>Calls</h3>
+                <table class="alt cache-table">
+                    <thead>
+                    <tr>
+                        <th class="nowrap" rowspan="2" style="vertical-align: middle">Préfix</th>
+                        <th class="nowrap" colspan="4" style="text-align: center">Layers</th>
+                    </tr>
+                    <tr>
+                        <th class="nowrap">NONE</th>
+                        <th class="nowrap">INNER</th>
+                        <th class="nowrap">OUTER</th>
+                        <th class="nowrap">DISTR</th>
+                    </tr>
+                    </thead>
+                    {% for prefix, cache in collector.cache.totals %}
+                        <tr>
+                            <td class="nowrap">{{ prefix }}</td>
+                            <td class="nowrap">{{ cache.NONE }}</td>
+                            <td class="nowrap">{{ cache.INNER }}</td>
+                            <td class="nowrap">{{ cache.OUTER }}</td>
+                            <td class="nowrap">{{ cache.DISTR }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+
+                <h3>Layers</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th scope="col">Layer</th>
+                        <th scope="col">Engine</th>
+                        <th scope="col">version</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>SHM</td>
+                        <td>{{ collector.cache.shm.engine }}</td>
+                        <td>{{ collector.cache.shm.version }}</td>
+                    </tr>
+                    <tr>
+                        <td>DSHM</td>
+                        <td>{{ collector.cache.dshm.engine }}</td>
+                        <td>{{ collector.cache.dshm.version }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="tab">
+            <h3 class="tab-title">Object</h3>
+            <div class="tab-content">
+                <span class="help">Objects that have been registered in cache (@see CStoredObject::registerCache)</span>
+                <table class="alt cache-objects">
+                    <thead>
+                    <tr>
+                        <th class="nowrap">Short name</th>
+                        <th class="nowrap">Count</th>
+                    </tr>
+                    </thead>
+                    {% for name, count in collector.objects %}
+                        <tr>
+                            <td class="nowrap">{{ name }}</td>
+                            <td class="nowrap">{{ count }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+        <div class="tab">
+            <h3 class="tab-title">NoSQL</h3>
+            <div class="tab-content">
+                <h3>Redis</h3>
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="value">{{ collector.nosql.redis.count }}</span>
+                        <span class="label">Queries</span>
+                    </div>
+                    <div class="metric">
+                        <span class="value">{{ collector.nosql.redis.time }} <span class="unit">ms</span></span>
+                        <span class="label">Time</span>
+                    </div>
+                </div>
+                <table class="alt redis">
+                    <thead>
+                    <tr>
+                        <th class="nowrap">#</th>
+                        <th class="nowrap">Time</th>
+                        <th class="nowrap">Info</th>
+                    </tr>
+                    </thead>
+                    {% for i, entry in collector.nosql.redis.entries %}
+                        <tr>
+                            <td class="nowrap">{{ i }}</td>
+                            <td class="nowrap">{{ entry[1] }} &#181;s</td>
+                            <td class="nowrap">{{ entry[0] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+                <h3>Elastic</h3>
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="value">{{ collector.nosql.elastic.count }}</span>
+                        <span class="label">Queries</span>
+                    </div>
+                    <div class="metric">
+                        <span class="value">{{ collector.nosql.elastic.time }} <span class="unit">ms</span></span>
+                        <span class="label">Time</span>
+                    </div>
+                </div>
+                <table class="alt redis">
+                    <thead>
+                    <tr>
+                        <th class="nowrap">#</th>
+                        <th class="nowrap">Time</th>
+                        <th class="nowrap">Route</th>
+                    </tr>
+                    </thead>
+                    {% for i, entry in collector.nosql.elastic.entries %}
+                        <tr>
+                            <td class="nowrap">{{ i }}</td>
+                            <td class="nowrap">{{ entry[1] }} ms</td>
+                            <td class="nowrap">{{ entry[0] }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+        <div class="tab">
+            <h3 class="tab-title">Transport Tiers</h3>
+            <div class="tab-content">
+                <h3>Metrics</h3>
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="value">{{ collector.transport.count }}</span>
+                        <span class="label">Request</span>
+                    </div>
+                    <div class="metric">
+                    <span class="value">{{ collector.transport.time }} <span class="unit">ms</span>
+                    </span>
+                        <span class="label">Time</span>
+                    </div>
+                </div>
+                <h3>Traces</h3>
+                <table class="alt cache-objects">
+                    <thead>
+                    <tr>
+                        <th class="nowrap">#</th>
+                        <th class="nowrap">Source</th>
+                        <th class="nowrap">Time</th>
+                        <th class="nowrap">Count</th>
+                    </tr>
+                    </thead>
+                    {% for i, source in collector.transport.sources %}
+                        <tr>
+                            <td class="nowrap">{{ i }}</td>
+                            <td class="nowrap">{{ source.name }}</td>
+                            <td class="nowrap">{{ source.time }} <span class="unit">ms</span></td>
+                            <td class="nowrap">{{ source.count }}</td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

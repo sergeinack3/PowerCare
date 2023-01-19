@@ -1,0 +1,219 @@
+@import url(vertical.css);
+
+body, table {
+  font-family: Georgia, serif;
+  font-size: small;
+  background: #fff;
+}
+
+body {
+  padding: 2px;
+  padding-right: 6px;
+}
+
+/** WIP **/
+@media WIP/* screen */ {
+  body {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 10px auto!important;
+    padding: 2cm!important;
+    /*transform: scale(0.9);*/
+    transform-origin: center top 0;
+    width: 21cm;
+    position: relative;
+  }
+
+  body:before {
+    content: "";
+    display: block;
+    border: 1px dotted rgba(0,0,0,0.2);
+    position: absolute;
+    top: 2cm;
+    height: 25.7cm; /* height - margin-top - margin-bottom */
+    left: 0;
+    right: 0;
+    border-width: 1px 0 0 0; /*1px 0 1px;*/
+  }
+
+  body:after {
+    content: "";
+    display: block;
+    border: 1px dotted rgba(0,0,0,0.2);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2cm;
+    right: 2cm;
+    border-width: 0 1px 0;
+  }
+}
+
+textarea#htmlarea {
+  width: 99%;
+  height: 100%;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+span.hilite {
+  background: #f5f;
+}
+
+table.tbl {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table.tbl th {
+  background: #eee;
+  border: 0.1px solid #aaa;
+  padding: 0.1em 0.5em;
+  text-align: center;
+}
+
+table.tbl td {
+  border: 0.1px solid #aaa;
+  padding: 0.1em 0.5em;
+}
+
+span.page:before {
+  content: counter(page, none);
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+@media screen {
+  #header,  #footer {
+    margin: 10px;
+    border: 2px dashed #ccc;
+    padding: 3px;
+    opacity: 0.4;
+    overflow: hidden;
+  }
+
+  #footer {
+    display: none;
+  }
+
+  #header:hover, #footer:hover {
+    opacity: 1;
+  }
+
+  html {
+    background: #eee;
+  }
+
+  body {
+    border: 1px solid #aaa;
+    margin: 10px;
+    padding: 2px;
+    padding-right: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+    min-height: 10em;
+    /*width: 21cm;
+    margin: 10px auto;*/
+  }
+
+  table {
+    border-collapse: collapse;
+    /* Pour le non heritage dans domPDF*/
+    text-align: left;
+    white-space: normal;
+    line-height: normal;
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    font-variant: normal;
+  }
+
+  td {
+    border: 1px solid #888;
+  }
+
+  span.field,
+  span.field * {
+    background: #dde;
+  }
+
+  span.metadata,
+  span.metada * {
+    background: #19a;
+  }
+
+  span.value,
+  span.value * {
+    background: #eee;
+  }
+
+  span.name {
+    background: #ded;
+  }
+
+  span.choice {
+    background: #eee;
+  }
+
+  hr.pagebreak,
+  hr.pageBreak {
+    border: 1px dotted #aaa;
+    border-width: 1px 0;
+    margin: 2px -10px;
+    background: #bbb;
+    height: 5px;
+  }
+
+  img.barcode {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAABCAIAAABG0om7AAAABGdBTUEAALGPC%2FxhBQAAAAlwSFlzAAAOwgAADsIBFShKgAAAABl0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuND6NzHYAAAAXSURBVBhXYziMBP4jAYgwRIB4NcgmAADkS0%2FP67r7igAAAABJRU5ErkJggg%3D%3D);
+    margin: 0.2em;
+  }
+}
+
+@media print {
+  #header, #footer {
+    /* si le display est changé par les plugins ckeditor */
+    display: block !important;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    border: none;
+  }
+
+  table {
+    border-collapse: collapse !important;
+  }
+
+  #header {
+    top: 0em;
+    /*border-bottom-width: 1px;*/
+  }
+
+  #footer {
+    bottom: 0em;
+    /*border-top-width: 1px;*/
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #999;
+    padding: 0;
+  }
+
+  hr.pagebreak,
+  hr.pageBreak {
+    border: none;
+    padding: 0;
+    margin: 0;
+    page-break-before: always;
+  }
+
+  input {
+    font-family: dejavu sans;
+    display: inline;
+  }
+}

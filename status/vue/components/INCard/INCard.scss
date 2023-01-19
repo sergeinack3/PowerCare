@@ -1,0 +1,13 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+@import '../INUtils';
+
+.INCard {
+  box-sizing: border-box;
+  padding: $xlarge-space;
+  border: 1px solid $grey-75;
+  border-radius: $border-radius;
+}

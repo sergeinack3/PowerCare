@@ -1,0 +1,24 @@
+includes:
+  - dev/PhpStan/ignoreErrorsCore.neon
+  - dev/PhpStan/ignoreErrorsModules.neon
+parameters:
+  level: 2
+  paths:
+    - core/classes
+    - cli/classes
+    - tests/classes
+    - modules
+  excludePaths:
+    - core/classes/CSmartyMB.php
+    - core/classes/CSmartyDP.php
+    - index.php
+    - cli/tests
+    - core/classes/Calendar
+    - core/classes/Socket
+    - core/tests
+  scanFiles:
+    - vendor/autoload.php
+  bootstrapFiles:
+    - dev/PhpStan/bootstrap.php
+  tmpDir: tmp/phpstan
+  reportUnmatchedIgnoredErrors: false

@@ -1,0 +1,51 @@
+<RetrieveValueSetResponse>
+    <ValueSet displayName="formatCode values for Connectathon" version="20081214" id="1.3.6.1.4.1.21367.101.4">
+        <ConceptList xml:lang="en-US">
+            <Concept code="1.2.840.10008.5.1.4.1.1.88.59" codeSystem="1.2.840.10008.2.6.1"
+                     displayName="Key Object Selection Document"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.10" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="EDR"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.10" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="urn:ihe:pcc:edr:2007"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.11.2" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="urn:ihe:pcc:aps:2007"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.16.1.1" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="urn:ihe:pcc:apr:handsp:2008"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.16.1.1" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="urn:ihe:pcc:apr:lab:2008"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.16.1.1" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="urn:ihe:pcc:apr:edu:2008"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.18.1.2" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="urn:ihe:pcc:irc:2008"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.2" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="XDS-MS"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.3" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="urn:ihe:pcc:xds-ms:2007"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.5" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="XPHR Extract"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.5" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="urn:ihe:pcc:xphr:2007"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.6" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="XPHR Update"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.7" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="Privacy Consent Policy"/>
+            <Concept code="1.3.6.1.4.1.19376.1.5.3.1.1.9" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="PPHP"/>
+            <Concept code="1.3.6.1.4.1.21367.2009.9.999" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="XX SVS Connectathon Code"/>
+            <Concept code="CCR-IHE-0.9" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="CCR/IHE-0.9"/>
+            <Concept code="CCR-V1.0" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="CCR V1.0"/>
+            <Concept code="CDA-IHE-1.0" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="CDA/IHE-1.0"/>
+            <Concept code="CDAR2-IHE-1.0" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="CDAR2/IHE-1.0"/>
+            <Concept code="Generic-Image" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="Generic Image"/>
+            <Concept code="HL7-Lab-2.5" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="HL7/Lab 2.5"/>
+            <Concept code="IHE-multipart" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="multipart"/>
+            <Concept code="PDF" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="PDF"/>
+            <Concept code="PDF/IHE-1.x" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="PDF/IHE-1.x"/>
+            <Concept code="ScanPDF/IHE-1.x" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="ScanPDF/IHE-1.x"/>
+            <Concept code="ScanTEXT/IHE-1.x" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE"
+                     displayName="ScanTEXT/IHE-1.x"/>
+            <Concept code="TEXT" codeSystem="1.3.6.1.4.1.21367.100.1" codeSystemName="99IHE" displayName="TEXT"/>
+        </ConceptList>
+    </ValueSet>
+</RetrieveValueSetResponse>

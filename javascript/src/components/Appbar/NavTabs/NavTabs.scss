@@ -1,0 +1,78 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.NavTabs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+
+  &-pinnedTabs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: $space*2;
+    overflow: hidden;
+  }
+
+  &-moreTab {
+    @include on-background(medium);
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    display: flex;
+    height: 42px;
+    justify-content: center;
+    margin-left: $space*4;
+    width: 42px;
+
+    &:hover {
+      @include primary-opacity($hover);
+      cursor: pointer;
+    }
+
+    &.active {
+      @include primary-opacity($active);
+    }
+
+    &.standard {
+      @include primary-opacity($active);
+      border: 1px solid $primary-300;
+      border-bottom-left-radius: 0;
+      border-left: none;
+      border-top-left-radius: 0;
+      margin-left: 0;
+    }
+  }
+
+  &-moreContainer {
+    position: relative;
+  }
+
+  &-tabSelector {
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 1;
+  }
+}
+
+@include screenSmallerThan($screenSmall, "700") {
+  .NavTabs {
+    &-pinnedTabs {
+      gap: $space;
+    }
+
+    &-tabSelector {
+      right: 0;
+      left: initial;
+    }
+  }
+}

@@ -1,0 +1,330 @@
+/**
+ * @package Mediboard\SalleOp
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.ccam-dents {
+  position: relative;
+}
+.ccam-dents img {
+  display: block;
+}
+.ccam-dents label.schema-out {
+  border: 1px solid #abe;
+  background-color: #eee;
+  border-radius: 3px;
+  margin: 1px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+.ccam-dents label.schema {
+  position: absolute;
+  background: grey;
+  opacity: 0.2;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+.ccam-dents input.schema+label.schema {
+  background: green;
+  opacity: 0.1;
+}
+.ccam-dents input.schema:checked+label.schema {
+  background: green;
+  opacity: 0.8;
+}
+.ccam-dents input.schema {
+  display: none;
+}
+.categorie_img {
+  text-align: center;
+}
+div.small-info a.button.big.search_nda,
+div.small-info button.search_nda {
+  width: 40px;
+  padding-top: 9px;
+  padding-left: 5px;
+  margin-left: 35px;
+}
+div.small-info a.button.big.search_nda:first-child,
+div.small-info button.search_nda:first-child {
+  margin-left: 0px;
+}
+div.small-info button.search_nda.clock-tick {
+  width: 65px;
+}
+div.small-info button.search_nda.clock-tick::after {
+  content: url(../../../style/mediboard_ext/images/icons/tick.png);
+  display: inline-block;
+  margin-right: 1px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+table.supervision {
+  border-collapse: collapse;
+}
+
+table.supervision th {
+  color: #777777;
+  border: 1px solid #bfbfbf;
+}
+
+table.supervision th.title {
+  font-weight: bold;
+  background-color: #eeeeee;
+  color: #777777;
+  text-shadow: none;
+}
+
+table.supervision th.row-title {
+  text-align: left;
+}
+
+table.supervision td {
+  text-align: center;
+  border: 1px solid #bfbfbf;
+  background-color: #eeeeee;
+  color: #777777;
+  padding: 1px;
+}
+
+table.supervision td.empty {
+  font-style: italic;
+  color: #999999;
+}
+
+table.tops_horaire_table > tbody > tr > td {
+  padding: 5px;
+}
+
+div.top_horaire {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  background-color: #e0e0e0;
+  width: 100%;
+  height: 80px;
+}
+
+div.top_horaire_to_fill {
+  cursor: pointer;
+}
+
+div.top_horaire_filled {
+  background-color: #f7f6f6;
+}
+
+div.top_horaire i {
+  font-size: 1.5em;
+}
+
+div.top_horaire_filled i {
+  color: #080;
+}
+
+div.top_horaire td {
+  font-size: 1.5em;
+  vertical-align: middle;
+  text-align: center;
+}
+
+div.top_horaire input[type="text"].dateTime {
+  width: 150px !important;
+}
+
+/* Perop */
+fieldset.surveillance-timeline-container {
+  padding-bottom: 10px;
+}
+
+div.tool_perop {
+  display: inline;
+  position: relative;
+}
+
+div.menu_perop {
+  padding: 15px;
+  margin: 0;
+  box-sizing: border-box;
+  text-indent: 0;
+  text-align: left;
+  border: 1px solid #bbb;
+  -moz-box-sizing: border-box;
+}
+
+div.menu_perop_common {
+  background-color: rgba(243, 156, 3, 0.7);
+}
+
+div.menu_perop_print {
+  background-color: rgba(166, 105, 237, 0.8);
+}
+
+/* Geste perop */
+ul#chapitres_geste,
+ul#categories_geste,
+ul#gestes_geste,
+ul#precisions_geste,
+ul#valeurs_geste {
+  list-style-type: none;
+  overflow-y: auto;
+  padding: 0;
+  border: 1px solid #bbb;
+  font-size: 1.2em;
+}
+
+ul#chapitres_geste li div.chapitres-container,
+ul#categories_geste li div.categories-container,
+ul#gestes_geste li div.gestes-container,
+ul#precisions_geste li div.precisions-container,
+ul#valeurs_geste li div.valeurs-container {
+  text-align: left;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 5px;
+}
+
+ul#chapitres_geste li:nth-of-type(odd) div.chapitres-container,
+ul#categories_geste li:nth-of-type(odd) div.categories-container,
+ul#gestes_geste li:nth-of-type(odd) div.gestes-container,
+ul#precisions_geste li:nth-of-type(odd) div.precisions-container,
+ul#valeurs_geste li:nth-of-type(odd) div.valeurs-container {
+  background-color: rgba(168, 183, 235, 0.10);
+}
+
+ul#chapitres_geste li div.chapitres-container:hover,
+ul#categories_geste li div.categories-container:hover,
+ul#gestes_geste li div.gestes-container:hover,
+ul#precisions_geste li div.precisions-container:hover,
+ul#valeurs_geste li div.valeurs-container:hover {
+  background-color: rgba(168, 183, 235, 0.30);
+}
+
+div.chapitres-container span.fold,
+div.categories-container span.fold,
+div.gestes-container span.fold,
+div.precisions-container span.fold,
+div.valeurs-container span.fold {
+  float: right;
+  margin-right: 5px;
+}
+
+div.chapitres-container.selected,
+div.categories-container.selected,
+div.gestes-container.selected,
+div.precisions-container.selected,
+div.valeurs-container.selected {
+  background-color: #fdfd96 !important;
+}
+
+div#list_elements_gestes {
+  vertical-align: top;
+  text-align: center;
+}
+
+div#list_elements_gestes fieldset {
+  overflow-y: auto;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+input.input_element {
+  float: left;
+  margin-right: 5px;
+}
+
+.header_fixed {
+  position: fixed;
+  top: 0 !important;
+  background-color: white;
+  z-index: 100;
+  box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+
+.field-timing-container {
+  text-align: center;
+  padding: 2px 1px;
+  display: flex;
+}
+
+.field-timing-title {
+  padding-left: 4px;
+  font-weight: bold;
+  flex: 1;
+  text-align: right;
+  padding-right: 4px;
+  min-height: 14px;
+}
+
+.field-timing-title label {
+  vertical-align: middle;
+}
+
+.field-timing-value {
+  padding-left: 4px;
+  font-weight: bold;
+  flex: 1;
+  text-align: left;
+  min-height: 18px;
+  min-width: 20px;
+  margin-right: 8px;
+}
+
+.vw-timings .field-timing-container {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  flex-direction: column;
+}
+
+.vw-timings .field-timing-container.show-content {
+  flex-direction: column;
+  padding-left: 28px;
+}
+
+.vw-timings .field-timing-container.show-content.inline-container {
+  padding-left: 1px;
+}
+
+.vw-timings .field-timing-container.show-button {
+  flex-direction: row-reverse;
+}
+
+.vw-timings .field-timing-container.show-button .field-timing-value {
+  flex: 0;
+}
+
+.vw-timings .field-timing-container.show-button.only-field {
+  flex-direction: row;
+}
+
+.vw-timings .field-timing-container.show-content.only-field {
+  padding-left: 1px;
+}
+
+.vw-timings .field-timing-title {
+  text-align: left;
+}
+
+.vw-timings .field-timing-value {
+  text-align: left;
+}
+
+span.timeline-total-massique {
+    color: #009866;
+    border-color: #009866;
+}
+
+.vis-item .vis-onUpdateTime-tooltip {
+  position: absolute;
+  background: #4f81bd;
+  color: white;
+  text-align: center;
+  white-space: nowrap;
+  padding: 5px;
+  border-radius: 1px;
+  transform: translateX(-50%);
+  left: 50%;
+  width: 50px;
+}

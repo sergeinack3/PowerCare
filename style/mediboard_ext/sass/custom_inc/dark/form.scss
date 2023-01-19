@@ -1,0 +1,217 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+optgroup, option {
+  @include body2();
+  padding: 0;
+  margin: 0;
+  background: $elevation-16;
+  @include black-emphasis($opacity-high-emphasis-black);
+
+  &[disabled] {
+    @include black-emphasis($opacity-low-black);
+  }
+}
+
+// Readonly
+textarea[readonly],
+textarea[readonly]:focus,
+input[type=text][readonly],
+input[type=text][readonly]:focus,
+input[type=number][readonly],
+input[type=number][readonly]:focus {
+  @include not-vue {
+    @include black-emphasis-color($opacity-low-black);
+    opacity: 1;
+
+    background-color: transparent !important;
+  }
+}
+
+body {
+  @include not-vue-container {
+    > input {
+      &[type="text"],
+      &[type="email"],
+      &[type="number"],
+      &[type="password"],
+      &[type="search"],
+      &[type="tel"],
+      &[type="url"] {
+        @include black-emphasis($opacity-high-emphasis-black);
+        @include black-emphasis-color($opacity-very-low-black);
+        background-color: $input-background;
+
+        &[disabled] {
+          opacity: .38 !important;
+        }
+      }
+    }
+  }
+
+
+  select {
+    @include black-emphasis($opacity-high-emphasis-black);
+    @include black-emphasis-color($opacity-very-low-black);
+    background-image: url('images/icons/caret-down-solid-white.svg');
+    background-color: $input-background;
+
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 rgba(255, 255, 255, $opacity-high-emphasis-black);
+    }
+  }
+
+  // Readonly
+  textarea[readonly],
+  textarea[readonly]:focus,
+  input[type=text][readonly],
+  input[type=text][readonly]:focus,
+  input[type=number][readonly],
+  input[type=number][readonly]:focus {
+    @include not-vue {
+
+      background-color: $input-background !important;
+    }
+  }
+}
+
+@include not-vue-container {
+  div.dropdown {
+    &.dropdown-group {
+      input.autocomplete {
+        background-color: $input-background;
+      }
+    }
+
+    input.autocomplete {
+      background-color: $input-background;
+    }
+  }
+}
+
+body {
+  @include not-vue-container {
+    div.me-form-group {
+      &-layout,
+      &-layout.inanimate{
+        @include black-emphasis($opacity-high-emphasis-black);
+        background-color: $input-background;
+        @include black-emphasis-color($opacity-very-low-black);
+
+        &.me-no-border {
+          background-color: transparent;
+        }
+      }
+
+      // Gestion du dirty
+      &.dirty {
+        input,
+        textarea,
+        .textarea-container + textarea,
+        div.dropdown + input {
+          @include black-emphasis-color($opacity-very-low-black);
+        }
+      }
+
+      // Gestion des contenus additionnels
+      div.me-field-content {
+        background-color: $input-background;
+      }
+
+
+      // Gestion de la couleur de fond
+      &.me-label-bg-light {
+        label {
+          background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, $input-background 50%, $input-background 100%) !important;
+        }
+      }
+
+      // Suppression du style par default nul de Chrome
+      input:-webkit-autofill,
+      input:-webkit-autofill:hover,
+      input:-webkit-autofill:focus,
+      textarea:-webkit-autofill,
+      textarea:-webkit-autofill:hover,
+      textarea:-webkit-autofill:focus,
+      select:-webkit-autofill,
+      select:-webkit-autofill:hover,
+      select:-webkit-autofill:focus {
+        background-color: $input-background !important;
+        -webkit-box-shadow: 0 0 0px 1000px $input-background inset;
+        -webkit-text-fill-color: alpha(#FFF, $opacity-high-emphasis-white);
+        border-color: #3a3a3a;
+      }
+
+      // Input Text
+      input {
+        @include black-emphasis($opacity-high-emphasis-black);
+        @include black-emphasis-color($opacity-very-low-black);
+        background-color: $input-background;
+      }
+
+      // Select
+      select {
+        @include black-emphasis($opacity-high-emphasis-black);
+        @include black-emphasis-color($opacity-very-low-black);
+        background-image: url('images/icons/caret-down-solid-white.svg') !important;
+        background-color: $input-background;
+
+        &:-moz-focusring {
+          color: transparent;
+          text-shadow: 0 0 0 rgba(255, 255, 255, $opacity-high-emphasis-black);
+        }
+
+        &:disabled {
+          @include black-emphasis-color(0.05);
+
+          & ~ label {
+            background: none;
+          }
+        }
+      }
+
+      // Color picker
+      div.sp-replacer {
+        @include black-emphasis-color($opacity-very-low-black);
+        background-color: $input-background;
+      }
+    }
+  }
+}
+
+
+/**
+  Fieldset
+ */
+body fieldset {
+  @include not-vue {
+    @include card-border();
+
+    > legend {
+      background-color: $secondary-bandeau;
+      z-index: 1;
+    }
+  }
+}
+
+
+
+
+.textarea-helped,
+.toolbar-container {
+  &.textarea-helped {
+    .toolbar {
+      @include shadow12();
+    }
+
+    .sub-toolbar {
+      @include shadow12();
+    }
+  }
+}
+

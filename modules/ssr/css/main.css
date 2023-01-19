@@ -1,0 +1,114 @@
+/**
+ * @package Mediboard\Ssr
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.planning-signatures fieldset {
+  width: 45%;
+  height: 6em;
+}
+
+table.tbl tr.ssr-kine-conges td,
+table.tbl tr.ssr-kine-conges th {
+  text-align: center;
+  background-image: url(../../../style/mediboard_ext/images/pictures/unavailable.png);
+}
+
+table.tbl tr  td.ssr-far {
+  text-align: center;
+}
+
+table.tbl tr td.ssr-close {
+  text-align: center;
+  font-weight: bold;
+}
+
+table.tbl tr td.ssr-today,
+table.tbl tr:hover td.ssr-today {
+  text-align: center;
+  font-weight: bold;
+  background: #ccc;
+}
+
+table.tbl tr td.ssr-today div {
+  display: none;
+}
+
+td.ssr-repartition {
+  border: 1px solid #aaa;
+  border-width: 1px 0;
+  line-height: 110%;
+}
+
+td.ssr-repartition span.encours {
+  font-weight: bold;
+}
+
+td.ssr-repartition div.libelle {
+  opacity: 0.7;
+  font-size: 90%;
+  line-height: 110%;
+}
+
+.ssr div.motif-color {
+  height: 5px;
+  margin-top: 4px;
+  margin-left: 2px;
+}
+
+td.ssr-repartition  div.motif-color {
+  float: left;
+  width: 70%;
+}
+
+table.tbl tr.ssr-annule td {
+  background-color: #f88;
+}
+
+table.tbl tr.ssr-prevu td {
+  background-color: #dfd;
+}
+
+table.tbl tr.ssr-annule  td.cancelled,
+table.tbl tr.ssr-termine td.cancelled,
+table.tbl tr.ssr-prevu   td.cancelled {
+  background-color: #f88;
+}
+
+/* Favoris CsARR */
+
+span.csarr-favori {
+  box-sizing: border-box;
+  display: inline-block;
+  border: none;
+  vertical-align: middle;
+  padding: 2px;
+  width: 45px;
+  font-size: 16px;
+  height: 22px;
+}
+
+span.csarr-favori:hover {
+  border: 1px solid goldenrod;
+  border-radius: 3px;
+  padding: 1px;
+}
+
+span.csarr-favori span.button {
+  display: inline-block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 15px;
+  font-size: 12px;
+}
+
+span.csarr-favori span.button i {
+  display: none;
+}
+
+span.csarr-favori:hover span.button i {
+  display: inline;
+}

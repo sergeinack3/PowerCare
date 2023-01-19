@@ -1,0 +1,70 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.SampleMovieForm {
+  display: block;
+  height: 100%;
+  padding-top: $space*20;
+
+  &-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-bottom: $space*3;
+    position: fixed;
+    top: 55px;
+    width: 554px;
+    z-index: 1;
+  }
+
+  &-headerActions {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: $space*4;
+  }
+
+  &-title {
+    @include h5;
+    @include on-background(high)
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: $space*6;
+    max-width: 554px;
+  }
+
+  &-date {
+    display: flex;
+    flex-direction: row;
+    gap: $space*5;
+  }
+
+  &-image {
+    object-fit: cover;
+  }
+
+  &-casting {
+    margin-bottom: $space*-4;
+  }
+
+  &-castingTitle {
+    @include on-background(high);
+    @include subtitle1();
+    margin-bottom: $space*2;
+  }
+
+  &-castingContent {
+    display: flex;
+    flex-direction: row;
+    gap: $space*2;
+  }
+}

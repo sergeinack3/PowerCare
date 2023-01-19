@@ -1,0 +1,3 @@
+yaml:
+  resource: '../includes/all_routes.yml'
+  type:     yaml

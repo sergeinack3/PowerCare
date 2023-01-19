@@ -1,0 +1,213 @@
+/**
+ * @package Mediboard\Facturation
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+table.tbl td.acte-CActeCCAM, table.tbl tr:hover td.acte-CActeCCAM {
+  background-color:#FF69B4;
+}
+table.tbl td.acte-CActeNGAP, table.tbl tr:hover td.acte-CActeNGAP {
+  background-color:#32CD32;
+}
+table.tbl td.acte-CFraisDivers, table.tbl tr:hover td.acte-CFraisDivers {
+  background-color:#C0C0C0;
+}
+
+table.main tr td.reglee, table.main tr.reglee,
+table.tbl tr td.reglee, table.tbl tr.reglee {
+  background-color:#cfc;
+}
+table.main tr td.non_cloture, table.main tr.non_cloture,
+table.tbl tr td.non_cloture, table.tbl tr.non_cloture {
+  background-color:#fcc;
+}
+table.main tr td.noncotee, table.main tr.noncotee,
+table.tbl tr td.noncotee, table.tbl tr.noncotee {
+  background-color:#ffcd75;
+}
+
+table.main tr td.rejet, table.main tr.rejet,
+table.tbl tr td.rejet, table.tbl tr.rejet {
+  background-color:#f89;
+}
+
+div.tip_hover {
+  position: relative;
+  display: inline-block;
+}
+div.tip_hover > div.tip_content {
+  position: absolute;
+  background: #FFFFFF;
+  border: 1px solid black;
+  box-shadow: 1px 1px 4px -2px black;
+  border-radius: 2px;
+  right: 0;
+  top: 0;
+  padding-left: 4px;
+  min-height: 20px;
+  line-height: 20px;
+  z-index: 2;
+  display: none;
+}
+div.tip_hover > div.tip_content.tip_content_left {
+  right: auto;
+  left: 0;
+}
+div.tip_hover > div.tip_content > form > button {
+  margin-top: -4px !important;
+}
+div.tip_hover:hover > div.tip_content {
+  display: block;
+}
+
+div.tdb-cotation-active-filter {
+  display: inline-block;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #666666;
+  color: #666666;
+  padding: 4px;
+}
+
+div.tdb-cotation-active-filter i{
+  font-size: 12px;
+  color: #666666;
+}
+div.tdb-cotation-active-filter *{
+  display: inline-block;
+}
+
+div.tdb-cotation-active-filter div.tdb-cotation-active-filter-label {
+  font-size: 10px;
+}
+div.tdb-cotation-active-filter div.tdb-cotation-active-filter-value {
+  font-size: 12px;
+}
+
+/****************************************
+** Gestion des liaisons de facture
+*****************************************/
+.factureliaison-container {
+  text-align: center;
+}
+.factureliaison-element-container {
+  width: calc(99% - 4px);
+  margin-top: 8px;
+  padding: 0 4px;
+}
+.factureliaison-element {
+  padding: 4px 8px;
+  box-sizing: border-box;
+  background: #F0F0F0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.12), 0 0px 2px rgba(0, 0, 0, 0.14);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all .2s;
+}
+.factureliaison-element.factureliaison-element-selected {
+  border-left: 5px solid #0a6dcf;
+}
+.factureliaison-element-container:hover .factureliaison-element{
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14);
+}
+.factureliaison-element .type {
+  font-size: 34px;
+  margin-right: 16px;
+}
+.factureliaison-element .content {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.factureliaison-element .label {
+  font-size: 18px;
+}
+.factureliaison-element .sublabel {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.factureliaison-element .sublabel2 {
+  margin-left: 8px;
+}
+.factureliaison-element .actions,
+.factureliaison-element .type {
+  height: 50px;
+  width: 50px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  border: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.factureliaison-element .actions:hover,
+.factureliaison-element .actions.selected,
+.factureliaison-element .type:hover {
+  color: #666666;
+  border-color: #666666;
+}
+.factureliaison-element .actions.disabled {
+  opacity: 0;
+  width: 1px;
+  overflow: hidden;
+}
+.factureliaison-element .actions i {
+  font-size: 34px;
+}
+.factureliaison-element .l-actions {
+  margin-right: 8px;
+  transition: all .2s;
+}
+.factureliaison-children .factureliaison-element {
+  display: none;
+  margin-left: 100px;
+  opacity: 0;
+}
+.factureliaison-element-container.show-children+.factureliaison-children .factureliaison-element {
+  display: flex;
+  opacity: 1;
+  height: auto;
+  animation-name: factureLiaisonChildrenReveal;
+  animation-duration: .1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+@keyframes factureLiaisonChildrenReveal {
+  from { opacity: 1; margin-top: -66px;}
+  to   { opacity: 1; margin-top: 0; }
+}
+
+.facturestatus-color-noncotee {
+  background-color: #ffcd75 !important;
+}
+
+.facturestatus-color-non_cloture {
+  background-color: #ffcd75 !important;
+}
+
+.facturestatus-color-rejets {
+  background-color: #f89 !important;
+}
+
+.facturestatus-color-reglee {
+  background-color: #cfc !important;
+}
+
+.facturestatus-color-none {
+  background-color: lightgrey !important;
+}
+
+.facturestatus-color-cotee {
+  background-color: lightblue !important;
+}
+
+.facturestatus-color-hatching, .facturestatus-color-extournee{
+  background-image: repeating-linear-gradient(-45deg, #B0BEC5, #B0BEC5 2px, transparent 3px, transparent 12px) !important;
+}

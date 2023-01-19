@@ -1,0 +1,9 @@
+{
+  "url" : "extension url",
+  "extension" : [
+    {
+      "url" : "extension url",
+      "valueString" : "value"
+    }
+  ]
+}

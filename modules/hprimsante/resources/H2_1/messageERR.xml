@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message>
+    <name>ERR</name>
+    <description>Error</description>
+    <segments>
+        <segment>H</segment>
+        <segment minOccurs="0" maxOccurs="unbounded">ERR</segment>
+        <segment>L</segment>
+    </segments>
+</message>

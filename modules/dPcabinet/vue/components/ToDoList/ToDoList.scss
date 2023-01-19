@@ -1,0 +1,41 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.ToDoList {
+
+  &-closedContent {
+    margin-top: $space*6;
+    text-align: center;
+    width: 100%;
+  }
+
+  &-header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: $space*6 $space*2 0 $space*6;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    padding-left: $space*6;
+  }
+
+  &-title {
+    @include h6;
+  }
+
+  &-add {
+    margin: $space*3 $space*2 0 0;
+    padding: $space*2 $space*2 $space*2 0;
+    text-align: center;
+    width: 100%;
+  }
+}

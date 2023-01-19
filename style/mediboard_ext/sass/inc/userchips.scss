@@ -1,0 +1,223 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+/**
+  User Chips
+ */
+.me-user-chips {
+  display: inline-block;
+  background-color: $grey-100;
+  height: 22px;
+  border-radius: 11px;
+  margin: $small-space 0;
+  overflow: hidden;
+  vertical-align: middle;
+
+  &:hover {
+    > div > .me-user-chips-icon .me-user-chips-border  {
+      transition: transform .1s linear;
+      transform: translateY(-50%) translateX(-50%) scale(1.15);
+    }
+  }
+
+  &.me-wrapped {
+    height: auto;
+    min-height: 22px;
+
+    > div {
+      min-height: 22px;
+
+      > .me-user-chips-icon {
+        min-width: 14px;
+      }
+
+      > .me-user-chips-content {
+        padding-right: 6px;
+        white-space: normal;
+        max-width: 75px;
+      }
+    }
+  }
+
+  &.expand {
+    height: auto;
+    min-height: 22px;
+    padding: 2px 0 0 4px;
+
+    .me-user-chips-icon {
+      align-self: flex-start;
+      margin-top: 2px;
+      margin-left: 0;
+    }
+
+    .me-user-chips-content {
+      margin-top: 2px;
+      max-width: unset;
+    }
+
+    .me-user-chips-speciality {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .me-user-chips-speciality {
+      @include black-emphasis(0.6);
+      @include caption;
+    }
+  }
+
+  &.me-no-chips {
+    background-color: transparent;
+    margin-top: 0;
+  }
+
+  &.me-full-width .me-user-chips-content {
+    max-width: unset;
+  }
+
+  &.me-user-chips-initials {
+    background-color: transparent;
+    overflow: visible;
+    padding-left: 4px;
+
+    .me-user-chips-icon {
+      background-color: transparent !important;
+      width: 22px;
+      height: 22px;
+      border-radius: 11px;
+
+      .me-user-chips-black {
+        display: block;
+        @include body2();
+        @include black-emphasis($opacity-high-emphasis-black);
+        background-color: $grey-100;
+        position: relative;
+        z-index: -1;
+        border-radius: 0 11px 11px 0;
+        padding: 0 1px 0 1px;
+        width: 22px;
+        height: 22px;
+        line-height: 11px;
+        display: -webkit-box;
+        display: flex;
+        -webkit-box-align : center;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .me-user-chips-border {
+        display: block;
+        position: absolute;
+        left: -3px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 22px;
+        border-radius: 99px;
+        z-index: -1;
+        transition: all .2s cubic-bezier(.19,1,.22,1);
+      }
+    }
+
+    &:hover {
+      .me-user-chips-icon {
+        background-color: transparent;
+
+        .me-user-chips-black {
+          color: rgba(255, 255, 255, $opacity-high-emphasis-white);
+          background-color: rgba(0, 0, 0, .4);
+          border-radius: 11px;
+          padding: 0;
+          z-index: 1;
+        }
+
+        .me-user-chips-border {
+          left: 0;
+          transform-origin: left;
+          transform: translateY(-50%) scale(1.4);
+          width: 16px;
+          height: 16px ;
+        }
+      }
+    }
+  }
+
+  &[onmouseover] {
+    border-bottom-width: 0;
+  }
+  > div {
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align : center;
+    align-items: center;
+    > .me-user-chips-icon {
+      position: relative;
+      z-index: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin-left: 4px;
+
+      > .me-user-chips-black {
+        display: none;
+      }
+
+      .me-user-chips-border {
+        display: none;
+      }
+    }
+    > .me-user-chips-content {
+      padding: 0 #{$space*3} 0 #{$space+$small-space};
+      max-width: 120px;
+      overflow: hidden;
+      white-space: nowrap;
+      z-index: 0;
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+
+    .me-user-chips-name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &.me-function {
+    > div {
+      > .me-user-chips-icon {
+        height: 22px;
+        width: 22px;
+        margin-left: 0;
+
+        &,
+        > .me-function-icon::before {
+          @include fontawesome(11px, 22px);
+          @include special-content('f0c0');
+          color: $white;
+          display: block;
+          text-align: center;
+        }
+      }
+
+      .me-user-chips-content {
+        max-width: none;
+      }
+    }
+  }
+}
+
+button .me-user-chips {
+  width: 100%;
+  background-color: transparent;
+  > div {
+    width: 100%;
+    cursor: pointer;
+    > .me-user-chips-content {
+      max-width: 100%;
+    }
+  }
+}

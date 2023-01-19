@@ -1,0 +1,44 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+$timeline-orange : #f1b774;
+@mixin timeline-color-orange {
+  background: $timeline-orange !important;
+}
+$timeline-violet: #c57fd0;
+@mixin timeline-color-violet {
+  background: $timeline-violet !important;
+}
+$timeline-green : #5fd0ba;
+@mixin timeline-color-green {
+  background: $timeline-green !important;
+}
+@mixin timeline-color-forestgreen {
+  background: #65ae65 !important;
+}
+$timeline-blue : #65bce4;
+@mixin timeline-color-blue {
+  background: $timeline-blue !important;
+}
+$timeline-red : #e2786a;
+@mixin timeline-color-red {
+  background: $timeline-red !important;
+}
+@mixin timeline-color-firebrick {
+  background: #c96565 !important;
+}
+@mixin timeline-actions-container ($color) {
+  background-color: $elevation-16;
+  border: none;
+  padding: 10px;
+  right: 0;
+}
+$timeline-label-color: $primary-50;
+$timeline-label-content-color: $elevation-4;
+$timeline-label-color-hover: alpha($primary-50, 52%);
+
+@import "../../inc/timeline_content";

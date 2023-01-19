@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+  <name>AP</name>
+  <description>Assuré primaire</description>
+  <elements>
+    <field minOccurs="1" maxOccurs="0" length="4">
+      <name>AP.1</name>
+      <description>Set ID</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="1" maxOccurs="0" length="2">
+      <name>AP.2</name>
+      <description>Nature assurance ou risque</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="8">
+      <name>AP.3</name>
+      <description>Date début de validité</description>
+      <datatype>TS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="8">
+      <name>AP.4</name>
+      <description>Date fin de validité</description>
+      <datatype>TS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="15">
+      <name>AP.5</name>
+      <description>Numéro d'immatriculation</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="3">
+      <name>AP.6</name>
+      <description>Rang bénéficiaire</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="2">
+      <name>AP.7</name>
+      <description>Rang de naissance</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="2">
+      <name>AP.8</name>
+      <description>Code grand régime</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="3">
+      <name>AP.9</name>
+      <description>Caisse d'affiliation</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="4">
+      <name>AP.10</name>
+      <description>Numéro du centre</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="1">
+      <name>AP.11</name>
+      <description>Origine des droits (nature de la pièce justificative)</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="1">
+      <name>AP.12</name>
+      <description>Nature exonération</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="48">
+      <name>AP.13</name>
+      <description>Nom et prénom de l'assuré</description>
+      <datatype>PN</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="24">
+      <name>AP.14</name>
+      <description>Nom de jeune fille</description>
+      <datatype>PN</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="6">
+      <name>AP.15</name>
+      <description>Taux de prise en charge</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="9">
+      <name>AP.16</name>
+      <description>Numéro accident travail</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="1">
+      <name>AP.17</name>
+      <description>AT causé par un tiers</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="8">
+      <name>AP.18</name>
+      <description>Date de fin de droits</description>
+      <datatype>TS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="8">
+      <name>AP.19</name>
+      <description>Date d'accident</description>
+      <datatype>TS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="30">
+      <name>AP.20</name>
+      <description>Nom de l'employeur</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="200">
+      <name>AP.21</name>
+      <description>Adresse de l'employeur</description>
+      <datatype>AD</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="8">
+      <name>AP.22</name>
+      <description>Date de début de grossesse</description>
+      <datatype>TS</datatype>
+    </field>
+  </elements>
+</segment>

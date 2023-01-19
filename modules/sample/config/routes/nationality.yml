@@ -1,0 +1,13 @@
+sample_nationalities_list:
+  path: /api/sample/nationalities
+  controller: Ox\Mediboard\Sample\Controllers\SampleNationalitiesController::listNationalities
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: List the nationalities.
+    accept:
+      - application/json
+    responses:
+      200: The response's body contains the list of nationalities in json_api format.
+      default: 403 or 500 on error.

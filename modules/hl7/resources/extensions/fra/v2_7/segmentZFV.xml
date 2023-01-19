@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>ZFV</name>
+    <description>Complements sur la rencontre</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="1" length="47">
+            <name>ZFV.1</name>
+            <description>Etablissement de provenance et date de dernier sejour dans cet etablissement</description>
+            <datatype>DLD</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="250">
+            <name>ZFV.2</name>
+            <description>Mode de transport de sortie</description>
+            <datatype>CE</datatype>
+        </field> 
+        <field minOccurs="0" maxOccurs="0" forbidden="true" length="2">
+            <name>ZFV.3</name>
+            <description>Type de preadmission</description>
+            <datatype>IS</datatype>
+        </field> 
+        <field minOccurs="0" maxOccurs="1" length="26">
+            <name>ZFV.4</name>
+            <description>Date de debut de placement (psy)</description>
+            <datatype>TS</datatype>
+        </field> 
+        <field minOccurs="0" maxOccurs="1" length="26">
+            <name>ZFV.5</name>
+            <description>Date de fin de placement (psy)</description>
+            <datatype>TS</datatype>
+        </field> 
+        <field minOccurs="0" maxOccurs="2" length="250">
+            <name>ZFV.6</name>
+            <description>Adresse de l'etablissement de provenance ou de destination</description>
+            <datatype>XAD</datatype>
+        </field> 
+        <field minOccurs="0" maxOccurs="1" length="250">
+            <name>ZFV.7</name>
+            <description>NDA de l'etablissement de provenance</description>
+            <datatype>CX</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="250">
+            <name>ZFV.8</name>
+            <description>Numéros d’archives</description>
+            <datatype>CX</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="6">
+            <name>ZFV.9</name>
+            <description>Mode de sortie personnalisé</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="2">
+            <name>ZFV.10</name>
+            <description>Code RIM-P du mode légal de soin</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="7" table="3306">
+            <name>ZFV.11</name>
+            <description>Prise en charge durant le transport</description>
+            <datatype>IS</datatype>
+        </field>
+    </elements>
+</segment>

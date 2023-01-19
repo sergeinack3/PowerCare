@@ -1,0 +1,47 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import '../OxLayoutStyle';
+
+.OxLayoutAsideLeft {
+  @include layoutPane;
+
+  display: flex;
+
+  &.small-aside {
+    .OxLayoutAsideLeft-asideContainer {
+      width: $small-aside-width;
+    }
+  }
+
+  &-aside {
+    @include layoutAside;
+  }
+
+  &-aside,
+  &-content {
+    @include layoutPart;
+
+    height: 100%;
+    width: 100%;
+  }
+
+  &-asideContainer {
+    width: $aside-width;
+  }
+
+  &-asideContainer,
+  &-contentContainer {
+    height: 100%;
+  }
+
+  &-contentContainer {
+    @include layoutContent;
+
+    flex: 1;
+  }
+}

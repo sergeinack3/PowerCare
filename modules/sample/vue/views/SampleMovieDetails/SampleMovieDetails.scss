@@ -1,0 +1,139 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+@import "@/core/styles/utils";
+
+.SampleMovieDetails {
+  @include fullPage;
+  background-color: $background-default-light;
+  padding: 0 $space*20;
+  position: relative;
+
+  &-content {
+    height: 100%;
+  }
+
+  &-back {
+    padding: $space*6 0;
+  }
+
+  &-container {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &-cover {
+    background: $background-light;
+    border-radius: 6px;
+    height: 188px;
+    object-fit: cover;
+    width: 141px;
+  }
+
+  &-content {
+    max-width: 1000px;
+    padding: $space*4 $space*20 $space*4 $space*6;
+  }
+
+  &-header {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  &-title {
+    @include h4;
+    color: $grey-900;
+  }
+
+  &-subtitle {
+    @include h6;
+    color: $grey-800;
+    padding-bottom: $space*2;
+  }
+
+  &-category {
+    @include body1;
+    color: $primary-500;
+    padding-bottom: $space*10;
+  }
+
+  &-loading {
+    left: 50%;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-text {
+    @include body2;
+    @include on-background(medium);
+    padding-bottom: $space*6;
+  }
+
+  &-plus {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: $space*10;
+    padding-bottom: $space*10;
+
+    &Container {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: $space;
+    }
+
+    &Title {
+      @include overline;
+      @include on-background(low);
+      white-space: nowrap;
+    }
+
+    &Text {
+      @include body2;
+      @include on-background(high);
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: $space*2;
+    }
+
+    &RatingDetails {
+      @include caption;
+      @include on-background(medium);
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      gap: $space*2
+    }
+
+    &Rating .v-icon {
+      padding: 0!important;
+    }
+  }
+
+  &-director {
+    padding-bottom: $space*6;
+  }
+
+  &-actors {
+    display: flex;
+    flex-direction: row;
+    gap: $space*2;
+    padding-bottom: $space*6;
+  }
+
+  &-alert {
+    @include body1;
+    @include on-background(medium);
+
+    &Title {
+      @include on-background(high)
+    }
+  }
+}

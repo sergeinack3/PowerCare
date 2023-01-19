@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Interop\\Hprimsante\\": "classes",
+      "Ox\\Interop\\Hprimsante\\Tests\\": "tests"
+    }
+  }
+}

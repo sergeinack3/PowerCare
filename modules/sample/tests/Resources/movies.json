@@ -1,0 +1,151 @@
+{
+  "movies":[
+    {
+      "name": "La chaise du mal",
+      "description": "Un couple vient dans un vieil asile psychiatrique à l'abandon pour ajouter un peu de piment à leur vie sexuelle. Découvrant une vieille et étrange chaise, ils s'essaient aux jeux morbides jusqu'à ce qu'un mécanisme se mette en route et mutile atrocement la jeune femme. Disparaissant dans une gerbe de sang, son compagnon est alors accusé de son meurtre et mis en examen dans un établissement spécialisé. Mais une équipe de scientifiques est décidée à se rendre sur place pour essayer la machine...",
+      "release": "2008-11-05",
+      "category": "Horreur",
+      "duration": "01:30:00"
+    },
+    {
+      "name": "The Batman",
+      "description": "Deux années à arpenter les rues en tant que Batman et à insuffler la peur chez les criminels ont mené Bruce Wayne au coeur des ténèbres de Gotham City. Avec seulement quelques alliés de confiance - Alfred Pennyworth, le lieutenant James Gordon - parmi le réseau corrompu de fonctionnaires et de personnalités de la ville, le justicier solitaire s'est imposé comme la seule incarnation de la vengeance parmi ses concitoyens. Lorsqu'un tueur s'en prend à l'élite de Gotham par une série de machinations sadiques, une piste d'indices cryptiques envoie le plus grand détective du monde sur une enquête dans la pègre, où il rencontre des personnages tels que Selina Kyle, alias Catwoman, Oswald Cobblepot, alias le Pingouin, Carmine Falcone et Edward Nashton, alias l'Homme-Mystère. Alors que les preuves s'accumulent et que l'ampleur des plans du coupable devient clair, Batman doit forger de nouvelles relations, démasquer le coupable et rétablir un semblant de justice au milieu de l'abus de pouvoir et de corruption sévissant à Gotham City depuis longtemps",
+      "release": "2022-03-02",
+      "category": "Action",
+      "duration": "02:57:00"
+    },
+    {
+      "name": "Matrix",
+      "description": "Programmeur anonyme dans un service administratif le jour, Thomas Anderson devient Neo la nuit venue. Sous ce pseudonyme, il est l'un des pirates les plus recherchés du cyber-espace. A cheval entre deux mondes, Neo est assailli par d'étranges songes et des messages cryptés provenant d'un certain Morpheus. Celui-ci l'exhorte à aller au-delà des apparences et à trouver la réponse à la question qui hante constamment ses pensées : qu'est-ce que la Matrice ? Nul ne le sait, et aucun homme n'est encore parvenu à en percer les defenses. Mais Morpheus est persuadé que Neo est l'Elu, le libérateur mythique de l'humanité annoncé selon la prophétie. Ensemble, ils se lancent dans une lutte sans retour contre la Matrice et ses terribles agents...",
+      "release": "1999-05-24",
+      "category": "Action",
+      "duration": "02:15:00"
+    },
+    {
+      "name": "Matrix Reloaded",
+      "description": "Neo apprend à mieux contrôler ses dons naturels, alors même que Sion s'apprête à tomber sous l'assaut de l'Armée des Machines. D'ici quelques heures, 250 000 Sentinelles programmées pour anéantir notre espèce envahiront la dernière enclave humaine de la Terre.\nMais Morpheus galvanise les citoyens de Sion en leur rappelant la Parole de l'Oracle : il est encore temps pour l'Elu d'arrêter la guerre contre les Machines. Tous les espoirs se reportent dès lors sur Neo. Au long de sa périlleuse plongée au sein de la Matrix et de sa propre destinée, ce dernier sera confronté à une résistance croissante, une vérité encore plus aveuglante, un choix encore plus douloureux que tout ce qu'il avait jamais imaginé.",
+      "release": "2003-05-16",
+      "category": "Action",
+      "duration": "02:18:00"
+    },
+    {
+      "name": "Avatar",
+      "description": "Malgré sa paralysie, Jake Sully, un ancien marine immobilisé dans un fauteuil roulant, est resté un combattant au plus profond de son être. Il est recruté pour se rendre à des années-lumière de la Terre, sur Pandora, où de puissants groupes industriels exploitent un minerai rarissime destiné à résoudre la crise énergétique sur Terre. Parce que l'atmosphère de Pandora est toxique pour les humains, ceux-ci ont créé le Programme Avatar, qui permet à des \" pilotes \" humains de lier leur esprit à un avatar, un corps biologique commandé à distance, capable de survivre dans cette atmosphère létale. Ces avatars sont des hybrides créés génétiquement en croisant l'ADN humain avec celui des Na'vi, les autochtones de Pandora.\nSous sa forme d'avatar, Jake peut de nouveau marcher. On lui confie une mission d'infiltration auprès des Na'vi, devenus un obstacle trop conséquent à l'exploitation du précieux minerai. Mais tout va changer lorsque Neytiri, une très belle Na'vi, sauve la vie de Jake...",
+      "release": "2009-12-16",
+      "category": "Science-fiction",
+      "duration": "02:42:00"
+    },
+    {
+      "name": "Willow",
+      "description": "Il était une fois un royaume peuplé de petits habitants apppelés les Nelwyns. Ce peuple paisible était dominé de temps immémorial par les Daikinis, gens de grand taille gouvernés par la cruelle reine Bavmorda. Or il advint qu'un prophète annonçât la naissance d'une princesse appelée à detrôner Bavmorda. La terrible reine ordonna alors de tuer céans tous les nouveaux-nés du royaume. Elora échapppa au massacre et ce fut Willow, un jeune Nelwyn féru de magie, qui la recueillit. Mais Bavmorda n'avait pas dit son dernier mot...",
+      "release": "1988-11-02",
+      "category": "Fantastique",
+      "duration": "02:05:00"
+    },
+    {
+      "name": "Will Hunting",
+      "description": "Will Hunting est un authentique génie mais également un rebelle aux élans imprévisibles. Il est né dans le quartier populaire de South Boston et a arrêté très tôt ses études, refusant le brillant avenir que pouvait lui procurer son intelligence. Il vit désormais entouré d'une bande de copains et passe son temps dans les bars a chercher la bagarre et à commettre quelques petits délits qui risquent bien de l'envoyer en prison. C'est alors que ses dons prodigieux en mathématiques attirent l'attention du professeur Lambeau, du Massachusetts Institute of Technology...",
+      "release": "1998-03-04",
+      "category": "Drame",
+      "duration": "02:06:00"
+    },
+    {
+      "name": "Sixième sens",
+      "description": "Cole Sear, garconnet de huit ans est hanté par un terrible secret. Son imaginaire est visité par des esprits menaçants. Trop jeune pour comprendre le pourquoi de ces apparitions et traumatisé par ces pouvoirs paranormaux, Cole s'enferme dans une peur maladive et ne veut reveler à personne la cause de son enfermement, à l'exception d'un psychologue pour enfants. La recherche d'une explication rationnelle guidera l'enfant et le thérapeute vers une vérité foudroyante et inexplicable.",
+      "release": "2000-01-05",
+      "category": "Thriller",
+      "duration": "01:47:00"
+    },
+    {
+      "name": "Je suis une légende",
+      "description": "Robert Neville était un savant de haut niveau et de réputation mondiale, mais il en aurait fallu plus pour stopper les ravages de cet incurable et terrifiant virus d'origine humaine. Mystérieusement immunisé contre le mal, Neville est aujourd'hui le dernier homme à hanter les ruines de New York. Peut-être le dernier homme sur Terre... Depuis trois ans, il diffuse chaque jour des messages radio dans le fol espoir de trouver d'autres survivants. Nul n'a encore répondu.\nMais Neville n'est pas seul. Des mutants, victimes de cette peste moderne - on les appelle les \"Infectés\" - rôdent dans les ténèbres... observent ses moindres gestes, guettent sa première erreur. Devenu l'ultime espoir de l'humanité, Neville se consacre tout entier à sa mission : venir à bout du virus, en annuler les terribles effets en se servant de son propre sang.\nSes innombrables ennemis lui en laisseront-ils le temps ? Le compte à rebours touche à sa fin...",
+      "release": "2007-12-19",
+      "category": "Science-fiction",
+      "duration": "01:40:00"
+    },
+    {
+      "name": "I, Robot",
+      "description": "En 2035, les robots sont devenus de parfaits assistants pour les êtres humains. Le détective Del Spooner enquête sur le meurtre du docteur Alfred Lanning, un chercheur en robotique. Le principal suspect semble être un androïde nommé Sonny. Or, si l'on s'en réfère aux lois de la robotique, les robots ne sont pas dotés de la faculté de tuer...",
+      "release": "2004-07-28",
+      "category": "Science-fiction",
+      "duration": "01:55:00"
+    },
+    {
+      "name": "Le Hobbit : La bataille des 5 armées",
+      "description": "Atteignant enfin la Montagne Solitaire, Thorin et les Nains, aidés par Bilbon le Hobbit, ont réussi à récupérer leur royaume et leur trésor. Mais ils ont également réveillé le dragon Smaug qui déchaîne désormais sa colère sur les habitants de Lac-ville. A présent, les Nains, les Elfes, les Humains mais aussi les Wrags et les Orques menés par le Nécromancien, convoitent les richesses de la Montagne Solitaire. La bataille des cinq armées est imminente et Bilbon est le seul à pouvoir unir ses amis contre les puissances obscures de Sauron.",
+      "release": "2014-12-10",
+      "category": "Fantastique",
+      "duration": "02:24:00"
+    },
+    {
+      "name": "Dune",
+      "description": "L'histoire de Paul Atreides, jeune homme aussi doué que brillant, voué à connaître un destin hors du commun qui le dépasse totalement. Car s'il veut préserver l'avenir de sa famille et de son peuple, il devra se rendre sur la planète la plus dangereuse de l'univers – la seule à même de fournir la ressource la plus précieuse au monde, capable de décupler la puissance de l'humanité. Tandis que des forces maléfiques se disputent le contrôle de cette planète, seuls ceux qui parviennent à dominer leur peur pourront survivre...",
+      "release": "2021-07-15",
+      "category": "Science-fiction",
+      "duration": "02:36:00"
+    },
+    {
+      "name": "Doctor Strange in the Multiverse of Madness",
+      "description": "Dans ce nouveau film Marvel Studios, l’univers cinématographique Marvel déverrouille et repousse les limites du multivers encore plus loin. Voyagez dans l’inconnu avec Doctor Strange, qui avec l’aide d’anciens et de nouveaux alliés mystiques, traverse les réalités hallucinantes et dangereuses du multivers pour affronter un nouvel adversaire mystérieux.",
+      "release": "2022-05-04",
+      "category": "Fantastique",
+      "duration": "02:06:00"
+    },
+    {
+      "name": "Interstellar",
+      "description": "Le film raconte les aventures d’un groupe d’explorateurs qui utilisent une faille récemment découverte dans l’espace-temps afin de repousser les limites humaines et partir à la conquête des distances astronomiques dans un voyage interstellaire.",
+      "release": "2014-11-05",
+      "category": "Science-fiction",
+      "duration": "02:49:00"
+    },
+    {
+      "name": "Le visiteur du futur",
+      "description": "2555. Dans un futur dévasté, l’apocalypse menace la Terre. Le dernier espoir repose sur un homme capable de voyager dans le temps. Sa mission : retourner dans le passé et changer le cours des événements. Mais la Brigade Temporelle, une police du temps, le traque à chaque époque. Débute alors une course contre la montre pour le Visiteur du Futur...",
+      "release": "2022-09-07",
+      "category": "Comédie",
+      "duration": "01:42:00"
+    },
+    {
+      "name": "Forrest Gump",
+      "description": "Quelques décennies d'histoire américaine, des années 1940 à la fin du XXème siècle, à travers le regard et l'étrange odyssée d'un homme simple et pur, Forrest Gump.",
+      "release": "1994-10-05",
+      "category": "Drame",
+      "duration": "02:20:00"
+    },
+    {
+      "name": "Inception",
+      "description": "Dom Cobb est un voleur expérimenté – le meilleur qui soit dans l’art périlleux de l’extraction : sa spécialité consiste à s’approprier les secrets les plus précieux d’un individu, enfouis au plus profond de son subconscient, pendant qu’il rêve et que son esprit est particulièrement vulnérable. Très recherché pour ses talents dans l’univers trouble de l’espionnage industriel, Cobb est aussi devenu un fugitif traqué dans le monde entier qui a perdu tout ce qui lui est cher. Mais une ultime mission pourrait lui permettre de retrouver sa vie d’avant – à condition qu’il puisse accomplir l’impossible : l’inception. Au lieu de subtiliser un rêve, Cobb et son équipe doivent faire l’inverse : implanter une idée dans l’esprit d’un individu. S’ils y parviennent, il pourrait s’agir du crime parfait. Et pourtant, aussi méthodiques et doués soient-ils, rien n’aurait pu préparer Cobb et ses partenaires à un ennemi redoutable qui semble avoir systématiquement un coup d’avance sur eux. Un ennemi dont seul Cobb aurait pu soupçonner l’existence.",
+      "release": "2010-07-21",
+      "category": "Thriller",
+      "duration": "02:28:00"
+    },
+    {
+      "name": "Pulp Fiction",
+      "description": "L'odyssée sanglante et burlesque de petits malfrats dans la jungle de Hollywood à travers trois histoires qui s'entremêlent.",
+      "release": "1994-10-26",
+      "category": "Thriller",
+      "duration": "02:29:00"
+    },
+    {
+      "name": "Fight Club",
+      "description": "Le narrateur, sans identité précise, vit seul, travaille seul, dort seul, mange seul ses plateaux-repas pour une personne comme beaucoup d'autres personnes seules qui connaissent la misère humaine, morale et sexuelle. C'est pourquoi il va devenir membre du Fight club, un lieu clandestin ou il va pouvoir retrouver sa virilité, l'échange et la communication. Ce club est dirigé par Tyler Durden, une sorte d'anarchiste entre gourou et philosophe qui prêche l'amour de son prochain.",
+      "release": "1999-11-10",
+      "category": "Thriller",
+      "duration": "02:19:00"
+    },
+    {
+      "name": "Le dîner de cons",
+      "description": "Tous les mercredis, Pierre Brochant et ses amis organisent un dîner où chacun doit amener un con. Celui qui a trouvé le plus spectaculaire est declaré vainqueur. Ce soir, Brochant exulte, il est sur d'avoir trouvé la perle rare, un con de classe mondiale: Francois Pignon, comptable au ministère des Finances et passionné de modèles réduits en allumettes. Ce qu'il ignore c'est que Pignon est passe maître dans l'art de déclencher des catastrophes.",
+      "release": "1998-04-15",
+      "category": "Comédie",
+      "duration": "01:20:00"
+    },
+    {
+      "name": "La chaise bleue",
+      "description": "Dans un monde désertique une chaise bleue tente de ne pas sombrer",
+      "release": "1895-12-28",
+      "category": "Horreur",
+      "duration": "00:55:00"
+    }
+  ]
+}

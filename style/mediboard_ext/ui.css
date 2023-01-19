@@ -1,0 +1,1812 @@
+/**
+ * @package Mediboard\Style\Mediboard
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+td a.email {
+  display: inline;
+}
+
+
+/* Global header */
+#header {
+  width: 100%;
+  border-spacing: 0;
+  border: none;
+}
+
+/*#header td {*/
+/*  padding: 0;*/
+/*}*/
+
+/*table.Offline td.button {*/
+/*  text-align: center;*/
+/*  vertical-align: middle;*/
+/*}*/
+
+/*table.Offline select,*/
+/*table.Offline option,*/
+/*table.Offline input,*/
+/*table.Offline button  {*/
+/*  height: 20px;*/
+/*  font-size: 1.2em;*/
+/*  font-weight: bold;*/
+/*  margin : 2px 2px;*/
+/*}*/
+
+
+/* Navigation */
+/*#menubar {*/
+/*  border-bottom: 1px solid #999;*/
+/*  background-color: #ddd;*/
+/*  color: #fff;*/
+/*  text-align: left;*/
+/*  width: 100%;*/
+/*}*/
+
+/*ul#nav,*/
+/*ul#nav-vert {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*  list-style-type: none;*/
+/*}*/
+
+/*#nav li {*/
+/*  display: inline;*/
+/*  float: left;*/
+/*}*/
+
+/*#nav a,*/
+/*#nav-vert a {*/
+/*  display: block;*/
+/*  text-align: center;*/
+/*  font-weight: bold;*/
+/*  font-variant: small-caps;*/
+/*  font-size: 1em;*/
+/*  padding: 2px 2px;*/
+/*}*/
+
+/*#nav a:hover,*/
+/*#nav-vert a:hover {*/
+/*  text-decoration: none;*/
+/*  background: #eee;*/
+/*  padding: 1px 2px 1px 1px;*/
+/*  border: 1px outset #ddd;*/
+/*}*/
+
+/*#nav a:active,*/
+/*#nav-vert a:active {*/
+/*  background: #eee;*/
+/*  padding:  1px 2px 1px 1px;*/
+/*  border: 1px inset #ddd;*/
+/*}*/
+
+/*#nav li.nonSelected a,*/
+/*#nav-vert li.nonSelected a {*/
+/*  text-decoration: none;*/
+/*  border-right: 1px dotted #aaa;*/
+/*}*/
+
+/*#nav li.selected a,*/
+/*#nav-vert li.selected a {*/
+/*  text-decoration: none;*/
+/*  background: #aaa;*/
+/*  padding:  1px 2px 1px 1px;*/
+/*  border: 1px inset #888;*/
+/*}*/
+
+/*#nav img,*/
+/*#nav-vert img {*/
+/*  display: block;*/
+/*  margin: auto;*/
+/*  width: 48px;*/
+/*}*/
+
+/*#menubar.uniconed #nav img,*/
+/*#menubar.uniconed #nav-vert li.nonSelected img {*/
+/*  display: none;*/
+/*}*/
+
+/* User */
+
+/*#user {*/
+/*  vertical-align: top;*/
+/*  height: 1%;*/
+/*  border-bottom: 1px dashed black;*/
+/*  padding: 2px;*/
+/*}*/
+
+/*#user .menu {*/
+/*  float: right;*/
+/*}*/
+
+/*#user .menu img {*/
+/*  padding: 2px;*/
+/*}*/
+
+/*#user .menu a:hover {*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*#user .menu img:hover {*/
+/*  background-color: #ccc;*/
+/*}*/
+
+/*!* Main -- table -- pane *!*/
+/*#main {*/
+/*  clear: both;*/
+/*  width: 100%;*/
+/*  border-spacing: 0*/
+/*}*/
+
+/*#mainPane {*/
+/*  vertical-align: top;*/
+/*}*/
+
+/* Touchscreen mode */
+.touchscreen input,
+.touchscreen select :not([multiple]),
+.touchscreen option,
+.touchscreen button,
+.touchscreen a.button,
+.touchscreen label {
+  height: 26px;
+  vertical-align: middle;
+}
+
+.touchscreen select[multiple] {
+  vertical-align: middle;
+}
+
+.touchscreen button,
+.touchscreen a.button {
+  height: 28px;
+  line-height: 28px;
+}
+
+.touchscreen button:before,
+.touchscreen a.button:before {
+  margin: 4px;
+}
+
+.touchscreen button.notext,
+.touchscreen a.button.notext {
+  width: 28px;
+}
+
+.touchscreen input {
+  height: 18px;
+}
+.touchscreen input[type=image] {
+  width: 18px;
+}
+
+.touchscreen input[type=text],
+.touchscreen input[type=tel],
+.touchscreen input[type=number],
+.touchscreen input[type=email],
+.touchscreen input[type=password] {
+  min-width: 3em;
+  padding-top: 5px;
+}
+
+.touchscreen input[type=radio],
+.touchscreen input[type=checkbox] {
+  width: 24px;
+  height: 24px;
+}
+
+.touchscreen option,
+.touchscreen form label {
+  padding-top: 5px;
+}
+
+.touchscreen optgroup option {
+  padding-left: 16px;
+}
+
+.touchscreen input.autocomplete {
+  background-position: 100% 5px;
+}
+
+.touchscreen input.autocomplete.throbbing {
+  background-position: 100% -15px;
+}
+
+.touchscreen div.autocomplete ul li {
+  padding: 6px;
+}
+
+.touchscreen .control .trigger {
+  width: 22px;
+  height: 22px;
+}
+
+.touchscreen .control .trigger,
+.touchscreen .inputExtension  {
+  margin: 1px;
+  top: 3px;
+}
+
+.touchscreen .inputExtension  {
+  margin: 1px;
+  width: 22px;
+}
+
+.touchscreen .control button,
+.touchscreen .control input {
+  top: -4px;
+}
+
+.touchscreen ul.control_tabs li a, 
+.touchscreen ul.control_tabs li span.subtab,
+.touchscreen ul.control_tabs_vertical li a {
+  font-size: 15px;
+}
+
+.touchscreen .numericField .arrows div {
+  width: 2.2em;
+  height: 14px;
+  right: -3px;
+}
+
+.touchscreen .numericField .arrows div.up {
+  top: -3px;
+  height: 15px;
+}
+
+.touchscreen .numericField .arrows div.down {
+  bottom: -3px;
+}
+
+.touchscreen .numericField.big-buttons button {
+  height: 22px;
+  width: 22px;
+  font-size: 18px;
+}
+
+.touchscreen .datepickerControl {
+  font-size: 14px;
+}
+
+.touchscreen .datepickerControl td {
+  padding: 3px;
+}
+
+.touchscreen div.dropdown-trigger {
+  height: 24px;
+  width: 24px;
+}
+
+.touchscreen div.dropdown {
+  padding-right: 25px;
+}
+
+/** aides à la saisie ipad : on ne cache pas les boutons **/
+.touchscreen .textarea-helped .toolbar {
+    display: block!important;
+}
+
+.touchscreen input[type=text].dateTime {
+  width: 120px;
+}
+
+.touchscreen input[type=text].date {
+  width: 90px;
+}
+
+.control_tabs_fold {
+  cursor: pointer;
+  padding: 3px;
+  width: 1em;
+  height: 1em;
+}
+.control_tabs_fold:hover {
+  color: white;
+  border-radius: 50%;
+  background: #658199;
+}
+.control_tabs_unfolded a {
+  pointer-events: none;
+}
+
+div.progressBar {
+  background: #ddd;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-weight: bold;
+  height: 15px;
+  position: relative;
+  min-width: 4em;
+}
+
+div.progressBar > .bar {
+  background: repeating-linear-gradient(45deg,#ccc,#ccc 10px,#d1d1d1 10px,#d1d1d1 20px);
+  background: #ccc;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  cursor: help;
+  height: 15px;
+  left: -1px;
+  position: absolute;
+  top: -1px;
+}
+
+div.progressBar > .text{
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  color: white;
+  text-shadow: 0 0 2px black;
+  font-size: .8em;
+}
+
+div.progressBar > .bar.empty{
+  background: none;
+  border: none;
+}
+div.progressBar > .bar.full{
+  background: repeating-linear-gradient(45deg,#e86f6b,#e86f6b 10px,#ea827e 10px,#ea827e 20px);
+  border: 1px solid #D9534F;
+}
+div.progressBar > .bar.booked{
+  background: repeating-linear-gradient(45deg,#F0AD4E,#F0AD4E 10px,#F2B968 10px,#F2B968 20px);
+  border: 1px solid #e37611;
+}
+div.progressBar > .bar.normal{
+  background: repeating-linear-gradient(45deg,#5CB85C,#5CB85C 10px,#74C374 10px,#74C374 20px);
+  border: 1px solid green;
+}
+
+div.progressBarModern {
+  background: #ddd;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-weight: bold;
+  height: 15px;
+  line-height: initial;
+  min-width: 4em;
+  position: relative;
+}
+
+div.progressBarModern > .bar{
+  background: repeating-linear-gradient(45deg,#ccc,#ccc 10px,#d1d1d1 10px,#d1d1d1 20px);
+  background: #ccc;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: white;
+  cursor: help;
+  height: 15px;
+  left: -1px;
+  text-shadow: 1px 1px 2px black;
+  top: -1px;
+  position: absolute;
+}
+
+div.progressBarModern > .bar > .progress{
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+div.progressBarModern > .bar > .values{
+  opacity: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+div.progressBarModern > .bar:hover > .values{
+  opacity: 1;
+  transition: opacity .7s;
+}
+div.progressBarModern > .bar:hover > .progress{
+  opacity: 0;
+  transition: opacity .7s;
+}
+
+div.progressBarModern.alternate > .bar > .progress{
+  opacity: 0;
+}
+div.progressBarModern.alternate > .bar > .values{
+  opacity: 1;
+}
+div.progressBarModern.alternate > .bar:hover > .values{
+  opacity: 0;
+}
+div.progressBarModern.alternate > .bar:hover > .progress{
+  opacity: 1;
+}
+
+div.progressBarModern > .bar.bar-empty{
+  background: none;
+  border: none;
+}
+div.progressBarModern > .bar.bar-error{
+  background: repeating-linear-gradient(45deg,#D9534F,#D9534F 10px,#DF6D69 10px,#DF6D69 20px);
+  border: 1px solid red;
+}
+div.progressBarModern > .bar.bar-critical{
+  background: repeating-linear-gradient(45deg,#E5804F,#E5804F 10px,#E89065 10px,#E89065 20px);
+  border: 1px solid #FF2300;
+}
+div.progressBarModern > .bar.bar-warning{
+  background: repeating-linear-gradient(45deg,#F0AD4E,#F0AD4E 10px,#F2B968 10px,#F2B968 20px);
+  border: 1px solid orangered;
+}
+div.progressBarModern > .bar.bar-ok{
+  background: repeating-linear-gradient(45deg,#5CB85C,#5CB85C 10px,#74C374 10px,#74C374 20px);
+  border: 1px solid green;
+}
+
+tr.show {
+  display: table-row;
+}
+
+td.show {
+  display: table-cell;
+}
+
+.hidden {
+  display: none;
+}
+
+.datepickerControl {
+  border:        1px solid #999999;
+  background-color:  #EEEEEE;
+  padding:      5px;
+  margin-top: -1px;
+  cursor: default;
+  z-index: 1000 !important;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+  border-radius: 6px;
+  border-top-left-radius: 0;
+}
+
+.datepickerControl.inline {
+  border:        none;
+  padding: 0;
+  background-color:  transparent;
+  width: auto;
+  position: static !important;
+  box-shadow: none;
+}
+
+.datepickerControl td {
+  text-align:      center;
+  padding:      1px;
+}
+
+.datepickerControl tr.monthLabel td {
+  background-color:  #FFFFFF;
+  border:        1px solid #999999;
+  font-weight:    bold;
+}
+
+.datepickerControl tr.navigation td {
+  cursor:        pointer;
+}
+
+.datepickerControl tr.navigation td:hover {
+  text-decoration:  underline;
+}
+
+.datepickerControl tr.dayLabel td,
+.datepickerControl td.weeknumber {
+  border:        1px solid #003366;
+  background-color:  #003366;
+  color:        white;
+  font-weight:    bold;
+}
+
+.datepickerControl td.day, 
+.datepickerControl td.dayothermonth {
+  cursor:        pointer;
+  background-color:  #FFFFFF;
+  border:        1px solid #EEEEEE;
+  width:        2em;
+}
+
+/* We should use a class "othermonth" in addition to "day" instead of "dayothermonth" */
+.datepickerControl td.dayothermonth { 
+  color:        #999999;
+  font-style:      italic;
+}
+
+.datepickerControl td.day:hover,
+.datepickerControl td.hour:hover,
+.datepickerControl td.minute:hover {
+  background-color:  #EBE4C0;
+  border:          outset 1px #666666;
+}
+
+.datepickerControl td.weekend {
+  background-color:  #CCCCCC;
+  font-style:      italic;
+}
+
+.datepickerControl td.today {
+  outline:  2px solid #EBC2C0;
+}
+
+/* Spotted days */
+.datepickerControl td.day.spot,
+.datepickerControl td.dayothermonth.spot {
+  color:    red;
+  font-weight: bold;
+}
+
+/* Active days */
+.datepickerControl td.day.active,
+.datepickerControl td.dayothermonth.active,
+.datepickerControl td.day.active:hover,
+.datepickerControl td.dayothermonth.active:hover {
+  border-bottom: green 1px solid;
+}
+
+/* Hours and minutes */
+.datepickerControl td.hour,
+.datepickerControl td.minute {
+  cursor:        pointer;
+  background-color:  #FFFFFF;
+  border:        1px solid #EEEEEE;
+  width:        2em;
+}
+
+/* Disabled days, minutes and hours */
+.datepickerControl td.disabled {
+  color: #999999;
+  background-color: #EEEEEE;
+  cursor: default;
+}
+
+.datepickerControl td.disabled:hover {
+  background-color: #EEEEEE;
+  border:       1px solid #EEEEEE;
+}
+
+.datepickerControl td input,
+.datepickerControl td button {
+  padding:      0;
+  border:        1px solid #999999;
+  text-align:      center;
+}
+
+.datepickerControl td.ampm {
+  cursor:        pointer;
+  background-color:  #CCCCCC;
+  border:        1px solid #EEEEEE;
+  width:        2em;
+}
+
+.datepickerControl input.current,
+.datepickerControl td.current,
+.datepickerControl td.current:hover {
+  background-color:  #EBC2C0;
+}
+
+.datepickerControl td.current {
+  font-weight:    bold;
+}
+
+.datepickerControl td.ferie {
+  background-color: yellow;
+  border:solid 1px orange;
+}
+
+.datepickerControl div.dropdown {
+  border:        1px solid #999999;
+  background-color:  #EEEEEE;
+  padding: 0;
+  margin: 0;
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.datepickerControl div.dropdown a {
+  display: block;
+  margin: 0;
+  padding: 1px 2px;
+  text-decoration: none;
+}
+
+.datepickerControl div.dropdown a.current {
+  background-color:  #CCCCCC;
+}
+
+.datepickerControl div.dropdown a:hover {
+  outline: 2px solid #666666;
+}
+
+/** Flotr */
+.flotr-datagrid-container {
+  border: 1px solid #999;
+  border-bottom: none;
+  background: #fff;
+}
+.flotr-datagrid-toolbar {
+  padding: 1px;
+  border-bottom: 1px solid #ccc;
+  background: #f9f9f9;
+}
+.flotr-datagrid {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.flotr-datagrid td, .flotr-datagrid th {
+  border: 1px solid #ccc;
+  padding: 1px 3px;
+  min-width: 2em;
+}
+.flotr-datagrid tr:hover {
+  background: #f3f3f3;
+}
+.flotr-datagrid tr:hover th {
+  background: #999;
+  color: #fff;
+}
+.flotr-datagrid th {
+  text-align: left;
+  background: #e3e3e3;
+  border: 2px outset #fff;
+}
+.flotr-datagrid td:hover {
+  background: #ccc;
+}
+.flotr-datagrid .first-row th {
+  text-align: center;
+}
+.flotr-canvas {
+  margin-bottom: -3px;
+  padding-bottom: 1px;
+}
+.flotr-tabs-group {
+  border-top: 1px solid #999;
+}
+.flotr-tab {
+  border: 1px solid #666;
+  border-top: none;
+  margin: 0 3px;
+  padding: 1px 4px;
+  cursor: pointer;
+  border-radius: 0 0 4px 4px;
+  opacity: 0.5;
+}
+.flotr-tab.selected {
+  background: #ddd;
+  opacity: 1;
+}
+.flotr-tab:hover {
+  background: #ccc;
+}
+.flotr-datagrid tr:hover, .flotr-datagrid col.hover {
+  border: none;
+  background: #f3f3f3;
+}
+.flotr-datagrid tr:hover th, .flotr-datagrid th.hover {
+  background: #999;
+  color: #fff;
+}
+.flotr-legend-label {
+  text-align: left;
+}
+.flotr-mouse-value {
+  z-index: 3;
+  margin: -2px;
+}
+
+td.user,
+td.prat,
+td.func,
+td.function,
+td.etab,
+td.group {
+  background-position: top right;
+  background-repeat: no-repeat;
+  padding-right: 16px !important;
+}
+
+td.user,
+td.prat {
+  background-image: url(../../images/icons/user.png);
+}
+
+td.func,
+td.function {
+  background-image: url(../../images/icons/user-function.png);
+}
+
+td.group,
+td.etab {
+  background-image: url(../../images/icons/group.png);
+}
+
+table.active {
+  outline: 2px solid #6688CC;
+}
+
+#control_overlay {
+  background-color: #000;
+}
+
+/*.modal {*/
+/*  !*max-width: 95%;*!*/
+/*  !*max-height: 95%;*!*/
+/*  height: 100% !important;*/
+/*  position: fixed !important;*/
+/*  top: 0 !important;*/
+/*  right: 0 !important;*/
+/*  opacity: 1;*/
+/*  left: auto !important;*/
+/*  border: 2px solid #fff;*/
+/*  background-color: #F5F5F5;*/
+/*  box-shadow: 0 0 15px rgba(0,0,0,0.7);*/
+/*  overflow: hidden;*/
+/*  box-sizing: border-box;*/
+/*  -moz-box-sizing: border-box;*/
+/*  animation-name: modalAnimation;*/
+/*  animation-iteration-count: 1;*/
+/*  animation-duration: 0.25s;*/
+/*}*/
+/*@keyframes modalAnimation {*/
+/*  0% {*/
+/*    opacity: 0;*/
+/*    right: -100px;*/
+/*  }*/
+/*  100% {*/
+/*    opacity: 1;*/
+/*    right: 0;*/
+/*  }*/
+/*}*/
+/*.modal.full-width {*/
+/*  width: 100%;*/
+/*}*/
+
+/*.modal.full-height {*/
+/*  height: 100%;*/
+/*}*/
+
+/*.modal h1 {*/
+/*  text-align: center;*/
+/*  font-size: inherit;*/
+/*  background: #ccc; */
+/*  border-radius: 5px;*/
+/*  font-weight: bold; */
+/*  margin: 0; */
+/*  padding: 5px 1em; */
+/*  white-space: nowrap;*/
+/*}*/
+
+/*.modal.popup > .title {*/
+/*  position: absolute;*/
+/*  box-sizing: border-box;*/
+/*  -moz-box-sizing: border-box;*/
+/*  z-index: 2;*/
+/*  display: flex;*/
+/*  height: 55px;*/
+/*  align-items: center;*/
+/*  justify-content: flex-start;*/
+/*  margin-top: -55px;*/
+/*  width: 100%;*/
+/*  background: #FFFFFF;*/
+/*}*/
+
+/*.modal.popup > .title > span {*/
+/*  margin: 1px 1px 1px 10px;*/
+/*  font-size: 20px;*/
+/*}*/
+
+/*.modal.popup > .title .left {*/
+/*  order: 2;*/
+
+/*}*/
+
+/*.modal.popup > .title .right {*/
+/*  order: 1;*/
+/*}*/
+/*.modal.popup > .title .right>button {*/
+/*  background-color: transparent;*/
+/*  box-shadow: none;*/
+/*  color: #3F51B5 !important;*/
+/*}*/
+/*.modal.popup > .title .right>button:hover {*/
+/*  background-color: rgba(125, 137, 205, 0.32);*/
+/*  box-shadow: none;*/
+/*}*/
+
+.modal > .content {
+  /*text-align: center;*/
+  overflow-x: auto; /* hidden */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  min-width: 200px;
+  min-height: 80px;
+}
+
+/* IE9 in IE8 mode */
+/* To fix a bug in IE where the scroll bar doesn't appear */
+.ua-msie-8 .modal > .content {
+  overflow-y: scroll;
+}
+.ua-msie-8 .modal.modal-iframe > .content {
+  overflow-y: auto;
+}
+
+.modal > .content > iframe {
+  margin-bottom: -10px;
+}
+
+/* Inner-shadow scroll top */
+.modal.scroll-top > .title,
+.modal.scroll-bottom:after {
+  box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
+}
+
+/* Inner-shadow scroll bottom */
+.modal.scroll-bottom:after {
+  content: "";
+  display: block;
+  position: relative;
+}
+
+.modal.popup > .title button.cancel,
+.modal.popup > .title button.close,
+.modal.popup > .title button.change {
+  margin: 0;
+}
+
+.modal.popup > .title:empty {
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+
+/** Image thumbnails **/
+img.thumbnail {
+  border: 1px solid #888;
+  padding: 1px;  
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+img.thumbnail:hover {
+  border-color: #000;
+}
+
+/** Object tags **/
+ul.tags {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.tags > li.tag,
+ul.tags > li.input {
+  display: inline-block;
+}
+
+
+ul.tags > li.tag button.delete {
+  background: transparent url(images/buttons/delete-tiny.png) no-repeat top center;
+  border: none;
+  width: 11px;
+  height: 11px;
+  padding: 0;
+}
+
+ul.tags > li.tag button.delete:hover {
+  background: transparent url(images/buttons/delete-tiny.png) no-repeat center center;
+}
+
+ul.tags > li.tag.through {
+  text-decoration: line-through;
+}
+
+ul.tags > li.input {
+  border: none;
+  padding: 0;
+}
+
+.hour_adm {
+  width: 100%;
+  display: none;
+  font-size: 0.8em; 
+  background-color: #555 !important;
+  color: #fff;
+  position: absolute;
+  top: -11px;
+  right: 0;  
+}
+
+td.td_hour_adm:hover {
+  background-color: #eee !important;
+}
+
+td.td_hour_adm:hover .hour_adm {
+ display: inline;
+}
+
+.text-block {
+  border: 1px solid #e6e6e6; 
+  padding: 4px; 
+  background:rgba(255,255,255, 0.4); 
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#66FFFFFF,endColorstr=#66FFFFFF)"; 
+  zoom: 1;
+  border-radius: 4px; 
+}
+
+/** TreeView **/
+.treeview, .treeview ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.treeview ul {
+  background-color: white;
+  margin-top: 4px;
+}
+
+.treeview .hitarea {
+  background: url(images/pictures/treeview-default.gif) -64px -25px no-repeat;
+  height: 16px;
+  width: 16px;
+  margin-left: -16px;
+  float: left;
+  cursor: pointer;
+}
+
+/* fix for IE6 */ * html .hitarea {
+  display: inline;
+  float: none;
+}
+
+.treeview li {
+  margin: 0;
+  padding: 1px 0 1px 16px;
+}
+
+.treeview a.selected {
+  background-color: #eee;
+}
+
+.treeview .hover {
+  color: red;
+  cursor: pointer;
+}
+
+.treeview li {
+  background: url(images/pictures/treeview-default-line.gif) 0 0 no-repeat;
+}
+
+.treeview li.collapsable, .treeview li.expandable {
+  background-position: 0 -176px;
+}
+
+.treeview .expandable-hitarea {
+  background-position: -80px -3px;
+}
+
+.treeview li.last {
+  background-position: 0 -1766px
+}
+
+.treeview li.lastCollapsable, .treeview li.lastExpandable {
+  background-image: url(images/pictures/treeview-default.gif);
+}
+
+.treeview li.lastCollapsable {
+  background-position: 0 -111px
+}
+
+.treeview li.lastExpandable {
+  background-position: -32px -67px
+}
+
+.treeview div.lastCollapsable-hitarea, .treeview div.lastExpandable-hitarea {
+  background-position: 16px;
+}
+
+/** Supervision graphs */
+#edit-timing-fields {
+  white-space: normal;
+  padding: 3px;
+}
+
+#edit-timing-fields .timing-field {
+  display: inline-block;
+  width: 200px;
+  min-height: 26px;
+  margin: 1px;
+}
+
+.supervision .timing-container {
+  height: 12px;
+}
+
+.supervision .timing-container .timing {
+  margin-left: -2px;
+}
+
+.supervision .timing-container .timing .label {
+  font-size: 0.9em;
+  white-space: nowrap;
+  position: absolute;
+  margin-left: 2px;
+  display: none;
+  z-index: 200;
+}
+
+.supervision .timing-container .timing:hover .label {
+  display: inline-block;
+}
+
+.supervision .timing-container .timing:hover .marking {
+  outline: 2px solid rgba(0,0,0,0.2);
+}
+
+.supervision .evenement > div .marking,
+.supervision .timing-container .marking {
+  position: absolute; 
+  top: 0; 
+  bottom: 0;
+  display: none;
+  background: rgba(0,0,0,0.1);
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#10000000,endColorstr=#10000000)";
+  min-width: 1px;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-bottom: none;
+  margin: 0 -1px;
+}
+
+.supervision .timing-container .marking {
+  display: block;
+  background: red;
+  border: none;
+  min-width: 2px;
+}
+
+.supervision .evenement > div .marking > span {
+  position: absolute; 
+  bottom: 10px;
+  background: #eee;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-left: none;
+}
+
+.supervision .evenement > div:hover .marking {
+  display: block;
+}
+
+.supervision.show-markings .evenement > div .marking {
+  display: block;
+  width: 0;
+  border: none;
+  border-left: 1px dotted #ccc;
+  margin: 0;
+  background: none;
+}
+.supervision .vis-labelset {
+  background: #eeeeee;
+}
+
+.supervision .vis-labelset .autogestion {
+  background-color: #ffd999 !important;
+}
+
+.supervision .vis-labelset .traitement {
+  background-color: #bdb !important;
+}
+
+.supervision .vis-labelset .premedication {
+  background-color: #ffa !important;
+}
+
+.supervision .vis-labelset .highlight_red {
+  background-color: #f66 !important;
+}
+
+.supervision .vis-item .vis-item-content {
+  padding: 2px;
+}
+
+.supervision .vis-labelset .vis-label .vis-inner {
+  display: block;
+}
+
+.supervision .vis-dot.timeline-error {
+  border-color: red;
+}
+
+.supervision table.evenements td {
+  padding-bottom: 10px;
+}
+
+.supervision .yaxis-labels {
+  position: absolute;
+}
+
+.supervision .yaxis-labels > .axis {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  padding: 2px;
+  font-size: 10px;
+  line-height: 0.8;
+  width: 74px;
+  box-sizing: border-box;
+  top: 0;
+}
+
+.supervision .flot-y-axis .flot-tick-label {
+  width: 70px;
+}
+
+.supervision .yaxis-labels > .graph-legend > table {
+  border-spacing: 1px;
+  border-collapse: collapse;
+  margin-bottom: 1px;
+}
+
+.supervision .yaxis-labels > .graph-legend .legendColorBox > div {
+  padding: 0 !important;
+  border: none !important;
+}
+
+.supervision .yaxis-labels > .graph-legend .legendLabel {
+  padding: 0 2px;
+}
+
+.supervision .yaxis-labels .symbol {
+  font-size: 16px;
+  font-family: 'Lucida Sans Unicode', 'Arial Unicode MS', sans-serif; /** For IE : use a Unicode font **/
+}
+
+.supervision .yaxis-labels .title {
+  font-size: 1.3em;
+  line-height: 1.4;
+  padding-left: 1em;
+}
+
+.supervision .xAxis .tickLabel {
+  color: black;
+  font-size: 1.1em;
+}
+
+.supervision .evt-perop {
+  display: inline-block;
+  background: #BBF;
+  bottom: 0;
+  font-size: 12px;
+  font-size: 1rem;
+}
+
+.supervision .vis-item[data-line_type='perf'] {
+  border: none;
+  background: none;
+}
+
+.supervision .vis-item[data-line_type='perf'] .vis-item-content {
+  width: 100%;
+  height: 30px;
+  padding: 0;
+  left: 0 !important;
+  min-height: 2px;
+}
+
+.supervision .vis-item[data-line_type='perf'] .vis-item-content .perf {
+  background: #bbccff;
+  display: inline-block;
+  min-height: 2px;
+}
+
+.supervision .vis-item[data-line_type='perf'] .vis-item-content .initial_debit {
+  border-top: 2px solid black;
+}
+
+.supervision .vis-item[data-line_type='perf'] .vis-item-content .perf:nth-child(odd) {
+  background: #BBF;
+}
+
+.supervision .vis-item[data-line_type='perf'] .vis-item-content .perf:hover {
+  /*background: #0bb875;*/
+}
+
+.supervision .vis-item[data-line_type='perf'] .vis-item-content .perf[data-value='0.00'],
+.supervision .vis-item[data-line_type='perf'] .vis-item-content .perf[data-value='0'] {
+  background: red!important;
+}
+
+.supervision .vis-item.planif_systeme {
+  border-color: #9dc773;
+  opacity: 0.8;
+}
+.supervision .vis-item.planif_systeme.vis-selected {
+  border-color: #37ae43;
+}
+
+.supervision .vis-item.planif_systeme.planif_success,
+.supervision .vis-item.vis-dot.planif_success {
+  border-color: #75ff74;
+}
+.supervision .vis-item.planif_systeme.planif_late {
+  border-color: #ff5d61;
+}
+.supervision .vis-item.planif_systeme.planif_cancel,
+.supervision .vis-item.vis-dot.planif_cancel{
+  border-color: #f00;
+}
+.supervision .vis-item.planif_systeme.planif_ok {
+  border-color: #7a7cff;
+}
+.timeline-draggable.planif_success,
+.legend_planif_success {
+  background-color: #cfc !important;
+}
+.timeline-draggable.planif_late,
+.legend_planif_late {
+  background-color: #f88 !important;
+}
+.timeline-draggable.planif_cancel,
+.legend_planif_cancel {
+  background-color: #f00 !important;
+}
+.timeline-draggable.planif_ok,
+.legend_planif_ok {
+  background-color: #bbf !important;
+}
+
+.vis-group.bg_conditionnel {
+  background-image: url(../../images/icons/ray.gif);
+}
+
+.vis-group.bg_chevron {
+  background-color: #eceff180;
+}
+
+.supervision .evt-perop .evt-label {
+  display: none;
+}
+.supervision .evt-perop:hover .evt-label {
+  display: block;
+  position: absolute;
+  bottom: 40px;
+}
+.supervision .evt-perop .evt-hover {
+  content: "";
+  display: none;
+  background: rgba(0,0,0,0.1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+}
+.supervision .evt-perop:hover .evt-hover {
+  display: block;
+}
+.supervision .legend {
+  font-size: 0.9em;
+}
+.supervision .legend td {
+  font-size:inherit;
+}
+
+.supervision .vis-readonly,
+.supervision .vis-readonly.vis-selected,
+.supervision .vis-readonly:hover {
+  background-color: #D5DDF6;
+  border-color: #97B0F8;
+}
+
+.supervision .vis-timeline {
+  margin-top: -1px;
+}
+
+.supervision .vis-group.timeline-CPrescriptionLineMix .vis-item {
+  background: none;
+}
+
+.supervision .vis-group.timeline-CPrescriptionLineMix .vis-item.vis-point.vis-selected {
+  background: #FFF785;
+}
+
+.supervision .vis-group.timeline-CPrescriptionLineMedicament,
+.supervision .vis-group.timeline-CPrescriptionLineElement,
+.supervision .vis-group.timeline-CPrescriptionLineMix,
+.supervision .vis-group.timeline-CAnesthPerop {
+  cursor: crosshair;
+}
+
+.supervision .vis-labelset .vis-label .vis-inner {
+  padding: 2px;
+  min-height: 19px;
+}
+
+.supervision #timeline-drag {
+  background: #97B0F8;
+  position: absolute;
+  top: 0;
+  padding: 3px;
+  text-align: right;
+  border-radius: 3px;
+  margin-right: 6px;
+}
+
+.supervision #timeline-drag:before {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-left-color: #97B0F8;
+  border-width: 6px;
+  margin-top: -6px;
+}
+
+.supervision .timeline-total {
+  font-style: italic;
+}
+
+div.bullet {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  background-image: none;
+  padding: 0;
+}
+
+div.bullet.none {
+  display: none;
+}
+
+div.bullet.ok {
+  background-color: #6f6;
+}
+
+div.bullet.warning {
+  background-color: #f90;
+}
+
+div.bullet.error {
+  background-color: #f33;
+}
+
+@media print {
+  .supervision .evenement > div {
+    outline: 1px solid #ccc;
+  }
+}
+
+/* Profiler */
+#profiling-toolbar {
+  position: fixed;
+  padding: 2px;
+  top: 0;
+  right: 0;
+  border: 1px solid #999;
+  border-width: 0 0 1px 1px;
+  background: white;
+  opacity: 0.80;
+  padding-right: 24px;
+  z-index: 1500;
+}
+
+#profiler-toggle {
+  position: fixed;
+  top: 2px;
+  right: 2px;
+  z-index: 1500;
+}
+
+#profiler-overview {
+  position: fixed;
+  bottom: 20px;
+  right: 2px;
+  z-index: 1500;
+  background: white;
+  vertical-align: top;
+  display: inline-block;
+  width: 90px;
+  opacity: 0.6;
+  font-size: 0.9em;
+  line-height: 1;
+}
+
+#profiler-overview .marking {
+  /*border-right: 4px solid #999;*/
+  border: none;
+}
+
+#profiler-overview .marking.sub {
+  color: #666;
+  display: none;
+}
+
+#profiler-overview:hover {
+  opacity: 1.0;
+  width: 120px;
+}
+
+#profiler-overview:hover .marking {
+  font-weight: bold;
+}
+
+#profiler-overview:hover .marking.sub {
+  display: block;
+  font-weight: normal;
+}
+
+#profiler-overview .profiler-buttons {
+  text-align: right;
+  display: none;
+}
+
+#profiler-overview:hover .profiler-buttons {
+  display: block;
+}
+
+#profiler-timebar {
+  font-size: 0;
+  height: 3px;
+}
+
+#profiler-timebar div {
+  display: inline-block;
+  height: 100%;
+}
+
+/** Bars **/
+.profiling-timeline .bar {
+  border: 1px solid #ccc;
+  border-width: 0 1px !important;
+  border-radius: 0!important;
+}
+
+.profiling-timeline .bar.sub {
+  height: 50%;
+  top: 0!important;
+  opacity: 0.7;
+}
+
+.profiling-timeline .bar.sub {
+  height: 50%;
+  top: 0!important;
+  opacity: 0.7;
+}
+
+.profiling-timeline .bar:hover {
+  border: 1px solid #333;
+}
+
+.profiling-timeline .bar-client {
+  background: #C94C4C;
+  border-color: #C61F1F;
+}
+
+.profiling-timeline .bar-network {
+  background: #4C80C9;
+  border-color: #155FC6;
+}
+
+.profiling-timeline .bar-server {
+  background: #66B230;
+  border-color: #449B06;
+}
+
+.profiling-timeline .bar-type-session {
+  background: #e9e146;
+  border-color: #b0ae00;
+}
+
+.profiling-timeline .bar-mem {
+  background: #000;
+  border: 1px solid rgba(0,0,0,0.2);
+  opacity: 1.0;
+  top: auto;
+  bottom: 0;
+  height: 30%;
+}
+
+.profiling-timeline .legend {
+  float: right;
+  line-height: 1;
+  font-size: 0.9em;
+  color: #666;
+  padding: 2px;
+}
+
+.profiling-timeline .legend .bar {
+  position: relative;
+  border-width: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10px;
+  height: 10px;
+}
+
+.profiling-timeline .legend-item {
+  display: inline-block;
+}
+
+.profiling-timeline .legend-item .bar-mem {
+  background: linear-gradient(to right, hsl(100, 100%, 50%), hsl(0, 100%, 50%));
+}
+
+.profiling-timeline .profiling-timeline-container {
+  clear: both;
+}
+
+.profiling-timeline .vis-label .vis-inner {
+  min-width: 20em;
+}
+
+/* To disable text selection */
+*[unselectable] {
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.columns-2,
+.columns-3,
+.columns-4,
+.columns-5,
+.columns-6 {
+  -webkit-column-gap: 2px;
+  -moz-column-gap: 2px;
+  -o-column-gap: 2px;
+  -ms-column-gap: 2px;
+  column-gap: 2px;
+}
+
+.columns-2 {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  -o-column-count: 2;
+  -ms-column-count: 2;
+  column-count: 2;
+}
+
+.columns-3 {
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  -o-column-count: 3;
+  -ms-column-count: 3;
+  column-count: 3;
+}
+
+.columns-4 {
+  -webkit-column-count: 4;
+  -moz-column-count: 4;
+  -o-column-count: 4;
+  -ms-column-count: 4;
+  column-count: 4;
+}
+
+.columns-5 {
+  -webkit-column-count: 5;
+  -moz-column-count: 5;
+  -o-column-count: 5;
+  -ms-column-count: 5;
+  column-count: 5;
+}
+
+.columns-6 {
+  -webkit-column-count: 6;
+  -moz-column-count: 6;
+  -o-column-count: 6;
+  -ms-column-count: 6;
+  column-count: 6;
+}
+
+.markdown p {
+  margin: 0.5em 0 1em 0;
+  line-height: 18px;
+}
+
+.markdown ol, .markdown ul {
+  /*white-space: nowrap;*/
+}
+
+.markdown p a {
+  display: inline;
+}
+
+div.folder {
+  font-size: 1.1em;
+  height: 20px;
+  border-bottom: none;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  padding-left: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+div.folder.selected {
+  background-color: rgba(252, 251, 255, 0.60);
+}
+
+div.folder:hover {
+  background-color: rgba(252, 251, 255, 0.40)
+}
+
+div.folder.selected:hover {
+  background-color: rgb(252, 251, 255);
+}
+
+div.legend_block {
+  height: 12px;
+  width: 20px;
+  border: solid 1px #666;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.process-progress {
+  width: 200px;
+  display: none;
+  height: 14px;
+}
+
+.process-progress[max] {
+  display: inline-block;
+}
+
+.process-progress[max]:before {
+  content: attr(max);
+}
+
+.process-progress[value][max]:before {
+  content: attr(value) " / " attr(max);
+}
+
+.dsn-uri {
+  color: #999;
+}
+.dsn {
+  font-weight: bold;
+}
+.dsn-empty {
+  font-style: italic;
+}
+.dsn.dsn-dbtype {
+  color: #8c000c;
+}
+.dsn.dsn-dbuser {
+  color: #0a4973;
+}
+.dsn.dsn-dbpass {
+  font-style: italic;
+  font-weight: normal;
+  color: #999;
+}
+.dsn.dsn-dbhost {
+  color: #009150;
+}
+.dsn.dsn-dbname {
+  color: #971777;
+}
+
+.dsn-host {
+  font-weight: normal;
+}
+
+.dsn-host.dsn-host-enabled {
+  font-weight: bold;
+}
+
+.blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+.fa-stack[data-count]:after{
+  position: absolute;
+  left: 50%;
+  top: 1%;
+  content: attr(data-count);
+  font-size: 50%;
+  padding: .6em;
+  border-radius: 999px;
+  line-height: .75em;
+  color: white;
+  background: rgba(255,0,0,.85);
+  text-align: center;
+  font-weight: bold;
+  /*min-width: 1em;*/
+}
+
+.fa-stack[data-count].fa-count-blue:after{
+  background-color: steelblue;
+}
+
+.bracket {
+  padding: 2em;
+  position: relative;
+}
+
+.bracket-left::before {
+  border-right: none !important;
+  left: 0;
+}
+
+.bracket-right::after {
+  border-left: none !important;
+  right: 0;
+}
+
+.bracket-left::before,
+.bracket-right::after {
+  border: .2em solid steelblue;
+  bottom: 0;
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 10%;
+}
+
+.axisLabel {
+  position: absolute;
+  text-align: center;
+  font-size: 12px;
+}
+
+.xaxisLabel {
+  bottom: 3px;
+  left: 0;
+  right: 0;
+}
+
+.yaxisLabel {
+  top: 50%;
+  left: 2px;
+  transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -webkit-transform:  rotate(-90deg);
+  transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+
+#flot-tooltip {
+  position: absolute;
+  opacity: 0.8;
+  background-color: #000000;
+  color: #FFFFFF;
+  border-radius: 4px;
+  text-align: center;
+  max-width: 300px;
+  white-space: normal;
+}

@@ -1,0 +1,184 @@
+etablissement_groups_list:
+  path: api/groups
+  controller: Ox\Mediboard\Etablissement\Controllers\CGroupsController::listGroups
+  methods: GET
+  defaults:
+    permission: none
+  options:
+    description: Get group list
+    responses:
+      200: The response's body contains the list of groups in JSON:API format.
+      default: 403 or 500 on error.
+
+etablissement_groups_show:
+  path: api/groups/{group_id}
+  controller: Ox\Mediboard\Etablissement\Controllers\CGroupsController::showGroup
+  methods: GET
+  defaults:
+    permission: none
+  requirements:
+    group_id: '\d+'
+  options:
+    description: Show a specific group
+    parameters:
+      with_roles: true|false
+    responses:
+      200: The response's body contains the group identified by {group_id} in JSON:API format.
+      default: 403, 404 or 500 on error.
+
+etablissement_groups_create:
+  path: /api/groups
+  controller: Ox\Mediboard\Etablissement\Controllers\CGroupsController::createGroups
+  methods: POST
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Create a list of groups.
+      Available fields are _name (*), code (*), raison_sociale, oid, adresse, cp, ville, tel,
+      fax, tel_anesth, siret, ape, mail, mail_apicrypt, web, finess.
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+    responses:
+      201: |
+        Groups have been created.
+        The response's body contains a list with the created groups in JSON:API format.
+      default: 403 or 500 on error.
+
+etablissement_groups_update:
+  path: api/groups/{group_id}
+  controller: Ox\Mediboard\Etablissement\Controllers\CGroupsController::updateGroup
+  methods: PUT
+  requirements:
+    group_id: '\d+'
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Update a group identified by group_id.
+      Available fields are _name (*), code (*), raison_sociale, oid, adresse, cp, ville, tel,
+      fax, tel_anesth, siret, ape, mail, mail_apicrypt, web, finess.
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+    responses:
+      200: |
+        The group identified by {group_id} have been updated.
+        The response's body contains the updated group in JSON:API format.
+      default: 403, 404 or 500 on error.
+      
+etablissement_groups_delete:
+  path: api/groups/{group_id}
+  controller: Ox\Mediboard\Etablissement\Controllers\CGroupsController::deleteGroup
+  methods: DELETE
+  requirements:
+    group_id: '\d+'
+  defaults:
+    permission: edit
+  options:
+    description: Delete a group identified by group_id.
+    accept:
+      - application/json
+    responses:
+      204: The group have been deleted.
+      default: 403, 404 or 500 on error.
+
+etablissement_functions_list:
+  path: /api/groups/{group_id}/functions
+  controller: Ox\Mediboard\Etablissement\Controllers\CGroupsController::listFunctions
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    group_id: '\d+'
+  options:
+    description: Get all functions of a group
+    responses:
+      200: The response's body contains the list of functions in JSON:API format.
+      default: 403, 404 or 500 on error.
+
+etablissement_functions_show:
+  path: /api/groups/functions/{function_id}
+  controller: Ox\Mediboard\Etablissement\Controllers\CGroupsController::showFunction
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    group_id: '\d+'
+    function_id: '\d+'
+  options:
+    description: Show a specific function
+    responses:
+      200: The response's body contains the function identified by {function_id} in JSON:API format.
+      default: 403, 404 or 500 on error.
+
+etablissement_functions_create:
+  path: /api/groups/{group_id}/functions
+  controller: Ox\Mediboard\Etablissement\Controllers\CGroupsController::createFunctions
+  methods: POST
+  defaults:
+    permission: edit
+  requirements:
+    group_id: '\d+'
+  options:
+    description: |
+      Create a list of functions into a specific group. A function is a medical office where doctors can be linked to.
+      Available fields are type (*), text (*), color (*).
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+    responses:
+      201: |
+        Functions have been created.
+        The response's body contains a list with the created functions in JSON:API format.
+      default: 403, 404 or 500 on error.
+
+etablissement_functions_update:
+  path: /api/groups/functions/{function_id}
+  controller: Ox\Mediboard\Etablissement\Controllers\CGroupsController::updateFunction
+  methods: PUT
+  requirements:
+    function_id: '\d+'
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Update a function identified by function_id.
+      Updatable fields are type (*), text (*), color (*).
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+    responses:
+      200: |
+        The function identified by {function_id} have been updated.
+        The response's body contains the updated function in JSON:API format.
+      default: 403, 404 or 500 on error.
+      
+etablissement_functions_delete:
+  path: /api/groups/functions/{function_id}
+  controller: Ox\Mediboard\Etablissement\Controllers\CGroupsController::deleteFunction
+  methods: DELETE
+  requirements:
+    function_id: '\d+'
+  defaults:
+    permission: edit
+  options:
+    description: Delete a function identified by function_id.
+    accept:
+      - application/json
+    responses:
+      204: The function have been deleted.
+      default: 403, 404 or 500 on error.

@@ -1,0 +1,12 @@
+div.import-layout {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+div.import-width-fixed {
+  width: 10%;
+}
+
+div.campaign-select {
+  text-align: center !important;
+}

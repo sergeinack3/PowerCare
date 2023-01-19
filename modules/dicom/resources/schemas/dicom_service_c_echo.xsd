@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:include schemaLocation="dicom_dataset_types.xsd"/>
+
+ <xs:complexType name="Type_C-Echo-RQ">
+    <xs:sequence>
+      <xs:element name="Command-group-length" type="Type_Cmd-Group-Length"/>
+      <xs:element name="Affected-SOP-Class-UID" type="Type_DataSet-UI"/>
+      <xs:element name="Command-Field" type="Type_Command-Field-Echo-RQ"/>
+      <xs:element name="Message-ID" type="Type_Message-ID"/>
+      <xs:element name="Command-DataSet-Type" type="Type_Cmd-DataSet-Type-Empty"/>
+    </xs:sequence>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_Command-Field-Echo-RQ">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000100"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort" fixed="2"/>
+      <xs:element name="Value" type="xs:hexBinary" fixed="0030"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_C-Echo-RSP">
+    <xs:sequence>
+      <xs:element name="Command-group-length" type="Type_Cmd-Group-Length"/>
+      <xs:element name="Affected-SOP-Class-UID" type="Type_DataSet-UI"/>
+      <xs:element name="Command-Field" type="Type_Command-Field-Echo-RSP"/>
+      <xs:element name="Message-ID-Responded-To" type="Type_Message-ID-Responded-To"/>
+      <xs:element name="Command-DataSet-Type" type="Type_Cmd-DataSet-Type-Empty"/>
+    </xs:sequence>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_Command-Field-Echo-RSP">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000100"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort" fixed="2"/>
+      <xs:element name="Value" type="xs:hexBinary" fixed="8030"/>
+      <xs:element name="Status" type="Type_Status"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+
+</xs:schema>

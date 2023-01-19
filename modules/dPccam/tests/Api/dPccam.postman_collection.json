@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "35563b69-db69-4051-acf1-e97692e8c42a",
+		"name": "dPccam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18603283"
+	},
+	"item": [
+		{
+			"name": "ccam_actes",
+			"item": [
+				{
+					"name": "ccam_actes",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Auth_Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Auth_Username}} ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/api/ccam/actes?code=YYY&date=2018-05-01",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"ccam",
+								"actes"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "YYY",
+									"description": "Name of CCAM searched"
+								},
+								{
+									"key": "date",
+									"value": "2018-05-01",
+									"description": "Date of CCAM searched"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ccam_actes_details",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"code_acte\", \"AAFA001\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response is API CCAM code\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    const data = jsonData.data;\r",
+									"\r",
+									"    pm.expect(data).to.be.an('object');\r",
+									"    pm.expect(data).to.have.property('type');\r",
+									"    pm.expect(data.type).to.eql('ApiCodeCCAM');\r",
+									"})\r",
+									"\r",
+									"pm.test(\"Response with the same CCAM code\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    const data = jsonData.data;\r",
+									"\r",
+									"    pm.expect(data).to.have.property('attributes');\r",
+									"\r",
+									"    const attributes = jsonData.data.attributes;\r",
+									"\r",
+									"    pm.expect(data.attributes.code).to.eql(pm.collectionVariables.get('code_acte'));\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Auth_Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Auth_Username}} ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/api/ccam/actes/{{code_acte}}?date_acte=2019-05-01",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"ccam",
+								"actes",
+								"{{code_acte}}"
+							],
+							"query": [
+								{
+									"key": "date_acte",
+									"value": "2019-05-01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ccam_actes_details (exceptions)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.collectionVariables.set(\"code_acte_error\", \"AAFA\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "{{Auth_Password}}",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "{{Auth_Username}} ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Host}}/api/ccam/actes/{{code_acte_error}}?date_acte=\"2021-05-01\"",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"api",
+								"ccam",
+								"actes",
+								"{{code_acte_error}}"
+							],
+							"query": [
+								{
+									"key": "date_acte",
+									"value": "\"2021-05-01\""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "code_acte",
+			"value": ""
+		},
+		{
+			"key": "code_acte_error",
+			"value": ""
+		}
+	]
+}

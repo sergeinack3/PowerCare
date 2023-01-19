@@ -1,0 +1,40 @@
+security:
+  enable_authenticator_manager: true
+
+  # https://symfony.com/doc/5.4/security.html#loading-the-user-the-user-provider
+  providers:
+    # used to reload user from session & other features (e.g. switch_user)
+    ox_user_provider:
+      id: Ox\Core\Auth\Providers\UserProvider
+
+  # https://symfony.com/doc/5.4/security.html#the-firewall
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+
+    api:
+      # https://symfony.com/doc/5.4/security/firewall_restriction.html
+      pattern: ^/api
+      provider: ox_user_provider
+
+      # https://symfony.com/doc/5.4/security/custom_authenticator.html
+      custom_authenticators:
+        - Ox\Core\Auth\Authenticators\BasicHeaderAuthenticator
+        - Ox\Core\Auth\Authenticators\ApiTokenAuthenticator
+        - Ox\Core\Auth\Authenticators\LegacySessionAuthenticator
+
+      # https://symfony.com/doc/5.4/security/user_checkers.html
+      user_checker: Ox\Core\Auth\Checkers\UserChecker
+
+  # Easy way to control access for large sections of your site
+  # Note: Only the *first* access control that matches will be used
+  # https://symfony.com/doc/5.4/security.html#access-control-authorization
+  access_control:
+    - { path: ^/api, roles: [ ROLE_API_USER ] }
+
+#when@test:
+#  security:
+#    providers:
+#      ox_user_provider:
+#        id: Ox\Core\Auth\Providers\TestUserProvider

@@ -1,0 +1,9 @@
+services:
+  _defaults:
+    autowire: false
+    autoconfigure: false
+
+  Ox\Mediboard\Admin\CLDAP: ~
+
+  Ox\Mediboard\Admin\Repositories\:
+    resource: '../../classes/Repositories/'

@@ -1,0 +1,511 @@
+/**
+ * @package Mediboard\Hospi
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.septique, table td.septique {
+  color: #3A3;
+}
+
+.patient-not-arrived {
+  color: #A33;
+}
+
+.patient-not-moved {
+  color: #F70;
+}
+
+div.clit {
+  background: #fff;
+  color: #000;
+}
+
+div.clit_bloque {
+  background: #fff;
+  color: #000;
+  border: 2px solid #688;
+  background-image: url(../../../images/icons/ray.gif);
+}
+
+div.wrapper_line {
+  position: relative;
+  height: 2em;
+  margin-bottom: 8px;
+}
+
+div.hatching {
+  background-image: url(../../../images/icons/ray.gif);
+}
+
+td.mouvement_lit {
+  padding-bottom: 0;
+  padding-top: 0;
+  vertical-align: top !important;
+}
+
+td.current_hour {
+  background: #f88 !important;
+}
+
+div.affectation, div.affect_legend {
+  border-right: none !important;
+  border-left: none !important;
+  border: 1px solid #aaa;
+  overflow: hidden;
+  position: absolute;
+  height: 2.4em;
+  padding: 1px;
+}
+
+div.affectation:hover {
+  overflow: visible;
+  z-index: 3;
+  outline: none !important;
+  height: auto;
+}
+
+div.affectation.child {
+  margin-top: 0.5em;
+}
+
+div.affectation:hover table {
+  outline: 3px solid #8F8;
+}
+
+div.affectation_resize:hover {
+  width: auto !important;
+  /*  z-index: 500;*/
+}
+
+div.affectation:hover .toolbar_affectation {
+  display: block;
+}
+
+div.affectation.compacte {
+  overflow: hidden;
+  position: absolute;
+  height: 1.1em;
+  padding: 1px;
+}
+
+div.toolbar_affectation {
+  position: absolute;
+  top: -24px;
+  left: -5px;
+  height: 24px;
+  background: #fff;
+  border: 1px solid #AAA;
+  border-radius: 3px;
+  display: none;
+}
+
+div.affect_left {
+  border-left: 4px solid #888 !important;
+}
+
+div.affect_right {
+  border-right: 4px solid #888 !important;
+}
+
+div.debut_sejour {
+  border-left: 4px solid #5a5 !important;
+}
+
+div.fin_sejour {
+  border-right: 4px solid #5a5 !important;
+}
+
+div.debut_blocage {
+  border-left: 1px solid #688 !important;
+}
+
+div.fin_blocage {
+  border-right: 1px solid #688 !important;
+}
+
+tr.lit_hover td {
+  background: #ccc !important;
+}
+
+div.non_affectes_hover {
+  background: #ccc !important;
+}
+
+div.sejour_non_affecte {
+  margin: 2px;
+  height: 2.4em;
+  border: 1px solid #aaa;
+  overflow: hidden;
+  vertical-align: top;
+  margin-top: 0 !important;
+}
+
+div.operation_in_mouv {
+  position: absolute;
+  height: 25px;
+  top: 1px;
+  background: #6AE;
+}
+
+div.operation_in_mouv.compacte {
+  height: 11px;
+}
+
+div.soins_uscpo {
+  position: absolute;
+  height: 25px;
+  top: 1px;
+  background: #fd7;
+}
+
+div.soins_uscpo.compacte {
+  height: 11px;
+}
+
+div.sejour_sortie_confirmee {
+  background-image: url(../../../images/icons/ray.gif) !important;
+}
+
+div.prolongation {
+  position: absolute;
+  height: 25px;
+  top: 1px;
+  background: #ffA000;
+}
+
+div.prolongation.compacte {
+  height: 11px;
+}
+
+table.layout_affectation,
+table.layout_affectation tr,
+table.layout_affectation td {
+  background: none !important;
+  padding: 0 !important;
+  border: 0 !important;
+  margin: 0 !important;
+  border-spacing: 0;
+}
+
+table.layout_temporel,
+table.layout_temporel tr,
+table.layout_temporel td {
+  /*padding: 0 !important;
+  margin: 0 !important;
+  border-spacing: 0 !important;*/
+}
+
+table.tbl th.service_externe {
+  background: #484 !important;
+}
+
+.item_egal {
+  background-color: #9f8 !important;
+}
+
+.item_superior {
+  background-color: #f89 !important;
+  line-height: 110%;
+}
+
+.item_inferior {
+  background-color: #fd9 !important;
+  line-height: 110%;
+}
+
+tr.consultation_entree td {
+  background-color: #fc8 !important;
+}
+
+tr.observation_urgente td {
+  background-color: #faa !important;
+}
+
+tr.observation_info td {
+  background-color: #ccf !important;
+}
+
+tr.transmission_haute td {
+  background-color: #faa !important;
+}
+
+div.scroll_shadow {
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .3);
+}
+
+table#diagramme {
+  height: 100%;
+  width: 100%;
+  font-size: 12px;
+}
+
+table#diagramme td.only {
+  border: 2px solid #050440;
+  color: #050440;
+}
+
+table#diagramme td.done {
+  background-color: #f3f5f7;
+  text-align: center;
+}
+
+table#diagramme td.current {
+  background-color: #aabcee;
+  text-align: center;
+}
+
+table#diagramme td.expect {
+  text-align: center;
+  background-color: #aaaaaa;
+}
+
+table#diagramme td.arrowdown {
+  height: 40px;
+  background-image: url(../../../style/mediboard_ext/images/icons/downarrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+table#diagramme td.arrowup {
+  height: 40px;
+  background-image: url(../../../style/mediboard_ext/images/icons/uparrow.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+table#diagramme td.arrowright {
+  height: 40px;
+  width: 100px;
+  background-image: url(../../../style/mediboard_ext/images/icons/loopnone.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+table#diagramme td.space {
+  width: 100px;
+}
+
+/* Chambres */
+table.chambrecollapse,
+table.chambreexpand {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin: 1px 0;
+}
+
+table.chambrecollapse td,
+table.chambrecollapse th,
+table.chambreexpand td,
+table.chambreexpand th {
+  border: 1px outset #050;
+}
+
+table.chambrecollapse td.action,
+table.chambreexpand td.action {
+  width: 20px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+table.chambrecollapse th.chambre {
+  background-color: #aaa;
+  color: #fff;
+}
+
+table.chambreexpand th.chambre {
+  background-color: #aaa;
+  color: #400;
+}
+
+th.chambre img {
+  float: right;
+  margin: 0 1px;
+}
+
+table.chambrecollapse tr.litdispo td,
+table.chambreexpand tr.litdispo td {
+  background: #dfd;
+}
+
+table.chambrecollapse tr.lit td,
+table.chambreexpand tr.lit td {
+  background: #ccc;
+  color: #000;
+}
+
+table.chambrecollapse tr.patient td,
+table.chambreexpand tr.patient td {
+  background: #eee;
+  color: #000;
+}
+
+table.chambrecollapse tr.patient img,
+table.chambreexpand tr.patient img {
+  float: left;
+  margin-right: 2px;
+}
+
+table.chambrecollapse tr.lit,
+table.chambrecollapse tr.litdispo,
+table.chambrecollapse tr.dates {
+  display: none;
+}
+
+table.chambreexpand td.dates {
+  white-space: normal;
+  color: red;
+}
+
+/* Operations */
+table.sejourcollapse,
+table.sejourexpand {
+  width: 100%;
+  background: #fff;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table.sejourcollapse td,
+table.sejourexpand td {
+  border: 1px solid #555;
+  padding: 0 2px;
+  color: #000;
+}
+
+table.sejourcollapse em,
+table.sejourexpand em {
+  font-weight: bold;
+}
+
+table.sejourcollapse td.selectsejour,
+table.sejourexpand td.selectsejour {
+  background: #ddf;
+  text-align: center;
+  vertical-align: middle;
+  width: 20px;
+}
+
+table.sejourcollapse td.patient {
+  background-color: #ddf;
+}
+
+table.sejournexpand td.patient {
+  background-color: #ddf;
+}
+
+table.operationcollapse td,
+table.sejourcollapse td {
+  display: none;
+}
+
+table.sejourcollapse td.patient,
+table.sejourcollapse td.selectsejour {
+  display: table-cell;
+}
+
+table.affectations {
+  width: 100%;
+}
+
+table.affectations td.fullService {
+  border: 1px solid #aaa;
+  background-color: #fff;
+}
+
+table.tbl td.trans-data {
+  background-image: url(../../../images/icons/trans_data.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+table.tbl td.trans-action {
+  background-image: url(../../../images/icons/trans_action.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+table.tbl td.trans-result {
+  background-image: url(../../../images/icons/trans_result.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+table.tbl td.trans-data p, table.tbl td.trans-action p, table.tbl td.trans-result p {
+  margin-left: 50px;
+}
+
+.transmission, table.tbl th.transmission {
+  border: 2px solid #900 !important;
+}
+
+span.listeCurrent a {
+  color: red;
+}
+
+div.effectue, td.effectue {
+  text-decoration: line-through;
+}
+
+tr.border-bold {
+  border: solid 2px black;
+}
+
+td.left_day_week {
+  border-left: 2px solid #bbb !important;
+}
+
+div.background_temporel_m {
+  background-color: #eef;
+}
+
+div.background_temporel_f {
+  background-color: #fee;
+}
+
+table.tbl tr td button.transmission_add {
+  display: none;
+}
+
+table.tbl tr td:hover button.transmission_add {
+  display: block;
+}
+
+#vue_tableau table {
+  border-collapse: collapse !important;
+  border-left-width: 0 !important;
+  border-bottom-width: 0 !important;
+}
+
+.affectation .footer {
+  float: right;
+  width: 6px;
+  height: 30px;
+  margin-left: 2px;
+}
+
+.icone_nc {
+  width: 15px;
+  height: 15px;
+  background-color: green;
+  color: white;
+  font-size: 0.9em;
+  font-weight: 700;
+  padding: 1px;
+  margin-top: 2px;
+}
+
+div.etat_des_lits_information {
+  float: right;
+  font-size: .85em;
+  color: black;
+  font-weight: normal;
+  margin: -0px 0px 0px 0px;
+  text-shadow: none;
+}
+
+div.list-patients-non-places {
+  min-width: 120px;
+}

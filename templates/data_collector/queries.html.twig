@@ -1,0 +1,216 @@
+{# templates/data_collector/template.html.twig #}
+{% extends '@WebProfiler/Profiler/layout.html.twig' %}
+
+{% block toolbar %}
+    {% set icon %}
+        <span class="icon">{{ include('data_collector/ds.svg') }}</span>
+        <span class="sf-toolbar-value">{{ collector.stats.queriesCount }}</span>
+        <span class="sf-toolbar-info-piece-additional-detail">
+            <span class="sf-toolbar-label">in</span>
+            <span class="sf-toolbar-value">{{ collector.stats.dsTime }}</span>
+            <span class="sf-toolbar-label">ms</span>
+        </span>
+    {% endset %}
+
+    {% set text %}
+        {# this is the content displayed when hovering the mouse over the toolbar panel #}
+        <div class="sf-toolbar-info-piece">
+            <b>Databases</b>
+            <span class="sf-toolbar-status ">{{ collector.stats.dsCount }}</span>
+        </div>
+        <div class="sf-toolbar-info-piece">
+            <b>Queries</b>
+            <span class="sf-toolbar-status ">{{ collector.stats.queriesCount }}</span>
+        </div>
+        <div class="sf-toolbar-info-piece">
+            <b>Query time</b>
+            <span>{{ collector.stats.dsTime }} ms</span>
+        </div>
+
+    {% endset %}
+
+    {% if collector.stats.queriesCount >= 25 %}
+        {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', { link: profiler_url, 'additional_classes' :  'sf-toolbar-status-yellow'  }) }}
+    {% else %}
+        {{ include('@WebProfiler/Profiler/toolbar_item.html.twig', {link: profiler_url} ) }}
+    {% endif %}
+{% endblock %}
+
+
+{% block menu %}
+ {# This left-hand menu appears when using the full-screen profiler. #}
+ <span class="label">
+    <span class="icon">{{ include('data_collector/ds.svg') }}</span>
+    <strong>OX Queries</strong>
+</span>
+{% endblock %}
+
+{% block panel %}
+
+    <style>
+      .SqlFormater pre {
+        max-height: 200px !important;
+        overflow-y: auto;
+        line-height: 1.2em !important;
+        cursor: pointer;
+        background-color: transparent !important;
+
+      }
+
+      body.theme-dark .SqlFormater pre {
+        filter: invert(100%) !important;
+      }
+
+      tr.tr_top_report td {
+        border-bottom: none;
+      }
+
+      tr.tr_bottom_report td {
+        padding-right: 16px;
+        padding-left: 16px;
+        border-top: none;
+      }
+
+      tr.tr_bottom_report pre {
+        padding: 16px;
+      }
+
+    </style>
+
+    <script>
+      docReady(function () {
+        if (navigator.clipboard) {
+          document.querySelectorAll('[data-clipboard-text]').forEach(function (element) {
+            element.addEventListener('click', function () {
+              navigator.clipboard.writeText(element.getAttribute('data-clipboard-text'));
+            })
+          });
+        }
+      });
+
+      function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+          // call on next available tick
+          setTimeout(fn, 1);
+        } else {
+          document.addEventListener("DOMContentLoaded", fn);
+        }
+      }
+    </script>
+
+    <h2>Metrics</h2>
+    <div class="metrics">
+        <div class="metric">
+            <span class="value">{{ collector.stats.dsCount }}</span>
+            <span class="label">Databases</span>
+        </div>
+        <div class="metric">
+            <span class="value">{{ collector.stats.queriesCount }}</span>
+            <span class="label">Queries</span>
+        </div>
+        <div class="metric">
+            <span class="value">{{ collector.stats.dsTime }}&nbsp;<span class="unit">ms</span></span>
+            <span class="label">Query time</span>
+        </div>
+    </div>
+
+    <h2>Queries</h2>
+    {% set group_queries = request.query.getBoolean('group') %}
+    {% if group_queries %}
+        <p><a href="{{ path('_profiler', { panel: 'app.queries_collector', token: token }) }}">Show all queries</a></p>
+    {% else %}
+        <p><a href="{{ path('_profiler', { panel: 'app.queries_collector', token: token, group: true }) }}">Group
+                similar statements</a>
+        </p>
+    {% endif %}
+
+    {% if collector.stats.dsCount == 0 %}
+        <div class="empty">
+            <p>No database queries were performed.</p>
+        </div>
+    {% endif %}
+
+    {% if group_queries %}
+        <table class="alt queries-table-grouped">
+            <thead>
+            <tr>
+                <th class="nowrap">#</th>
+                <th class="nowrap">Database</th>
+                <th class="nowrap">Count</th>
+                <th class="nowrap">Time</th>
+                <th class="nowrap">Sample</th>
+            </tr>
+            </thead>
+            {% for i, report in collector.reports %}
+                <tr class="tr_top_report">
+                    <td class="nowrap">{{ i }}</td>
+                    <td class="nowrap">{{ report.ds }}</td>
+                    <td class="nowrap">{{ report.count }}x</td>
+                    <td class="nowrap">{{ report.time }}&nbsp;<span class="unit">ms</span></td>
+                    <td class="nowrap"
+                        data-clipboard-text="{{ report.sample }}" title="Click to copy">{{ report.sample|ox_format_sql|raw }}</td>
+
+                </tr>
+                <tr class="tr_bottom_report">
+                    <td colspan="5" class="distribution">
+                        {{ report.distribution|raw }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    {% else %}
+        <table class="alt queries-table">
+            <thead>
+            <tr>
+                <th class="nowrap">#</th>
+                <th class="nowrap">Database</th>
+                <th class="nowrap">Time</th>
+                <th style="width: 100%;">Info</th>
+            </tr>
+            </thead>
+            {% for i, query in collector.queries %}
+                <tr>
+                    <td class="nowrap">{{ i }}</td>
+                    <td class="nowrap">{{ query.ds }}</td>
+                    <td class="nowrap">{{ query.time }}&nbsp;&#181;s</td>
+                    <td class="nowrap" data-clipboard-text="{{ query.sql }}" title="Click to copy">{{ query.sql|ox_format_sql|raw }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+    <h2>Database Connections</h2>
+    {% if not collector.datasources %}
+        <div class="empty">
+            <p>There are no configured database connections.</p>
+        </div>
+    {% else %}
+
+        <table>
+            <thead>
+            <tr>
+                <th scope="col" class="key">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Host</th>
+                <th scope="col">Database</th>
+                <th scope="col">User</th>
+                <th scope="col">Link</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for i, ds in collector.datasources %}
+                <tr>
+                    <td>{{ ds.dsn }}</td>
+                    <td>{{ ds.type }}</td>
+                    <td>{{ ds.host }}</td>
+                    <td>{{ ds.name }}</td>
+                    <td>{{ ds.user }}</td>
+                    <td>{{ ds.link }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,108 @@
+/**
+ * @package Mediboard\Stock
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.bargraph {
+  overflow: hidden;
+  height: 1.2em;
+  min-width: 4em;
+}
+
+.legend .value {
+  font-weight: bold;
+  border: none;
+  padding: 2px;
+  width: 12em;
+}
+
+.legend .color {
+  height: 6px;
+  width: 6px;
+  float: left;
+  margin: 3px;
+  margin-bottom: 0;
+  border: 1px solid #333333;
+}
+
+.bargraph .threshold {
+  height: 25%;
+  opacity: .3;
+  margin-top: 0;
+  z-index: 100;
+}
+
+.bargraph .value div, .bargraph .threshold div {
+  height: 100%;
+}
+
+.bargraph .value {
+  border-color: #999;
+}
+
+.bargraph .threshold div {
+  float: left;
+}
+
+.critical {
+  background: #F00;
+}
+
+.min {
+  background: #FC3;
+}
+
+.optimum {
+  background: #1D6;
+}
+
+.max {
+  background: #06F;
+}
+
+.bargraph.advanced > .value.critical {
+  border-color: #F00;
+}
+
+.bargraph.advanced > .value.min {
+  border-color: #FC3;
+}
+
+.bargraph.advanced > .value.optimum {
+  border-color: #1D6;
+}
+
+.bargraph.advanced > .value.max {
+  border-color: #06F;
+}
+
+.bargraph > .value {
+  height: 60%;
+  border: 1px solid #999;
+  background: none;
+}
+
+table.grid {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 99%;
+  margin: auto;
+}
+
+table.grid td,
+table.grid th {
+  border: 1px solid #ccc;
+  padding: 2px;
+  color: #000;
+}
+
+table.grid > * > tr > th.title {
+  font-size: 1.0em;
+}
+
+.most_used_ref
+{
+  text-align: center;
+}

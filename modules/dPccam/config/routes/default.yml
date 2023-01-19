@@ -1,0 +1,32 @@
+ccam_actes:
+  path: /api/ccam/actes
+  controller: Ox\Mediboard\Ccam\Controllers\CCodeCCAMsController::listCodes
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a list of codes
+    parameters:
+      code: '\w+'
+      date: '\w+'
+    accept:
+      - application/json
+
+ccam_actes_details:
+  path: /api/ccam/actes/{code_acte}
+  controller: Ox\Mediboard\Ccam\Controllers\CCodeCCAMsController::showCode
+  methods: GET
+  requirements:
+    code_acte: '\w+'
+  defaults:
+    permission: read
+  options:
+    description: |
+      Get the information of a CCAM acte according to its code and a given date
+    parameters:
+      date_acte: '\w+'
+    accept:
+      - application/json
+    responses:
+      200: The response's body contains the CCAM acte in json_api format.
+      default: 403, 404 or 500 on error.

@@ -1,0 +1,110 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
+parameters:
+  ox.dsn.std: 'std'
+
+imports:
+  - { resource: "../includes/all_services.yml" }
+  - { resource: "services/auth.yml" }
+  - { resource: "services/security.yml" }
+
+services:
+  # Default configuration for services in *this* file
+  _defaults:
+    autowire: true      # Automatically injects dependencies in your services.
+    autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+  # Symfony default container
+  Symfony\Component\DependencyInjection\ContainerInterface: '@service_container'
+
+  # Symfony Dotenv Dump Command
+  Symfony\Component\Dotenv\Command\DotenvDumpCommand:
+    - '%kernel.project_dir%/.env'
+    - '%kernel.environment%'
+
+  # Core API services (RequestApi ...)
+  Ox\Core\Api\:
+    resource: '../core/classes/Api'
+
+  # Cli Console
+  Ox\Cli\Console\:
+    resource: '../cli/classes/Console'
+
+  # Inject instance of CStoredObject and check controller perms
+  Ox\Core\Kernel\Resolver\CStoredObjectAttributeValueResolver:
+    tags:
+      - { name: controller.argument_value_resolver, priority: 100 }
+
+  # Event dispatcher
+  Ox\Core\Kernel\Event\:
+    resource: '../core/classes/Kernel/Event/'
+
+  # CSQLDataSource which have to be instanced via CSQLDataSource::get
+  Ox\Core\CSQLDataSource:
+    autowire: false
+    autoconfigure: false
+    factory: [ Ox\Core\CSQLDataSource, 'get' ]
+    arguments: [ '%ox.dsn.std%' ]
+
+  # CApp which have to be instanced via CApp::get
+  Ox\Core\CApp:
+    autowire: false
+    autoconfigure: false
+    factory: [ Ox\Core\CApp, 'getInstance' ]
+
+  # CSessionManager which have to be instanced via CSessionManager::get
+  Ox\Core\Sessions\CSessionManager:
+    autowire: false
+    autoconfigure: false
+    factory: [ Ox\Core\Sessions\CSessionManager, 'get' ]
+
+  # Configurations
+  Ox\Core\Config\Conf:
+    autowire: false
+    autoconfigure: false
+
+  # Locales
+  Ox\Core\Locales\Translator:
+    autowire: false
+    autoconfigure: false
+
+  Ox\Core\Repositories\AbstractRequestApiRepository:
+    # Repositories does not need to be autoconfigured
+    autoconfigure: false
+    calls:
+      - initFromRequest: [ '@Ox\Core\Api\Request\RequestApi' ]
+
+when@dev:
+  services:
+    _defaults:
+      autowire: true
+      autoconfigure: true
+
+    Ox\Core\Profiler\QueriesCollector:
+      tags:
+        - name: data_collector
+          template: 'data_collector/queries.html.twig'
+          id: 'app.queries_collector'
+
+    Ox\Core\Profiler\PerformanceCollector:
+      tags:
+        - name: data_collector
+          template: 'data_collector/performance.html.twig'
+          id: 'app.performance_collector'
+
+    Symfony\Component\HttpKernel\Profiler\Profiler: '@profiler'
+
+when@test:
+  services:
+    _defaults:
+      autowire: true
+      autoconfigure: true
+
+    Symfony\Component\BrowserKit\HttpBrowser:
+      tags: [ 'test.client' ]
+
+  parameters:
+    OX_PHPUNIT_BASIC: '%env(OX_PHPUNIT_BASIC)%'

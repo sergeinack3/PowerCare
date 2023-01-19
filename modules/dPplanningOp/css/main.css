@@ -1,0 +1,189 @@
+/**
+ * @package Mediboard\PlanningOp
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+div.sejour {
+  font-weight: bold;
+}
+
+#prog_plageop .insert input,
+#prog_plageop .insert div {
+  display: inline-block; 
+  margin: 0;
+  height: 16px;
+  vertical-align: middle;
+}
+
+#prog_plageop label.insert {
+  display: block;
+  font-size: 0.9em;
+  color: #666;
+}
+
+#prog_plageop .insert div {
+  width: 16px;
+  background-image: url(../../../style/mediboard_ext/images/buttons/right.png);
+  background-repeat: no-repeat;
+}
+
+#prog_plageop .insert input:checked+div {
+  background-image: url(../../../style/mediboard_ext/images/buttons/right-selected.png);
+}
+
+td.median_ok {
+  background-color: #080 !important;
+}
+
+td.median_nonok {
+  background-color: #fb0 !important;
+}
+
+div.dhe_multiple {
+  border:solid 1px #adadad;
+  margin:3px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px black;
+}
+
+span.dhe_item {
+  display: inline-block;
+  border: 1px solid #1f3950;
+  background-color: #c1cdee;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 1px;
+  margin: 1px;
+  font-size: 1.2em;
+  vertical-align: middle;
+  width: 95%;
+}
+
+span.dhe_sum_item {
+  border: 1px solid #abe;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 1px;
+  margin: 1px;
+}
+
+span.dhe_diagnostic, span.dhe_flag {
+  cursor: help;
+  border-radius: 3px;
+  padding: 1px;
+  margin: 1px;
+  vertical-align: middle;
+}
+
+span.dhe_diagnostic {
+  display: inline-block;
+  font-size: 1.2em;
+  color: white;
+}
+
+span.dhe_diag_main {
+  border: 1px solid #5969b9;
+  background-color: #6496f0;
+}
+
+span.dhe_diag_second {
+  border: 1px solid rgba(100, 150, 250, 0.70);
+  background-color: rgba(100, 150, 250, 0.70);
+}
+
+span.dhe_diag_related {
+  border: 1px solid #718287;
+  background-color: #a3b4b9;
+}
+
+span.dhe_flag {
+  color: white;
+  float: right;
+  border: 1px solid #425055;
+}
+
+span.dhe_flag_info {
+  background-color: steelblue;
+}
+
+span.dhe_flag_warning {
+  color: black;
+  background-color: goldenrod;
+}
+
+span.dhe_flag_important {
+  border: 1px solid #425055;
+  background-color: firebrick;
+}
+
+table.selector td {
+  cursor: pointer;
+}
+
+table.selector td.selected {
+  background-color: rgba(165, 182, 235, 0.8);!important
+}
+
+table.selector td.selected:hover {
+  background-color: rgba(165, 182, 235, 0.9);!important
+}
+
+table.selector td:hover {
+  background-color: rgba(165, 182, 235, 0.4);!important
+}
+
+table.form th.dhe-summary {
+  width: 100px;
+}
+
+span.dhe_anesth_ASA {
+  background-color: #4cae4c;
+  color: #fff;
+}
+
+span.dhe_flag_urgence {
+  background-color: #f6a2bf;
+  color: #fff;
+}
+
+span.dhe_flag_extempo {
+  background-color: #8c51cf;
+  color: #fff;
+}
+
+span.dhe_flag_conventionne {
+  background-color: #1f3950;
+  color: #fff;
+}
+
+span.dhe_flag_info {
+  background-color: #ff9f51;
+  color: #fff;
+}
+
+span.dhe_flag_RRAC {
+  border: 1px solid red;
+  color: red;
+  background-color: white;
+  text-shadow: none;
+  font-weight: normal;
+}
+
+span.dhe_flag_circuit_ambu {
+  border: 1px solid deeppink;
+  color: deeppink;
+  background-color: white;
+  text-shadow: none;
+  font-weight: normal;
+}
+
+div.sejour-modif-prestations {
+  width: 80%;
+}
+
+.ask_nda_scrollable {
+  height: 90%;
+  overflow: auto;
+}

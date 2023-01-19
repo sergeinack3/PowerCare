@@ -1,0 +1,132 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+@media print {
+  html,
+  body {
+    background: transparent !important;
+  }
+
+  .not-printable,
+  #user, #menubar, .titleblock, .tabmenu,
+  #systemMsg, #performance, .smarty-include, #waitingMsgMask, #waitingMsgText,
+  #profiling-toolbar, #profiler-overview, #nav-header, .nav-compenser {
+    display: none !important;
+  }
+
+  div.warning,
+  div.error,
+  div.message {
+    display: none;
+  }
+
+  div.empty,
+  li.empty{
+    @include black-emphasis($opacity-medium-emphasis-black);
+  }
+
+  table#weber table#allvalues,
+  table#weber td.radiointeractive {
+    display: none;
+  }
+
+  h1.newpage {
+    page-break-before:always;
+    display:none;
+  }
+
+  .planning .event  {
+    font-size: 110%;
+  }
+
+  table.tabview td.tabox {
+    background: transparent;
+  }
+
+  table.form,
+  table.tbl,
+  table.print {
+    border-radius: 0 !important;
+    margin: auto;
+    max-width: 99%;
+    width: 99%;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+
+    th.title:not(.me-no-title) {
+      background-color: white !important;
+      @include black-emphasis($opacity-high-emphasis-black);
+    }
+    th,
+    td {
+      padding: 2px !important;
+      line-height: normal !important;
+      border-radius: 0 !important;
+    }
+  }
+
+  table.tbl {
+    > * > tr {
+      > td,
+      > th,
+      > th.title {
+        border: 1px solid $grey-300 !important;
+      }
+    }
+  }
+
+  .me-user-chips {
+    overflow: visible;
+    background-color: transparent;
+
+    &.me-user-chips-initials {
+      .me-user-chips-icon {
+        display: block;
+      }
+      .me-user-chips-black {
+        border-left: 3px solid;
+      }
+      .me-user-chips-border {
+        display: none !important;
+      }
+    }
+  }
+  .me-user-chips-content {
+    border-left: 3px solid;
+  }
+  .me-user-chips-icon {
+    display: none;
+  }
+
+  div.small-success,
+  div.small-info,
+  div.small-warning,
+  div.small-error,
+  div.big-success,
+  div.big-info,
+  div.big-warning,
+  div.big-error,
+  div.small-mail {
+    background-color: transparent !important;
+    @include black-emphasis($opacity-high-emphasis-black, true);
+  }
+
+  /********************************************
+              ADMISSIONS
+  *********************************************/
+  body .me-patient-view {
+    @include body2;
+    display: inline-block;
+    line-height: normal;
+  }
+
+  body .me-patient-details {
+    @include body2;
+    @include black-emphasis($opacity-medium-emphasis-black);
+    display: inline-block;
+  }
+}

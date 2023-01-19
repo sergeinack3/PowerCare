@@ -1,0 +1,79 @@
+/**
+ * @package Mediboard\Style\Mediboard
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+/* Vertical text */
+span.vertical {
+  display: inline-block;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+span.vertical i {
+  display: block;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  margin-bottom: -60%;
+  font-style: normal;
+}
+
+div.vertical_inverse {
+  display: inline-block;
+  position: relative;
+  left:15px;
+
+  transform-origin: 100% 100%;
+  -webkit-transform-origin: 100% 100%;
+  -moz-transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+
+  transform: rotate(-90deg);
+  -webkit-transform: translate(-100%, 0) rotate(-90deg) ;
+  -moz-transform: translate(-100%, 0) rotate(-90deg);
+  -ms-transform: translate(-100%, 0) rotate(-90deg);
+}
+
+span.vertical .nowm {
+  width: 0.9em;
+  padding: 0 2px;
+  display: inline-block;
+  font-family: "lucida console", "courier new", courier, monospace;
+  font-size: 0.9em;
+}
+
+span.vertical .orig {
+  display: none;
+}
+
+/* MSIE supports writing-mode */
+.ua-msie span.vertical {
+  -ms-writing-mode: tb-rl;
+  width: auto;
+}
+
+.ua-msie span.vertical .orig {
+  display: inline;
+}
+
+.ua-msie span.vertical .nowm {
+  display: none !important; /* doesn't work when contentEditable=true !!! */
+  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: -1px;
+  -ms-filter: "alpha(opacity=0)";
+}
+
+@media screen {
+  .ua-msie span.vertical {
+    -ms-filter: flipv fliph;
+    background-color: inherit;
+  }
+}

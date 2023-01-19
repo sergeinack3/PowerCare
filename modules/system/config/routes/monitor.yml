@@ -1,0 +1,11 @@
+system_monitor_views_export_list:
+  path: api/system/viewSenders
+  controller: Ox\Mediboard\System\Controllers\ViewSendersController::getViewSendersList
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: List all view senders and if needed, include exports linked to view senders with "lastExecution" relations parameter.
+    responses:
+      200: The response's body contains the list of all view senders in JSON:API format.
+      default: 403 or 500 on error.

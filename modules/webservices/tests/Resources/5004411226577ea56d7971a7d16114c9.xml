@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--WSDL Mediboard genere permettant de decrire le service web.-->
+<!--Partie 1 : Definitions-->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" name="MediboardWSDL" targetNamespace="http://soap.mediboard.org/wsdl/" xmlns:typens="http://soap.mediboard.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <!--Partie 3 : Messages-->
+  <message name="calculatorAuthRequest">
+    <part name="operation" type="xsd:string"/>
+    <part name="entier1" type="xsd:int"/>
+    <part name="entier2" type="xsd:int"/>
+  </message>
+  <message name="calculatorAuthResponse">
+    <part name="result" type="xsd:int"/>
+  </message>
+  <message name="eventRequest">
+    <part name="message" type="xsd:string"/>
+  </message>
+  <message name="eventResponse">
+    <part name="response" type="xsd:string"/>
+  </message>
+  <!--partie 4 : Port Type-->
+  <portType name="MediboardPort">
+    <!--partie 5 : Operation-->
+    <operation name="calculatorAuth">
+      <input message="typens:calculatorAuthRequest"/>
+      <output message="typens:calculatorAuthResponse"/>
+    </operation>
+    <!--partie 5 : Operation-->
+    <operation name="event">
+      <input message="typens:eventRequest"/>
+      <output message="typens:eventResponse"/>
+    </operation>
+  </portType>
+  <!--partie 6 : Binding-->
+  <binding name="MediboardBinding" type="typens:MediboardPort">
+    <soap:binding xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="calculatorAuth">
+      <soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="MediboardAction"/>
+      <input name="calculatorAuthRequest">
+        <soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" namespace="urn:MediboardWSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output name="calculatorAuthResponse">
+        <soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" namespace="urn:MediboardWSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="event">
+      <soap:operation xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" soapAction="MediboardAction"/>
+      <input name="eventRequest">
+        <soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" namespace="urn:MediboardWSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output name="eventResponse">
+        <soap:body xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" use="encoded" namespace="urn:MediboardWSDL" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <!--Partie 7 : Service-->
+  <service name="MediboardService">
+    <documentation>Documentation du WebService</documentation>
+    <!--partie 8 : Port-->
+    <port name="MediboardPort" binding="typens:MediboardBinding">
+      <soap:address xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" location="https://localhost/mediboard/?login=user:pwd&amp;m=must_be&amp;a=found&amp;class=CEAISoapHandler&amp;wsdl_mode=CWSDLRPCEncoded&amp;suppressHeaders=1"/>
+    </port>
+  </service>
+</definitions>

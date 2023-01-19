@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+    dicom_a_associate_rq
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+ <xs:include schemaLocation="dicom_types.xsd"/>
+
+  <xs:element name="DICOM-PDU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PDU-type" type="Type_PDU-type" fixed="0100"/>
+        <xs:element name="PDU-length" type="xs:unsignedInt"/>
+        <xs:element name="A-Associate-RQ" type="Type_A-Associate-RQ"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="Type_A-Associate-RQ">
+    <xs:sequence>
+      <xs:element name="Protocol-version" type="xs:unsignedShort" fixed="1"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="0000"/>
+      <xs:element name="Called-AE-Title" type="Type_AE-Title"/>
+      <xs:element name="Calling-AE-Title" type="Type_AE-Title"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="00000000000000000000000000000000"/>
+      <xs:element name="Application-Context" type="Type_App-Context"/>
+      <xs:element name="Presentation-Context" type="Type_Pres-Context_RQ" maxOccurs="unbounded"/>
+      <xs:element name="User-Info" type="Type_User-Info"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Type_Pres-Context_RQ">
+    <xs:sequence>
+      <xs:element name="Item-type" type="xs:hexBinary" fixed="20"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="00"/>
+      <xs:element name="Item-length" type="xs:unsignedShort"/>
+      <xs:element name="Presentation-context-ID" type="unsignedByte"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="000000"/>
+      <xs:element name="Abstract-Syntax" type="Type_Abs-Syntax"/>
+      <xs:element name="Transfer-Syntax" type="Type_Transfer-Syntax" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Type_Abs-Syntax">
+    <xs:sequence>
+      <xs:element name="Item-type" type="xs:hexBinary" fixed="30"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="00"/>
+      <xs:element name="Item-length" type="xs:unsignedShort"/>
+      <xs:element name="Abstract-syntax-name" type="Type_UID"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Interop\\Ihe\\": "classes",
+      "Ox\\Interop\\Ihe\\Tests\\": "tests"
+    }
+  }
+}

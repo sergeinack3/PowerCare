@@ -1,0 +1,22 @@
+/**
+ * @package Mediboard\ImportTools
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+span.module-actif {
+    color: #22aa00;
+}
+
+span.module-installe {
+    color: #ff5500;
+}
+
+span.module-present {
+    color: #aa0000;
+}
+
+span.module-absent {
+    color: #666666;
+}

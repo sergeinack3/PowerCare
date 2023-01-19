@@ -1,0 +1,93 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.SampleMovieCard {
+  display: block;
+
+  &:hover {
+    cursor: pointer;
+
+    .SampleMovieCard {
+      &-coverImage {
+        transform: scale(1.2);
+        filter: brightness(70%);
+      }
+      &-content {
+        background-color: alpha($secondary-50, 0.4);
+      }
+    }
+  }
+
+  &-cover {
+    border-radius: 6px 6px 0 0;
+    height: 224px;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &-coverImage {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+    width: 100%;
+  }
+
+  &-content {
+    @include elevation(2, true);
+    border: $border;
+    border-radius: 0 0 6px 6px;
+    border-top: none;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space;
+    padding: $space*2;
+    width: 100%;
+  }
+
+  &-titleContainer {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: $space;
+  }
+
+  &-title {
+    @include on-background(high);
+    @include subtitle2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-informations {
+    @include caption;
+    @include on-background(medium);
+
+  }
+
+  &-footer {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  &-rating {
+    @include caption;
+    @include on-background(low);
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: $space;
+  }
+
+  &-date {
+    @include caption;
+    @include on-background(low);
+  }
+}

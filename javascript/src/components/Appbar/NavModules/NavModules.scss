@@ -1,0 +1,178 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.NavModules {
+  @include elevation(16);
+  align-items: stretch;
+  border-radius: 6px;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100%;
+  overflow-y: auto;
+  transition: max-height .18s, width .18s;
+  width: 100%;
+  will-change: max-height;
+
+  &-details {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 56px;
+  }
+
+  &-homeButton {
+    padding: $space*3 0 $space*5 0;
+  }
+
+  &.expand {
+    max-height: 90vh;
+
+    .NavModules-modules {
+      max-height: 100vh;
+      scrollbar-width: auto;
+    }
+    .NavModules-cta {
+      height: 0;
+    }
+  }
+
+  &-navigation {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: $space*3 $space*4 0 $space*4;
+    width: 100%;
+  }
+
+  &-shortcuts {
+    display: grid;
+    flex-wrap: wrap;
+    gap: $space*2;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: $space*5;
+  }
+
+  &-noFavTabIllus {
+    height: auto;
+    width: 155px;
+  }
+
+  &-emptyShortcuts {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space;
+    margin-bottom: $space*5;
+    width: 100%;
+  }
+
+  &-noFavTabTextTitle {
+    @include subtitle2;
+    @include on-background(medium);
+    text-align: center;
+  }
+
+  &-noFavTabTextDesc {
+    @include caption;
+    @include on-background(low);
+    text-align: center;
+  }
+
+  &-title {
+    @include subtitle1;
+    @include on-background(high);
+    margin-bottom: $space*2;
+    user-select: none;
+  }
+
+  &-searchField {
+    flex: 0;
+    margin-bottom: $space*2 !important;
+  }
+
+  &-empty {
+    @include body2();
+    @include on-background(medium);
+    background-image: url("~assets/illus_search.png");
+    background-position: center bottom;
+    background-size: 100px;
+    height: 180px;
+    margin-bottom: $space*6;
+    padding: $space*5 $space*6;
+    text-align: center;
+  }
+
+  &-cta {
+    @include button;
+    @include hoverable;
+    align-items: center;
+    border-top: $border;
+    color: $grey-600;
+    display: flex;
+    flex-shrink: 0;
+    height: 40px;
+    justify-content: center;
+    margin: 0 $space*-4;
+    overflow: hidden;
+    transition: height .25s;
+    will-change: height;
+  }
+
+  &-CTAInit {
+    color: $secondary-600 !important;
+  }
+
+  &-tabShortcut {
+    min-width: 48%;
+  }
+}
+
+@include screenLargerThan($screenSmall, "300") {
+  .NavModules {
+    max-height: 630px;
+    width: fit-content;
+
+    &-details {
+      position: initial;
+      min-width: 300px;
+    }
+
+    &-title {
+      @include overline;
+      @include on-background(medium);
+    }
+
+    &-navigation {
+      overflow: hidden;
+      width: 536px;
+    }
+
+    &-tabShortcut {
+      width: 248px;
+    }
+
+    &-modules {
+      display: flex;
+      flex: 1 1 auto;
+      flex-flow: column nowrap;
+      gap: $space*2;
+      margin: 0 $space*-3;
+      max-height: 386px;
+      overflow-y: auto;
+      padding: 0 $space*3 $space*3 $space*3;
+      scrollbar-width: none;
+      transition: max-height .18s;
+
+      &.empty {
+        padding: 0;
+        max-height: 0 !important;
+      }
+    }
+  }
+}

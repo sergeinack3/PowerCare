@@ -1,0 +1,13 @@
+twig:
+  default_path: '%kernel.project_dir%/templates'
+  globals:
+    Conf: '@Ox\Core\Config\Conf'
+    Translator: '@Ox\Core\Locales\Translator'
+
+services:
+  Ox\Core\Twig\OxExtension:
+    tags: [ 'twig.extension' ]
+
+when@test:
+  twig:
+    strict_variables: true

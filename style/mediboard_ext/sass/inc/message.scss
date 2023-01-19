@@ -1,0 +1,421 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+body {
+  .nav-history .nav-type-view .nav-object a::before {
+    @include fontawesome(12px, normal);
+    @include special-content("f06e");
+    color: $primary;
+  }
+  .nav-history .nav-type-edit .nav-object a::before {
+    @include fontawesome(12px, normal);
+    @include special-content("f304");
+    color: $primary;
+  }
+  .nav-history .nav-type-new .nav-object a::before {
+    @include fontawesome(12px, normal);
+    @include special-content("f067");
+    color: $primary;
+  }
+  .nav-history .nav-type-search .nav-object a::before {
+    @include fontawesome(12px, normal);
+    @include special-content("f002");
+    color: $primary;
+  }
+
+
+  fieldset.error-notice legend,
+  td.error-notice {
+    @include white-emphasis($opacity-high-emphasis-white, true);
+    background-color: $info-color-background !important;
+  }
+
+  fieldset.error-warning legend,
+  td.error-warning {
+    @include white-emphasis($opacity-high-emphasis-white, true);
+    background-color: $warning-color-background !important;
+  }
+
+  fieldset.error-error legend,
+  td.error-error {
+    background-color: $error-color-background !important;
+  }
+
+  fieldset.error-notice legend,
+  fieldset.error-warning legend,
+  fieldset.error-error legend,
+  td.error-notice,
+  td.error-warning,
+  td.error-error {
+    @include white-emphasis($opacity-high-emphasis-white, true);
+    button,
+    a.button,
+    a.me-button {
+      @include white-button;
+    }
+  }
+
+  div.success {
+    color: $success-color;
+  }
+
+  div.info {
+    color: $info-color;
+  }
+
+  div.warning {
+    color: $warning-color;
+  }
+
+  div.error {
+    color: $error-color;
+  }
+
+  div.loading {
+    @include body2;
+    padding: #{$small-space*3} #{$space*2} #{$small-space*3} #{$space*5};
+    position: relative;
+    color: $grey-700;
+
+    &::before {
+      @include fontawesome(12px, 12px);
+      text-align: center;
+      width: 12px;
+      display: inline-block;
+      position: absolute;
+      top: 50%;
+      left: 4px;
+      margin-top: -6px;
+      @include special-content("f110");
+      color: $grey-700;
+      animation-name: rotationAnimation;
+      animation-iteration-count: infinite;
+      animation-duration: 1s;
+      animation-timing-function: linear;
+    }
+  }
+
+  div.warning,
+  div.error,
+  div.info,
+  div.success {
+    @include body2;
+    padding: #{$space} #{$space} #{$space} #{$space*2};
+  }
+
+  div.small-success,
+  div.small-info,
+  div.small-warning,
+  div.small-error,
+  div.big-success,
+  div.big-info,
+  div.big-warning,
+  div.big-error,
+  div.small-mail {
+    &,
+    &.me-no-align {
+      border-style: solid;
+      border-width: 0 0 0 5px;
+      border-color: alpha($black, 25%);
+      border-radius: #{$small-space*2};
+      padding: #{$space} #{$small-space*3} #{$space} #{$space + $small-space} !important;
+      min-width: 130px;
+      position: relative;
+      box-sizing: border-box;
+      display: block;
+      text-align: left;
+
+      &.refresh-page-message {
+        display: none;
+      }
+    }
+
+    margin: $space auto $space auto !important;
+    width: 99%;
+    @include body2;
+    @include white-emphasis($opacity-high-emphasis-white);
+
+    > span,
+    > ul li,
+    strong,
+    > a,
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
+      @include white-emphasis($opacity-high-emphasis-white);
+    }
+
+    a:not(.button) {
+      &,
+      &:visited,
+      &:hover {
+        color: $primary-50;
+      }
+    }
+    > a {
+      text-decoration: underline;
+
+      &.button,
+      &.me-button {
+        text-decoration: none;
+      }
+    }
+    white-space: normal;
+
+    button,
+    a.button,
+    a.me-button {
+      @include me-button-lighter;
+    }
+  }
+
+  div.small-success,
+  div.big-success {
+    background-color: $success-color-background;
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+
+  div.small-info,
+  div.big-info {
+    background-color: $info-color-background;
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+
+  div.small-warning,
+  div.big-warning {
+    background-color: $warning-color-background;
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+
+  div.small-error,
+  div.big-error {
+    background-color: $error-color-background;
+    @include white-emphasis($opacity-high-emphasis-white);
+  }
+
+  div.small-mail {
+    background-color: #E7E7E7;
+  }
+
+  > .small-warning,
+  > .small-error,
+  > .small-info {
+    position: relative;
+
+    &.me-notice-header {
+      top: 55px + $space;
+    }
+  }
+
+  #main:not(.me-fullpage) {
+    #systemMsg {
+      cursor: pointer;
+      position: fixed;
+      z-index: 1200;
+      width: 30%;
+      right: $space;
+      top: -30px;
+      text-align: left;
+      opacity: 1;
+      transition: transform .15s linear;
+
+      @include small-screen {
+        width: 95%;
+      }
+
+      &.systemmsg-in {
+        transform: translateY(30px);
+      }
+
+      > div {
+        @include border-radius;
+        @include realShadow2;
+        margin-left: 8px;
+        margin-top: 4px;
+        text-align: left;
+        padding: 5px 0 5px 8px;
+        font-size: 13px;
+        line-height: 14px;
+        opacity: 1;
+        transition: opacity .2s linear;
+
+        &::before {
+          display: none;
+        }
+
+        &.error {
+          background-color: $error-color-background;
+          @include white-emphasis($opacity-high-emphasis-white);
+          strong {
+            @include white-emphasis($opacity-high-emphasis-white);
+          }
+        }
+
+        &.warning {
+          background-color: $warning-color-background;
+          @include white-emphasis($opacity-high-emphasis-white);
+          strong {
+            @include white-emphasis($opacity-high-emphasis-white);
+          }
+        }
+
+        &.info {
+          background-color: $info-color-background;
+          @include white-emphasis($opacity-high-emphasis-white);
+          strong {
+            @include white-emphasis($opacity-high-emphasis-white);
+          }
+        }
+
+        &.loading {
+          padding-left: 25px;
+          background: $white;
+
+          &::before {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+            @include fontawesome(12px, 20px);
+            @include special-content("f110");
+            animation-name: rotationAnimation;
+            animation-iteration-count: infinite;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+          }
+        }
+      }
+    }
+  }
+
+  #main.me-fullpage {
+    #systemMsg {
+      cursor: pointer;
+      position: fixed;
+      z-index: 1200;
+      width: 30%;
+      left: 50%;
+      top: -100px;
+      text-align: left;
+      opacity: 1;
+      transform: translateX(-50%);
+      transition: transform .15s linear;
+
+      @include small-screen {
+        width: 95%;
+      }
+
+      &.systemmsg-in {
+        transform: translateX(-50%) translateY(100px);
+      }
+
+      > div {
+        @include border-radius();
+        @include realShadow2;
+        margin-left: 8px;
+        margin-top: 4px;
+        text-align: left;
+        padding: 5px 0 5px 8px;
+        font-size: 13px;
+        line-height: 14px;
+        opacity: 1;
+        transition: opacity .2s linear;
+
+        &::before {
+          display: none;
+        }
+
+        &.error {
+          background-color: $error-color-background;
+          @include white-emphasis($opacity-high-emphasis-white);
+          strong {
+            @include white-emphasis($opacity-high-emphasis-white);
+          }
+        }
+
+        &.warning {
+          background-color: $warning-color-background;
+          @include white-emphasis($opacity-high-emphasis-white);
+          strong {
+            @include white-emphasis($opacity-high-emphasis-white);
+          }
+        }
+
+        &.info {
+          background-color: $info-color-background;
+          @include white-emphasis($opacity-high-emphasis-white);
+          strong {
+            @include white-emphasis($opacity-high-emphasis-white);
+          }
+        }
+
+        &.loading {
+          padding-left: 25px;
+          background: $white;
+          @include shadow4();
+
+          &::before {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-top: -10px;
+            @include fontawesome(12px, 20px);
+            @include special-content("f110");
+            animation-name: rotationAnimation;
+            animation-iteration-count: infinite;
+            animation-duration: 1s;
+            animation-timing-function: linear;
+          }
+        }
+      }
+    }
+  }
+
+  .me-caution-wrap {
+    width: 378px;
+    padding-bottom: 20px;
+    animation: .5s CautionApparition;
+
+    &.no-error {
+      display: none;
+    }
+  }
+
+  @keyframes CautionApparition {
+    0% { opacity: 0; position: absolute; }
+    99% { opacity: 0; position: absolute; }
+    100% { opacity: 1; position: initial; }
+  }
+
+  .me-caution {
+    @include border-radius(4px);
+    width: 100%;
+    padding: 0 $space * 2 $space * 2 $space * 2 !important;
+    margin: 0 -100px 0 0 !important;
+  }
+
+  .control-error {
+    line-height: 1.25;
+  }
+
+  .control-browser-error {
+    display: none;
+    &.displayed {
+      display: block;
+    }
+  }
+
+  .control-browser-error-title,
+  .control-error-title {
+    @include h6();
+    padding-top: $space * 2;
+  }
+}
+

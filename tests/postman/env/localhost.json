@@ -1,0 +1,21 @@
+{
+	"id": "0f7c4919-3163-4585-8f71-51d9b8a5f391",
+	"name": "Localhost",
+	"values": [
+		{
+			"key": "Host",
+			"value": "http://127.0.0.1/mediboard",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "Basic",
+			"value": "XXXXXXXXXX",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2022-10-25T11:25:14.838Z",
+	"_postman_exported_using": "Postman/9.31.0"
+}

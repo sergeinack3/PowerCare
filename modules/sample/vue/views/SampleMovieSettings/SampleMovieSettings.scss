@@ -1,0 +1,39 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+@import "@/core/styles/utils";
+
+.SampleMovieSettings {
+  @include fullParamPage;
+  display: flex;
+  flex-direction: column;
+  padding: $space*11 $space*20;
+
+  &-alertFullName {
+    @include on-background(high);
+  }
+
+  &-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &-datagrid {
+    overflow: hidden;
+  }
+
+  &-title {
+    color: $grey-900;
+    font-family: $font-family;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    padding-bottom: $space*5;
+  }
+}

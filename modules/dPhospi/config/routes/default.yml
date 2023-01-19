@@ -1,0 +1,51 @@
+hospi_ufs:
+  path: /api/hospi/ufs/{type}
+  requirements:
+    type: hebergement|medicale|soins
+  controller: Ox\Mediboard\Hospi\Controllers\CUniteFonctionnelleController::listUfs
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a list of ufs
+    parameters:
+      type_sejour: comp|ambu|exte|seances|ssr|psy|urg|consult
+    accept:
+      - application/json
+
+hospi_uf:
+  path: /api/hospi/ufs/{uf_id}
+  requirements:
+    uf_id: '\d+'
+  controller: Ox\Mediboard\Hospi\Controllers\CUniteFonctionnelleController::showUf
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return an uf
+    accept:
+      - application/json
+
+hospi_services:
+  path: /api/hospi/services
+  controller: Ox\Mediboard\Hospi\Controllers\CServicesController::listServices
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a list of services
+    accept:
+      - application/json
+
+hospi_service:
+  path: /api/hospi/services/{service_id}
+  requirements:
+    service_id: '\d+'
+  controller: Ox\Mediboard\Hospi\Controllers\CServicesController::showService
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a service
+    accept:
+      - application/json

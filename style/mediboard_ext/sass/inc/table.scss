@@ -1,0 +1,1292 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+@use "sass:math";
+
+table.form,
+table.tbl,
+table.main {
+  th.title:not(.me-no-title) {
+    @include white-context;
+  }
+}
+
+table.form,
+table.tbl {
+  border-collapse: collapse !important;
+}
+
+table.form,
+table.tbl,
+table.print {
+  max-width: 99%;
+  width: 99%;
+  border-radius: 4px;
+  @include card-border();
+  margin: #{$space*2} auto;
+  background: #FFFFFF;
+
+  &:-moz-only-whitespace,
+  &:empty {
+    box-shadow: none !important;
+
+    @include ie {
+      border-width: 0;
+    }
+  }
+
+  &:blank  {
+    box-shadow: none !important;
+
+    @include ie {
+      border-width: 0;
+    }
+  }
+
+  > thead,
+  > tbody,
+  & {
+    &.hoverable:hover {
+      td {
+        background-color: alpha($secondary-50, 31%);
+      }
+    }
+
+    &.me-font-bigger {
+      font-size: 1.2em !important;
+
+      * {
+        font-size: 1em !important;
+      }
+    }
+  }
+}
+
+table.form {
+  >thead,
+  >tbody {
+    >tr {
+      >th {
+        padding: $space;
+        vertical-align: middle;
+        @include body2();
+        text-align: right;
+        @include black-emphasis($opacity-medium-emphasis-black);
+        white-space: nowrap;
+        border-right: 1px solid $grey-75;
+
+        &.title {
+          @include h6();
+          @include note-light();
+          text-align: left;
+          padding: #{$space} 0 #{$space} #{$space};
+          background-color: $primary-300;
+          border-right: none;
+
+          a.not-printable {
+            margin: 0 $space;
+          }
+
+          &.modify,
+          &.me-th-new{
+            $icon-size: 18px;
+            padding-left: #{($space * 3) + $icon-size};
+            &::before {
+              width: $icon-size;
+              height: $icon-size;
+              @include fontawesome(#{$icon-size - ($space * 2)}, $icon-size);
+              @include border-radius();
+              color: #FFFFFF;
+              float: left;
+              text-align: center;
+              margin-right: $space;
+              margin-left: -#{$icon-size + $space*2};
+            }
+          }
+          &.modify::before {
+            background: $brown-light;
+            @include special-content("f304");
+          }
+          &.me-th-new::before {
+            @include special-content("f067");
+            background: $primary-100;
+          }
+        }
+
+        &.category {
+          text-align: center;
+          @include body1;
+          padding: $space $space $space $space;
+          @include black-emphasis($opacity-high-emphasis-black);
+          background-color: $primary-100;
+          border-right: none;
+
+          label {
+            background-color: $primary-100 !important;
+          }
+        }
+
+        &.section {
+          @include subtitle1();
+          text-align: left;
+          padding: #{$space} $space $space #{$space*2};
+          border-top: 1px solid $grey-100;
+          border-right: none;
+        }
+
+        &.cancelled {
+          color: $error-color;
+        }
+
+        &:empty {
+          border-right: none;
+        }
+        &:blank {
+          border-right: none;
+        }
+        &:-moz-only-whitespace {
+          border-right: none;
+        }
+      }
+      
+      >td {
+        white-space: nowrap;
+        text-align: left;
+
+        &.button {
+          padding-top: #{$space*2};
+        }
+        &.cancelled {
+          color: $error-color;
+        }
+      }
+    }
+  }
+
+  >tbody {
+    >tr {
+      >td {
+        padding: #{$space};
+        // Valeur qui change souvent. Il faut la laisser middle.
+        vertical-align: middle;
+
+        &:first-of-type {
+          padding-left: #{$space};
+        }
+
+        &:last-of-type {
+          padding-right: #{$space};
+        }
+
+        &.button {
+          text-align: center;
+        }
+      }
+    }
+  }
+  &.me-compact > tbody > tr {
+    > th,
+    > td {
+      padding : 1px;
+    }
+  }
+
+  &.me-small-form {
+    @include not-vue {
+      margin-top: 0;
+      > tbody {
+        > tr {
+          > th,
+          > td {
+            padding: 1px $small-space;
+            vertical-align: top;
+
+            label {
+              font-size: 11px;
+              line-height: normal;
+              padding: 0 !important;
+            }
+
+            li.tag button.delete {
+              height: 11px !important;
+              width: 11px !important;
+            }
+
+            button,
+            a.button {
+              @include me-form-btn-small();
+            }
+
+            input[type="checkbox"] {
+              @include small-checkbox();
+            }
+            input[type="radio"] {
+              @include small-radio();
+            }
+
+            .numericField .arrows div {
+              font-size: 11px;
+              line-height: 10px;
+              text-align: center;
+
+              &:hover {
+                background-color: transparent !important;
+              }
+            }
+          }
+
+          > th {
+            line-height: normal;
+            border-right: 1px solid $grey-100 !important;
+
+            &.category,
+            &.title,
+            &.section {
+              border-right: none !important;
+            }
+
+            &.category {
+              background-color: $primary-100;
+            }
+          }
+
+          > td {
+            input[type="text"],
+            input[type="email"],
+            input[type="number"],
+            input[type="password"],
+            input[type="search"],
+            input[type="tel"],
+            input[type="url"] {
+              @include small-input();
+            }
+
+            textarea {
+              @include small-texterea();
+            }
+
+            select {
+              @include small-select();
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+table.layout {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: none !important;
+  margin: 0 !important;
+  display: table;
+  min-width: 0;
+}
+
+table.tbl {
+  margin-bottom: 1px !important;
+  >thead,
+  >tbody,
+  & {
+    >tr {
+      >th {
+        @include body2();
+        text-align: left;
+        @include black-emphasis($opacity-medium-emphasis-black);
+        border-bottom : 1px solid $grey-200;
+        padding: #{$space};
+        font-size: 11px;
+        vertical-align: middle;
+        white-space: nowrap;
+        font-weight: 700;
+        background-color: alpha($grey-50, 50%);
+        label {
+          background-color: #f5f7f8 !important;
+        }
+
+        &.title {
+          @include h6();
+          @include note-light();
+          background-color: $primary-300;
+
+          label {
+            background-color: $primary-300 !important;
+          }
+          a {
+            margin: 0 $small-space;
+          }
+        }
+        &.section {
+          padding-left: $space;
+          @include body1();
+          text-align: left;
+          background-color: alpha($grey-50, 50%);
+          label {
+            background-color: alpha($grey-50, 50%) !important;
+          }
+        }
+        &.me-special-section {
+          @include black-emphasis($opacity-medium-emphasis-black);
+          background-color: alpha($grey-50, 50%);
+          @include body2();
+
+          label {
+            background-color: alpha($grey-50, 50%);
+          }
+        }
+        // Suppression du style parce que classe trop presente a la place de simple th
+        //&.category {
+        //  text-align: center;
+        //  @include body1;
+        //  padding: $small-space;
+        //  @include black-emphasis($opacity-high-emphasis-black);
+        //  background: $white;
+        //  label {
+        //    background-color: $white !important;
+        //  }
+        //}
+        &.me-category {
+          @include body1;
+          padding: $space $space $space $space;
+          @include black-emphasis($opacity-high-emphasis-black);
+          background-color: $primary-100;
+
+          label {
+            background-color: $primary-100;
+          }
+        }
+        &.error {
+          background-color: $error-color-background !important;
+        }
+        &.ok {
+          background-color: $success-color-background !important;
+        }
+        &.warning {
+          background-color: $warning-color-background !important;
+        }
+        &.error,
+        &.ok,
+        &.warning {
+          @include white-emphasis($opacity-high-emphasis-white, true);
+          &.compact,
+          &.compact,
+          div.compact,
+          span.compact {
+            @include white-emphasis($opacity-medium-emphasis-white);
+          }
+
+          button,
+          a.button,
+          a.me-button {
+            @include me-button-lighter;
+          }
+        }
+        &.cancelled {
+          color: $error-color !important;
+        }
+      }
+
+      >td {
+        @include body2();
+        padding: #{$space};
+        border-bottom: 1px solid $grey-200;
+        background-color: rgba(125, 137, 205, 0);
+        white-space: nowrap;
+        vertical-align: middle;
+        text-align: left;
+
+        &:first-of-type {
+          padding-left: $space;
+        }
+
+        &:last-of-type {
+          padding-right: $space;
+        }
+        &.error {
+          background-color: $error-color-background !important;
+        }
+        &.ok {
+          background-color: $success-color-background !important;
+        }
+        &.warning {
+          background-color: $warning-color-background !important;
+        }
+        &.error,
+        &.ok,
+        &.warning,
+        &.highlight {
+          @include white-emphasis($opacity-high-emphasis-white, true);
+          &.compact,
+          &.compact,
+          div.compact,
+          span.compact {
+            @include white-emphasis($opacity-medium-emphasis-white);
+          }
+
+          button,
+          a.button,
+          a.me-button {
+            @include me-button-lighter;
+          }
+        }
+        &.highlight {
+          background-color: $secondary-400;
+        }
+        &.disabled {
+          @include black-emphasis($opacity-low-black);
+        }
+        &.top {
+          vertical-align: top;
+        }
+        &.cancelled {
+          color: $error-color !important;
+        }
+        &.big-warning,
+        &.big-error,
+        &.big-info {
+          border-style: solid;
+          border-width: 0 0 0 5px;
+          border-color: alpha($black, 25%);
+          border-radius: #{$small-space*2};
+          padding: #{$space} #{$small-space*3} #{$space} #{$space + $small-space} !important;
+          min-width: 130px;
+          position: relative;
+          box-sizing: border-box;
+          text-align: left;
+        }
+
+        &.big-error {
+          &,
+          label {
+            background-color: alpha($error-color) !important;
+            @include white-emphasis($opacity-high-emphasis-white, true);
+          }
+        }
+        &.big-warning {
+          &,
+          label {
+            background-color: alpha($warning-color) !important;
+            @include white-emphasis($opacity-high-emphasis-white, true);
+          }
+        }
+        &.big-info {
+          &,
+          label {
+            background-color: alpha($info-color) !important;
+            @include white-emphasis($opacity-high-emphasis-white, true);
+          }
+        }
+
+        &.checked {
+          &::before {
+            @include fontawesome(11px, 16px);
+            @include special-content("f00c");
+            color: $success-color;
+          }
+          a {
+            display: inline-block;
+          }
+        }
+
+        &.isolement {
+          background-color: #afa;
+        }
+
+        &.sortie {
+          &.mutation {
+            background-color: #ff8;
+          }
+
+          &.transfert {
+            background-color: #fc8;
+          }
+
+          &.deces {
+            background-color: #faa;
+          }
+        }
+      }
+
+      &:hover {
+        >td {
+          background-color: alpha($secondary-50, 31%);
+
+          &.error {
+            background-color: $error-color-background !important;
+          }
+          &.ok {
+            background-color: $success-color-background !important;
+          }
+          &.warning {
+            background-color: $warning-color-background !important;
+          }
+          &.highlight {
+            background-color: $secondary-400;
+            @include white-emphasis($opacity-high-emphasis-white);
+          }
+          &.isolement {
+            background-color: #afa;
+          }
+        }
+      }
+
+      &.selected,
+      &.hoverable:hover{
+        > td {
+          background-color: alpha($secondary-50, 31%);
+        }
+      }
+
+      &[style*="bold"] {
+        >td {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  >thead,
+  >tbody {
+    &:first-of-type {
+      tr:first-of-type {
+        > th {
+          &:first-of-type {
+            border-top-left-radius: 4px;
+          }
+          &:last-of-type {
+            border-top-right-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  > tbody {
+    &:last-of-type {
+      tr:last-of-type {
+        >td,
+        >th {
+          border-bottom: none;
+        }
+        > td {
+          &:first-of-type {
+            border-bottom-left-radius: 4px;
+          }
+          &:last-of-type {
+            border-bottom-right-radius: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    display: block;
+    &.button,
+    &.action {
+      display: inline-block;
+    }
+  }
+
+  li {
+    list-style-position: inside;
+  }
+
+  &.me-contrast {
+    >thead,
+    >tbody {
+      > tr {
+        > th {
+          &.section {
+            background-color: alpha($primary-50, 30%) !important;
+            label {
+              background-color: alpha($primary-50, 30%) !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.me-small-tbl {
+    >thead,
+    >tbody {
+      > tr {
+        > th,
+        > td {
+          padding: 2px;
+          line-height: normal;
+
+          label {
+            line-height: normal;
+          }
+        }
+      }
+    }
+  }
+}
+
+table.main {
+  width: 99%;
+  border-radius: 4px;
+
+  th {
+    &.title {
+      @include h6();
+      @include note-light();
+      background-color: $primary-300;
+
+      text-align: left;
+    }
+
+    &.category {
+      @include body1();
+    }
+  }
+
+  td {
+    vertical-align: top;
+    padding: 0;
+  }
+}
+
+table.print {
+  font-family: georgia, serif;
+  border-collapse: separate;
+  border-spacing: 3px;
+  margin: 0;
+
+  tr {
+    &:first-of-type {
+      th,
+      td {
+        border-top: none !important;
+      }
+    }
+
+    &:last-of-type {
+      th,
+      td {
+        border-bottom: none;
+      }
+    }
+
+    th:first-of-type,
+    td:first-of-type {
+      border-left: none;
+    }
+
+    th:last-of-type,
+    td:last-of-type {
+      border-right: none;
+    }
+
+    th {
+      border-right: 1px solid $grey-200 !important;
+      @include body2();
+      line-height: normal;
+      text-align: right;
+      padding: 1px 0.5em 1px 1px;
+      vertical-align: top;
+      white-space: nowrap;
+      font-weight: bold;
+      &,
+      * {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+
+      &.title {
+        @include h6();
+        @include black-emphasis($opacity-high-emphasis-black);
+        padding: $space;
+        background: $primary-50;
+        font-weight: 700;
+        text-align: center;
+        border: 1px solid $grey-400 !important;
+      }
+
+      &.category {
+        @include body1;
+        text-align: center;
+        background: $primary-50;
+        line-height: normal;
+        padding: 2px;
+        border: 1px solid $grey-400 !important;
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+    }
+
+    td {
+      @include body2();
+      font-size: 10pt;
+      line-height: normal;
+      text-align: left;
+      padding: 1px;
+      background-color: rgba(125, 137, 205, 0);
+      white-space: normal;
+      vertical-align: top;
+      @include black-emphasis($opacity-high-emphasis-black);
+
+      * {
+        @include black-emphasis($opacity-high-emphasis-black);
+      }
+
+      &.halfPane {
+        width: 50%;
+        background: transparent;
+      }
+
+      &.info {
+        white-space: normal;
+        font-style: italic;
+        padding: 10px;
+        margin: 5px;
+        border: $grey-200 2px dotted;
+      }
+    }
+
+    label {
+      line-height: normal;
+    }
+  }
+}
+
+table.grid {
+  tr {
+    td {
+      border: 1px solid $grey-100 !important;
+    }
+  }
+}
+
+table.merger {
+  > thead,
+  > tbody {
+    > tr {
+      > th {
+        &.category {
+          text-align: left;
+          border-bottom: 1px solid $grey-100;
+          background-color: $white;
+        }
+      }
+
+      > td,
+      > th {
+        //border-bottom: 1px solid $grey-100;
+      }
+
+      &:last-of-type {
+        > td,
+        > th {
+          border-bottom: none;
+        }
+      }
+      &:hover {
+        &.multiple {
+          > th,
+          > td {
+            background-color: alpha($error-color, 6%);
+          }
+        }
+        &.duplicate {
+          > th,
+          > td {
+            background-color: #388e3c26;
+          }
+        }
+        &.unique {
+          > th,
+          > td {
+            background-color: #5c6bc010;
+          }
+        }
+
+        &.none {
+          > th,
+          > td {
+            background-color: $grey-50;
+          }
+        }
+      }
+
+      &.multiple {
+        > td {
+          color: $error-color;
+          white-space: nowrap;
+          position: relative;
+          $icon-size: 12px;
+
+          &:first-of-type {
+            input {
+              margin-right: $space*2 + $icon-size;
+            }
+
+            &::after {
+
+              @include special-content('f071');
+              @include fontawesome($icon-size, 12px);
+              color: alpha($error-color, 40%);
+              position: absolute;
+              right: $space;
+              top: 50%;
+              margin-top: -#{math.div($icon-size, 2)};
+            }
+          }
+        }
+      }
+      &.duplicate {
+        > td {
+          color: #388e3c;
+        }
+      }
+      &.unique {
+        > td {
+          color: #5c6bc0;
+        }
+      }
+    }
+  }
+}
+
+table.me-table-col-separated {
+  > tbody,
+  > thead {
+    > tr > td,
+    > tr > th {
+      border-left: 1px solid $grey-100;
+
+      &:first-of-type {
+        border-left: none;
+      }
+    }
+  }
+}
+
+table.me-striped {
+  > tbody {
+    tr:nth-child(even) {
+      td {
+        background-color: alpha($primary-50, 30%);
+      }
+      &:hover {
+        td {
+          background-color: alpha($secondary-50, 31%);
+        }
+      }
+    }
+  }
+}
+
+body {
+  table.fullCode {
+    background: $grey-100;
+    @include black-emphasis($opacity-high-emphasis-black);
+    tr {
+      td.pane {
+        background: $white;
+      }
+    }
+  }
+
+  table.findCode {
+    width: 99%;
+    background: $primary-100;
+    @include black-emphasis($opacity-high-emphasis-black);
+    td {
+      background: $primary-50;
+    }
+  }
+
+
+  table.selectCode {
+    width: 99%;
+    background: $secondary-100;
+    @include black-emphasis($opacity-high-emphasis-black);
+    td {
+      background: $secondary-50;
+    }
+  }
+  table.grid {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 99%;
+    margin: auto;
+
+    td, th {
+      border: none;
+      padding: 2px;
+    }
+  }
+
+  table.me-no-hover {
+    tr:hover {
+      > td {
+        background-color: transparent !important;
+      }
+    }
+  }
+
+  table.me-no-hover-discret {
+    tr:hover {
+      > td {
+        background-color: transparent;
+      }
+    }
+  }
+
+  table.me-no-hover-specific {
+    tr:hover {
+      > td.me-specific-cell {
+        background-color: transparent;
+      }
+    }
+  }
+
+  table.me-small {
+    thead,
+    tbody {
+      tr {
+        th,
+        td {
+          padding-top: 1px !important;
+          padding-bottom: 1px !important;
+          line-height: 16px;
+
+          label {
+            line-height: normal;
+          }
+        }
+      }
+    }
+  }
+
+  table {
+    tr.me-row-valign {
+      height: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: stretch;
+
+      @include ie {
+        display: table-row;
+      }
+
+      &.me-same-width {
+        > td {
+          flex-grow: 1;
+        }
+      }
+
+      > td {
+        vertical-align: top;
+
+        > div,
+        > fieldset,
+        > table {
+          box-sizing: border-box;
+          height: 100%;
+        }
+      }
+
+      table {
+        margin: 0;
+      }
+    }
+
+    tr.me-cancelled {
+      opacity: .38;
+
+      td.cancelled div.me-cancelled-text {
+        display: inline-block !important;
+        color: $grey-600;
+        @include body1();
+        float: right;
+        margin-right: $space;
+      }
+    }
+
+    tr.clear {
+      td,
+      th {
+        background-color: transparent;
+        border-left: none;
+        border-right: none;
+      }
+    }
+
+    th,
+    td {
+      &.quarterPane {
+        width: 25%;
+      }
+      &.thirdPane {
+        width: 33%;
+      }
+      &.me-cell-medium-emphasis {
+        background-color: alpha($primary-50, 30%) !important;
+        vertical-align: middle !important;
+        border: 1px solid $grey-100 !important;
+      }
+      &.compact {
+        font-size: 0.9em;
+        label {
+          font-size: 0.9em;
+        }
+
+      }
+    }
+
+    th {
+      &.title {
+        a.not-printable {
+          margin: 0 $space;
+        }
+      }
+    }
+
+    td {
+      &.user {
+        position: relative;
+        background-image: none;
+        &::after {
+          $icon-size: 12px;
+          @include fontawesome($icon-size, $icon-size);
+          @include special-content('f007');
+          display: block;
+          position: absolute;
+          right: $space;
+          top: 50%;
+          margin-top: -#{math.div($icon-size, 2)};
+          @include black-emphasis($opacity-medium-emphasis-black);
+        }
+      }
+
+      &.function {
+        position: relative;
+        background-image: none;
+        &::after {
+          $icon-size: 12px;
+          @include fontawesome($icon-size, $icon-size);
+          @include special-content('f0c0');
+          display: block;
+          position: absolute;
+          right: $space;
+          top: 50%;
+          margin-top: -#{math.div($icon-size, 2)};
+          width: 12px;
+          @include black-emphasis($opacity-medium-emphasis-black);
+        }
+      }
+
+      &.empty {
+        font-style: italic;
+        @include black-emphasis($opacity-low-black);
+      }
+
+      &.me-group-cell {
+        background-color: inherit !important;
+
+        &::before {
+          @include fontawesome(11px, 23px);
+          @include special-content("f0f8");
+          color: $white;
+          background-color: #379337;
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+          text-align: center;
+        }
+      }
+
+      &.button {
+        text-align: center;
+      }
+
+      &.separator,
+      &.separator_vertical {
+        $icon-size: 16px;
+        vertical-align: middle;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+        height: $icon-size;
+        min-width: $icon-size;
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translateX(-50%) translateY(-50%);
+          z-index: 2;
+          width: $icon-size;
+          height: $icon-size;
+          text-align: center;
+          margin: auto;
+          display: block;
+          @include fontawesome(#{$icon-size - 6}, $icon-size);
+          @include special-content("f066");
+          color: $grey-400;
+          background: transparent;
+          border: 1px solid $grey-400;
+          border-radius: 50%;
+          opacity: .7;
+          transition: color .25s, transform .25s, opacity .25s, border-color .25s, background .25s;
+        }
+
+        &:hover::before {
+          background: $white;
+          opacity: 1;
+          color: $secondary;
+          border-color: $secondary;
+          transform: translateX(-50%) translateY(-50%) scale(1.8);
+        }
+        &.expand {
+          &::before,
+          &:hover::before {
+            @include special-content("f065");
+          }
+        }
+      }
+    }
+  }
+}
+
+table.me-table {
+  display: table !important;
+  > thead,
+  > tbody {
+    > tr {
+      > th {
+        background: $primary-50;
+
+        label {
+          background: $primary-50 !important;
+        }
+
+        &.title {
+          background: $primary-100;
+
+          label {
+            background: $primary-100 !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+table.main td.button,
+table.tbl td.button {
+  text-align: center;
+
+  &.me-button-separate {
+    button {
+      margin: $space;
+    }
+  }
+}
+
+table.form td.narrow,
+table.form th.narrow,
+table.form col.narrow,
+table.main td.narrow,
+table.main th.narrow,
+table.main col.narrow,
+table.tbl td.narrow,
+table.tbl th.narrow,
+table.tbl col.narrow {
+  width: 1%;
+}
+
+table.layout.main,
+table.layout.tbl,
+table.layout {
+  width: 100%;
+}
+
+#main-content > table > tbody > tr > td {
+  vertical-align: top;
+}
+
+table td.halfPane,
+table th.halfPane,
+.halfPane{
+  width: 50%;
+}
+
+/*table.main {*/
+/*  width: 100%;*/
+/*}*/
+/*td.greedyPane,*/
+/*th.greedyPane {*/
+/*  width: 100%;*/
+/*}*/
+
+// Tree grid
+table.treegrid {
+  .tree-folding{
+    position: relative;
+    padding-left: $space*3;
+    border-right: 1em solid transparent;
+
+    &:hover {
+      &::before {
+        color: $secondary;
+      }
+    }
+
+    &::before {
+      @include fontawesome(13px, auto);
+      @include special-content('f0da');
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      color: $grey-400;
+    }
+  }
+
+  tbody.opened {
+    .tree-folding {
+      &::before {
+        @include special-content('f0d7');
+        margin-left: -1px;
+      }
+    }
+  }
+}
+
+/*****************
+  TABLEHEADFIXED
+ *****************/
+div.tablefixedheaders_wrap {
+  overflow-y: auto;
+  clear: both;
+  position: relative;
+  @include card-border();
+  @include border-radius();
+
+  &::before {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 10px;
+  }
+
+  > table {
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+  }
+  &.tablefixedheaders_wrap_shadowed > table > thead {
+    box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+    background: $white;
+    position: relative;
+    z-index: 10;
+  }
+}

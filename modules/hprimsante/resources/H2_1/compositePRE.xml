@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>PRE</name>
+    <description>Individual identifier and service identifier</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0">
+            <name>PRE.1</name>
+            <description>Identifier individual</description>
+            <datatype>CNA</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>PRE.2</name>
+            <description>Identifier service</description>
+            <datatype>CNA</datatype>
+        </field>
+    </elements>
+</segment>

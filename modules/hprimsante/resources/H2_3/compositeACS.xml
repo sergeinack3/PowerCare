@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+  <name>ACS</name>
+  <description>Taux de remboursement assuré complémentaire</description>
+  <elements>
+    <field minOccurs="0" maxOccurs="0" length="50">
+      <name>ACS.1</name>
+      <description>Taux</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="2">
+      <name>ACS.2</name>
+      <description>Base</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="2">
+      <name>ACS.3</name>
+      <description>Plafonnement</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="50">
+      <name>ACS.4</name>
+      <description>Coefficient multiplicateur</description>
+      <datatype>NM</datatype>
+    </field>
+  </elements>
+</segment>

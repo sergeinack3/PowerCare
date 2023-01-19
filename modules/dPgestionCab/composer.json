@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Mediboard\\GestionCab\\": "classes",
+      "Ox\\Mediboard\\GestionCab\\Tests\\": "tests"
+    }
+  }
+}

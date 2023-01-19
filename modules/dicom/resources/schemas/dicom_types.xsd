@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+  <xs:simpleType name="Type_PDU-type">
+    <xs:restriction base="xs:hexBinary">
+      <xs:enumeration value="0100"/>
+      <xs:enumeration value="0200"/>
+      <xs:enumeration value="0300"/>
+      <xs:enumeration value="0400"/>
+      <xs:enumeration value="0500"/>
+      <xs:enumeration value="0600"/>
+      <xs:enumeration value="0700"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="Type_UID">
+    <xs:restriction base="xs:tokens">
+      <xs:length value="64"/>
+      <xs:pattern value="[0-9\.]+"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="Type_AE-Title">
+    <xs:restriction base="xs:string">
+      <xs:length value="16"/>
+      <xs:pattern value="([a-zA-Z0-9])*( )*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="Type_App-Context">
+    <xs:sequence>
+      <xs:element name="Item-type" type="xs:hexBinary" fixed="10"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="00"/>
+      <xs:element name="Item-length" type="xs:unsignedShort"/>
+      <xs:element name="Applicationn-context-name" type="Type_UID"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Type_User-info">
+    <xs:sequence>
+      <xs:element name="Item-type" type="xs:hexBinary" fixed="50"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="00"/>
+      <xs:element name="Item-length" type="xs:unsignedShort"/>
+      <xs:element name="Max-PDU-length" type="Type_Max-Length"/>
+      <xs:element name="Implementation-UID" type="Type_Impl-UID"/>
+      <xs:element name="Implementation-Version-Name" type="Type_Impl-Name" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Type_Impl-UID">
+    <xs:sequence>
+      <xs:element name="Item-type" type="xs:hexBinary" fixed="52"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="00"/>
+      <xs:element name="Item-length" type="xs:unsignedShort"/>
+      <xs:element name="Implementation-class-UID" type="Type_UID"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Type_Impl-Name">
+    <xs:sequence>
+      <xs:element name="Item-type" type="xs:hexBinary" fixed="55"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="00"/>
+      <xs:element name="Item-length" type="xs:unsignedShort"/>
+      <xs:element name="Implementation-version-name">
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:length value="16"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Type_Transfer-Syntax">
+    <xs:sequence>
+      <xs:element name="Item-type" type="xs:hexBinary" fixed="40"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="00"/>
+      <xs:element name="Item-length" type="xs:unsignedShort"/>
+      <xs:element name="Transfer-syntax-name" type="Type_UID"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="Type_Max-Length">
+    <xs:sequence>
+      <xs:element name="Item-type" type="xs:hexBinary" fixed="51"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="00"/>
+      <xs:element name="Item-length" type="xs:unsignedShort"/>
+      <xs:element name="Max-PDU-length" type="xs:unsignedInt"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>

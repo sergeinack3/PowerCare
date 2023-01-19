@@ -1,0 +1,152 @@
+/**
+ * @package Mediboard\Admin
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+div.CRGPDConsent_status_counter {
+  border-radius: 3px;
+  padding: 5px;
+  margin-right: 40px;
+  display: inline-block;
+  width: 70px;
+}
+
+/*div.CRGPDConsent_status_counter:hover {*/
+  /*border: solid 2px;*/
+  /*padding: 4px;*/
+  /*cursor: pointer;*/
+/*}*/
+
+.CRGPDConsent_status_tip[data-count]:after{
+  position: absolute;
+  margin-top: -5px;
+  margin-left: -50px;
+  content: attr(data-count);
+  font-size: 75%;
+  padding: .6em;
+  border-radius: 999px;
+  line-height: .75em;
+  color: white;
+  background: red;
+  text-align: center;
+  font-weight: bold;
+  /*min-width: 1em;*/
+}
+
+.CRGPDConsent_status_1 {
+  font-weight: bold;
+  background-color: orange !important;
+}
+
+.CRGPDConsent_status_2 {
+  font-weight: bold;
+  background-color: yellow !important;
+}
+
+.CRGPDConsent_status_3 {
+  font-weight: bold;
+  background-color: steelblue !important;
+}
+
+.CRGPDConsent_status_4 {
+  font-weight: bold;
+  background-color: pink !important;
+}
+
+.CRGPDConsent_status_5 {
+  font-weight: bold;
+  background-color: forestgreen !important;
+}
+
+.CRGPDConsent_status_6 {
+  font-weight: bold;
+  background-color: firebrick !important;
+}
+
+.CRGPDConsent_status_tag_1 {
+  font-weight: bold;
+  border: solid 1px orange;
+  color: orange;
+}
+
+.CRGPDConsent_status_tag_2 {
+  font-weight: bold;
+  border: solid 1px yellow;
+  color: yellow;
+}
+
+.CRGPDConsent_status_tag_3 {
+  font-weight: bold;
+  border: solid 1px steelblue;
+  color: steelblue;
+}
+
+.CRGPDConsent_status_tag_4 {
+  font-weight: bold;
+  border: solid 1px pink;
+  color: pink;
+}
+
+.CRGPDConsent_status_tag_5 {
+  font-weight: bold;
+  border: solid 1px forestgreen;
+  color: forestgreen;
+}
+
+.CRGPDConsent_status_tag_6 {
+  font-weight: bold;
+  border: solid 1px firebrick;
+  color: firebrick;
+}
+
+
+
+/***********
+  Changement de mot de passe
+************/
+#change_indicator .indicator-list {
+  list-style: none;
+  margin-bottom: 16px;
+}
+#change_indicator .indicator {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+#change_indicator .indicator span,
+#change_indicator .indicator i{
+  transition: color .2s ease;
+}
+#change_indicator .indicator.indicator i {
+  width: 5px;
+  margin-right: 20px;
+  font-size: 12px;
+}
+#change_indicator .indicator.indicator-ok {
+  color: #4caf50;
+}
+#change_indicator .indicator.indicator-ok i::before {
+  content: "\f00c";
+}
+#change_indicator .indicator.indicator-not-ok {
+  color: #f44336;
+}
+#change_indicator .indicator.indicator-not-ok i::before {
+  content: "\f00d";
+}
+
+#change_indicator .indicator-circle {
+  display: flex;
+  justify-content: center;
+}
+
+div.allowedRoutes, div.showAllowRoutes.hide {
+  display:none;
+}
+
+div.allowedRoutes.show, div.showAllowRoutes {
+  display: block;
+}

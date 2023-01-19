@@ -1,0 +1,138 @@
+/**
+ * @package Mediboard\Style\Mediboard
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+#login #systemMsg {
+  cursor: pointer;
+  position: relative;
+  right: 0;
+}
+
+
+.ajax-loading {
+  background: #666 url(images/icons/ajax-loading.gif) no-repeat center;
+  border: none;
+  min-height: 16px;
+  min-width: 16px;
+  z-index: 800;
+}
+
+.modal .ajax-loading {
+  z-index: 1002;
+}
+
+fieldset.error-notice legend,
+td.error-notice {
+  background-color: #ccccff !important;
+}
+
+fieldset.error-warning legend,
+td.error-warning {
+  background-color: #ffcd75 !important;
+}
+
+fieldset.error-error legend,
+td.error-error {
+  background-color: #ff9999 !important;
+}
+
+/** -- USER MESSAGE NOTIFICATIONS -- **/
+#usermessage_notification a {
+    position: fixed;
+    top: 0;
+    right:0;
+    width:48px;
+    height:48px;
+    margin:5px;
+    background: url('images/icons/mail.png') no-repeat;
+}
+
+#usermessage_notification a p {
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    text-align: center;
+}
+
+#usermessage_notification a p span {
+    display:block;
+    width: 12px;
+    height: 12px;
+    margin:0 auto;
+    background-color: red;
+    box-shadow: 0 0 2px black;
+    font-weight:bold;
+    color:white;
+    border-radius: 100%;
+    font-size: 1em;
+    line-height: 12px;
+}
+
+.nav-history {
+  border-spacing: 0;
+}
+
+button.nav-history {
+  position: fixed;
+  bottom: 2px;
+  left: 2px;
+}
+
+.nav-history a {
+  display: block;
+}
+
+.nav-history .nav-block {
+  line-height: 16px;
+  vertical-align: middle;
+}
+
+.nav-history a:hover {
+  text-decoration: none;
+}
+
+.nav-history tr:hover td {
+  background: #ccc;
+}
+
+.nav-history .nav-block img {
+  margin: 2px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.nav-history .nav-object a:before {
+  content: "";
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin: 2px;
+}
+
+.nav-history .nav-time a {
+  color: #999;
+}
+
+.texticon-stroke:after,
+.texticon-stroke_light:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: -1px;
+  height: 4px;
+  transform: rotate(18deg);
+}
+
+.texticon-stroke:after {
+  border-bottom: 2px solid red;
+}
+
+.texticon-stroke_light:after {
+  border-bottom: 1px solid red;
+}

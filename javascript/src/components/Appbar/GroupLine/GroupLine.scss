@@ -1,0 +1,70 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.GroupLine {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: $space*3 $space*3;
+
+  &:hover,
+  &:focus {
+    @include primary-opacity($hover);
+  }
+
+  &.active {
+    @include primary-opacity($active);
+  }
+
+  &-content {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space*0.5;
+    overflow: hidden;
+  }
+
+  &-name {
+    @include on-background(high);
+    @include subtitle2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-function {
+    @include caption;
+    @include on-background(medium);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &-functionIndicator {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    &.mainFunction::before {
+      background-color: $grey-200;
+    }
+
+    &.secondaryFunction::before {
+      border-color: $grey-200;
+    }
+
+    &::before {
+      border: 2px solid transparent;
+      border-radius: 50%;
+      box-sizing: border-box;
+      content: "";
+      height: 18px;
+      width: 18px;
+    }
+  }
+}

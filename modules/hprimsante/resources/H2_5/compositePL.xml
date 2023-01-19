@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>PL</name>
+    <description>Person Location</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0" length="20">
+            <name>PL.1</name>
+            <description>Bed</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20">
+            <name>PL.2</name>
+            <description>Room</description>
+            <datatype>IS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20">
+            <name>PL.3</name>
+            <description>Point of Care</description>
+            <datatype>IS</datatype>
+        </field>
+    </elements>
+</segment>

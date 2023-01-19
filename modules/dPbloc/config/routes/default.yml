@@ -1,0 +1,64 @@
+bloc_blocs:
+  path: /api/bloc/blocs
+  controller: Ox\Mediboard\Bloc\Controllers\CBlocsOperatoiresController::listBlocs
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a list of blocs
+    accept:
+      - application/json
+
+bloc_bloc:
+  path: /api/bloc/blocs/{bloc_operatoire_id}/plages
+  controller: Ox\Mediboard\Bloc\Controllers\CBlocsOperatoiresController::showBloc
+  requirements:
+    bloc_operatoire_id: '\d+'
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a bloc
+    accept:
+      - application/json
+
+bloc_blocs_with_plages:
+  path: /api/bloc/blocswithplages
+  controller: Ox\Mediboard\Bloc\Controllers\CBlocsOperatoiresController::listBlocsWithPlages
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a list of blocs with vacation
+    parameters:
+      mois: '\w+'
+    accept:
+      - application/json
+
+bloc_plagesops:
+  path: /api/bloc/plagesops
+  controller: Ox\Mediboard\Bloc\Controllers\CPlagesOpsController::listPlages
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a list of plages
+    parameters:
+      date: '\w+'
+      bloc: '\d+'
+      chir: '\d+'
+    accept:
+      - application/json
+
+bloc_plageop:
+  path: /api/bloc/plagesops/{plageop_id}
+  controller: Ox\Mediboard\Bloc\Controllers\CPlagesOpsController::showPlage
+  requirements:
+    plageop_id: '\d+'
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a plage
+    accept:
+      - application/json

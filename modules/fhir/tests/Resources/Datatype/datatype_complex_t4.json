@@ -1,0 +1,20 @@
+{
+  "coding" : [
+    {
+      "id" : "id",
+      "system": "system",
+      "code": "code",
+      "display": "display"
+    },
+    {
+      "id" : "id",
+      "extension" : {
+        "url" : "extension url",
+        "valueString" : "value"
+      },
+      "system": "system",
+      "code": "code",
+      "display": "display"
+    }
+  ]
+}

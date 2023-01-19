@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>OBX</name>
+    <description>Test results</description>
+    <elements>
+        <field minOccurs="1" maxOccurs="1" length="10">
+            <name>OBX.1</name>
+            <description>Rank segment</description>
+            <datatype>NM</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="1" length="3">
+          <name>OBX.2</name>
+          <description>Result type</description>
+          <datatype>CE</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="1" length="120">
+          <name>OBX.3</name>
+          <description>Test</description>
+          <datatype>CE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20">
+          <name>OBX.4</name>
+          <description>Sub ID test</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded" length="64000">
+          <name>OBX.5</name>
+          <description>Result</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20">
+          <name>OBX.6</name>
+          <description>Unit</description>
+          <datatype>CE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded" length="60">
+          <name>OBX.7</name>
+          <description>Normal</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded" length="10">
+          <name>OBX.8</name>
+          <description>Indicators of abnormality</description>
+          <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="5">
+          <name>OBX.9</name>
+          <description>Probability</description>
+          <datatype>NM</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded" length="5">
+          <name>OBX.10</name>
+          <description>Nature normal</description>
+          <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="2">
+          <name>OBX.11</name>
+          <description>Status of the results</description>
+          <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="26">
+          <name>OBX.12</name>
+          <description>Date of last change in the normal range and units</description>
+          <datatype>TS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="20">
+          <name>OBX.13</name>
+          <description>Right of access</description>
+          <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="26">
+          <name>OBX.14</name>
+          <description>Date of obtaining the result</description>
+          <datatype>TS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBX.15</name>
+          <description>Technical sector (publishing Order</description>
+          <datatype>CE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+          <name>OBX.16</name>
+          <description>Validator</description>
+          <datatype>CE</datatype>
+        </field>
+    </elements>
+</segment>

@@ -1,0 +1,63 @@
+/**
+ * @package Mediboard\Style\Mediboard
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+/* To put on elements visible only by admins */
+.admin-view {
+  outline: 1px dotted #DF3737;
+}
+
+span.smarty-include {
+  background: #444;
+  color: #fff;
+  opacity: 0.7;
+  text-indent: 0.9em;
+  width: 5px;
+  height: 5px;
+  font-family: "lucida console", "courier new", courier, monospace;
+  border: 1px solid #fff;
+  float: left;
+}
+
+span.smarty-include.ajax {
+  background: #494;
+}
+
+span.smarty-include:hover {
+  opacity: 1;
+  cursor: help;
+}
+
+/* Prism.js */
+code[class*="language-"],
+pre[class*="language-"] {
+  font-size: 11px;
+  text-shadow: none;
+}
+
+pre[class*="language-"] {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+pre[class*="language-"]::before,
+pre[class*="language-"]::after {
+  content: none;
+}
+
+.highlight-fill {
+  position: relative;
+}
+
+.highlight-fill pre[class*="language-"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-height: none;
+}

@@ -1,0 +1,329 @@
+/**
+ * @package Mediboard\Maternite
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.gender_f, .gender_m {
+  padding-left: 3px;
+  list-style: none;
+}
+
+.gender_m {
+  border-left: solid 4px #6aa3ff;
+}
+
+.gender_f {
+  border-left: solid 4px #ff9485;
+}
+
+.width50 {
+  width: 50%;
+}
+
+.width75 {
+  width: 75%;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.viewported th.title a {
+  cursor: pointer;
+}
+
+.placeholder_mater {
+  display: inline-block;
+}
+
+.patient.draggable.div_opacity {
+  opacity: 0.4 !important;
+}
+
+.print_label {
+  border-right: 1px solid #B0BEC5 !important;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 11px;
+  letter-spacing: 0.25px;
+  line-height: 17px;
+  text-align: right;
+  padding: 4px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.print_date_depistage {
+  background-color: rgba(236, 239, 241, 0.5);
+}
+
+legend.dossier-perinatal-font-size-legend {
+  font-size: 1em !important;
+}
+
+/* Modification dossier perinatal */
+.container_main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container_main div#perinatal_folder {
+  width: 75%;
+  height: 99%;
+  overflow: auto;
+  position: relative;
+}
+
+.container_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 36px;
+}
+
+.container_card {
+  scroll-margin-top: 5em;
+  border-radius: 4px;
+  border: 1px solid #F0F1F3;
+  margin: 36px;
+  padding: 10px;
+}
+
+.text_info_patiente {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.4px;
+}
+
+.grey_color_info_patiente {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.label_header {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.4px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+tr#header {
+  z-index: 3;
+  position: -webkit-sticky;
+  position: sticky;
+  top: -4px;
+}
+
+/* H6 / Roboto Medium */
+.title_h6 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.15px;
+  color: rgba(0, 0, 0, 0.87);
+  text-align: left;
+}
+
+.title_h6_spacing {
+  padding: 19px 16px 18px 16px;
+}
+
+.title_section {
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+.title_section_spacing {
+  padding: 19px 16px 18px 16px;
+}
+
+.hr_menu {
+  background: rgba(38, 50, 56, 1);
+}
+
+.title_chapters {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #3F51B5;
+}
+
+.title_menu_selected a {
+  color: #FFFFFF;
+}
+
+.title_menu_selected {
+  color: #FFFFFF;
+  background: #3F51B5;
+  border-radius: 4px;
+}
+
+.title_menu_container {
+  width: 80%;
+  margin: 0px 24px 12px 24px;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-bottom: 8px;
+}
+
+.title_menu_container:hover {
+  background: #E5E7F5;
+  border-radius: 4px;
+}
+
+td.card_input {
+  padding: 12px 10px 10px 18px !important;
+  width: 30%;
+}
+
+td.immuno-hematology-none > div {
+  display: none !important;
+}
+
+td.card_input_rhesus {
+  padding: 6px 5px 5px 9px !important;
+  width: 30%;
+}
+
+label.label_rhesus_pos {
+  margin-right: 20px;
+}
+
+label.label_rhesus_pos,
+label.label_rhesus_neg {
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px 12px;
+
+}
+
+label.label_rhesus_pos_selected {
+  border: 1px solid #3F51B5;
+  background: #5C6BC0;
+  opacity: 0.7;
+}
+
+label.label_rhesus_neg_selected {
+  border: 1px solid #FF3100;
+  background: #FF8B70;
+  opacity: 0.7;
+}
+
+td.card_button {
+  padding: 12px 10px 10px 18px !important;
+  width: 30%;
+}
+
+.fieldset_other_screenings {
+  background: #E5E7F5;
+  border-radius: 8px;
+  margin: 24px 16px 16px 16px;
+}
+
+.fieldset_prelevement {
+  background: #FAFAFA;
+  border-radius: 4px;
+}
+
+.subtitle_chapter {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  text-align: left;
+  padding-top: 16px;
+  padding-left: 16px;
+  padding-bottom: 16px;
+}
+
+.subtitle_color_black {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.subtitle_color_black_dark {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+/* Arrows */
+.empty_arrow {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 0.7em;
+}
+
+.actif_arrow {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.7em;
+}
+
+/* Pathologies tags */
+.texticon-pathology {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.87);
+  mix-blend-mode: normal;
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px 5px;
+  line-height: 17px;
+  background: #CFD8DC;
+  border: 1px solid rgba(250, 250, 250, 1);
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 2px;
+  border-radius: 12px;
+}
+
+.texticon-delete {
+  background: #DADADA;
+}
+
+.pathology_autocomplete {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.card_input_pathology {
+  padding: 5px 10px 10px 18px !important;
+}
+
+div#date_genotypage {
+  display: none;
+}
+
+span.empty {
+  color: #999;
+  font-style: italic;
+}
+
+@media screen and (max-height: 660px) {
+  div.container_menu {
+    overflow-y: scroll;
+  }
+}
+
+

@@ -1,0 +1,61 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+@import '../INUtils';
+
+$tile-height: 40px;
+.install-element-tile-container {
+  margin: $large-space;
+  padding: 0 #{$large-space * 6};
+  border-radius: #{$tile-height / 2};
+  min-height: $tile-height;
+  line-height: $tile-height;
+  box-sizing: border-box;
+  transition: background .2s;
+  position: relative;
+
+  .install-element {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    @include font-roboto();
+    color: $black;
+    flex-wrap: wrap;
+
+    .install-element-label {
+      @include overline();
+      line-height: $tile-height;
+      flex-grow: 1;
+    }
+
+    &.install-element-empty {
+      color: $black-emphasis-200;
+    }
+  }
+  &:hover {
+    background: #F6F6F6;
+
+    .install-element-edit {
+      opacity: .1;
+      &:hover {
+        opacity: .5;
+      }
+    }
+  }
+
+  .install-element-edit {
+    $icon-size: 18px;
+    position: absolute;
+    font-size: $icon-size;
+    height: $icon-size;
+    line-height: $icon-size;
+    width: $icon-size;
+    right: 12px;
+    top: #{($tile-height / 2) - ($icon-size / 2)};
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity .2s;
+  }
+}

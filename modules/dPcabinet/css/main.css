@@ -1,0 +1,409 @@
+/**
+ * @package Mediboard\Cabinet
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+li.atcd_hover a {
+  background: #fd7 !important;
+}
+
+.hr_rank {
+  border: none;
+  background: #ccc;
+  height: 8px;
+  margin: 0;
+}
+
+.rank-selected {
+  border: none;
+  background: #ccc;
+  height: 8px;
+  margin: 0;
+  outline: 3px #f88 solid;
+}
+
+.categorieConsult {
+  padding-left: 20px;
+  height: 18px;
+  margin-left: 0;
+}
+
+.planning div.event-container div.pour_tiers {
+  background-image: url("../../../images/icons/ray_blue.gif");
+}
+
+
+/** barre des disponibilités **/
+div.progressBar_dispo {
+  font-size: 0;
+  margin: 2px auto;
+  line-height: 1;
+  display: inline-block;
+  text-align: center;
+}
+
+div.progressBar_dispo div.disponibility_bar {
+  background: transparent;
+  height: 10px;
+  padding: 0;
+  margin-left: 1px;
+  width: 3px;
+  display: inline-block;
+}
+
+div.progressBar_dispo div.disponibility_planning_0 {
+  background-color: #80b859;
+}
+
+div.progressBar_dispo div.disponibility_planning_-1 {
+  background-color: transparent;
+}
+
+div.progressBar_dispo div.disponibility_planning_1 {
+  background-color: #ff7b66;
+}
+
+div.progressBar_dispo div.disponibility_planning_more {
+  background-color: #800000;
+}
+
+.schema-dentaire {
+  margin: auto;
+}
+
+.dent {
+  border-radius: 22px;
+  position: absolute;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0); /* Ne pas mettre "transparent", sinon pas cliquable sous IE10 */
+}
+
+.dent:hover {
+  outline: 2px solid #F00;
+}
+
+.focus {
+  outline: 1px solid #F00;
+}
+
+.schema-dentaire .defaut {
+  background: red;
+}
+
+.schema-dentaire .absence {
+  background: #999999;
+}
+
+.schema-dentaire .bridge {
+  background: #6699FF;
+}
+
+.schema-dentaire .implant {
+  background: #FFFF00;
+}
+
+.schema-dentaire .pivot {
+  background: #FF9900;
+}
+
+.schema-dentaire .mobile {
+  background: #33CC00;
+}
+
+.schema-dentaire .appareil {
+  background: #FF66FF;
+}
+
+.schema-dentaire .app-partiel {
+  background: #8888ff;
+}
+
+.dent-menu {
+  position: absolute;
+  z-index: 100;
+  border: 1px solid #999;
+  background: #fff;
+}
+
+.dent-menu a {
+  display: block;
+  cursor: pointer;
+  padding: 3px;
+  color: #000;
+  clear: both;
+}
+
+.dent-menu a:hover {
+  text-decoration: none;
+  color: #666;
+}
+
+.dent-menu a.cancel {
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: right;
+  background: #999;
+  color: #fff;
+}
+
+.dent-legend, .dent-buttons {
+  position: absolute;
+  top: -4px;
+  margin: 0;
+}
+
+.dent-legend {
+  right: 0;
+  width: 170px;
+  height: 120px;
+  font-size: 0.9em;
+}
+
+.dent-legend a {
+  display: inline-block !important;
+  width: 52px;
+  float: left;
+  color: #000000;
+}
+
+.dent-buttons {
+  left: 0;
+}
+
+.dent-legend a {
+  padding: 1px;
+  margin: 1px;
+}
+
+.dent-legend a.none {
+  background-color: #fff;
+}
+
+.dent-legend a.active {
+  outline: 2px solid #f00;
+}
+
+.mallampati-selected, .cormack-selected {
+  background: #B2CCFF;
+}
+
+div.jeton_dizaine {
+  background: #333;
+  border: 1px solid #666;
+  border-radius: 6px;
+  float: left;
+  width: 11px;
+  height: 11px;
+  margin-right: -7px;
+}
+
+div.jeton_unite {
+  background: #ddd;
+  border: 1px solid #666;
+  border-radius: 4px;
+  float: left;
+  width: 7px;
+  height: 7px;
+  margin-top: 2px;
+  margin-right: -6px;
+}
+
+table#weber td {
+  text-align: center;
+}
+
+table#weber tr.values,
+table#weber tr.vocales {
+  display: none;
+}
+
+table#weber tr.moyenne td {
+  background-color: #ddd;
+}
+
+table#weber tr.moyenne td.aerien {
+  background-color: #aaf;
+  font-weight: bold;
+}
+
+table#weber tr.moyenne td.osseux {
+  background-color: #faa;
+  font-weight: bold;
+}
+
+table#weber td {
+  text-align: center;
+}
+
+table.tbl td.pause_consult,
+div.pause_consult {
+  background-color: #ffa;
+}
+
+table.tbl td.premiere_consult,
+div.premiere_consult {
+  background-color: #faa;
+}
+
+table.tbl td.derniere_consult,
+div.derniere_consult {
+  background-color: #faf;
+}
+
+table.tbl td.consult_sejour,
+div.consult_sejour {
+  background-color: #CFFFAD;
+}
+
+@media print {
+  div.plages {
+    height: 100% !important;
+  }
+}
+
+span.tag_libelle_plage {
+  border: solid 1px grey;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 6px;
+  margin: 0 3px;
+  padding: 3px;
+}
+
+button.btn-share-docs {
+  margin-top: 10px;
+}
+
+table.share_docs td {
+  padding: 2px 3px;
+  font-size: 12px;
+}
+
+table.share_docs td fieldset {
+  min-height: 150px;
+}
+
+/*
+Vaccination calendar
+*/
+#vaccination_calendar {
+  background: #e9e9e9;
+  border-collapse: collapse;
+}
+
+#vaccination_calendar th, #vaccination_calendar td {
+  border: 2px solid #fff;
+  width: 100px;
+}
+
+#vaccination_calendar td.clickable {
+  transition: filter 0.15s;
+}
+
+#vaccination_calendar td.clickable:hover {
+  filter: brightness(1.2);
+}
+
+#vaccination_calendar tr.ages th {
+  color: #585857;
+  height: 40px;
+  padding-top: 20px;
+}
+
+#vaccination_calendar tr.ages th.date {
+  font-size: 16px;
+  transform: rotate(-35.2054deg) scaleX(0.690106);
+}
+
+#vaccination_calendar tr.vaccines th, #vaccination_calendar tr.vaccines td {
+  vertical-align: top;
+}
+
+#vaccination_calendar tr.vaccines th {
+  color: #fffeff;
+}
+
+#vaccination_calendar tr.vaccines td {
+  color: #1d1d1b;
+  height: 60px;
+}
+
+#vaccination_calendar td.full-cell div {
+  position: relative;
+}
+
+#vaccination_calendar td.full-cell {
+  text-align: center;
+}
+
+#vaccination_calendar td.full-cell i {
+  color: #ffefff;
+  font-size: 50px;
+  opacity: 0.3;
+}
+
+#vaccination_calendar td.full-cell span {
+  position: absolute;
+  z-index: 5;
+  font-size: 20px;
+  top: 0;
+  left: 0;
+}
+
+.scores_anesth {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.scores_anesth .score {
+  display: flex;
+  flex-grow: 1;
+  width: 33%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.scores_anesth .score .score-content {
+  flex-grow: 1;
+  white-space: normal;
+}
+
+.label_modalite:hover {
+  cursor: pointer;
+}
+
+.exam-gir-titre {
+  font-size: 13px;
+  text-align: right;
+}
+ .exam-gir-desc {
+   white-space: normal;
+   opacity: 0.7;
+   text-align: right;
+ }
+
+ /**
+ Affchage d'une ancienne consultation
+  */
+ .old_consultation{
+   opacity: 0.5;
+ }
+
+.consultation-payment-_payment_status-settlementNotPayed, .consultation-payment-_payment_status-voucherNotSent, .consultation-payment-_payment_status-voucherSentNotPayed, .consultation-payment-_payment_status-noSettlement {
+  background-color: #454545 !important;
+}
+
+.consultation-payment-_payment_status-settlementPayed, .consultation-payment-_payment_status-voucherPayed {
+  background-color: #007e34 !important;
+}
+
+.consultation-payment-_payment_status-settlementPartiallyPayed {
+  background-color: #ff8800 !important;
+}
+
+.consultation-payment-_payment_status-refundNotReceived, .consultation-payment-_payment_status-voucherPaymentError {
+  background-color: #f50005 !important;
+}

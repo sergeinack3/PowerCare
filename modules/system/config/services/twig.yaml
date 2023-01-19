@@ -1,0 +1,3 @@
+twig:
+  paths:
+    'modules/system/templates': 'system'

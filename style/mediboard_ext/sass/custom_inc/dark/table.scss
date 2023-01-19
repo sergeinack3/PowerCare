@@ -1,0 +1,157 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+$table-cell-color: transparent;
+$table-header-color: add-elevation(2);
+
+table.form,
+table.tbl,
+table.print {
+  @include card-border();
+}
+
+table.form {
+  >thead,
+  >tbody {
+    > tr {
+      > td {
+        @include black-emphasis($opacity-high-emphasis-black);
+
+        &.empty {
+          font-style: italic;
+          color: rgba(255, 255, 255, 0.38);
+        }
+      }
+    }
+  }
+
+  &.me-small-form {
+    @include not-vue {
+      margin-top: 0;
+      > tbody {
+        > tr {
+          > th {
+            &.category {
+              background-color: $primary-bandeau;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+table.tbl,
+table.form,
+table.main {
+  > thead,
+  > tbody {
+    > tr {
+      > th {
+        &.title {
+          background: $secondary-bandeau;
+          label {
+            background-color: $secondary-bandeau !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+table.form {
+  > thead,
+  > tbody {
+    > tr {
+      > th {
+        &.category {
+          background-color: $primary-bandeau;
+
+          label {
+            background-color: $primary-bandeau !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+table.tbl {
+  >thead,
+  >tbody {
+    >tr {
+      >th {
+        background-color: $table-header-color;
+        label {
+          background-color: transparent !important;
+        }
+        &.section {
+          background-color: $primary-50;
+          label {
+            background-color: transparent !important;
+          }
+        }
+      }
+
+      >td {
+        background-color: $table-cell-color;
+        @include black-emphasis($opacity-high-emphasis-black);
+
+        &.empty {
+          font-style: italic;
+          color: rgba(255, 255, 255, 0.38);
+        }
+
+        &.isolement {
+          background-color: #2f7a2f;
+        }
+
+        &.sortie {
+          &.mutation {
+            background-color: #7a7a2f;
+          }
+
+          &.transfert {
+            background-color: #7a582f;
+          }
+
+          &.deces {
+            background-color: #7a3636;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+table.main {
+  @include black-emphasis($opacity-high-emphasis-black);
+}
+
+body {
+  table.fullCode {
+    tr {
+      td.pane {
+        background: transparent;
+      }
+    }
+  }
+}
+
+
+/*****************
+  TABLEHEADFIXED
+ *****************/
+div.tablefixedheaders_wrap {
+  &.tablefixedheaders_wrap_shadowed > table > thead {
+    background-color: $elevation-12;
+  }
+}
+
+
+

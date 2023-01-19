@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<root>
+  <excludes>
+    <exclude>includes/config_overload.php</exclude>
+    <exclude>includes/config.php</exclude>
+    <exclude>/tmp</exclude>
+    <exclude>/files</exclude>
+    <exclude>images/pictures/logo_custom.png</exclude>
+    <exclude>cli/conf/deploy.xml</exclude>
+    <exclude>cli/conf/exclude.xml</exclude>
+    <exclude>cli/conf/mysqlbackup.xml</exclude>
+    <exclude>shell/rsyncupdate.conf</exclude>
+    <exclude>shell/rsyncupdate.exclude</exclude>
+    <exclude>modules/monitorClient/cli/conf/monitoring.xml</exclude>
+  </excludes>
+
+  <includes>
+    <include>*.exe</include>
+    <include>/core</include>
+  </includes>
+</root>

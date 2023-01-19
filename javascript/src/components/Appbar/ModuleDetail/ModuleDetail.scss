@@ -1,0 +1,157 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+@mixin skeleton () {
+  &Skeleton {
+    @content;
+  }
+}
+
+@mixin skeletonLoading {
+  background-color: rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    animation: skeletonEffect 1.5s infinite;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+  }
+}
+
+
+.ModuleDetail {
+  background-color: $background-darker;
+  border-left: $border;
+  height: 100%;
+  width: 100%;
+
+  &-mainContent {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-header {
+    border-bottom: $border;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: $space*3 $space*4;
+  }
+
+  &-title {
+    @include h6;
+    @include on-background(high);
+    cursor: pointer;
+  }
+
+  &-icon {
+    height: 30px;
+    width: 30px;
+  }
+
+  &-content {
+    display: flex;
+    flex: 1;
+    flex-flow: column nowrap;
+    margin-top: $space*2;
+    overflow-y: auto;
+  }
+
+  &-footer {
+    border-top: $border;
+  }
+
+  &-cta {
+    border-top: $border;
+    padding: $space*2 $space*3;
+    text-align: right;
+  }
+
+  @include skeleton {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+
+    &-header {
+      align-items: center;
+      border-bottom: $border;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding: $space*3 $space*4;
+    }
+
+    &-title {
+      @include skeletonLoading;
+      border-radius: 99px;
+      height: 20px;
+      width: 70%;
+    }
+
+    &-icon {
+      @include skeletonLoading;
+      background-color: alpha($secondary, 0.12);
+      border-radius: 99px;
+      height: 30px;
+      width: 30px;
+    }
+
+    &-content {
+      display: flex;
+      flex: 1;
+      flex-flow: column nowrap;
+      gap: $space*8;
+      margin-top: $space*4;
+      overflow-y: auto;
+      padding: $space*2 $space*4;
+    }
+
+    &-tabLine {
+      @include skeletonLoading;
+      border-radius: 99px;
+      height: 16px;
+      width: 90%;
+
+      &.variantWidth1 {
+        width: 72%;
+      }
+      &.variantWidth2 {
+        width: 98%;
+      }
+      &.variantWidth3 {
+        width: 56%;
+      }
+    }
+
+    &-cta {
+      border-top: $border;
+      padding: $space*2 $space*3;
+      text-align: right;
+    }
+  }
+}
+
+@keyframes skeletonEffect {
+  100% {
+    transform: translateX(100%);
+  }
+}

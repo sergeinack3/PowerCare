@@ -1,0 +1,43 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.SampleActorLine {
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: $space;
+  max-width: 124px;
+  min-width: 104px;
+  padding: $space*2;
+  width: fit-content;
+
+  &:hover,
+  &:focus {
+    @include primary-opacity($hover);
+  }
+
+  &.active {
+    @include primary-opacity($active);
+  }
+
+  &-image {
+    background: $background-dark;
+    border-radius: 50%;
+    height: 64px;
+    object-fit: cover;
+    width: 64px;
+  }
+
+  &-content {
+    @include body2;
+    @include on-background(high);
+    text-align: center;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Import\\GenericImport\\": "classes",
+      "Ox\\Import\\GenericImport\\Tests\\": "tests"
+    }
+  }
+}

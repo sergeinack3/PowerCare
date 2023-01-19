@@ -1,0 +1,19 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+@mixin nav-menu-dark {
+  @include nav-fixed();
+  @include shadow16();
+  @include border-radius();
+  display: none;
+  padding: $space 0;
+}
+
+.messagerie-menu {
+  @include nav-menu-dark();
+  display: block;
+}

@@ -1,0 +1,101 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+/**
+  Subtabs
+ */
+div.nav-subtabs {
+  background-color: $elevation-3;
+
+  > ul {
+    > li {
+      >span {
+        @include black-emphasis($opacity-medium-emphasis-black);
+      }
+    }
+  }
+}
+
+body {
+  @include not-vue-container {
+    ul.control_tabs {
+      @include add-elevation();
+      border: none;
+
+      >li {
+        @include black-emphasis($opacity-medium-emphasis-black);
+        >a {
+          @include black-emphasis($opacity-medium-emphasis-black);
+          &.empty {
+            @include black-emphasis($opacity-low-black);
+          }
+        }
+        span {
+          &.subtab {
+            &.empty {
+              @include black-emphasis($opacity-low-black);
+            }
+          }
+        }
+
+        &.form-tab {
+          a,
+          span {
+            background-color: #2f3a25;
+          }
+
+          &:hover {
+            a,
+            span {
+              background-color: #3d4c31;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+div.main-content {
+  > ul.control_tabs {
+    @include add-elevation();
+    >li {
+      >a {
+        @include black-emphasis($opacity-medium-emphasis-black);
+      }
+    }
+  }
+}
+
+ul.control_tabs_vertical,
+ul.control_tabs_vertical.small {
+  @include add-elevation();
+
+  >li {
+    @include add-elevation();
+
+    >a {
+      @include black-emphasis($opacity-medium-emphasis-black);
+
+
+      &.empty {
+        @include black-emphasis($opacity-low-black);
+      }
+    }
+  }
+}
+
+.tab-container {
+  @include add-elevation();
+  @include black-emphasis($opacity-high-emphasis-black);
+  border: none !important;
+
+  &.layout {
+    border: none !important;
+  }
+}

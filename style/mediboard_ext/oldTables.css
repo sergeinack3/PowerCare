@@ -1,0 +1,768 @@
+th.title.modify,
+th.category.modify,
+table.form th.title.modify,
+table.tbl th.title.modify,
+table.form th.category.modify,
+table.tbl th.category.modify,
+table.main th.title.modify,
+table.main th.title.modify {
+  color: #fd4;
+}
+th.title.urgence {
+  background-color: #00a;
+  color: #fff;
+}
+th.title.urgence.modify {
+  background-color: #00a;
+  color: #fd4;
+}
+
+table.form td.cancelled,
+table.form tr.selected td.cancelled,
+table.tbl tr td.cancelled,
+.desktop table.tbl tr:hover td.cancelled,
+table.tbl tr.selected td.cancelled,
+table.tbl tbody.hoverable td.cancelled,
+th.cancelled,
+th.category.cancelled,
+table.form th.category.cancelled {
+  color: #fff;
+  background-color: #f88;
+  text-shadow: 0 0 0 rgba(0, 0, 0, .0), 0 0 2px rgba(0, 0, 0, .7);
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+}
+
+table.form td.narrow,
+table.form th.narrow,
+table.form col.narrow,
+table.main td.narrow,
+table.main th.narrow,
+table.main col.narrow,
+table.tbl td.narrow,
+table.tbl th.narrow,
+table.tbl col.narrow {
+  width: 1%;
+}
+
+/* Title block */
+table.titleblock td {
+  white-space: nowrap;
+}
+
+table.titleblock td.titlecell {
+  font-family: Georgia, serif;
+  font-size: 1.8em; 
+  color: #620;
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* Tab view table */
+table.tabview {
+  border-spacing: 0;
+  border-collapse: collapse; /* Hack for IE */
+  empty-cells: show;
+  width: 100%;
+}
+
+table.tabview td {
+  padding: 0;
+}
+
+table.tabmenu {
+  margin-left: 10px;
+  border-spacing: 0;
+}
+
+table.tabmenu td {
+  background: url(./images/icons/tabBg.png) repeat-x top;
+  padding: 3px 8px 0 8px;
+  height: 24px;
+}
+
+table.tabmenu td.left,
+table.tabmenu td.right {
+  width: 12px;
+  padding: 0;
+}
+
+table.tabmenu td.left {
+  background: url(./images/icons/tabLeft.png) no-repeat top right;
+}
+
+table.tabmenu td.right {
+  background: url(./images/icons/tabRight.png) no-repeat top left;
+}
+
+table.tabmenu td.selected {
+  background: url(./images/icons/tabSelectedBg.png) repeat-x top;
+}
+
+table.tabmenu td.selected a {
+  color: white;
+}
+
+table.tabmenu td.selected.left {
+  background: url(./images/icons/tabSelectedLeft.png) no-repeat top right;
+}
+
+table.tabmenu td.selected.right {
+  background: url(./images/icons/tabSelectedRight.png) no-repeat top left;
+}
+
+/* Pane table */
+
+table.main {
+  width: 100%;
+  border-spacing: 4px;
+}
+
+table.main td {
+  vertical-align: top;
+}
+
+table.main td.button {
+  text-align: center;
+}
+
+table.main td.top {
+  vertical-align: top;
+}
+
+table.main tbody.viewported td.viewport {
+  border: 1px solid #000;
+}
+
+td.halfPane,
+th.halfPane {
+  width: 50%;
+}
+
+td.thirdPane,
+th.thirdPane {
+  width: 33%;
+}
+
+td.quarterPane,
+th.quarterPane {
+   width: 25%;
+ }
+
+td.greedyPane,
+th.greedyPane {
+  width: 100%;
+}
+
+th.title {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;  
+  text-align: center;
+  background: #888;
+  border: 1px solid #ccc;
+}
+
+/* Standard table */
+table.tbl {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+table.tbl a {
+  display: block;
+  margin: 0;
+}
+
+table.tbl a.button,
+table.tbl a.action {
+  display: inline-block;
+}
+
+table.tbl td.top {
+  vertical-align: top;
+}
+
+a.actionPat {
+  display: inline;
+  float: right;
+  margin: 0 1px;
+}
+
+table.tbl td,
+table.tbl th {
+  border: 1px solid #ccc;
+}
+
+table.tbl td.empty,
+table.form td.empty,
+div.empty,
+li.empty,
+span.empty {
+  font-style: italic;
+  color: #999;
+}
+
+span.negative {
+  color: #f00;
+}
+
+table.tbl th {
+  background-color: #bbb;
+  padding: 2px;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+table.tbl th.title {
+  font-size: 1.2em;
+  font-weight: bold;  
+  text-align: center;
+  background-color: #888;
+}
+
+table.tbl td,
+div.tree-header {
+  background-color: #fff;
+  padding: 2px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/*table.tbl tr,
+div.tree-header {
+  background-color: #fff;
+}
+
+table.tbl tr:nth-of-type(2n+1) {
+  background-color: #f3f3f3;
+}*/
+
+table.tbl td.disabled,
+table.tbl th.disabled,
+span.disabled {
+  color: #555 !important;
+  font-style:italic !important;
+}
+
+table.tbl td.error,
+table.tbl th.error,
+span.error {
+  background-color: #f66 !important;
+}
+
+table.tbl td.warning,
+table.tbl th.warning,
+span.warning {
+  background-color: #fc0 !important;
+}
+
+table.tbl td.ok,
+table.tbl th.ok,
+span.ok {
+  background-color: #afa !important;
+}
+
+table.tbl td.off,
+table.tbl th.off,
+span.off {
+  background-color: #ccc !important;
+}
+
+table.tbl td.highlight,
+table.tbl th.highlight,
+td.highlight {
+  background-color: #ff5 !important;
+}
+
+table.tbl td.checked {
+  background-image : url(images/buttons/tick.png);
+  background-repeat: no-repeat;
+  background-position: 2px;
+  padding-left: 20px;
+}
+
+table.tbl td.warned {
+  background-image : url(images/buttons/warning.png);
+  background-repeat: no-repeat;
+  background-position: 2px;
+  padding-left: 20px;
+}
+
+table.tbl td.big-warning,
+span.big-warning {
+  background-image: url(images/icons/warning.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-color: #ffd;
+  padding-left: 55px;
+}
+
+table.tbl td.big-error,
+span.big-error {
+  background-image: url(images/icons/error.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-color: #fee;
+  padding-left: 55px;
+}
+
+table.tbl td.big-info,
+span.big-info {
+  background-image: url(images/icons/info.png);
+  background-repeat: no-repeat;
+  background-position: left;
+  background-color: #eef;
+  padding-left: 55px;
+}
+
+table.tbl tr.selected td,
+table.tbl tbody.selected td,
+div.selected {
+  background-color: #ffc;
+}
+
+table.tbl td.sortie.normal {
+}
+
+table.tbl td.sortie.mutation {
+  background-color: #ff8;
+}
+
+table.tbl td.sortie.transfert {
+  background-color: #fc8;
+}
+
+table.tbl td.sortie.deces {
+  background-color: #faa;
+}
+
+table.tbl tr td.isolement,
+.desktop table.tbl tr:hover td.isolement {
+  background-color: #afa;
+}
+
+
+/**
+ * Layout tables
+ */
+table.layout {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: none !important;
+  margin: 0 !important;
+}
+
+table.layout > * > tr,
+table.layout > * > tr,
+table.layout > * > tr > td,
+table.layout > * > tr > th {
+  border: none !important;
+  background: transparent !important;
+}
+
+table > * > tr > td.separator,
+table > * > tr > td.separator_vertical {
+  width: 8px;
+  background: #eee!important;
+  vertical-align: middle;
+  text-align:center;
+  color: #AAA;
+  cursor: pointer;
+  font-size: 9px;
+}
+
+table > * > tr > td.separator:hover,
+table > * > tr > td.separator_vertical:hover{
+  background: #ddd!important;
+}
+
+table > * > tr > td.separator:before {
+  content: "\3C\A\3C\A\3C";
+}
+
+table > * > tr > td.separator.expand:before {
+  content: "\3E\A\3E\A\3E";
+}
+
+table > * > tr > td.separator_vertical:before {
+  content: "\02C4\A\02C4\A\02C4";
+}
+
+table > * > tr > td.separator_vertical.expand:before {
+  content: "\02C5\A\02C5\A\02C5";
+}
+
+.desktop tbody.hoverable:hover tr td,
+.desktop table.tbl tr:hover td,
+.desktop div.tree-header:hover,
+table.tbl tr td.hover {
+  background-color: #f8f8f8;
+}
+
+table.tbl td.button {
+  text-align: center;
+  vertical-align: middle;
+  white-space: normal;
+  line-height: 140%;
+}
+
+table.merger tr.none td, 
+table.merger tr.none th {
+  opacity: 0.5;
+}
+
+table.merger tr.unique td, 
+table.merger tr.unique th {
+  background-color: #aaf;
+}
+
+table.merger tr.multiple td, 
+table.merger tr.multiple th {
+  background-color: #faa;
+}
+
+table.merger tr.duplicate td, 
+table.merger tr.duplicate th {
+  background-color: #afa;
+}
+
+table.tbl tr.clear,
+table.tbl tr.clear a {
+  background-color: #ddf;
+  color: #000;
+}
+
+table.tbl tr.clear td,
+table.tbl tr.clear th {
+  background-color: transparent;
+  border: none;
+}
+
+table.tbl th.title h2 {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Form tables */
+table.form {
+  width: 100%;
+  border-spacing: 1px;
+}
+
+table.form th {
+  color: #000;
+  white-space: nowrap;
+  background-color: #eee;
+  vertical-align: middle;
+  text-align: right;
+  font-weight: normal;
+  padding: 2px 3px;
+  border: none;
+}
+
+table.form th.title {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;  
+  text-align: center;
+  background-color: #888;
+}
+
+table.form th.category {
+  font-weight: bold;  
+  text-align: center;
+  background-color: #bbb;
+  vertical-align: middle;
+}
+
+table.form th.section, 
+table.tbl th.section {
+  text-align: center;
+  font-size: 0.9em; 
+  font-weight: normal; 
+  line-height: 100%;
+  background-color: #DDD;
+  text-transform: uppercase;
+}
+
+table.form th.category label {
+  font-weight: bold;  
+  text-align: center;
+  background-color: transparent;
+  vertical-align: middle;
+}
+
+table.form th.text {
+  text-align: center;
+}
+
+table.form td {
+  white-space: nowrap;
+  vertical-align: top;
+  background-color: #eee;
+  text-align: left;
+  padding: 1px 3px;
+}
+
+table.form td.dark {
+  background-color: #ddd;
+}
+
+table.form td.light {
+  background-color: #fff;
+}
+
+table.form td.compte_rendu {
+  background-color: #ddd;
+}
+
+table.form td.info {
+  white-space: normal;
+}
+
+table.form td.button {
+  text-align: center;
+  vertical-align: middle;
+}
+
+table.form td.arretee {   
+  background-image: url(images/icons/ray.gif);
+}
+
+/* The admission table based on the form one */
+table.print {
+  width: 100%;
+  border-spacing: 3px;
+  font-family: georgia, serif;
+  color: #006;
+}
+
+table.print th {
+  white-space: nowrap;
+  background: transparent;
+  vertical-align: top;
+  text-align: right;
+  font-weight: bold;
+  border-right: #eee 1px solid;
+  padding-right : 0.5em;
+}
+
+table.print th.title {
+  font-weight: bold;  
+  text-align: center;
+  background: #68f;
+  border: #aaa 2px solid;
+  padding: 2px;
+  color: #006;
+}
+
+/** Pour eviter d'avoir des titres enormes */
+table.print > * > tr > th.title {
+  font-size: 1.4em;
+}
+
+table.print th.category {
+  font-weight: bold;  
+  text-align: center;
+  background: #abf;
+  padding: 2px;
+  border: #aaa 2px solid;
+  font-size: 10pt;
+}
+
+table.print td {
+  white-space: normal;
+  vertical-align: top;
+  background: transparent;
+  text-align: left;
+  font-size: 10pt;
+}
+
+table.print td.halfPane {
+  white-space: normal;
+  vertical-align: top;
+  width: 50%;
+  background: transparent;
+  text-align: left;
+}
+
+ table.print td.info {
+  white-space: normal;
+  font-style: italic;
+  padding: 10px;
+  margin: 5px;
+  border: #aaa 2px dotted;
+}
+
+table.main td.step {
+  background: url(images/pictures/background.png) left bottom;
+  width: 10%; 
+  font-size: 12px; 
+  font-weight: bold; 
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+
+table.main td.step.selected  {
+  border: 2px solid;
+}
+
+table.main td.step.selected a {
+  font-size: 1.5em;
+}
+
+td.active {
+  font-weight: bold;
+}
+
+td.redefined, td.redefined ul li {
+  text-decoration: line-through; 
+  color: #888;
+}
+
+/** Tree grid **/
+.treegrid .tree-folding {
+  background-image: url(images/buttons/tree-folding.png);
+  background-repeat: no-repeat;
+  padding-left: 16px;
+  font-weight: bold;
+  border-right: 1em solid transparent; 
+}
+
+/*.treegrid .tree-folding:before {
+  content: url(images/icons/tag.png);
+}*/
+
+.treegrid .tree-folding:hover {
+  background-position: 0 0;
+}
+
+.treegrid .tree-folding {
+  background-position: 0 -16px;
+}
+
+.treegrid tbody.opened .tree-folding:hover {
+  background-position: 0 -32px;
+}
+
+.treegrid tbody.opened .tree-folding {
+  background-position: 0 -48px;
+}
+
+/**
+ * Dans les tableaux de constantes, les cumuls ont des bords, qui se chavauchent dans certains cas quand border-collapse:collapse
+ */
+@media screen {
+  table.constantes {
+    border-collapse: separate !important;
+  }
+}
+
+table.constantes td, 
+table.constantes th {
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+table.tbl tr.alternate:nth-of-type(odd) td {
+  background-color: #ebebeb;
+}
+
+table.tbl tr.alternate:hover:nth-of-type(odd) td {
+  background-color: #f8f8f8;
+}
+
+table.tbl tr.highlight_patient td,
+table.tbl tbody.highlight_patient td{
+  background-color: #f0f0f0;
+}
+
+/**
+ * Div permettant de gérer les scrolls
+ */
+div.y-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+div.x-scroll {
+  overflow-x: auto;
+}
+div.x-y-scroll {
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+/**
+ * Div permettant de gérer les scrolls
+ * au survol uniquement
+ */
+div.y-scroll-hover {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+div.y-scroll-hover:hover {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/**
+ * Div qui va encadrer les tableaux dont le theader devra être fixe lors du scroll
+ */
+div.tablefixedheaders_wrap {
+  overflow: auto;
+  height: 100%;
+  clear: both;
+}
+
+div.tablefixedheaders_wrap table {
+  border-collapse: separate;
+  border-left-width: 1px;
+  border-bottom-width: 1px;
+}
+
+div.tablefixedheaders_wrap_shadowed table thead {
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.3);
+}
+
+/** http://jimmybonney.com/articles/column_header_rotation_css/ */
+th.rotate-45 {
+  border: none !important;
+  padding: 0 !important;
+  height: 80px;
+  width: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  position: relative;
+  vertical-align: bottom;
+}
+
+th.rotate-45 > div {
+  position: relative;
+  top: 0;
+  left: 40px; /* 80 * tan(45) / 2 = 40 where 80 is the height on the cell and 45 is the transform angle*/
+  height: 100%;
+  transform:skew(-45deg,0deg);
+  overflow: hidden;
+  z-index: 10;
+  border-left: 1px solid #dddddd;
+  background: inherit;
+  line-height: 0.8;
+}
+
+th.rotate-45 > div > span {
+  transform:skew(45deg, 0deg) rotate(315deg);
+  position: absolute;
+  bottom: 30px; /* 40 cos(45) = 28 with an additional 2px margin*/
+  left: -25px; /* Because it looked good, but there is probably a mathematical link here as well*/
+  display: inline-block;
+  width: 85px; /* 80 / cos(45) - 40 cos (45) = 85 where 80 is the height of the cell, 40 the width of the cell and 45 the transform angle*/
+  text-align: left;
+}

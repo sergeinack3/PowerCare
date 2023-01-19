@@ -1,0 +1,275 @@
+system_shemas_models:
+  path: api/schemas/{resource_type}
+  controller: Ox\Mediboard\System\Controllers\SchemaController::models
+  requirements:
+    resource_type: '\w+'
+  methods: GET
+  defaults:
+    permission: none
+  options:
+    description: Get the schema for resource_type
+    parameters:
+      fieldsets: '\w+'
+    accept:
+      - application/json
+
+system_shemas_routes:
+  path: api/routes/{path}/{method}
+  controller: Ox\Mediboard\System\Controllers\SchemaController::routes
+  requirements:
+    method: get|post|put|delete|head|options|patch
+    path: '\w+'
+  methods: GET
+  defaults:
+    permission: none
+  options:
+    description: Get routes OAS3 (path encoded in base64)
+    accept:
+      - application/json
+
+system_bulk_operations:
+  path: api/bulkOperations
+  controller: Ox\Mediboard\System\Controllers\BulkController::execute
+  methods: POST
+  defaults:
+    permission: none # take permission of sub route
+  options:
+    description: Send a set of requests to handle (bulk)
+    parameters:
+      stopOnFailure: true|false
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+
+system_history_list:
+  path: api/history/{resource_type}/{resource_id}
+  controller: Ox\Mediboard\System\Controllers\HistoryController::list
+  methods: GET
+  defaults:
+    permission: admin
+  requirements:
+    resource_type: '\w+'
+    resource_id: '\d+'
+  options:
+    description: List resource history
+    accept:
+      - application/json
+
+system_history_show:
+  path: api/history/{resource_type}/{resource_id}/{history_id}
+  controller: Ox\Mediboard\System\Controllers\HistoryController::show
+  methods: GET
+  defaults:
+    permission: admin
+  requirements:
+    resource_type: '\w+'
+    resource_id: '\d+'
+    history_id: '\d+'
+  options:
+    description: Show  resource history
+    parameters:
+      loadResource: true|false
+    accept:
+      - application/json
+
+system_locales:
+  path: api/locales/{language}/{mod_name}
+  controller: Ox\Mediboard\System\Controllers\LocalesController::listLocales
+  methods: GET
+  defaults:
+    permission: none
+  requirements:
+    language: fr|en|it|de|fr-be|nl-be
+    mod_name: '\w+'
+  options:
+    description: List locales by module
+    accept:
+      - application/json
+    parameters:
+      search: '\w+'
+      search_mode: starts_with|ends_with|contains|equal
+      search_in: key|value
+
+system_preferences:
+  path: api/preferences/{mod_name}
+  controller: Ox\Mediboard\System\Controllers\PreferencesController::listPreferences
+  methods: GET
+  defaults:
+    permission: none
+  requirements:
+    mod_name: '\w+'
+  options:
+    description: List default preferences for module
+    accept:
+      - application/json
+    parameters:
+      search: '\w+'
+
+system_user_preferences:
+  path: api/preferences/{mod_name}/{user_id}
+  controller: Ox\Mediboard\System\Controllers\PreferencesController::listUserPreferences
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    user_id: '\d+'
+    mod_name: '\w+'
+  options:
+    description: List user preferences for module
+    accept:
+      - application/json
+    parameters:
+      search: '\w+'
+
+system_preferences_set:
+  path: api/preferences/{user_id}
+  controller: Ox\Mediboard\System\Controllers\PreferencesController::setPreferences
+  methods: POST
+  defaults:
+    permission: none
+  requirements:
+    user_id: '\d*'
+  options:
+    description: Set user or default preferences
+    parameters:
+      restricted: true|false
+    accept:
+      - application/json
+    responses:
+      201: The response's body contains the setted preferences in json_api format.
+      default: 403, 404 or 500 on error.
+    body:
+      required: true
+      content-type:
+        - application/json
+
+system_preferences_delete:
+  path: api/preferences/{user_id}
+  controller: Ox\Mediboard\System\Controllers\PreferencesController::deletePreferences
+  methods: DELETE
+  defaults:
+    permission: none
+  requirements:
+    user_id: '\d*'
+  options:
+    description: Delete user preferences
+    parameters:
+      restricted: true|false
+    accept:
+      - application/json
+    responses:
+      204: The preferences have been deleted.
+      default: 403, 404 or 500 on error.
+    body:
+      required: true
+      content-type:
+        - application/json
+
+system_configs_instance:
+  path: api/configurations/{mod_name}
+  controller: Ox\Mediboard\System\Controllers\ConfigurationController::listConfigurations
+  methods: GET
+  defaults:
+    permission: none
+  requirements:
+    mod_name: '\w+'
+  options:
+    description: List all configurations for a module
+    accept:
+      - application/json
+    parameters:
+      search: '\w+'
+
+system_set_configs:
+  path: api/configurations
+  controller: Ox\Mediboard\System\Controllers\ConfigurationController::setConfigurations
+  methods: PUT
+  defaults:
+    permission: admin
+  options:
+    description: Set configurations
+    accept:
+      - application/json
+    parameters:
+      context: '^(\w+\-\d+|global|static)$'
+    body:
+      required: true
+      content-type:
+        - application/json
+
+system_get_configs:
+  path: api/configurations
+  controller: Ox\Mediboard\System\Controllers\ConfigurationController::getConfigurations
+  methods: GET
+  defaults:
+    permission: none
+  options:
+    description: Get configurations which paths are specified in the request body
+    accept:
+      - application/json
+    parameters:
+      context: '^(\w+\-\d+|global|static)$'
+    body:
+      required: true
+      content-type:
+        - application/json
+
+system_api_status:
+  path: api/status
+  controller: Ox\Mediboard\System\Controllers\SystemController::status
+  methods: GET
+  defaults:
+    permission: none
+    public: true
+  options:
+    description: Api status
+    accept:
+      - application/json
+
+system_api_tags:
+  path: /api/tag
+  controller: Ox\Mediboard\System\Controllers\TagController::listTags
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a list of tags
+    parameters:
+    body:
+      required: false
+      content-type: [ form-data ]
+
+system_api_tag:
+  path: /api/tag/{tag_id}
+  controller: Ox\Mediboard\System\Controllers\TagController::showTag
+  methods: GET
+  requirements:
+    tag_id: '\d+'
+  defaults:
+    permission: read
+  options:
+    description: Return a tag data
+    parameters:
+    body:
+      required: false
+      content-type: [ form-data ]
+
+system_gui_about:
+  path: /gui/system/about
+  controller: Ox\Mediboard\System\Controllers\SystemController::about
+  methods: GET
+  defaults:
+    permission: read
+
+system_openapi:
+  path: /api/doc
+  controller: Ox\Mediboard\System\Controllers\SystemController::openapi
+  methods: GET
+  defaults:
+    public: true
+    permission: none
+  options:
+    openapi: false

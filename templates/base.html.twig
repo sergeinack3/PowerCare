@@ -1,0 +1,33 @@
+{#@author  SAS OpenXtrem <dev@openxtrem.com>#}
+{#@license https://www.gnu.org/licenses/gpl.html GNU General Public License#}
+{#@license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License#}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <base href="{% if external_url %} {{ external_url }} {% else %} {{ Conf.get('external_url') }}/ {% endif %}">
+        <meta http-equiv="Content-Type" content="text/html;charset=windows-1252" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <link href="style/mediboard_ext/vendor/fonts/roboto/roboto.css" rel="stylesheet">
+        <link href="style/mediboard_ext/vendor/fonts/materialdesignicons/css/materialdesignicons.min.css" rel="stylesheet">
+
+        <link rel="shortcut icon" type="image/ico" href="style/mediboard_ext/images/icons/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="style/mediboard_ext/standard.css" media="all"/>
+
+        <title>{% block title %}{% endblock %}</title>
+
+        {% block head %}
+        {% endblock %}
+
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

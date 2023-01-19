@@ -1,0 +1,283 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+@import "@/core/styles/utils";
+
+$collapseSidebarWidth: 50px;
+$image-offset-top: $space*15;
+
+.SampleMovieList {
+  @include fullPage;
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: ". .";
+  transition: grid-template-columns linear .15s;
+
+  @include screenSmallerThan($screenSmall, "800") {
+    grid-template-columns: $collapseSidebarWidth 1fr;
+
+    &.filtersExpand {
+      grid-template-columns: 1fr;
+
+      .SampleMovieList {
+        &-filters {
+          @include elevation(4);
+          background-color: $grey-50;
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          top: -4px;
+          width: 400px;
+          z-index: 1;
+        }
+
+        &-filtersContent {
+          display: flex;
+        }
+
+        &-filtersMore {
+          display: none;
+        }
+
+        &-content {
+          margin-left: $collapseSidebarWidth;
+        }
+      }
+    }
+  }
+
+
+  &-filters {
+    background-color: $grey-50;
+    overflow: hidden;
+
+    @include screenSmallerThan($screenSmall, "800") {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &-filtersContent {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space*10;
+    padding: $space*8 $space*4 $space*8 $space*4;
+    position: relative;
+
+    @include screenSmallerThan($screenSmall, "800") {
+      display: none;
+    }
+  }
+
+  &-filterReset {
+    position: absolute;
+    right: $space*4;
+    top: $space*5;
+  }
+
+  &-filtersMore {
+    display: none;
+    margin-top: $space*2;
+
+    @include screenSmallerThan($screenSmall, "800") {
+      display: block;
+    }
+  }
+
+  &-filterGroup {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space*2;
+  }
+
+  &-filterContent {
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+  }
+
+  &-filterName {
+    @include subtitle2;
+    color: $grey-900;
+  }
+
+  &-filterSeparator {
+    margin: 0 $space;
+  }
+
+  &-filtersCheckbox {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space;
+  }
+
+  &-filterCheckbox {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: $space*2;
+  }
+
+  &-content {
+    @include elevation(1, true);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    grid-template-areas:
+      "."
+      ".";
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &-header {
+    align-items: center;
+    border-bottom: $border;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: $space*4;
+    height: 96px;
+    justify-content: space-between;
+    padding: $space*6 $space*10;
+    width: 100%;
+  }
+
+  &-title {
+    @include h5;
+    color: $grey-800;
+  }
+
+  &-search {
+    flex: 1;
+    max-width: 660px;
+  }
+
+  &-filmsContainer {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space*4;
+    padding: $space*4 $space*10 0 $space*10;
+    overflow: hidden;
+  }
+
+  &-filmsHeader {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  &-sortSection {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: $space*4;
+  }
+
+  &-counter {
+    @include body2;
+    @include on-background(medium);
+  }
+
+  &-films {
+    --column-number: 5;
+    display: grid;
+    gap: $space*6;
+    grid-template-columns: repeat(var(--column-number), minmax(0, 1fr));
+    justify-items: stretch;
+    margin: 0 $space*-10;
+    padding: 0 $space*10 $space*4 $space*10;
+
+    @include screenLargerThan($screenWide, "400") {
+      --column-number: 6;
+    }
+
+    @include screenLargerThan($screenWide, "600") {
+      --column-number: 7;
+    }
+
+    @include screenLargerThan($screenWide, "800") {
+      --column-number: 8;
+    }
+
+    @include screenSmallerThan($screenWide, "200") {
+      --column-number: 4;
+    }
+
+    @include screenSmallerThan($screenSmall, "800") {
+      --column-number: 5;
+    }
+
+    @include screenSmallerThan($screenSmall, "600") {
+      --column-number: 4;
+    }
+
+    @include screenSmallerThan($screenSmall, "400") {
+      --column-number: 3;
+    }
+
+    @include screenSmallerThan($screenSmall, "200") {
+      --column-number: 2;
+    }
+
+    @include screenSmallerThan($screenSmall, "100") {
+      --column-number: 1;
+    }
+  }
+
+  &-contextMenu {
+    @include on-background(medium);
+  }
+
+  &-form {
+    @include elevation(1, true);
+    @include fullPage;
+    bottom: 0;
+    padding: 0 $space*20;
+    position: fixed;
+  }
+
+  &-noData {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-top: $image-offset-top;
+  }
+
+  &-noDataTitle {
+    @include h6;
+    @include on-background(medium);
+    margin-bottom: $space;
+  }
+
+  &-noDataDesc {
+    @include body2;
+    @include on-background(medium);
+  }
+
+  &-noDataIllus {
+    margin-bottom: $space*6;
+    width: clamp(200px, 40vw, 300px);
+  }
+
+  &-noResult {
+    background-image: url("/modules/sample/images/search.svg");
+    background-position: center top;
+    background-size: clamp(180px, 40vw, 260px);
+    flex: 1;
+    margin-top: $image-offset-top;
+    padding-top: clamp(180px, 40vw, 260px);
+  }
+
+  &-noResultLabel {
+    @include body1;
+    @include on-background(medium);
+    padding-top: $space*4;
+    text-align: center;
+  }
+}

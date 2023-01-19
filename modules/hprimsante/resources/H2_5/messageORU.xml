@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message>
+    <name>ORU</name>
+    <description>Observations and results</description>
+    <segments>
+        <segment>H</segment>
+        <group maxOccurs="unbounded" name="PATIENT_RESULT">
+            <segment>P</segment>
+            <group maxOccurs="unbounded" name="ORDER_OBSERVATION">
+              <segment>OBR</segment>
+              <group maxOccurs="unbounded" name="OBSERVATION">
+                <segment>OBX</segment>
+              </group>
+            </group>
+        </group>
+        <segment>L</segment>
+    </segments>
+</message>

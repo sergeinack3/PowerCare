@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- by Alexis Granger (openXtrem) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+      <xs:element name="catalogue">
+            <xs:complexType>
+                  <xs:sequence>
+                        <xs:element name="analyse" maxOccurs="unbounded" minOccurs="1">
+                              <xs:complexType>
+                                    <xs:sequence>
+                                          <xs:element name="libelle" type="xs:string" />
+                                          <xs:element name="technique"
+                                                type="xs:string" />
+                                          <xs:element name="delaitechnique"
+                                                type="xs:string" />
+                                          <xs:element name="heurelimite"
+                                                type="xs:string" />
+                                          <xs:element name="joursrealisation">
+                                                <xs:complexType>
+                                                      <xs:sequence>
+                                                            <xs:element name="lundi"
+                                                                  type="jourType" />
+                                                            <xs:element name="mardi"
+                                                                  type="jourType" />
+                                                            <xs:element name="mercredi"
+                                                                  type="jourType" />
+                                                            <xs:element name="jeudi"
+                                                                  type="jourType" />
+                                                            <xs:element name="vendredi"
+                                                                  type="jourType" />
+                                                            <xs:element name="samedi"
+                                                                  type="jourType" />
+                                                            <xs:element name="dimanche"
+                                                                  type="jourType" />
+                                                      </xs:sequence>
+                                                </xs:complexType>
+                                          </xs:element>
+                                          <xs:element name="applicablesexe"
+                                                type="xs:string" />
+                                          <xs:element name="volumeminimum"
+                                                type="xs:string" />
+                                          <xs:element name="volumerequis"
+                                                type="xs:string" />
+                                          <xs:element name="materiel"
+                                                type="xs:string" />
+                                          <xs:element name="chapitre"
+                                                type="xs:string" />
+                                          <xs:element name="sschapitre"
+                                                type="xs:string" />
+                                    </xs:sequence>
+                                    <xs:attribute name="code"
+                                          type="codeType">
+                                    </xs:attribute>
+                              </xs:complexType>
+                        </xs:element>
+                  </xs:sequence>
+            </xs:complexType>
+      </xs:element>
+
+      <xs:simpleType name="codeType">
+            <xs:restriction base="xs:string">
+                  <xs:maxLength value="5"></xs:maxLength>
+                  <xs:minLength value="2"></xs:minLength>
+            </xs:restriction>
+      </xs:simpleType>
+
+      <xs:simpleType name="jourType">
+            <xs:restriction base="xs:string">
+                  <xs:enumeration value="0"></xs:enumeration>
+                  <xs:enumeration value="1"></xs:enumeration>
+            </xs:restriction>
+      </xs:simpleType>
+
+
+</xs:schema>

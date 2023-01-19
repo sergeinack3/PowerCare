@@ -1,0 +1,143 @@
+/**
+ * @package Mediboard\Soins
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+table.tbl td.left_day {
+  border-left: 2px solid grey;
+}
+
+table.tbl td.right_day {
+  border-right: 2px solid grey;
+}
+
+table.tbl td.first_perf {
+  border-top: 1px solid grey !important;
+}
+
+table.tbl td.last_perf {
+  border-bottom: 1px solid grey !important;
+}
+
+tr.in_progress_before, tr.in_progress_after {
+  display: none !important;
+}
+
+tr.show_important {
+  display: table-row !important;
+}
+
+tr.colored_line td {
+  background-color: #ffdfb2;
+}
+
+div.cellule_patient {
+  float: left;
+  width: 49%;
+  padding: 1px;
+}
+
+div.sejour-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid #aaa;
+  height: 3px;
+  width: 90%;
+  background-color: #fff;
+}
+
+div.sejour-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid #aaa;
+  height: 3px;
+  width: 90%;
+  background-color: #fff;
+}
+
+div.ssr-sejour-bar {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  border: 1px solid #aaa;
+  height: 3px;
+  width: 20px;
+  background-color: #fff;
+}
+
+div.ecap-sejour-bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid #aaa;
+  height: 3px;
+  width: 90%;
+  background-color: #fff;
+  margin: 2px;
+}
+
+div.sejour-bar div,
+div.ecap-sejour-bar div,
+div.ssr-sejour-bar div {
+  background: #444;
+  height: 4px;
+}
+
+div.hatching_case {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: rotate(45deg) scale(1, 100);
+}
+
+div.hatching_case:before {
+  content: "|   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |";
+  color: #ccc;
+  z-index: 0;
+}
+
+table.feuille_trans td {
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+td.no_border_bottom {
+  border-bottom: none!important;
+}
+
+table.feuille_trans td.alle {
+  text-align: left;
+}
+
+table.feuille_trans td.atcd {
+  text-align: left;
+}
+
+span.text_bold {
+  font-weight: bold;
+}
+
+td.text_left {
+  text-align: left!important;
+  vertical-align: text-top!important;
+}
+
+div#list_month_by_year .circled {
+  font-size: 1.2em;
+}
+.inc_banner_patient_rques {
+  font-size: 0.8em;
+  color:goldenrod;
+}
+
+div.pancarte-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

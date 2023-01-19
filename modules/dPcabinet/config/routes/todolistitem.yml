@@ -1,0 +1,65 @@
+cabinet_todolistitem_list:
+  path: api/cabinet/todolistitems
+  controller: Ox\Mediboard\Cabinet\Controllers\ToDoListItemController::listToDoListItem
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: |
+      List the items to do.
+      The list is always filtered on the current user.
+    accept:
+      - application/json
+
+cabinet_todolistitem_create:
+  path: api/cabinet/todolistitems
+  controller: Ox\Mediboard\Cabinet\Controllers\ToDoListItemController::createToDoListItem
+  methods: POST
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Create a todolist item.
+      The user attached to the item will be the current one by default.
+    accept:
+      - application/json
+
+
+cabinet_todolistitem_delete:
+  path: api/cabinet/todolistitems/{todo_list_item_id}
+  controller: Ox\Mediboard\Cabinet\Controllers\ToDoListItemController::deleteToDoListItem
+  methods: DELETE
+  defaults:
+    permission: edit
+  requirements:
+    todo_list_item_id: '\d+'
+  options:
+    description: Delete a todolist item.
+    accept:
+      - application/json
+
+cabinet_todolistitem_update:
+  path: api/cabinet/todolistitems/{todo_list_item_id}
+  controller: Ox\Mediboard\Cabinet\Controllers\ToDoListItemController::updateToDoListItem
+  methods: PATCH
+  defaults:
+    permission: edit
+  requirements:
+    todo_list_item_id: '\d+'
+  options:
+    description: Update a todolist item given.
+    accept:
+      - application/json
+
+cabinet_todolistitem_show:
+  path: api/cabinet/todolistitems/{todo_list_item_id}
+  controller: Ox\Mediboard\Cabinet\Controllers\ToDoListItemController::getToDoListItem
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    todo_list_item_id: '\d+'
+  options:
+    description: Get one todolist item.
+    accept:
+      - application/json

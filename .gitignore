@@ -1,0 +1,67 @@
+# Root ignores
+.project
+.projectOptions
+.phpunit.result.cache
+.settings
+.cache
+.buildpath
+.awcache
+.npmrc
+.rnd
+/.idea
+**/Thumbs.db
+**/.DS_Store
+
+# Includes
+includes/config.php
+includes/classmap.php
+includes/classref.php
+includes/legacy_actions.php
+includes/config_dist.php
+includes/all_routes.yml
+includes/all_services.yml
+includes/documentation.yml
+includes/version.php
+includes/classes_index.php
+
+# Deployment
+bundle.yml
+
+# MB VueJS
+javascript/dist/*
+javascript/src/core/utils/modulesList.json
+
+# User files
+files/*
+!files/.htaccess
+!files/editor/
+
+# Temporary files
+tmp/*
+!tmp/.keep
+
+# Library files
+lib/*
+!lib/.keep
+
+# svn
+.svn
+
+# vendor
+/vendor
+
+# nodes
+node_modules
+
+# Docker
+dev/Docker/.env
+dev/Docker/docker-compose.local.yml
+
+# symfony/framework-bundle
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/tmp/public/
+/var/
+/src/

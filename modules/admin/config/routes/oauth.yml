@@ -1,0 +1,29 @@
+admin_psc_callback:
+  path: api/oauth2/psc/callback
+  controller: Ox\Mediboard\Admin\Controllers\PSCController::callback
+  methods: [GET]
+  defaults:
+    public: true
+    permission: none
+  options:
+    openapi: false
+
+admin_fc_callback:
+  path: api/oauth2/fc/callback
+  controller: Ox\Mediboard\Admin\Controllers\FCController::callback
+  methods: [GET]
+  defaults:
+    public: true
+    permission: none
+  options:
+    openapi: false
+
+admin_fc_logout:
+  path: api/oauth2/fc/logout
+  controller: Ox\Mediboard\Admin\Controllers\FCController::logout
+  methods: [GET]
+  defaults:
+    public: true
+    permission: none
+  options:
+    openapi: false

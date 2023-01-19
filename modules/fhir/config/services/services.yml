@@ -1,0 +1,10 @@
+services:
+  _defaults:
+    autoconfigure: true
+
+  Ox\Interop\Fhir\Subscriber\:
+    resource: '../../classes/Subscriber/'
+
+  Ox\Interop\Fhir\Api\Request\:
+    autowire: true
+    resource: '../../classes/Api/Request'

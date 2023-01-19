@@ -1,0 +1,141 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+@mixin skeleton () {
+  &Skeleton {
+    @content;
+  }
+}
+
+@mixin skeletonLoading {
+  background-color: rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    animation: skeletonEffect 1.5s infinite;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translateX(-100%);
+    z-index: 1;
+  }
+}
+
+.ModuleDetailMobile {
+  background-color: $background-default-light;
+  height: 100%;
+  width: 100%;
+  padding: 0 $space*2;
+  overflow: auto;
+
+  &-back {
+    margin-top: $space*5;
+  }
+
+  &-mainContent {
+    display: flex;
+    flex-flow: column;
+    padding: 0 $space*2;
+    width: 100%;
+  }
+
+  &-header {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: $space*3;
+    padding: $space*5 0;
+  }
+
+  &-title {
+    @include h6;
+    @include on-background(high);
+    cursor: pointer;
+  }
+
+  &-icon {
+    height: 30px;
+    width: 30px;
+  }
+
+  &-content {
+    background-color: $background-darker;
+    display: flex;
+    flex-flow: column;
+    border-radius: $space;
+  }
+
+  &-footer {
+    background-color: $secondary-50;
+    border-radius: $space;
+    margin: $space*4 0;
+    height: fit-content;
+  }
+
+  @include skeleton {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    width: 100%;
+
+    &-header {
+      align-items: center;
+      display: flex;
+      flex-flow: row nowrap;
+      padding: $space*5 $space*2;
+    }
+
+    &-title {
+      @include skeletonLoading;
+      border-radius: 99px;
+      height: 20px;
+      width: 40%;
+    }
+
+    &-icon {
+      @include skeletonLoading;
+      background-color: alpha($secondary, 0.12);
+      border-radius: 99px;
+      height: 30px;
+      width: 30px;
+      margin-right: $space*3;
+    }
+
+    &-content {
+      display: flex;
+      flex: 1;
+      flex-flow: column nowrap;
+      gap: $space*4;
+      overflow-y: auto;
+      padding: $space*2 $space*2;
+    }
+
+    &-tabLine {
+      @include skeletonLoading;
+      border-radius: $space;
+      height: 144px;
+      width: 100%;
+
+      &.variantWidth1 {
+        background-color: alpha($secondary, 0.12);
+        height: 48px;
+      }
+    }
+  }
+}
+
+@keyframes skeletonEffect {
+  100% {
+    transform: translateX(100%);
+  }
+}

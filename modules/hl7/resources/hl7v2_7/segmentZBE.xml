@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>ZBE</name>
+    <description>Movement segment</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="unbounded" length="427">
+            <name>ZBE.1</name>
+            <description>Movement ID</description>
+            <datatype>EI</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="1" length="26">
+            <name>ZBE.2</name>
+            <description>Start of Movement Date/Time</description>
+            <datatype>TS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="26">
+            <name>ZBE.3</name>
+            <description>End of Movement Date/Time</description>
+            <datatype>TS</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="1" length="6">
+            <name>ZBE.4</name>
+            <description>Action on the Movement</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="1" length="1">
+            <name>ZBE.5</name>
+            <description>Indicator "Historical Movement"</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="3">
+            <name>ZBE.6</name>
+            <description>Original trigger event code</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="6">
+            <name>ZBE.7</name>
+            <description>Ward of medical responsibility in the period starting with this movement</description>
+            <datatype>XON</datatype>
+        </field>     
+    </elements>
+</segment>

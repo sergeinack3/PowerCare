@@ -1,0 +1,40 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+@import '../INUtils';
+
+$button-height: 36px;
+
+.INButton {
+  @include font-button();
+  background-color: $primary;
+  color: $white;
+  display: inline-flex;
+  line-height: $button-height;
+  border-radius: #{$button-height / 2};
+  padding: 0 $xlarge-space;
+  cursor: pointer;
+  transition: background .2s, box-shadow .2s;
+  user-select: none;
+
+  &:hover {
+    @include shadow2();
+    background: $primary-400;
+  }
+
+  &.notext {
+    padding: 0 11px;
+  }
+
+  &.tertiary {
+    background-color: transparent;
+    color: $secondary;
+
+    &:hover {
+      box-shadow: none;
+      background: alpha($secondary-500, .16);
+    }
+  }
+}

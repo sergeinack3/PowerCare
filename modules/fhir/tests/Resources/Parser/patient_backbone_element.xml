@@ -1,0 +1,12 @@
+<Patient xmlns='http://hl7.org/fhir'>
+  <communication>
+    <language>
+      <coding>
+        <system value='input system'/>
+        <code value='fr-Fr'/>
+        <display value='Fr'/>
+      </coding>
+    </language>
+    <preferred value='1'/>
+  </communication>
+</Patient>

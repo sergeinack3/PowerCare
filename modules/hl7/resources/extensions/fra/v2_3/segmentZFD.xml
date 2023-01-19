@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>ZFD</name>
+    <description>Complement demographique</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="1" length="8">
+            <name>ZFD.1</name>
+            <description>Date lunaire</description>
+            <datatype>NA</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="16">
+            <name>ZFD.2</name>
+            <description>Nombre de semaines de gestation</description>
+            <datatype>NM</datatype>
+        </field> 
+    </elements>
+</segment>

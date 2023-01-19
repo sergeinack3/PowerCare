@@ -1,0 +1,203 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+div#login {
+  @include custom-background-cover;
+}
+
+div.login-wrap {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+div.login-form#login-form {
+  background-color: $white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  padding: #{$space*6} #{$space*6} #{$space*8} #{$space*6};
+  width: 330px;
+  box-sizing: content-box;
+  position: relative;
+
+  img#mediboard-logo {
+    width: 330px;
+    margin-bottom: $space*3;
+  }
+
+  div.systemmsg-in,
+  div.me-form-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    height: 26px;
+    width: 50%;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 50%;
+  }
+
+  #systemMsg .error {
+    padding: 0;
+  }
+
+  .login-form-others {
+    border-top: 1px $grey-300 dashed;
+    margin-top: $space*6;
+    padding-top: $space*4;
+
+    .me-button-other-login {
+      // !important obligatoire pour surcharger le style du module Mbhost
+      height: 32px !important;
+      width: 100%;
+      font-size: 12px;
+      text-align: center;
+      line-height: 32px !important;
+      margin: $space*2 0;
+
+      &.kerberos {
+        &::before {
+          content: none;
+        }
+
+        $kerberos-color: $primary;
+        border-color: $kerberos-color;
+        color: $kerberos-color;
+
+        &:hover {
+          background-color: alpha($kerberos-color, 10%);
+        }
+      }
+
+      &.cps {
+        $cps-color: #ee1573;
+        border-color: $cps-color;
+        color: $cps-color;
+
+        &:hover {
+          background-color: alpha($cps-color, 10%);
+        }
+
+        &::before {
+          content: none;
+          color: $cps-color;
+        }
+
+        &.loading {
+          @include button-icon("f110");
+        }
+      }
+    }
+  }
+}
+
+.PscLogin {
+
+
+  &-badge {
+    padding: 8px 8px 8px 0;
+    width: 18px
+  }
+
+  &-cgu {
+    text-align: right;
+    opacity: 0.6;
+  }
+}
+
+div.login-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
+  border-top: 1px solid $primary;
+
+  > span {
+    margin: 10px;
+    color: $primary;
+    font-size: 12px;
+    font-weight: bold;
+    width: 33%;
+  }
+}
+
+div.me-session-lock {
+  height: 300px;
+  width: 400px;
+  position: relative;
+
+  .me-session-lock_container {
+    width: 100%;
+    height: 100%;
+    border-bottom-right-radius: 28px;
+    border-top-right-radius: 28px;
+    background-color: $white;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+
+    .me-session-lock_logo {
+      text-align: center;
+      margin-top: $space*2;
+
+      img {
+        width: 80%;
+        height: auto;
+
+        &.me-tamm {
+          width: 70%;
+          margin-top: $space*4;
+          margin-bottom: $space*4;
+        }
+      }
+    }
+
+    .me-session-lock_message {
+      padding: 0 $space*4;
+    }
+
+    .me-session-lock_password {
+      padding: $space $space*4;
+
+      div.me-form-group {
+        max-width: none;
+      }
+    }
+
+    .me-session-lock_actions {
+      padding: 0 $space*4;
+      display: flex;
+      flex-direction: column;
+
+      .me-session-lock_action-primary {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .me-session-lock_action-secondary {
+        padding-top: $space*4;
+      }
+
+      .me-session-lock_action {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,34 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+@import "@/core/styles/utils";
+
+.SampleLegacyCompat {
+  div {
+    padding: 10px;
+  }
+
+  &-user {
+    width: 250px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &-tooltip {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-label {
+    @include body2();
+    @include on-background(medium);
+    border-bottom: 1px dotted #CFD8DC;
+  }
+}

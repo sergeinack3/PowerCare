@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Import\\Rpps\\": "classes",
+      "Ox\\Import\\Rpps\\Tests\\": "tests"
+    }
+  }
+}

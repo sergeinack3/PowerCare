@@ -1,0 +1,40 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.SamplePersonForm {
+  display: flex;
+  flex-direction: column;
+  gap: $space*12;
+
+  &-fieldGroup {
+    display: flex;
+    flex-direction: column;
+    gap: $space*6;
+  }
+
+  &-director {
+    background-color: $background-info;
+    border: $border;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    padding: $space*4;
+    width: 351px;
+  }
+
+  &-directorField {
+    padding-left: $space*4;
+  }
+
+  &-directorDesc {
+    @include caption;
+    @include on-background(medium);
+    display: block;
+    padding-top: $space;
+  }
+}

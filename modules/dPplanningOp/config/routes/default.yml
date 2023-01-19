@@ -1,0 +1,345 @@
+#planning_sejours:
+#  path: /api/planning/sejours
+#  controller: Ox\Mediboard\PlanningOp\Controllers\CSejoursController::listSejours
+#  methods: GET
+#  options:
+#    description: Return a list of sejours
+#    parameters:
+#      includes: patients|praticiens|actesCCAM
+#      fieldsets: admission|sortie|annulation|urgences|placement|repas|cotation
+#    accept:
+#      - application/json
+#      - application/xml
+#    permission: read
+
+planning_sejour:
+  path: /api/planning/sejours/{sejour_id}
+  controller: Ox\Mediboard\PlanningOp\Controllers\CSejoursController::showSejour
+  methods: GET
+  requirements:
+    sejour_id: '\d+'
+  defaults:
+    permission: read
+  options:
+    description: Return a sejour
+    accept:
+      - application/json
+
+planning_protocoles:
+  path: /api/planning/protocoles
+  controller: Ox\Mediboard\PlanningOp\Controllers\CProtocolesController::listProtocoles
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a list of protocoles
+    parameters:
+      libelle: '\w+'
+      chir_id: '\d+'
+      for_sejour: 0|1
+    accept:
+      - application/json
+
+planning_protocole:
+  path: /api/planning/protocoles/{protocole_id}
+  controller: Ox\Mediboard\PlanningOp\Controllers\CProtocolesController::showProtocole
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    protocole_id: '\d+'
+  options:
+    description: Return a protocole
+    accept:
+      - application/json
+
+planning_typesanesth:
+  path: /api/planning/typesanesth
+  controller: Ox\Mediboard\PlanningOp\Controllers\CTypeAnesthController::listTypesAnesth
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a list of types of anesthesia
+    accept:
+      - application/json
+
+planning_typeanesth:
+  path: /api/planning/typesanesth/{type_anesth_id}
+  controller: Ox\Mediboard\PlanningOp\Controllers\CTypeAnesthController::showTypeAnesth
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    type_anesth_id: '\d+'
+  options:
+    description: Return a type of anesthesia
+    accept:
+      - application/json
+
+planning_modestraitements:
+  path: /api/planning/modestraitements/{type}
+  controller: Ox\Mediboard\PlanningOp\Controllers\CChargePriceIndicatorsController::listCharges
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    type: comp|ambu|exte|seances|ssr|psy|urg|consult
+  options:
+    description: Return a list of charge price indicators
+    accept:
+      - application/json
+
+planning_modetraitement:
+  path: /api/planning/modestraitements/{charge_price_indicator_id}
+  controller: Ox\Mediboard\PlanningOp\Controllers\CChargePriceIndicatorsController::showCharge
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    charge_price_indicator_id: '\d+'
+  options:
+    description: Return a charge price indicator
+    accept:
+      - application/json
+
+planning_operations_in_plage:
+  path: /api/planning/operationsinplage/{plageop_id}
+  controller: Ox\Mediboard\PlanningOp\Controllers\COperationsController::listOperationsForPlage
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    plageop_id: '\d+'
+  options:
+    description: Return a list of operations for a plageop
+    accept:
+      - application/json
+
+planning_dhe_add:
+  path: /api/planning/dhe
+  controller: Ox\Mediboard\PlanningOp\Controllers\DHEsController::addDHE
+  methods: POST
+  defaults:
+    permission: read
+  options:
+    description: Add a DHE
+    parameters:
+      intervention_chir_id: '\d+'
+      intervention_protocole_id: '\d+'
+      intervention_plageop_id: '\d+'
+      intervention_actes: '\w+'
+      intervention_cote: '\w+'
+      intervention_temp_operation: '\w+'
+      intervention_date: '\w+'
+      intervention_urgence: 0|1
+      intervention_materiel: '\w+'
+      intervention_rques: '\w+'
+      intervention_preop: '\w+'
+      intervention_postop: '\w+'
+      intervention_nettoyage: '\w+'
+      intervention_duree_bio_nettoyage: '\w+'
+      intervention_duree_uscpo: '\w+'
+      intervention_exam_extempo: 0|1
+      intervention_examen: '\w+'
+      intervention_exam_per_op: '\w+'
+      intervention_conventionne: 0|1
+      intervention_depassement: '\w+'
+      intervention_forfait: '\w+'
+      intervention_fournitures: '\w+'
+      intervention_reglement_dh_chir: '\w+'
+      sejour_entree: '\w+'
+      sejour_sortie: '\w+'
+      sejour_type: '\w+'
+      sejour_libelle: '\w+'
+      sejour_patient_id: '\d+'
+      sejour_praticien_id: '\d+'
+      sejour_service_id: '\d+'
+      sejour_charge_id: '\d+'
+      sejour_uf_medicale_id: '\d+'
+      sejour_rques: '\w+'
+      sejour_facturable: 0|1
+      sejour_ald: 0|1
+      sejour_aide_organisee: '\w+'
+      sejour_handicap: '\d'
+      sejour_presence_confidentielle: 0|1
+      sejour_frais_sejour: '\w+'
+      sejour_reglement_frais_sejour: '\w+'
+      sejour_isolement: 0|1
+      sejour_nuit_convenance: 0|1
+      sejour_hospit_de_jour: 0|1
+      sejour_consult_accomp: '\w+'
+      sejour_convalescence: '\w+'
+      patient_tutelle: '\w+'
+    accept:
+      - application/json
+
+planning_dhe_modify:
+  path: /api/planning/dhe/{operation_id}
+  controller: Ox\Mediboard\PlanningOp\Controllers\DHEsController::modifyDHE
+  methods: PUT
+  defaults:
+    permission: read
+  requirements:
+    operation_id: '\d+'
+  options:
+    description: Modify a DHE
+    parameters:
+      intervention_chir_id: '\d+'
+      intervention_protocole_id: '\d+'
+      intervention_actes: '\w+'
+      intervention_cote: '\w+'
+      intervention_temp_operation: '\w+'
+      intervention_date: '\w+'
+      intervention_urgence: 0|1
+      intervention_materiel: '\w+'
+      intervention_rques: '\w+'
+      intervention_preop: '\w+'
+      intervention_postop: '\w+'
+      intervention_nettoyage: '\w+'
+      intervention_duree_bio_nettoyage: '\w+'
+      intervention_duree_uscpo: '\w+'
+      intervention_exam_extempo: 0|1
+      intervention_examen: '\w+'
+      intervention_exam_per_op: '\w+'
+      intervention_conventionne: 0|1
+      intervention_depassement: '\w+'
+      intervention_forfait: '\w+'
+      intervention_fournitures: '\w+'
+      intervention_reglement_dh_chir: '\w+'
+      sejour_entree: '\w+'
+      sejour_sortie: '\w+'
+      sejour_type: '\w+'
+      sejour_libelle: '\w+'
+      sejour_patient_id: '\d+'
+      sejour_praticien_id: '\d+'
+      sejour_service_id: '\d+'
+      sejour_charge_id: '\d+'
+      sejour_uf_medicale_id: '\d+'
+      sejour_rques: '\w+'
+      sejour_facturable: 0|1
+      sejour_ald: 0|1
+      sejour_aide_organisee: '\w+'
+      sejour_handicap: '\d'
+      sejour_presence_confidentielle: 0|1
+      sejour_frais_sejour: '\w+'
+      sejour_reglement_frais_sejour: '\w+'
+      sejour_isolement: 0|1
+      sejour_nuit_convenance: 0|1
+      sejour_hospit_de_jour: 0|1
+      sejour_consult_accomp: '\w+'
+      sejour_convalescence: '\w+'
+      patient_tutelle: '\w+'
+    accept:
+      - application/json
+
+planning_dhe:
+  path: /api/planning/dhe/{operation_id}
+  controller: Ox\Mediboard\PlanningOp\Controllers\DHEsController::showDHE
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    operation_id: '\d+'
+  options:
+    description: Return a DHE
+    accept:
+      - application/json
+
+planning_sejour_add:
+  path: /api/planning/sejour
+  controller: Ox\Mediboard\PlanningOp\Controllers\CSejoursController::addSejour
+  methods: POST
+  defaults:
+    permission: read
+  options:
+    description: Add a sejour
+    parameters:
+      sejour_entree: '\w+'
+      sejour_sortie: '\w+'
+      sejour_type: '\w+'
+      sejour_libelle: '\w+'
+      sejour_patient_id: '\d+'
+      sejour_praticien_id: '\d+'
+      sejour_service_id: '\d+'
+      sejour_charge_id: '\d+'
+      sejour_uf_medicale_id: '\d+'
+      sejour_rques: '\w+'
+      sejour_facturable: 0|1
+      sejour_ald: 0|1
+      sejour_aide_organisee: '\w+'
+      sejour_handicap: '\d'
+      sejour_presence_confidentielle: 0|1
+      sejour_frais_sejour: '\w+'
+      sejour_reglement_frais_sejour: '\w+'
+      sejour_isolement: 0|1
+      sejour_nuit_convenance: 0|1
+      sejour_hospit_de_jour: 0|1
+      sejour_consult_accomp: '\w+'
+      sejour_convalescence: '\w+'
+      patient_tutelle: '\w+'
+    accept:
+      - application/json
+
+planning_sejour_modify:
+  path: /api/planning/sejour/{sejour_id}
+  controller: Ox\Mediboard\PlanningOp\Controllers\CSejoursController::modifySejour
+  methods: PUT
+  defaults:
+    permission: read
+  requirements:
+    sejour_id: '\d+'
+  options:
+    description: Modify a sejour
+    parameters:
+      sejour_entree: '\w+'
+      sejour_sortie: '\w+'
+      sejour_type: '\w+'
+      sejour_libelle: '\w+'
+      sejour_patient_id: '\d+'
+      sejour_praticien_id: '\d+'
+      sejour_service_id: '\d+'
+      sejour_charge_id: '\d+'
+      sejour_uf_medicale_id: '\d+'
+      sejour_rques: '\w+'
+      sejour_facturable: 0|1
+      sejour_ald: 0|1
+      sejour_aide_organisee: '\w+'
+      sejour_handicap: '\d'
+      sejour_presence_confidentielle: 0|1
+      sejour_frais_sejour: '\w+'
+      sejour_reglement_frais_sejour: '\w+'
+      sejour_isolement: 0|1
+      sejour_nuit_convenance: 0|1
+      sejour_hospit_de_jour: 0|1
+      sejour_consult_accomp: '\w+'
+      sejour_convalescence: '\w+'
+      patient_tutelle: '\w+'
+    accept:
+      - application/json
+
+planning_sejour_getfields:
+  path: /api/planning/sejours/fields
+  controller: Ox\Mediboard\PlanningOp\Controllers\CSejoursController::getFields
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return modele fields from a sejour
+    parameters:
+      sejour_id: '\d+'
+    accept:
+      - application/json
+
+planning_operation_getfields:
+  path: /api/planning/operations/fields
+  controller: Ox\Mediboard\PlanningOp\Controllers\COperationsController::getFields
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return modele fields from an operation
+    parameters:
+      operation_id: '\d+'
+    accept:
+      - application/json

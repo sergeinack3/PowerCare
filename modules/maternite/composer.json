@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Mediboard\\Maternite\\": "classes",
+      "Ox\\Mediboard\\Maternite\\Tests\\": "tests"
+    }
+  }
+}

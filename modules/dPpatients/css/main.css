@@ -1,0 +1,234 @@
+/**
+ * @package Mediboard\Patients
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+div.outlined {
+  float: left;
+  margin: 3px;
+  text-align: center;
+  font-weight: bold;
+  position: relative;
+}
+
+div.outlined label {
+  display: block;
+  padding: 2px;
+  z-index: 20;
+}
+
+div.outlined label:hover {
+  background: #cccccc;
+}
+
+div.outlined input {
+  display: none;
+}
+
+div.outlined input[type="radio"]:checked + label {
+  outline: 2px solid orange;
+}
+
+div.outlined input[type=radio].checked + label {
+  outline: 2px solid orange;
+}
+
+div.axis-onhover {
+  font-weight: bold;
+  color: black;
+}
+
+td.legend-onhover {
+  font-weight: bold;
+  color: black;
+}
+
+.iconed-text {
+  padding-left: 20px !important;
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.iconed-text.interv {
+  background-image: url("../../../style/mediboard_ext/images/icons/interv.png");
+}
+
+.iconed-text.urg {
+  background-image: url("../../../style/mediboard_ext/images/icons/urg.png");
+}
+
+.iconed-text.anesth {
+  background-image: url("../../../style/mediboard_ext/images/icons/anesth.png");
+}
+
+.encart {
+  font-size: 0.8em;
+  padding: 2px;
+  border-radius: 3px;
+  background: white;
+  line-height: 1;
+  text-align: center;
+}
+
+.encart-vip {
+  border: 1px solid #661d00;
+  color: #661d00;
+}
+
+.date-naissance-input {
+  position: relative;
+  display: inline-block;
+}
+
+.date-naissance-input span {
+  font-size: 1.2em;
+  display: none;
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+}
+
+.date-naissance-input:hover span {
+  display: inline;
+}
+
+table.table_icon_fileview {
+  display: inline-table;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+}
+
+table.table_icon_fileview div.icon_fileview {
+  border: 1px solid black;
+  width: 64px;
+  height: 92px;
+  cursor: pointer;
+  background: white;
+  margin: auto;
+}
+
+table.table_icon_fileview div.toolbar-container {
+  position: absolute;
+  display: none;
+  top: 30px;
+  right: 1px;
+}
+
+table.table_icon_fileview:hover div.icon_fileview {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+
+table.table_icon_fileview:hover {
+  background-color: #DDD;
+}
+
+table.table_icon_fileview:hover div.toolbar-container {
+  display: block;
+}
+
+fieldset.case_add_doc {
+  width: 47%;
+  min-height: 100px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+fieldset.case_add_doc legend {
+  font-size: 13pt;
+}
+
+.sejour-avenir {
+  background-color: steelblue;
+}
+
+.sejour-encours {
+  background-color: forestgreen;
+}
+
+span.alert_1,
+span.alert_2,
+span.alert_3{
+  height: 16px;
+  background: no-repeat center left;
+  padding: 2px;
+  padding-left: 20px;
+}
+.constant_alert_1 {
+  color: #fc0;
+}
+
+.constant_alert_2 {
+  color: #ff8600;
+}
+
+.constant_alert_3 {
+  color: red;
+}
+
+table.form td.warning,
+table.form th.warning,
+span.warning {
+  background-color: #fc0;
+}
+
+.up-rank-graph{
+  height:12px;
+  z-index: 2;
+  overflow:hidden;
+  top: 12px;
+}
+.down-rank-graph{
+  z-index: 1;
+}
+
+.graph-rank{
+  font-size: 1.5em;
+  display:inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+#ex_class-list {
+  min-height: 250px;
+}
+
+span.status-patient {
+  font-weight: bold !important;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+span.status-prov {
+  color: #800;
+  border-color: #800;
+}
+
+span.status-vali {
+  color: #ff7611;
+  border-color: #ff7611;
+}
+
+span.status-recup {
+  color: #008;
+  border-color: #008;
+}
+
+span.status-qual {
+  color: #080;
+  border-color: #080;
+}
+
+span.ins-nia {
+  font-weight: bold !important;
+  color: #ff7611;
+  border-color: #ff7611;
+}
+
+.email-nowrap .email {
+  display: inline-block;
+}

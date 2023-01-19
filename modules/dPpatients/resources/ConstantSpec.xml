@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<constantSpec xmlns="http://www.openxtrem.com" xsd:schemaLocation="http://www.openxtrem.com ConstantSpec.xsd"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance">
+  <constants>
+    <constant code="height" id="1" period="0">
+      <name>height</name>
+      <unit>cm|m *100|mm /10</unit>
+      <value_class>CValueInt</value_class>
+      <category>physio</category>
+      <min_value>0</min_value>
+      <max_value>300</max_value>
+    </constant>
+
+    <constant code="heartrate" id="2" period="0">
+      <name>heartrate</name>
+      <unit>bpm</unit>
+      <value_class>CValueInt</value_class>
+      <category>physio</category>
+      <min_value>0</min_value>
+      <max_value>250</max_value>
+      <alerts>
+        <alert id="1">
+          <seuil_bas>50</seuil_bas>
+          <text_bas>Poul faible</text_bas>
+        </alert>
+        <alert id="2">
+          <seuil_haut>180</seuil_haut>
+          <text_haut>Poul haut</text_haut>
+        </alert>
+        <alert id="3">
+          <seuil_haut>205</seuil_haut>
+          <text_haut>Poul très haut</text_haut>
+        </alert>
+      </alerts>
+    </constant>
+
+    <constant code="dailyactivity" id="3" period="86400">
+      <name>dailyactivity</name>
+      <unit>step</unit>
+      <value_class>CValueInt</value_class>
+      <category>activity</category>
+      <min_value>0</min_value>
+      <max_value>1000000</max_value>
+      <alerts>
+        <alert id="1">
+          <seuil_bas>100</seuil_bas>
+          <text_bas>Peu d'activité dans la journée</text_bas>
+        </alert>
+      </alerts>
+    </constant>
+
+    <constant code="hourlyactivity" id="4" period="3600">
+      <name>hourlyactivity</name>
+      <unit>step</unit>
+      <value_class>CValueInt</value_class>
+      <category>activity</category>
+      <min_value>0</min_value>
+      <max_value>100000</max_value>
+    </constant>
+
+    <constant code="dailysleep" id="5" period="86400">
+      <name>dailysleep</name>
+      <unit>sec|min /60|h /3600</unit>
+      <value_class>CDateTimeInterval</value_class>
+      <category>biolo</category>
+      <alerts>
+        <alert id="1">
+          <seuil_bas>28800</seuil_bas>
+          <text_bas>Vous dormez peu</text_bas>
+          <seuil_haut>43200</seuil_haut>
+          <text_haut>Vous dormez beaucoup</text_haut>
+        </alert>
+      </alerts>
+    </constant>
+
+    <constant code="hourlysleep" id="6" period="0">
+      <name>hourlysleep</name>
+      <unit>sec|min /60</unit>
+      <value_class>CStateInterval</value_class>
+      <category>biolo</category>
+      <list>0|1|2|3|4|5|6</list>
+    </constant>
+
+    <constant code="lightsleepduration" id="7" period="86400">
+      <name>lightsleepduration</name>
+      <unit>sec|min /60|h /3600</unit>
+      <value_class>CValueInt</value_class>
+      <category>biolo</category>
+      <min_value>0</min_value>
+      <max_value>86400</max_value>
+    </constant>
+
+    <constant code="deepsleepduration" id="8" period="86400">
+      <name>deepsleepduration</name>
+      <unit>sec|min /60|h /3600</unit>
+      <value_class>CValueInt</value_class>
+      <category>biolo</category>
+      <min_value>0</min_value>
+      <max_value>86400</max_value>
+    </constant>
+
+    <constant code="wakeupduration" id="9" period="86400">
+      <name>wakeupduration</name>
+      <unit>sec|min /60|h /3600</unit>
+      <value_class>CValueInt</value_class>
+      <category>biolo</category>
+      <min_value>0</min_value>
+      <max_value>86400</max_value>
+    </constant>
+
+    <constant code="weight" id="10" period="0">
+      <name>weight</name>
+      <unit>g|kg *1000</unit>
+      <value_class>CValueInt</value_class>
+      <category>physio</category>
+      <min_value>0</min_value>
+      <max_value>8000000</max_value>
+    </constant>
+
+    <constant code="remduration" id="11" period="86400">
+      <name>remduration</name>
+      <unit>sec|min /60|h /3600</unit>
+      <value_class>CValueInt</value_class>
+      <category>biolo</category>
+      <min_value>0</min_value>
+      <max_value>86400</max_value>
+    </constant>
+
+    <constant code="imc" id="12" period="0">
+      <name>imc</name>
+      <unit>g/mm²</unit>
+      <value_class>CValueInt</value_class>
+      <category>biolo</category>
+      <formule>(([$weight]*10) / pow(2,[$height])</formule>
+    </constant>
+
+    <constant code="dailyheartrate" id="13" period="86400">
+      <name>heartrate</name>
+      <unit>bpm</unit>
+      <value_class>CValueInt</value_class>
+      <category>physio</category>
+      <min_value>0</min_value>
+      <max_value>250</max_value>
+      <alterable>1</alterable>
+    </constant>
+
+    <constant code="heartrateinterval" id="14" period="86400">
+      <name>heartrate</name>
+      <unit>bpm</unit>
+      <value_class>CValueInterval</value_class>
+      <category>physio</category>
+      <min_value>0</min_value>
+      <max_value>250</max_value>
+    </constant>
+
+    <constant code="dailydistance" id="15" period="86400">
+      <name>distance</name>
+      <unit>m</unit>
+      <value_class>CValueInt</value_class>
+      <category>physio</category>
+      <min_value>0</min_value>
+      <alterable>1</alterable>
+    </constant>
+
+    <constant code="systole" id="16" period="0">
+      <name>systole</name>
+      <unit>mm/Hg|cm/Hg /10</unit>
+      <value_class>CValueInt</value_class>
+      <category>physio</category>
+      <min_value>0</min_value>
+    </constant>
+
+    <constant code="diastole" id="17" period="0">
+      <name>diastole</name>
+      <unit>mm/Hg|cm/Hg /10</unit>
+      <value_class>CValueInt</value_class>
+      <category>physio</category>
+      <min_value>0</min_value>
+    </constant>
+
+    <constant code="temperature" id="18" period="0">
+      <name>temperature</name>
+      <unit>°C|°F (($a-32)*(5/9))</unit>
+      <value_class>CValueFloat</value_class>
+      <category>physio</category>
+      <min_value>35</min_value>
+      <max_value>43</max_value>
+    </constant>
+  </constants>
+</constantSpec>

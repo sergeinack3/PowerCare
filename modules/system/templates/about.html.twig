@@ -1,0 +1,24 @@
+{# @author  SAS OpenXtrem <dev@openxtrem.com> #}
+{# @license https://www.gnu.org/licenses/gpl.html GNU General Public License #}
+{# @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License #}
+
+{% extends "base.html.twig" %}
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <div id="about">
+        <div class="text me-color-black-high-emphasis">
+            <h2>Présentation</h2>
+            <p><a href="http://www.mediboard.org/" title="Site du projet Mediboard" target="_blank">Mediboard</a>
+                est un <strong>système web open source de gestion d'établissements de santé</strong>.
+                Il se définit plus précisément comme un <strong>SIH</strong> (Système d'Information Hospitalier)
+                c'est-à-dire un PGI (Progiciel de Gestion Integré) adapté aux <strong>établissements de santé de toute
+                    taille</strong>,
+                du simple cabinet de praticien au centre médical multi-sites.</p>
+
+            <br/>
+            <h2>Version</h2>
+            {{ version }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,36 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.OxCardHeader {
+  align-items: center;
+  background: $surface-primary;
+  border-radius: 4px 4px 0 0;
+  display: flex;
+  height: 48px;
+  width: 100%;
+
+  &-icon {
+    align-items: center;
+    background: $background-default-light;
+    border-radius: 50%;
+    color: $primary;
+    display: flex;
+    font-size: 18px;
+    height: 32px;
+    justify-content: center;
+    margin-left: 12px;
+    width: 32px;
+  }
+
+  &-label {
+    @include on-primary(high);
+    font-size: 18px;
+    margin-left: 12px;
+  }
+}

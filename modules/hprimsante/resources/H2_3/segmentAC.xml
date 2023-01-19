@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+  <name>AC</name>
+  <description>Assuré complémentaire</description>
+  <elements>
+    <field minOccurs="1" maxOccurs="0" length="4">
+      <name>AC.1</name>
+      <description>Set ID</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="1" maxOccurs="0" length="9">
+      <name>AC.2</name>
+      <description>Code organisme ou mutuelle</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="15">
+      <name>AC.3</name>
+      <description>Numéro d'adhérent mutuelle</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="8">
+      <name>AC.4</name>
+      <description>Date début de droits</description>
+      <datatype>TS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="8">
+      <name>AC.5</name>
+      <description>Date fin de droits</description>
+      <datatype>TS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="28">
+      <name>AC.6</name>
+      <description>Type de contrat</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="6">
+      <name>AC.7</name>
+      <description>Taux de remboursement Assurance complémentaire</description>
+      <datatype>ACS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="40">
+      <name>AC.8</name>
+      <description>Nom de la mutuelle</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="200">
+      <name>AC.9</name>
+      <description>Adresse de la mutuelle</description>
+      <datatype>AD</datatype>
+    </field>
+  </elements>
+</segment>

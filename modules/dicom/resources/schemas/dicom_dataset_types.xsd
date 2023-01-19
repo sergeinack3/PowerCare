@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:include schemaLocation="dicom_types.xsd"/>
+
+  <xs:complexType name="Type_DataSet">
+    <xs:sequence>
+      <xs:element name="Tag" type="Type_Tag"/>
+      <xs:element name="VR" type="Type_VR"/>
+      <xs:element name="Reserved" type="xs:hexBinary" fixed="0000"/>
+      <xs:element name="Value-length" type="xs:unsignedInt"/>
+      <xs:element name="Value" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+ <xs:simpleType name="Type_Tag">
+  <xs:restriction>
+    <xs:length value="8"/>
+  </xs:restriction>
+ </xs:simpleType>
+ 
+ <xs:simpleType name="Type_VR">
+  <xs:restriction base="xs:string">
+    <xs:length value="2"/>
+  </xs:restriction>
+ </xs:simpleType>
+
+ <xs:complexType name="Type_DataSet-UI">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet">
+      <xs:element name="Tag" type="Type_Tag"/>
+      <xs:element name="VR" type="Type_VR" fixed="UI"/>
+      <xs:element name="Value-length" type="xs:unsignedShort"/>
+      <xs:element name="Value" type="Type_UID"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+
+ <xs:complexType name="Type_DataSet-UL">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet">
+      <xs:element name="Tag" type="Type_Tag"/>
+      <xs:element name="VR" type="Type_VR" fixed="UL"/>
+      <xs:element name="Value-length" type="xs:unsignedShort"/>
+      <xs:element name="Value" type="xs:unsignedInt"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+  
+ <xs:complexType name="Type_DataSet-US">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet">
+      <xs:element name="Tag" type="Type_Tag"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort"/>
+      <xs:element name="Value" type="xs:unsignedShort"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+ 
+  <xs:complexType name="Type_Cmd-Group-Length">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-UL">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000000"/>
+      <xs:element name="VR" type="Type_VR" fixed="UL"/>
+      <xs:element name="Value-length" type="xs:unsignedShort"/>
+      <xs:element name="Value" type="xs:unsignedInt"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_Aff-SOP-Class">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-UI">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000002"/>
+      <xs:element name="VR" type="Type_VR" fixed="UI"/>
+      <xs:element name="Value-length" type="xs:unsignedShort"/>
+      <xs:element name="Value" type="Type_UID"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_Command-Field">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000100"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort"/>
+      <xs:element name="Value" type="xs:unsignedShort"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+
+<xs:complexType name="Type_Message-ID">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000110"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort"/>
+      <xs:element name="Value" type="xs:unsignedShort"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+ 
+ <xs:complexType name="Type_Message-ID-Responded-To">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000120"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort"/>
+      <xs:element name="Value" type="xs:unsignedShort"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+
+<xs:complexType name="Type_Cmd-DataSet-Type">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000800"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort"/>
+      <xs:element name="Value" type="xs:unsignedShort"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+ 
+<xs:complexType name="Type_Cmd-DataSet-Type-Empty">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000800"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort" fixed="2"/>
+      <xs:element name="Value" type="xs:hexBinary" fixed="0101"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+ 
+<xs:complexType name="Type_Status">
+  <xs:complexContent>
+    <xs:restriction base="Type_DataSet-US">
+      <xs:element name="Tag" type="Type_Tag" fixed="00000900"/>
+      <xs:element name="VR" type="Type_VR" fixed="US"/>
+      <xs:element name="Value-length" type="xs:unsignedShort"/>
+      <xs:element name="Value" type="xs:unsignedShort"/>
+    </xs:restriction>
+  </xs:complexContent>
+ </xs:complexType>
+
+</xs:schema>

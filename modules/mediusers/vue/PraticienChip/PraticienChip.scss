@@ -1,0 +1,14 @@
+@import '~oxify/src/styles/utils';
+
+.PraticienChip {
+  &-initials {
+    @include overline;
+    letter-spacing: 0.5px;
+    line-height: 8px;
+    text-align: center;
+  }
+
+  &-name {
+    @include body2
+  }
+}

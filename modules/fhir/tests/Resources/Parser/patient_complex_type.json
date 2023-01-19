@@ -1,0 +1,12 @@
+{
+  "resourceType": "Patient",
+  "maritalStatus": {
+    "coding": {
+      "system": "input system",
+      "code": "input code",
+      "display": "input display"
+    },
+    "text": "text coding"
+  },
+  "preferred": true
+}

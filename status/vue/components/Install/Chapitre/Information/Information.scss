@@ -1,0 +1,106 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+@import '../../../INUtils';
+
+.Information {
+  height: 100%;
+
+  &-content {
+    margin: auto;
+    max-width: 75%;
+  }
+  &-dom {
+    @include font-roboto();
+    table {
+      //border-collapse: collapse;
+      width: 100%;
+      border-radius: $border-radius;
+      border: 1px solid $grey-200;
+      border-spacing: 0;
+
+      tbody>tr {
+        th, td {
+          font-size: 75%;
+          vertical-align: baseline;
+          padding: 4px 5px;
+          border-bottom: 1px solid $grey-100;
+
+          h1 {
+            @include table-header-text();
+          }
+        }
+        &:last-of-type:last-of-type {
+          th, td {
+            border-bottom: 0;
+          }
+        }
+      }
+    }
+
+    pre {
+      margin: 0;
+      font-family: monospace;
+    }
+
+    a:link {
+      color: #009;
+      text-decoration: none;
+    }
+
+    .center {
+      text-align: left;
+      table {
+        margin: $large-space 0 0 0;
+        text-align: left;
+
+        th {
+          text-align: center;
+        }
+      }
+    }
+
+    h1 {
+      width: 100%;
+      text-align: left;
+      @include h4();
+    }
+    h2 {
+      width: 100%;
+      text-align: left;
+      @include h5();
+    }
+    hr {
+      border: 0;
+      background: transparent;
+      margin: $large-space 0 0 0;
+    }
+
+    .p {
+      text-align: left;
+    }
+    .e {
+      width: 300px;
+      font-weight: bold;
+    }
+    .h {
+      font-weight: bold;
+    }
+    .v {
+      max-width: 300px;
+      overflow-x: auto;
+      word-wrap: break-word;
+
+      i {
+        color: #999;
+      }
+    }
+    img {
+      float: right;
+      border: 0;
+    }
+  }
+}

@@ -1,0 +1,289 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.NavModulesTamm {
+  @include elevation(16);
+  border-radius: 6px;
+  display: flex;
+  flex-flow: column nowrap;
+  height: auto;
+  overflow: hidden;
+  padding: 0 $space*4 0 $space*4;
+  position: relative;
+  scrollbar-width: none;
+  transition: all 0.18s;
+  width: initial;
+  will-change: max-height;
+
+  &.expand {
+    max-height: 640px;
+    padding-top: 0;
+
+    .NavModulesTamm {
+      &-homeSection {
+        margin: $space*-4 $space*-7 0 $space*-8;
+        padding: $space*4 $space*8 $space*4 $space*5;
+      }
+      &-linksSection {
+        max-height: 0;
+        padding: 0;
+        visibility: hidden;
+      }
+
+      &-modulesSection {
+        height: auto;
+        padding-top: $space*9;
+      }
+
+      &-cta {
+        border-bottom: $border;
+        position: sticky;
+        top: 68px;
+        z-index: 1;
+      }
+
+      &-details {
+        margin-top: $space*-5 - 1;
+      }
+    }
+  }
+
+  &-base {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &-homeSection {
+    @include elevation(16, true);
+    padding-left: $space;
+    padding-top: $space*5;
+    position: relative;
+    transition: all 0.12s;
+    z-index: 1;
+  }
+
+  &-homeButton {
+    border-radius: 4px;
+    color: $secondary;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: $space*3;
+    padding: $space*2 $space*3;
+    user-select: none;
+    width: fit-content;
+
+    &:hover {
+      background-color: $secondary-50;
+      cursor: pointer;
+    }
+  }
+
+  &-homeText {
+    @include subtitle2;
+    color: $secondary !important;
+    display: block;
+  }
+
+  &-linksSection {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space*6;
+    max-height: initial;
+    overflow: hidden;
+    padding: $space*4 0;
+    transition: max-height .18s;
+  }
+
+  &-linksGroup {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $space*2;
+  }
+
+  &-linkTitle,
+  &-title {
+    @include h6;
+    color: $primary-800;
+    font-size: 18px;
+    padding-left: $space*4;
+  }
+
+  &-title {
+    padding-top: $space*5;
+  }
+
+  &-links {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  &-link {
+    @include on-background(medium);
+    @include subtitle2;
+    border-radius: 4px;
+    padding: $space*2 $space*4;
+    user-select: none;
+
+    &:hover {
+      @include primary-opacity($hover);
+      cursor: pointer;
+    }
+  }
+
+  &-divider {
+    border-bottom: $border;
+    box-sizing: border-box;
+    height: 1px;
+    margin: 0 $space*-7;
+    position: initial;
+    z-index: 0;
+  }
+
+  &-cta {
+    @include button;
+    @include elevation(16, true);
+    align-items: center;
+    color: $grey-600;
+    display: flex;
+    flex-shrink: 0;
+    height: 40px;
+    justify-content: center;
+    margin: 0 $space*-7;
+    position: relative;
+    user-select: none;
+
+    &:hover {
+      cursor: pointer;
+
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &::before {
+      background-color: alpha($secondary-50, 0.4);
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 0;
+      z-index: 0;
+    }
+  }
+
+  &-ctaLabel {
+    z-index: 1;
+  }
+
+  &-modulesSection {
+    height: auto;
+    width: 100%;
+  }
+
+  &-searchSection {
+    @include elevation(16, true);
+    padding: $space*2 0;
+    position: sticky;
+    top: 108px;
+    z-index: 0;
+  }
+
+  &-modulesSection {
+    margin: auto;
+  }
+
+  &-modulesList {
+    flex: 1;
+    padding-bottom: $space*4;
+  }
+
+  &-details {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 56px;
+  }
+
+  &-emptyDetail {
+    flex: 1;
+  }
+
+  &-empty {
+    @include body2();
+    @include on-background(medium);
+    background-image: url("~assets/illus_search.png");
+    background-position: center bottom;
+    background-size: 100px;
+    height: 180px;
+    margin-bottom: $space*6;
+    padding: $space*2 $space*4;
+    text-align: center;
+  }
+}
+/** Screen min width 600 px **/
+@include screenLargerThan($screenSmall, "300") {
+  .NavModulesTamm {
+    display: flex;
+    flex-flow: column nowrap;
+    height: auto;
+    overflow: auto;
+    padding: 0 $space*7 0 $space*7;
+    position: relative;
+    transition: all .18s;
+    width: fit-content;
+    will-change: max-height;
+
+    &-homeSection {
+      padding-top: $space*5;
+      position: sticky;
+      top: 0;
+    }
+
+    &-linksSection {
+      flex-flow: row nowrap;
+      max-height: 600px;
+    }
+
+    &-modulesSection {
+      align-items: flex-start;
+      display: flex;
+      flex-flow: row nowrap;
+      gap: $space*2;
+      height: 0;
+      margin: 0 $space*-7 0 $space*-3;
+      width: auto;
+    }
+
+    &-title {
+      @include overline;
+      @include on-background(medium);
+      user-select: none;
+    }
+
+    &-details {
+      flex: 1;
+      height: 532px;
+      position: sticky;
+      top: 108px;
+      right: -28px;
+    }
+
+    &-searchSection {
+      z-index: 1;
+    }
+
+    &-divider {
+      position: sticky;
+      top: 68px;
+      z-index: 2;
+    }
+  }
+}

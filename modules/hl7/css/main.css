@@ -1,0 +1,227 @@
+/**
+ * @package Mediboard\Hl7
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+/*** ER7 ***/
+.er7 {
+  max-height: none;
+  max-width: 100%;
+  padding: 20px 3px;
+}
+
+/* separators */
+.er7 .fs,
+.er7 .rs,
+.er7 .cs,
+.er7 .scs {
+  padding: 0.15em;
+}
+
+.er7 .fs {
+  color: #CC0000;
+}
+
+.er7 .rs {
+  color: #9F0000;
+}
+
+.er7 .cs {
+  color: #009966;
+}
+
+.er7 .scs {
+  color: #006699;
+}
+
+/* entities */
+.er7 .segment {
+  vertical-align: middle;
+  line-height: 1.8;
+}
+
+.er7 .segment:hover {
+  background-color: #fff;
+  border: none !important;
+  margin: 0 !important;
+}
+
+.er7 .segment:after {
+  color: #AAA;
+  font-size: 0.5em;
+  content: "[CR]";
+}
+
+.er7 .entity {
+  position: relative;
+  cursor: default;
+}
+
+.er7 .entity:before {
+  font-family: sans-serif;
+  position: absolute;
+  border: 1px solid;
+  padding: 2px;
+  top: -17px;
+  left: -1px;
+  z-index: 200;
+  line-height: 1.4;
+  font-size: 0.9em;
+  background: #eee;
+  color: #000;
+}
+
+.er7 .entity:hover:before {
+  content: attr(data-title);
+}
+
+.er7 .entity:hover {
+  border: 1px solid gray;
+  margin: -1px;
+}
+
+.er7 .entity.invalid {
+  padding: 2px;
+  border-bottom: 1px dotted red;
+}
+
+.er7 .entity.table-entry {
+  color: #939;
+}
+
+.er7 .group:hover {
+  background-color: rgba(0,0,0,0.1);
+  border: none;
+  margin: 0;
+}
+
+.er7 .group:hover:before {
+  right: -1px;
+  left:  auto;
+}
+
+.er7 .field:hover {
+  background: #ddffee;
+  border: none;
+  margin: 0;
+}
+
+.er7 .field:hover:before {
+  content: none;
+}
+
+.er7 .field-item:empty:after {
+  content: "\00D8";
+  color: #ccc;
+}
+
+.er7 .field-item:hover {
+  border-color: #CC0000;  /** outline bugs in Firefox **/
+  padding: 6px 0;
+}
+
+.er7 .field-item:before {
+  bottom: -17px;
+  top: auto;
+  background-color: #FF9999;
+  border-top: none;
+  border-color: #CC0000;
+}
+
+.er7 .component:hover {
+  border-color: #009966;
+  padding: 4px 0;
+}
+
+.er7 .component:before {
+  background-color: #99FFAA;
+  border-bottom: none;
+  border-color: #009966;
+}
+
+.er7 .sub-component:hover {
+  border-color: #006699;
+  padding: 2px 0;
+}
+
+.er7 .sub-component:before {
+  top: auto;
+  right: -1px;
+  left:  auto;
+  background: #99CCFF;
+  bottom: -17px;
+  border-top: none;
+  border-color: #006699;
+}
+/*** /ER7 ***/
+
+/*** HL7 Tree ***/
+
+ul.hl7-tree,
+.hl7-tree ul {
+  line-height: 1.4;
+  padding-left: 2em;
+  margin-bottom: 6px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.hl7-tree .type,
+.hl7-tree .type-segment{
+  color: #2D9A00;
+}
+
+.hl7-tree .type-group{
+  color: #04054d;
+}
+
+/*
+.hl7-tree .type:before {
+  content: "(";
+}
+
+.hl7-tree .type:after {
+  content: ")";
+}*/
+
+.hl7-tree .table {
+  color: #9A2D00;
+}
+
+.hl7-tree .invalid {
+  color: red !important;
+}
+
+.hl7-tree .field-name {
+  color: #3252A7;
+  margin-right: 5px;
+  display: inline-block;
+  width: 5em;
+  white-space: nowrap;
+}
+
+.hl7-tree .field-description {
+  color: #999;
+}
+
+.hl7-tree .value {
+  background: #eee;
+  padding: 0 2px;
+}
+
+.hl7-tree .field-item {
+  border: 1px dotted #ccc;
+  margin: 1px;
+}
+
+.hl7-tree .field-item > ol {
+  padding-left: 2px;
+  margin-bottom: 0;
+}
+
+.hl7-tree .field-empty {
+  opacity: 0.5;
+}
+/*** /HL7 Tree ***/

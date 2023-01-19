@@ -1,0 +1,75 @@
+/**
+ * @package Mediboard\Ressources
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+table#weeklyPlanning {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  font-size: 0.9em;
+  line-height: 115%;
+}
+
+table#weeklyPlanning td {
+  text-align: center;
+  vertical-align: middle;
+  white-space: normal;
+  border-left: 1px solid #ccc;
+  padding: 1px;
+}
+
+table#weeklyPlanning th {
+  padding: 4px;
+}
+
+table#weeklyPlanning th[scope="row"] {
+  border-top: 1px solid #ccc;
+  vertical-align: middle;
+}
+
+table#weeklyPlanning th[scope="col"] {
+  border-left: 1px solid #ccc;
+}
+
+table#weeklyPlanning td.selectedPlage {
+  background: #ddd;
+  outline: 2px solid #444;
+}
+
+table#weeklyPlanning td.nonEmpty {
+  background: #ccc;
+  border: 1px solid #999 !important;
+}
+
+table#weeklyPlanning td.empty {
+  background: #eee;
+}
+
+table#weeklyPlanning td.hour_start {
+  border-top: 1px solid #ccc;
+}
+
+table#weeklyPlanning th.today {
+  background-color: #ffd;
+}
+
+/*
+ *
+#weeklyPlanning .toolbar {
+  position: absolute;
+  top: -24px;
+  right: 0;
+  background: #ddd;
+  display: none;
+  border: 1px solid #AAA;
+  border-radius: 3px;
+}
+
+#weeklyPlanning td:hover .toolbar {
+  display: block;
+}
+ */

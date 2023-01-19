@@ -1,0 +1,46 @@
+/**
+ * @package Mediboard\Style\Mediboard
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+/** Postit **/
+div.postit {
+  border-radius: 6px;
+  background: #FEFF7F;
+  padding: 4px;
+}
+
+/** Note **/
+table.note {
+  background: transparent;
+  border-spacing: 0;
+  padding: 0;
+  color: #000;
+  font-size: 0.9em;
+  font-weight: normal;
+  min-width: 15em;
+  max-width: 40em;
+}
+
+table.note th,
+table.note td {
+  background: transparent;
+  text-align: left;
+}
+
+table.note th {
+  font-weight: bold;
+}
+
+table.note th.high {
+  background-color: #faa;
+}
+
+table.note th.medium {
+  background-color: #fc0;
+}
+table.note th.low {
+  background-color: #afa;
+}

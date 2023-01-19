@@ -1,0 +1,79 @@
+/**
+ * @package Mediboard\Reservation
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.planning .pause {
+  z-index:11;
+}
+
+.planning .event:hover {
+  box-shadow: none;
+  opacity: 1;
+  overflow: visible;
+}
+
+.planning .event:hover .body {
+  background-color: white;
+  color: black;
+}
+
+.draggable {
+  opacity:1!important;
+}
+
+.operation_horsplage:hover {
+  width: 90% !important;
+  z-index: 130 !important;
+}
+
+/* PLAGES d'operation */
+.planning .operation_horsplage,.planning .operation_enplage, .planning .post-op, .planning .pre-op {
+  z-index:20;
+}
+
+/* HORS PLAGE */
+.planning .operation_horsplage:hover .body {
+  border-left:solid 1px #888;
+  box-shadow: 0 1px 4px black;
+  z-index:130;
+}
+
+.planning .event:hover .pause_before, .planning .event:hover .pause_after {
+  display:none!important;
+}
+
+.planning .operation_horsplage, .planning .operation_horsplage:hover {
+  border-right:dotted 3px red;
+}
+
+/* EN PLAGE */
+.planning .operation_enplage, .planning .operation_enplage:hover {
+  border-right:dotted 3px #1dff00;
+}
+
+.planning .operation_enplage:hover .body {
+  box-shadow: 0 1px 4px green;
+}
+
+#planning_interv .planning tr:hover {
+  border:solid 3px black!important;
+}
+
+.plage_planning {
+  z-index: 2;
+}
+
+.planning .minutes {
+  position:relative;
+  float:left;
+  width:100%;
+  padding:0!important;
+  margin:0!important;
+}
+
+.planning .event.invert_color {
+  color:white;
+}

@@ -1,0 +1,98 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+/**
+  Datepicker
+*/
+div.datepickerControl {
+  @include shadow16();
+  background-color: $elevation-8;
+
+  table {
+    background-color: $elevation-8;
+    tr {
+      &.dayLabel {
+        td {
+          background-color: $elevation-8;
+        }
+      }
+
+      &.calendarRow {
+        td {
+          background-color: $elevation-8;
+
+          &.day {
+            &:hover {
+              border: 1px solid $elevation-8;
+            }
+
+            &.current {
+              &.today {
+                &::before {
+                  border: 2px solid $elevation-8;
+                }
+              }
+            }
+          }
+
+          &.active {
+            border-bottom: $elevation-8 1px solid;
+          }
+
+          &.hour,
+          &.minute {
+            &:hover {
+              border: 1px solid $elevation-8;
+            }
+          }
+        }
+      }
+
+      td {
+        &.otherminute {
+          i {
+            @include black-emphasis($opacity-medium-emphasis-black);
+          }
+
+          input.current {
+            background-color: #494141;
+          }
+        }
+
+        &[colspan="6"] {
+          hr {
+            background-color: $elevation-24 !important;
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    > img {
+      background: alpha($elevation-8, 40%);
+    }
+
+    & + div {
+      table {
+        tr {
+          &.calendarRow {
+            td {
+              &.day {
+                &[rowspan="5"] {
+                  &:hover {
+                    color: $elevation-8;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

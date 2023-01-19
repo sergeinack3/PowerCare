@@ -1,0 +1,19 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@mixin fullPage {
+  height: calc(100vh - 56px);
+  margin-top: -4px !important;
+  overflow: auto;
+  width: 100%;
+}
+
+@mixin fullParamPage {
+  height: calc(100vh - 81px);
+  margin-top: -4px !important;
+  overflow: auto;
+  width: 100%;
+}

@@ -1,0 +1,181 @@
+sample_movies_list:
+  path: /api/sample/movies
+  controller: Ox\Mediboard\Sample\Controllers\SampleMoviesController::listMovies
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: |
+      List the movies.
+      Available relations are 'director', 'category', 'casting', 'actors' and 'cover'.
+      The link to the cover of the movie is always present in the item links.
+      Using the parameter nationality_id will return the movies with a director of the selected nationality.
+      Using the parameter search will make a global search on multiple fields of the movies.
+      Using the parameter top_bookmarked will return the movies the most bookmarked.
+    parameters:
+      nationality_id: '\d+'
+      search: '\w+'
+      top_bookmarked: '\d+'
+    accept:
+      - application/json
+    responses:
+      200: The response's body contains the list of movies in json_api format.
+      default: 403 or 500 on error.
+
+sample_movies_show:
+  path: /api/sample/movies/{sample_movie_id}
+  controller: Ox\Mediboard\Sample\Controllers\SampleMoviesController::getMovie
+  methods: GET
+  requirements:
+    sample_movie_id: '\d+'
+  defaults:
+    permission: read
+  options:
+    description: |
+      Get a movie identified by sample_movie_id.
+      Available relations are 'director', 'category', 'casting', 'actors' and 'cover'.
+      The link to the cover of the movie is always present in the item links.
+    accept:
+      - application/json
+    responses:
+      200: The response's body contains the movie identified by {sample_movie_id} in json_api format.
+      default: 403, 404 or 500 on error.
+
+sample_movies_create:
+  path: /api/sample/movies
+  controller: Ox\Mediboard\Sample\Controllers\SampleMoviesController::createMovie
+  methods: POST
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Create a list of movies.
+      Available fields are name (*), release (*), duration (*), description, csa, languages.
+      Available relations are category (sample_cateogry) and director (sample_person).
+      The link to the cover of the movie is always present in the item links.
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+    responses:
+      201: |
+        All the movies have been created.
+        The response's body contains the list of created movies in json_api format.
+      default: 403 or 500 on error.
+
+sample_movies_import:
+  path: /api/sample/movies/import
+  controller: Ox\Mediboard\Sample\Controllers\SampleMoviesController::importMovies
+  methods: POST
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Use theMovieDB API to create approximatly 100 movies with their actors.
+    accept:
+      - application/json
+
+sample_movies_update:
+  path: /api/sample/movies/{sample_movie_id}
+  controller: Ox\Mediboard\Sample\Controllers\SampleMoviesController::updateMovie
+  methods: PATCH
+  requirements:
+    sample_movie_id: '\d+'
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Update a movie identified by sample_movie_id.
+      Updatable fields are name (*), release (*), duration (*), description, languages.
+      Updatable relations are category (sample_category) and director (sample_person).
+      The link to the cover of the movie is always present in the item links.
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+    responses:
+      200: |
+        The movie identified by {sample_movie_id} have been updated.
+        The response's body contains the updated movie in json_api format.
+      default: 403, 404 or 500 on error.
+
+sample_movies_delete:
+  path: /api/sample/movies/{sample_movie_id}
+  controller: Ox\Mediboard\Sample\Controllers\SampleMoviesController::deleteMovie
+  methods: DELETE
+  requirements:
+    sample_movie_id: '\d+'
+  defaults:
+    permission: edit
+  options:
+    description: Delete a movie identified by sample_movie_id.
+    accept:
+      - application/json
+    responses:
+      204: The movie have been deleted.
+      default: 403, 404 or 500 on error.
+
+sample_casting_list:
+  path: /api/sample/movies/{sample_movie_id}/casting
+  controller: Ox\Mediboard\Sample\Controllers\SampleMoviesController::listCasting
+  methods: GET
+  requirements:
+    sample_movie_id: '\d+'
+  defaults:
+    permission: read
+  options:
+    description: |
+      List the casting for a movie.
+      Available relation is 'actor'.
+      If this relation is used, the actors are returned with the link to their profile pictures.
+    accept:
+      - application/json
+    responses:
+      200: The response's body contains the list of casting for the movie in json_api format.
+      default: 403 or 500 on error.
+
+sample_casting_set:
+  path: /api/sample/movies/{sample_movie_id}/casting
+  controller: Ox\Mediboard\Sample\Controllers\SampleMoviesController::setCasting
+  methods: POST
+  requirements:
+    sample_movie_id: '\d+'
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Add persons to a movie.
+      Available field is is_main_actor.
+      The relation actor must be set with the a sample_person (the actor).
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+    responses:
+      201: |
+        All the actors have been added to the movie.
+        The response's body contains the list of casting created in json_api format.
+      default: 403, 404 or 500 on error.
+
+sample_casting_delete:
+  path: /api/sample/movies/{sample_movie_id}/casting/{sample_person_id}
+  controller: Ox\Mediboard\Sample\Controllers\SampleMoviesController::deleteCasting
+  methods: DELETE
+  requirements:
+    sample_movie_id: '\d+'
+    sample_person_id: '\d+'
+  defaults:
+    permission: edit
+  options:
+    description: Remove an actor from a movie
+    accept:
+      - application/json
+    responses:
+      204: The actor have been removed from the movie.
+      default: 403, 404 or 500 on error.

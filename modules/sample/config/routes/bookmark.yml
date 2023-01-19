@@ -1,0 +1,60 @@
+sample_bookmarks_list:
+  path: /api/sample/bookmarks
+  controller: Ox\Mediboard\Sample\Controllers\SampleBookmarksController::list
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: |
+      List the bookmarks for the current user.
+      Available relations are user (get the user of the bookmark) and movie (get the movie of the bookmark).
+    accept:
+      - application/json
+    responses:
+      200: The response's body contains the list of bookmarks in json_api format.
+      default: 403 or 500 on error.
+
+sample_bookmarks_add:
+  path: /api/sample/bookmarks
+  controller: Ox\Mediboard\Sample\Controllers\SampleBookmarksController::add
+  methods: POST
+  defaults:
+    permission: edit
+  options:
+    description: |
+      Create bookmarks for the current user.
+      No attributes are available. The relationship movie must be present for each bookmark.
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - application/json
+    responses:
+      201: All the bookmarks have been created. The response's body contains the list of created bookmarks.
+      default: 403 or 500 on error.
+
+sample_bookmarks_delete:
+  path: /api/sample/bookmarks/{sample_bookmark_id}
+  controller: Ox\Mediboard\Sample\Controllers\SampleBookmarksController::delete
+  methods: DELETE
+  defaults:
+    permission: edit
+  requirements:
+    sample_bookmark_id: '\d+'
+  options:
+    description: |
+      Delete the bookmark identified by sample_bookmark_id.
+    accept:
+      - application/json
+    responses:
+      204: The body is empty.
+      default: 403 or 500 on error.
+
+#sample_movies_top:
+#  path: /api/sample/movies
+#  controller: Ox\Mediboard\Sample\Controllers\SampleBookmarksController::topBookmarks
+#  methods: GET
+#  defaults:
+#    permission: edit
+#  condition: "request.query.get('top_bookmarked')"

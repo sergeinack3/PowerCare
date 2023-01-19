@@ -1,0 +1,27 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.DocPastille {
+  align-items: center;
+  border: 2px solid;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  height: 24px;
+  overflow: hidden;
+  white-space: nowrap;
+
+  &-label {
+    @include caption;
+    padding: 0 $space;
+  }
+
+  &-number {
+    @include subtitle2;
+  }
+}

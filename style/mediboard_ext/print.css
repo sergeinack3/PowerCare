@@ -1,0 +1,47 @@
+/**
+ * @package Mediboard\Style\Mediboard
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+@media print {
+  body {
+    background: transparent;
+  }
+  
+  .not-printable, 
+  #user, #menubar, .titleblock, .tabmenu,
+  #systemMsg, #performance, .smarty-include, #waitingMsgMask, #waitingMsgText,
+  #profiling-toolbar, #profiler-overview {
+    display: none !important;
+  }
+  
+  div.warning,
+  div.error,
+  div.message {
+    display: none;
+  }
+  
+  table#weber table#allvalues,
+  table#weber td.radiointeractive {
+    display: none;
+  }
+  
+  h1.newpage {
+    page-break-before:always;
+    display:none;
+  }
+  
+  table.tbl > * > tr > td {
+    border-width: 1pt;
+  }
+  
+  .planning .event  {    
+    font-size: 110%;
+  }
+  
+  table.tabview td.tabox {
+    background: transparent;
+  }
+}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>ZFS</name>
+    <description>Mode legal de soins en psychiatrie</description>
+    <elements>
+        <field minOccurs="1" maxOccurs="1" length="4">
+            <name>ZFS.1</name>
+            <description>Set ID - ZFS</description>
+            <datatype>SI</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="1" length="427">
+            <name>ZFS.2</name>
+            <description>Identifiant du mode legal de soin</description>
+            <datatype>EI</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="1" length="26">
+            <name>ZFS.3</name>
+            <description>Date et Heure du début du mode legal de soin</description>
+            <datatype>TS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="26">
+            <name>ZFS.4</name>
+            <description>Date et Heure de la fin du mode legal de soin</description>
+            <datatype>TS</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="1" length="6">
+            <name>ZFS.5</name>
+            <description>Action du mode legal de soin</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="1" length="250">
+            <name>ZFS.6</name>
+            <description>Mode legal de soins</description>
+            <datatype>CWE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="2">
+            <name>ZFS.7</name>
+            <description>Code RIM-P du mode legal de soin</description>
+            <datatype>CWE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="1" length="65536">
+            <name>ZFS.8</name>
+            <description>Commentaire</description>
+            <datatype>FT</datatype>
+        </field>
+    </elements>
+</segment>

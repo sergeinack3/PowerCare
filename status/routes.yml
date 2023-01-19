@@ -1,0 +1,54 @@
+status_home:
+  path: /status/
+  controller: Ox\Status\Controllers\StatusController::home
+  methods: GET
+
+status_requirements:
+  path: /status/requirements
+  controller: Ox\Status\Controllers\StatusController::requirements
+  methods: GET
+
+status_libraries:
+  path: /status/libraries
+  controller: Ox\Status\Controllers\StatusController::libraries
+  methods: GET
+
+status_packages:
+  path: /status/packages
+  controller: Ox\Status\Controllers\StatusController::packages
+  methods: GET
+
+status_configs:
+  path: /status/configs
+  controller: Ox\Status\Controllers\StatusController::configs
+  methods: GET
+
+status_infos:
+  path: /status/infos
+  controller: Ox\Status\Controllers\StatusController::infos
+  methods: GET
+
+status_logs:
+  path: /status/logs
+  controller: Ox\Status\Controllers\StatusController::logs
+  methods: GET
+
+status_errors:
+  path: /status/errors
+  controller: Ox\Status\Controllers\StatusController::errors
+  methods: GET
+
+status_errors_buffer:
+  path: /status/errors/bufferStatistics
+  controller: Ox\Status\Controllers\StatusController::bufferStatistics
+  methods: GET
+
+status_authentication_check:
+  path: /status/authentication
+  controller: Ox\Status\Controllers\StatusController::authenticationCheck
+  methods: GET
+
+status_dependances_check:
+  path: /status/dependances
+  controller: Ox\Status\Controllers\StatusController::dependancesCheck
+  methods: GET

@@ -1,0 +1,62 @@
+/*
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.SampleCastingCard {
+  position: relative;
+
+  &:hover {
+    .SampleCastingCard-mainActor {
+      transform: scale(1);
+    }
+  }
+
+  &.isMain {
+    .SampleCastingCard-mainActor {
+      color: $secondary;
+      transform: scale(1);
+    }
+  }
+
+  &-mainActor {
+    color: $grey-400;
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px currentColor);
+    position: absolute;
+    right: $space*2;
+    top: 0;
+    transform: scale(0);
+    transition: transform 0.2s ease-in, color 0.15s linear;
+
+    &:hover {
+      color: $secondary-200;
+    }
+  }
+
+  &-removeActor {
+    @include on-primary(medium);
+    align-items: center;
+    background-color: var(--color-on-background-medium);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    height: 64px;
+    justify-content: center;
+    left: 50%;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: $space*2;
+    transform: translateX(-50%);
+    transition: opacity 0.15s ease-in;
+    width: 64px;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

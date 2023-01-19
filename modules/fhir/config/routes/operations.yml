@@ -1,0 +1,11 @@
+fhir_ihe_pix:
+  path: api/fhir/{resource}/$ihe-pix
+  controller: Ox\Interop\Fhir\Controllers\CFHIROperationsController::ihepix
+  defaults:
+    object_class: Ox\Interop\Fhir\Operations\CFHIROperationIhePix
+    permission: none
+  requirements:
+    resource:  Patient
+  methods:    GET
+  options:
+    openapi: false

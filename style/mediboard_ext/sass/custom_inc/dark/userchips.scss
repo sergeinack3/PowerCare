@@ -1,0 +1,27 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+/**
+  User Chips
+ */
+.me-user-chips {
+  > div {
+    > .me-user-chips-icon {
+      > .me-user-chips-black {
+        background-color: rgba(255, 255, 255, .25);
+      }
+    }
+  }
+
+  &.me-function {
+    > div {
+      > .me-user-chips-icon {
+        background-color: alpha(#FFFFFF, 30%);
+      }
+    }
+  }
+}

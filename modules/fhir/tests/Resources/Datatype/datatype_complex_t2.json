@@ -1,0 +1,14 @@
+{
+  "system": "system",
+  "_system": {
+    "id": "id",
+    "extension": [
+      {
+        "url": "extension url",
+        "valueString": "value"
+      }
+    ]
+  },
+  "code": "code",
+  "display": "display"
+}

@@ -1,0 +1,21 @@
+#dropdown-context {
+  background-color: #FFFFFF!important;
+  border: 0;
+}
+
+button.ic-integration::before {
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Brands"!important;
+}
+
+.Authentication {
+  margin: 4px 0 8px 0;
+}
+
+.Authentication-Title {
+  font-size: 1.4em;
+  margin: 5px 20px;
+}
+
+.Authentication-Choices {
+  margin: 5px 20px;
+}

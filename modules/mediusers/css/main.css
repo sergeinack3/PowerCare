@@ -1,0 +1,43 @@
+/**
+ * @package Mediboard\Mediusers
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+.mediuser {
+  border-left: 4px solid transparent;
+  padding-left: 4px;
+  margin-left: 0;
+}
+
+button.text-button {
+  font-weight: bold;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+
+button.mediuser-flat-button,
+button.mediuser-flat-button:hover {
+  background-image: inherit;
+  cursor: default;
+  background-color: #eee;
+  border-color: #999;
+}
+button.mediuser-flat-button-g {
+  color: #111 !important;
+}
+button.mediuser-flat-button-pf {
+  color: #282 !important;
+}
+button.mediuser-button-sf {
+  color: #44F !important;
+}
+button.mediuser-flat-button-wp{
+  color: #D66 !important;
+}
+
+table.tbl>tbody>tr.mediuser_group_line>td {
+  border-top: 2px solid #d0d0d0
+}

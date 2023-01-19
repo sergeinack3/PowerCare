@@ -1,0 +1,28 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+$aside-width: 450px;
+$small-aside-width: 290px;
+
+@mixin layoutPane() {
+  background-color: $background-default;
+  height: 100%;
+  width: 100%;
+}
+
+@mixin layoutContent() {
+  box-sizing: border-box;
+}
+
+@mixin layoutPart() {
+}
+
+@mixin layoutAside() {
+  background-color: $background-default-light;
+}

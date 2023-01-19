@@ -1,0 +1,69 @@
+/**
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+@import "../../INUtils";
+
+.Menu {
+  $title-margin: 12px;
+  $title-size: 48px;
+
+  overflow: hidden;
+  height: 100%;
+  box-shadow: inset 0 -3px 10px -5px #000000;
+  @include flex-center();
+  background: linear-gradient(to right, #072C6C, #1588BA);
+  position: relative;
+
+  &-title,
+  &-disconnect {
+    @include flex-center();
+    position: absolute;
+    z-index: 1;
+    top: $title-margin;
+    @include font-roboto();
+    letter-spacing: 1px;
+    font-size: 20px;
+  }
+  &-title {
+    height: $title-size;
+    border-radius: 24px;
+    left: $title-margin;
+    padding: 0 8px 0 4px;
+    color: $white;
+    cursor: pointer;
+
+    &Label{
+      width: 250px;
+      opacity: 1;
+      overflow: hidden;
+      white-space: nowrap;
+      transition: opacity .2s, width .2s;
+
+      &Compact {
+        width: 0;
+        opacity: 0;
+      }
+    }
+    &Icon {
+      margin-right: 8px;
+    }
+  }
+
+  &-content {
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: #{($title-size + $title-margin) / 2};
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &-disconnect {
+    right: 16px;
+    top: 16px;
+  }
+}

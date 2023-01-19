@@ -1,0 +1,119 @@
+/**
+ * @package Mediboard\Developpement
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+div.sniffer {
+  float: right;
+  margin-top: -4px;
+  margin-right: -4px;
+}
+
+div.sniffed {
+  float: left;
+  border: 1px solid #888;
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  margin-left: -20px;
+}
+
+div.sniff-bar {
+  float: left;
+  width: 100px;
+  height: 10px;
+  border: 1px solid #888;
+  margin: 1px 10px 1px 0;
+}
+
+div.sniff-bar div {
+  background: #f88;
+  height: 10px;
+  font-size: 9px;
+}
+
+div.sniffed.none {
+  background: #eee;
+}
+
+div.sniffed.obsolete {
+  background: #fda;
+}
+
+div.sniffed.uptodate {
+  background: #bfb;
+}
+
+div.regression {
+  float: right;
+  margin-top: -4px;
+  margin-right: -4px;
+}
+
+div.tree-content {
+  margin: 0;
+  padding-left: 25px;
+}
+
+div.tree-trigger {
+  overflow: hidden;
+  width: 0;
+  float: left;
+  padding-left: 20px;
+}
+
+div.tree-header {
+  border: 1px solid #777;
+  margin-top: -1px;
+  padding-top: 4px;
+  font-weight: normal;
+}
+
+/*
+  Graph data model
+
+  Si on met 100% à la hauteur de la div alors elle passe à 150px
+ */
+div#graph_draw {
+  width: 100%;
+  height: 600px;
+  border: 1px solid lightgray;
+  background-color: #ffffff;
+}
+
+span.prop_enum {
+  color: #0000ff;
+}
+span.prop_list {
+  color: #0066ff;
+}
+span.prop_notNull {
+  color: #ff0000;
+}
+span.prop_index {
+  color: #aa0000;
+}
+span.prop_confidential {
+  color: #ff5500;
+}
+span.prop_ref {
+  color: #660066;
+}
+span.prop_class {
+  color: #6600bb;
+}
+span.prop_default {
+  color: #777700;
+}
+span.prop_length {
+  color: #007700;
+}
+
+div.thumbnail_test {
+  float: left;
+  margin: 0;
+  display: inline-block;
+  box-sizing: border-box;
+}

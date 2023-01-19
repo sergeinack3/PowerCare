@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>ARV</name>
+    <description>Access Restriction</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0">
+            <name>ARV.1</name>
+            <description>Set ID</description>
+            <datatype>SI</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="0">
+            <name>ARV.2</name>
+            <description>Access Restriction Action Code</description>
+            <datatype>CNE</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="0">
+            <name>ARV.3</name>
+            <description>Access Restriction Value</description>
+            <datatype>CWE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded">
+            <name>ARV.4</name>
+            <description>Access Restriction Reason</description>
+            <datatype>CWE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="unbounded">
+            <name>ARV.5</name>
+            <description>Special Access Restriction Instructions</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>ARV.6</name>
+            <description>Access Restriction Date Range</description>
+            <datatype>DR</datatype>
+        </field>
+    </elements>
+</segment>

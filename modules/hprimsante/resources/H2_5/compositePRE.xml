@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>PRE</name>
+    <description>Individual identifier and service identifier</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0">
+            <name>PRE.1</name>
+            <description>Code Identifier</description>
+            <datatype>ID</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>PRE.2</name>
+            <description>Identifier service</description>
+            <datatype>CNA</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>PRE.3</name>
+            <description>Type of Code identifier</description>
+            <datatype>ST</datatype>
+            <!--
+                L : Local
+                A : ADELI
+                R : RPPS
+            -->
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>PRE.4</name>
+            <description>Address</description>
+            <datatype>AD</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>PRE.5</name>
+            <description>Service Code or UF</description>
+            <datatype>CE</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>PRE.6</name>
+            <description>Service Libelle or UF</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0">
+            <name>PRE.7</name>
+            <description>Type Code</description>
+            <datatype>ST</datatype>
+            <!--
+                L : Local
+            -->
+        </field>
+    </elements>
+</segment>

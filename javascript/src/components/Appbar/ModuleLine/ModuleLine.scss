@@ -1,0 +1,91 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.ModuleLine {
+  align-items: stretch;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  flex-flow: row nowrap;
+  flex-shrink: 0;
+  height: 50px;
+  justify-content: flex-start;
+  overflow: auto;
+  user-select: none;
+  width: 100%;
+
+  &:hover,
+  &.focused {
+    @include primary-opacity($hover);
+    cursor: pointer;
+
+    .ModuleLine-action {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &.active {
+    @include primary-opacity($active);
+  }
+
+  &-content {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-flow: row nowrap;
+    flex-shrink: 0;
+    justify-content: flex-start;
+    padding-left: $space*2;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-icon {
+    height: 34px;
+    width: 34px;
+  }
+
+  &-name {
+    @include subtitle1;
+    @include on-background(high);
+    flex: 1;
+    margin-left: $space*2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &-action {
+    color: $grey-600;
+    display: none;
+    flex: 0;
+    padding: 0 $space*4;
+
+    &:hover {
+      background-color: $background-light;
+    }
+  }
+}
+
+@include screenSmallerThan($screenSmall, "300") {
+  .ModuleLine {
+    &:hover {
+      @include primary-opacity($hover);
+    }
+
+    .ModuleLine-action {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

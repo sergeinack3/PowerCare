@@ -1,0 +1,15 @@
+/*
+  @package Openxtrem\Core
+  @author  SAS OpenXtrem <dev@openxtrem.com>
+  @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+  @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+*/
+
+@import "~oxify/src/styles/utils";
+
+.OxSwitch {
+  &-switch.v-input--switch {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+  <name>ERR</name>
+  <description>Error</description>
+  <elements>
+   <field minOccurs="1" maxOccurs="0" length="10">
+     <name>ERR.1</name>
+     <description>Segment Row</description>
+     <datatype>NM</datatype>
+   </field>
+   <field minOccurs="1" maxOccurs="0" length="50">
+     <name>ERR.2</name>
+     <description>Filename</description>
+     <datatype>ST</datatype>
+   </field>
+   <field minOccurs="0" maxOccurs="0" length="26">
+     <name>ERR.3</name>
+     <description>Date / Time of receipt</description>
+     <datatype>TS</datatype>
+   </field>
+   <field minOccurs="1" maxOccurs="0" length="2">
+     <name>ERR.4</name>
+     <description>Severity</description>
+     <datatype>CE</datatype>
+   </field>
+   <field minOccurs="0" maxOccurs="0" length="6">
+     <name>ERR.5</name>
+     <description>Line number</description>
+     <datatype>NM</datatype>
+   </field>
+   <field minOccurs="0" maxOccurs="0" length="255">
+     <name>ERR.6</name>
+     <description>Error Location</description>
+     <datatype>ERL</datatype>
+   </field>
+   <field minOccurs="0" maxOccurs="0" length="20">
+     <name>ERR.7</name>
+     <description>Field Position</description>
+     <datatype>ST</datatype>
+   </field>
+   <field minOccurs="0" maxOccurs="0" length="255">
+     <name>ERR.8</name>
+     <description>Error value</description>
+     <datatype>TX</datatype>
+   </field>
+   <field minOccurs="0" maxOccurs="0" length="2">
+     <name>ERR.9</name>
+     <description>Error type</description>
+     <datatype>CE</datatype>
+   </field>
+   <field minOccurs="0" maxOccurs="0" length="255">
+     <name>ERR.10</name>
+     <description>Original Text</description>
+     <datatype>TX</datatype>
+   </field>
+  </elements>
+</segment>

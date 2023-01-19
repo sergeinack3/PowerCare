@@ -1,0 +1,139 @@
+dossierpatient_patients:
+  path: /api/dossierpatient/patients
+  controller: Ox\Mediboard\Patients\Controllers\CPatientsController::listPatients
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a list of patients
+    parameters:
+      nom: '\w+'
+      prenom: '\w+'
+      sexe: '\w+'
+      naissance: '\w+'
+      INS: '\w+'
+      OID: '\w+'
+      paysnaissanceinsee: '\w+'
+      communenaissanceinsee: '\w+'
+      cpnaissance: '\w+'
+      communenaissance: '\w+'
+      paysnaissance: '\w+'
+      offset: '\d+'
+      limit: '\d+'
+      filter: '\w+'
+      proche: 0|1
+    accept:
+      - application/json
+
+dossierpatient_patient:
+  path: /api/dossierpatient/patients/{patient_id}
+  controller: Ox\Mediboard\Patients\Controllers\CPatientsController::showPatient
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    patient_id: '\d+'
+  options:
+    description: Return a patient
+    accept:
+      - application/json
+
+dossierpatient_patientbyid400sih:
+  path: /api/dossierpatient/patientbyid400sih
+  controller: Ox\Mediboard\Patients\Controllers\CPatientsController::showPatientById400SIH
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    patient_id: '\d+'
+    cabinet_id: '\d+'
+  options:
+    description: Return a patient by an specific id400
+    accept:
+      - application/json
+
+dossierpatient_patientadd:
+  path: /api/dossierpatient/patients
+  controller: Ox\Mediboard\Patients\Controllers\CPatientsController::addPatient
+  methods: POST
+  defaults:
+    permission: read
+  options:
+    description: Add a patient
+    parameters:
+      nom: '\w+'
+      prenom: '\w+'
+      sexe: '\w+'
+      naissance: '\w+'
+      prenoms: '\w+'
+      nom_jeune_fille: '\w+'
+      deces: '\w+'
+      civilite: '\w+'
+      rang_naissance: '\w+'
+      cp_naissance: '\w+'
+      lieu_naissance: '\w+'
+      pays_naissance: '\w+'
+      pays_naissance_insee: '\w+'
+      commune_naissance_insee: '\w+'
+      vip: '\w+'
+      adresse: '\w+'
+      ville: '\w+'
+      cp: '\w+'
+      pays: '\w+'
+      phone_area_code: '\w+'
+      tel: '\w+'
+      tel2: '\w+'
+      allow_sms_notification: '\w+'
+      tel_pro: '\w+'
+      tel_autre: '\w+'
+      tel_autre_mobile: '\w+'
+      email: '\w+'
+      allow_email: '\w+'
+      situation_famille: '\w+'
+      mdv_familiale: '\w+'
+      condition_hebergement: '\w+'
+      niveau_etudes: '\w+'
+      activite_pro: '\w+'
+      profession: '\w+'
+      csp: '\w+'
+      fatigue_travail: '\w+'
+      travail_hebdo: '\w+'
+      transport_jour: '\w+'
+      matricule: '\w+'
+      qual_beneficiaire: '\w+'
+      tutelle: '\w+'
+      don_organes: '\w+'
+      directives_anticipees: '\w+'
+      rques: '\w+'
+      fictif: '\w+'
+      douteux: '\w+'
+    accept:
+      - application/json
+
+dossierpatient_patientmodify:
+  path: /api/dossierpatient/patients/{patient_id}
+  controller: Ox\Mediboard\Patients\Controllers\CPatientsController::modifyPatient
+  methods: PUT
+  defaults:
+    permission: read
+  requirements:
+    patient_id: '\d+'
+  options:
+    description: Modify a patient
+    parameters:
+      name: '\w+'
+      firstname: '\w+'
+      birth: '\w+'
+    accept:
+      - application/json
+
+dossierpatient_patientdelete:
+  path: /api/dossierpatient/patients/{patient_id}
+  controller: Ox\Mediboard\Patients\Controllers\CPatientsController::deletePatient
+  methods: DELETE
+  defaults:
+    permission: read
+  requirements:
+    patient_id: '\d+'
+  options:
+    description: Delete a patient

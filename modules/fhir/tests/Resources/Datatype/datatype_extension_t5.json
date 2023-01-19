@@ -1,0 +1,13 @@
+{
+  "url": "extension url",
+  "valueString": "value",
+  "_valueString": {
+    "id": "id",
+    "extension": [
+      {
+        "url": "extension url",
+        "valueString": "value"
+      }
+    ]
+  }
+}

@@ -1,0 +1,125 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+strong,
+li {
+  @include black-emphasis($opacity-high-emphasis-black);
+}
+
+#control_overlay {
+  opacity: 0.7 !important;
+}
+
+.me-bg-elevation-2 {
+  background-color: $elevation-2 !important;
+}
+.me-bg-elevation-3 {
+  background-color: $elevation-3 !important;
+}
+.me-bg-elevation-6 {
+  background-color: $elevation-6 !important;
+}
+.me-bg-elevation-16 {
+  background-color: $elevation-16 !important;
+}
+.me-add-elevation {
+  @include add-elevation(1, true);
+}
+.me-add-elevation-2 {
+  @include add-elevation(2, true);
+}
+
+/**
+  Draggable elements
+ */
+
+.draggable {
+  &:hover {
+    @include realShadow4();
+  }
+}
+
+// Treeview
+.treeview .hitarea {
+  background: url(images/pictures/treeview-default-dark.gif) -64px -25px no-repeat;
+}
+.treeview li.lastCollapsable, .treeview li.lastExpandable {
+  background-image: url(images/pictures/treeview-default-dark.gif);
+}
+
+/******************************************
+          CLASSES UTILITAIRES
+******************************************/
+body {
+  .me-no-box-shadow:not(&-only-white) {
+    background-color: transparent !important;
+  }
+
+  .me-box-shadow-table {
+    @include add-elevation();
+  }
+
+
+  /**
+    Gestion des couleurs
+   */
+  .me-color-black-high-emphasis:not(.me-no-convert-dark) {
+    &,
+    label {
+      color: rgba(255, 255, 255, $opacity-high-emphasis-black) !important;
+    }
+  }
+  .me-color-black-medium-emphasis:not(.me-no-convert-dark) {
+    &,
+    label {
+      color: rgba(255, 255, 255, $opacity-medium-emphasis-black) !important;
+    }
+  }
+  .me-color-white-high-emphasis:not(.me-no-convert-dark) {
+    &,
+    label {
+      color: rgba(0, 0, 0, $opacity-high-emphasis-white) !important;
+    }
+  }
+  .me-color-white-medium-emphasis:not(.me-no-convert-dark) {
+    &,
+    label {
+      color: rgba(0, 0, 0, $opacity-medium-emphasis-white) !important;
+    }
+  }
+
+
+  /**
+    Gestion du background
+  */
+  .me-bg-white {
+    background: transparent !important;
+  }
+
+
+  th.me-label {
+    color: rgba(255, 255, 255, $opacity-medium-emphasis-black) !important;
+  }
+}
+/*************************************
+       FIN CLASSES UTILITAIRES
+************************************/
+
+
+// legend
+div.legend {
+  > div[style*="rgb(255, 255, 255)"] {
+    @include add-elevation(2, true);
+  }
+}

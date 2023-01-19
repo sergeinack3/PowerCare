@@ -1,0 +1,40 @@
+@import '~oxify/src/styles/utils';
+
+.OxNotify {
+  align-items: flex-start;
+  bottom: $space*4;
+  display: flex;
+  flex-direction: column;
+  left: $space*4;
+  position: fixed;
+  z-index: 1001;
+
+  &-libelle {
+    min-width: 150px;
+  }
+
+  &-line {
+    @include body2;
+    @include on-primary($medium);
+    border-radius: 4px;
+    margin-bottom: $space * 4;
+    padding: $space * 2;
+  }
+
+  &-info {
+    background-color: var(--color-on-background-high);
+  }
+  &-closeInfo {
+    &.mainButton {
+      @include on-primary($medium, true);
+    }
+    color: $primary-200 !important;
+  }
+  &-error {
+    background: $error-surface-default;
+    color: alpha($white, .87);
+  }
+  &-closeError {
+    color: white !important;
+  }
+}

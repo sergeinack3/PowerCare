@@ -1,0 +1,13 @@
+{
+  "url" : "extension url",
+  "extension" : [
+    {
+      "url" : "extension url",
+      "valueCoding" : {
+        "system": "system",
+        "code": "code",
+        "display": "display"
+      }
+    }
+  ]
+}

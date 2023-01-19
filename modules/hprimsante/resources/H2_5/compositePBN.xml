@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <!-- PBN (Patient Birth Name) !-->
+    <name>PBN</name>
+    <description>Patient Birth Name</description>
+    <elements>
+        <field minOccurs="0" maxOccurs="0" length="999">
+            <name>PBN.1</name>
+            <description>Birth Name (INSI)</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="999">
+            <name>PBN.2</name>
+            <description>First Birth Given Name</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="999">
+            <name>PBN.3</name>
+            <description>List of Birth Given Names</description>
+            <datatype>ST</datatype>
+        </field>
+    </elements>
+</segment>

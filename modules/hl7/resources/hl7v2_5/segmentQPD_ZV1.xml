@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+  <name>QPD</name>
+  <description>Query Parameter Definition</description>
+  <elements>
+    <field minOccurs="1" maxOccurs="0" length="250" table="0471">
+      <name>QPD.1</name>
+      <description>Message Query Name</description>
+      <datatype>CE</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="32">
+      <name>QPD.2</name>
+      <description>Query Tag</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="1" maxOccurs="0">
+      <name>QPD.3</name>
+      <description>Demographic Fields</description>
+      <datatype>QIP</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0">
+      <name>QPD.4</name>
+      <description>Search Confidence Threshold</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0">
+      <name>QPD.5</name>
+      <description>Algorithm Name</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0">
+      <name>QPD.6</name>
+      <description>Algorithm Version</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0">
+      <name>QPD.7</name>
+      <description>Algorithm Description</description>
+      <datatype>ST</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0">
+      <name>QPD.8</name>
+      <description>What Domains Returned</description>
+      <datatype>CX</datatype>
+    </field>
+  </elements>
+</segment>

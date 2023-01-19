@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+  <name>ZFA</name>
+  <description>Statut DMP</description>
+  <elements>
+    <field minOccurs="0" maxOccurs="1" length="20">
+      <name>ZFA.1</name>
+      <description>Statut du DMP du patient</description>
+      <datatype>ID</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="26">
+      <name>ZFA.2</name>
+      <description>Date de recueil du statut du DMP du patient</description>
+      <datatype>TS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="26">
+      <name>ZFA.3</name>
+      <description>Date de fermeture du DMP du patient</description>
+      <datatype>TS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="1">
+      <name>ZFA.4</name>
+      <description>Autorisation valide d’accès au DMP du patient pour l’établissement</description>
+      <datatype>ID</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="26">
+      <name>ZFA.5</name>
+      <description>Date de recueil de l’état de l’autorisation d’accès au DMP du patient pour l’établissement</description>
+      <datatype>TS</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="1">
+      <name>ZFA.6</name>
+      <description>Opposition du patient à l’accès en mode bris de glace</description>
+      <datatype>ID</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="1">
+      <name>ZFA.7</name>
+      <description>Opposition du patient à l’accès en mode centre de régulation</description>
+      <datatype>ID</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="1" length="26">
+      <name>ZFA.8</name>
+      <description>Date de recueil de l’état des oppositions du patient</description>
+      <datatype>TS</datatype>
+    </field>
+  </elements>
+</segment>

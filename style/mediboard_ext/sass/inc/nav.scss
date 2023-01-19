@@ -1,0 +1,230 @@
+//
+// @package Mediboard\Style\Mediboard
+// @author  SAS OpenXtrem <dev@openxtrem.com>
+// @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+// @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+//
+
+@mixin nav-large-element {
+  width: 100%;
+  background-color: $white;
+  padding: 0;
+  transition: box-shadow 0.125s;
+}
+@mixin nav-fixed {
+  position: fixed;
+}
+@mixin nav-flex-center {
+  display: flex;
+  align-items: center;
+}
+@mixin nav-header-element {
+  cursor: pointer;
+  color: $grey-600;
+}
+@mixin nav-menu {
+  @include nav-fixed();
+  @include shadow2();
+  @include border-radius();
+  display: none;
+  background: $white;
+  padding: $space 0;
+}
+
+body.desktop, div.main-container, div.main-container div.main-content {
+  background-color: $light;
+  font-family: inherit;
+
+  &.dyslexic {
+    font-family: opendyslexic, arial, helvetica, sans-serif;
+  }
+}
+
+div.main-content > div {
+  @include black-emphasis($opacity-high-emphasis-black);
+}
+
+.me-date {
+  @include overline(true);
+  @include black-emphasis(0.6);
+
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+
+  &-modal {
+    float: right;
+  }
+}
+
+.me-date {
+  margin-right: $space * 2;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: auto;
+  white-space: nowrap;
+}
+
+div.nav-subtabs {
+  @include nav-large-element();
+  @include nav-fixed();
+}
+
+.main-content>.control_tabs {
+  @include nav-large-element();
+}
+
+div.nav-compenser,
+div.nav-subtabs-compenser {
+  background-color: $light;
+  width: 100%;
+}
+
+div.nav-compenser {
+  height: 55px;
+  margin-top: 0;
+}
+div.nav-subtabs-compenser {
+  height: 24px;
+}
+
+div.main-container {
+  .main-content {
+    padding-top: $space;
+    text-align: center;
+    > div {
+      @include not-vue {
+        padding: 0 #{$space * 4};
+        &.popup {
+          padding: 0;
+        }
+      }
+    }
+    > * {
+      @include not-vue {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+      }
+    }
+    div {
+      @include vue {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@mixin nav-plus-counter {
+  position: absolute;
+  display: inline;
+  color: $white;
+  background: $secondary;
+  min-width: 12px;
+  line-height: 16px;
+  height: 16px;
+  padding: 0 2px;
+  margin: 0;
+  right: -8px;
+  bottom: 15px;
+  border-radius: 99px;
+  font-size: 0.9em;
+}
+/**
+  Messagerie
+ */
+.messagerie-menu {
+  @include nav-menu();
+  display: block;
+  margin-top: -5px;
+  > li {
+    @include ripple-effect();
+    @include border-radius();
+    display: block;
+    font-family: inherit;
+    padding: $space;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background 0.25s;
+    cursor: pointer;
+  }
+  .msg-counter {
+    @include nav-plus-counter();
+    min-width: 10px;
+    right: 2px;
+    bottom: 4px;
+  }
+  .msgicon {
+    @include black-emphasis($opacity-medium-emphasis-black);
+  }
+}
+
+/**
+  Ruban de qualif
+*/
+$ribbon-width: 42px;
+$ribbon-height: 49px;
+$ribbon-left: 69px;
+$ribbon-shift-y: 19px;
+$ribbon-extra-height: 10px;
+$ribbon-extra-width: 21px;
+div.me-qualif-ribbon {
+  @include shadow9();
+  width: $ribbon-width;
+  height: $ribbon-height+$ribbon-shift-y;
+  background: $ribbon-color;
+  position: absolute;
+  left: $ribbon-left;
+  top: -$ribbon-shift-y;
+  transition: transform .4s cubic-bezier(.68,-0.55,.27,1.55);
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    bottom: -#{$ribbon-extra-height - 1px};
+    border-left: $ribbon-extra-width solid $ribbon-color;
+    border-right: $ribbon-extra-width solid $ribbon-color;
+    border-bottom: $ribbon-extra-width solid transparent;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border-bottom-width: $ribbon-extra-height;
+  }
+
+  &.login-ribbon {
+    height: 57px;
+    top: -4px;
+    left: 290px;
+    border-radius: 4px 4px 0 0;
+
+    .me-logo-white {
+      top: 8px;
+    }
+  }
+
+  .me-logo-white {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: 50%;
+    top: 23px;
+    transform: translateX(-50%);
+
+    path {
+      stroke: alpha($white, $opacity-high-emphasis-white);
+      fill: alpha($white, $opacity-high-emphasis-white);
+    }
+  }
+
+  .me-ribbon-qualif-text {
+    @include overline();
+    color: #FFFFFF;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8px;
+  }
+}

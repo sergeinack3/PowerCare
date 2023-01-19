@@ -1,0 +1,226 @@
+{
+  "columns": ["1 mois", "2 mois", "3 mois", "4 mois", "5 mois", "11 mois", "12 mois", "16 - 18 mois", "6 ans", "11 - 13 ans", "14 ans", "25 ans", "45 ans", "65 ans et +"],
+  "vaccines": {
+    "BCG": {
+      "shortname": "BCG",
+      "longname": "BCG",
+      "color": "#ba4e97",
+      "recall": [
+        {
+          "age": 1
+        }
+      ]
+    },
+    "DTP": {
+      "shortname": "DTPolio",
+      "longname": "Diphtérie - Tétanos - Poliomyélite",
+      "color": "#58b998",
+      "recall": [
+        {
+          "age": 2,
+          "mandatory": true
+        },
+        {
+          "age": 4,
+          "mandatory": true
+        },
+        {
+          "age": 11,
+          "mandatory": true
+        },
+        {
+          "age": 72
+        },
+        {
+          "age": 132,
+          "age_max": 156
+        },
+        {
+          "age": 300
+        },
+        {
+          "age": 540
+        },
+        {
+          "age": 780,
+          "repeat": 10
+        }
+      ]
+    },
+    "Coqueluche": {
+      "shortname": "Coqueluche",
+      "longname": "Coqueluche",
+      "color": "#58b998",
+      "recall": [
+        {
+          "age": 2,
+          "mandatory": true
+        },
+        {
+          "age": 4,
+          "mandatory": true
+        },
+        {
+          "age": 11,
+          "mandatory": true
+        },
+        {
+          "type": 2,
+          "age": 72
+        },
+        {
+          "age": 132,
+          "age_max": 156
+        },
+        {
+          "age": 300
+        }
+      ]
+    },
+    "HIB": {
+      "shortname": "HIB",
+      "longname": "Haemophilus Influenzae de type b",
+      "color": "#58b998",
+      "recall": [
+        {
+          "age": 2,
+          "mandatory": true
+        },
+        {
+          "age": 4,
+          "mandatory": true
+        },
+        {
+          "age": 11,
+          "mandatory": true
+        }
+      ]
+    },
+    "HB": {
+      "shortname": "Hépatite B",
+      "longname": "Hépatite B",
+      "color": "#fdc300",
+      "recall": [
+        {
+          "age": 2,
+          "mandatory": true
+        },
+        {
+          "age": 4,
+          "mandatory": true
+        },
+        {
+          "age": 11,
+          "mandatory": true
+        }
+      ]
+    },
+    "Pneumocoque": {
+      "shortname": "Pneumocoque",
+      "longname": "Pneumocoque",
+      "color": "#eb589a",
+      "recall": [
+        {
+          "age": 2,
+          "mandatory": true
+        },
+        {
+          "age": 4,
+          "mandatory": true
+        },
+        {
+          "age": 11,
+          "mandatory": true
+        }
+      ]
+    },
+    "MeningocoqueC": {
+      "shortname": "Méningocoque C",
+      "longname": "Méningocoque C",
+      "color": "#eb589a",
+      "recall": [
+        {
+          "age": 5,
+          "mandatory": true
+        },
+        {
+          "age": 12,
+          "mandatory": true
+        }
+      ]
+    },
+    "MeningocoqueB": {
+      "shortname": "Méningocoque B",
+      "longname": "Méningocoque B",
+      "color": "#ef7d00",
+      "recall": [
+        {
+          "age": 3,
+          "mandatory": true
+        },
+        {
+          "age": 5,
+          "mandatory": true
+        },
+        {
+          "age": 12,
+          "mandatory": true
+        }
+      ]
+    },
+    "ROR": {
+      "shortname": "ROR",
+      "longname": "Rougeole-Oreillons-Rubéole",
+      "color": "#e6223d",
+      "recall": [
+        {
+          "age": 12,
+          "mandatory": true
+        },
+        {
+          "age": 16,
+          "age_max": 18,
+          "mandatory": true
+        }
+      ]
+    },
+    "HPV": {
+      "shortname": "HPV",
+      "longname": "Papillomavirus humain",
+      "color": "#ef7d00",
+      "recall": [
+        {
+          "type": 2,
+          "age": 132,
+          "colspan": 2
+        },
+        {
+          "type": 2,
+          "age": 168,
+          "empty": true
+        }
+      ]
+    },
+    "Grippe": {
+      "shortname": "Grippe",
+      "longname": "Grippe",
+      "color": "#41c0f0",
+      "recall": [
+        {
+          "age": 780,
+          "repeat": 1
+        }
+      ]
+    },
+    "Zona": {
+      "shortname": "Zona",
+      "longname": "Zona",
+      "color": "#a95f49",
+      "recall": [
+        {
+          "age": 780
+        }
+      ]
+    }
+  }
+}

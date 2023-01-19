@@ -1,0 +1,11 @@
+/**
+ * @package Mediboard\Style\Mediboard
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+/* A transparent pixel because IE doesn't consider "transparent" color as opaque for the mouse pointer */
+.ua-msie-9 .dent {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQAAAAA3bvkkAAAAAnRSTlMAAQGU%2Fa4AAAAKSURBVHjaY2oAAACGAIOk3dDiAAAAAElFTkSuQmCC);
+}

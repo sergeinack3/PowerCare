@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<configurations>
+  <configuration context="CPatient" key="intro">
+    Cher patient,
+
+    En utilisant Mediboard, vous nous confiez des données personnelles. Nous vous remercions de la confiance que vous nous témoignez et tenons à être parfaitement transparents sur la façon dont nous les utilisons.
+  </configuration>
+
+  <configuration context="CPatient" key="data">
+    Toutes les données saisies dans Appfine sont accessibles en vous connectant à votre compte. Elles ont pour finalité de vous aider dans votre parcours de soins et de simplifier vos démarches administratives. Elles peuvent éventuellement être utilisées pour réaliser des statistiques anonymisées.
+
+    Les données sont conservées jusqu'à ce que vous nous en demandiez la suppression. Les destinataires de ces données sont les professionnels de santé et le personnel des établissements en charge de gérer mes évènements AppFine (séjours et consultations).
+  </configuration>
+
+  <configuration context="CPatient" key="droits">
+    Elles ne font pas l'objet de transfert. Elles sont recueillies sur la base de votre consentement et peuvent faire l'objet d'une demande de rectification de votre part. Vous disposez également du droit à la portabilité de vos données.
+  </configuration>
+
+  <configuration context="CPatient" key="contact">
+    Le responsable de traitement au sens du Règlement européen sur la protection des données est ………..représenté par………..
+
+    Pour toute question, vous pouvez contacter M. ...DPO à l'adresse suivante :
+
+    Toutefois, si vos demandes nous apparaissent comme manifestement infondées ou abusives, nous nous réservons le droit de ne pas y répondre.
+
+    Nous vous informons que vous pouvez exercer, si vous le souhaitez, une réclamation auprès d'une autorité de contrôle.
+
+    Notre politique de confidentialité est susceptible d'évolution. Si des modifications majeures avaient lieu, vous en seriez informés par mail ou lors de votre connexion à Appfine.
+  </configuration>
+
+  <configuration context="CPatient" key="conclusion">
+    La protection de vos données est pour nous une préoccupation constante . Des procédures très strictes sont mises en place pour leur sécurisation. Nous vous rappelons que vos codes d'accès sont strictement confidentiels, ne doivent jamais être communiqués et ne vous seront jamais demandés par nos équipes.
+  </configuration>
+
+  <configuration context="CUser" key="intro">
+    Cher utilisateur,
+
+    En utilisant Mediboard, vous nous confiez des données personnelles. Nous vous remercions de la confiance que vous nous témoignez et tenons à être parfaitement transparents sur la façon dont nous les utilisons.
+  </configuration>
+
+  <configuration context="CUser" key="data">
+    Toutes les données saisies dans Appfine sont accessibles en vous connectant à votre compte. Elles ont pour finalité de vous aider dans votre parcours de soins et de simplifier vos démarches administratives. Elles peuvent éventuellement être utilisées pour réaliser des statistiques anonymisées.
+
+    Les données sont conservées jusqu'à ce que vous nous en demandiez la suppression. Les destinataires de ces données sont les professionnels de santé et le personnel des établissements en charge de gérer mes évènements AppFine (séjours et consultations).
+  </configuration>
+
+  <configuration context="CUser" key="droits">
+    Elles ne font pas l'objet de transfert. Elles sont recueillies sur la base de votre consentement et peuvent faire l'objet d'une demande de rectification de votre part. Vous disposez également du droit à la portabilité de vos données.
+  </configuration>
+
+  <configuration context="CUser" key="contact">
+    Le responsable de traitement au sens du Règlement européen sur la protection des données est ………..représenté par………..
+
+    Pour toute question, vous pouvez contacter M. ...DPO à l'adresse suivante :
+
+    Toutefois, si vos demandes nous apparaissent comme manifestement infondées ou abusives, nous nous réservons le droit de ne pas y répondre.
+
+    Nous vous informons que vous pouvez exercer, si vous le souhaitez, une réclamation auprès d'une autorité de contrôle.
+
+    Notre politique de confidentialité est susceptible d'évolution. Si des modifications majeures avaient lieu, vous en seriez informés par mail ou lors de votre connexion à Appfine.
+  </configuration>
+
+  <configuration context="CUser" key="conclusion">
+    La protection de vos données est pour nous une préoccupation constante . Des procédures très strictes sont mises en place pour leur sécurisation. Nous vous rappelons que vos codes d'accès sont strictement confidentiels, ne doivent jamais être communiqués et ne vous seront jamais demandés par nos équipes.
+  </configuration>
+</configurations>

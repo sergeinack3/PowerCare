@@ -1,0 +1,805 @@
+/**
+ * @package Mediboard\Forms
+ * @author  SAS OpenXtrem <dev@openxtrem.com>
+ * @license https://www.gnu.org/licenses/gpl.html GNU General Public License
+ * @license https://www.openxtrem.com/licenses/oxol.html OXOL OpenXtrem Open License
+ */
+
+table.ex-form td,
+table.ex-form th {
+  padding: 1px;
+}
+
+.out-of-grid div {
+  /*display: inline-block;*/
+}
+
+.label-list .draggable,
+.field-list .draggable {
+  border: 1px dotted #aaa;
+  margin: 2px;
+  padding: 2px;
+}
+
+.droppable.grid .draggable {
+  display: block;
+}
+
+.droppable.grid .draggable.label {
+  /*text-align: right;*/
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.field-list .field {
+  white-space: normal;
+}
+
+.drop-grid .field:hover .field-info,
+.pixel-positionning .field:hover .field-info,
+.field-list .field .field-info {
+  display: block !important;
+  position: absolute;
+  top: -1.5em;
+  color: #333;
+  background: #ddd;
+  padding: 0 1em;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.pixel-positionning .group-layout .field:hover .field-info {
+  top: -16px;
+  left: 0;
+  border-radius: 4px;
+  z-index: 200;
+  white-space: nowrap;
+}
+
+.group-layout .field:hover .field-info {
+  color: #fff;
+  background: #999;
+}
+
+.field-list .field {
+  margin-top: 1.2em;
+}
+
+.field .field-content {
+  overflow-y: hidden;
+}
+
+.field-list .field .field-content {
+  max-height: 2.5em;
+}
+
+.cell[rowspan] .grid .field .field-content {
+  max-height: none;
+}
+
+.grid .field .field-content,
+.cell[rowspan="1"] .grid .field .field-content {
+  max-height: 3.5em;
+}
+
+.overlayed .overlay {
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
+
+.ua-msie .overlayed .overlay {
+  background: #fff;
+  -ms-filter: "alpha(opacity=0)";
+  opacity: 0;
+}
+
+.pixel-grid .hostfield .field-name,
+.grid .hostfield .field-name,
+.hostfield.dragging .field-name {
+  display: inline !important;
+}
+
+.hostfield {
+  background-color: rgb(205,252,204);
+  background-color: rgba(205,252,204,0.4);
+}
+
+.draggable.hr {
+  padding: 6px;
+}
+
+.message_text {
+  min-height: 1.8em;
+}
+
+div.ex-message-title {
+  font-weight: bold;
+  border-bottom: 1px solid #666;
+  font-size: 1.2em;
+  left: 0.5em; 
+  right: 0.5em; 
+  line-height: 1.4;
+  padding-top: 3px;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.pixel-positionning a {
+  pointer-events: all;
+}
+
+.ex-message .message-content {
+  white-space: pre;
+}
+
+span.ex-message-title-spacer {
+  font-size: 1.6em;
+}
+
+table.cell-layout {
+  empty-cells: hide;
+  line-height: 10px;
+  font-family: monospace;
+  position: absolute;
+  right: 0;
+  top: -10px;
+}
+
+table.cell-layout td {
+  padding: 0;
+}
+
+table.cell-layout a {
+  display: inline;
+  cursor: pointer;
+}
+
+table.cell-layout tr.middle {
+  line-height: 6px;
+}
+
+div.cell-layout-wrapper {
+  display: none;
+}
+
+.cell:hover div.cell-layout-wrapper {
+  /*display: block;*/
+}
+
+form[name="form-grid-layout"].pickmode .draggable {
+  cursor: pointer;
+}
+
+form[name="form-grid-layout"].pickmode .draggable.picked {
+  outline: 2px solid red;
+}
+
+.ua-firefox form[name="form-grid-layout"].pickmode .draggable.picked {
+  outline: none;
+  box-shadow: 0 0 0 2px red;
+}
+
+form[name="form-grid-layout"].pickmode .drop-grid .droppable:hover {
+  outline: 2px solid green;
+}
+
+.ua-firefox form[name="form-grid-layout"].pickmode .drop-grid .droppable:hover {
+  outline: none;
+  box-shadow: 0 0 0 2px green;
+}
+
+.pixel-grid,
+.pixel-grid-print {
+  position: relative;
+  width: 1024px;
+  height: 760px;
+}
+
+.pixel-grid-page {
+  page-break-inside: avoid;
+}
+
+.pixel-grid {
+  border: 1px dashed #999;
+  border-width: 0 1px 1px 0;
+  background: #f9f9f9;
+}
+
+.form-wrapper {
+  position: relative;
+}
+
+.pixel-positionning .resizable,
+.pixel-positionning .form-picture,
+.pixel-positionning .form-widget {
+  position: absolute;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.pixel-positionning .reported-icon {
+  height: 13px;
+  width: 13px;
+}
+
+.pixel-positionning .subgroup > .overlayed > fieldset {
+  margin: 0;
+}
+
+.pixel-positionning .subgroup {
+  min-width: 4em;
+  height: 3em;
+}
+
+.pixel-positionning .field-input {
+  white-space: nowrap;
+}
+
+.pixel-positionning .field-input p {
+  white-space: normal;
+}
+
+.pixel-positionning .field-input fieldset legend {
+  font-weight: normal;
+  margin: 0 2px;
+}
+
+.pixel-positionning .pixel-grid .resizable:focus,
+.pixel-positionning .pixel-grid .resizable.handle-focus {
+  outline: 1px solid #CCC;
+  cursor: move;
+}
+
+.ua-firefox .pixel-positionning .pixel-grid .resizable:focus {
+  outline-offset: -4px;
+  /*z-index: 200;*/
+}
+
+
+.pixel-positionning .field .field-content {
+  overflow: visible;
+}
+
+.pixel-positionning .field-content,
+.pixel-positionning .field-content > table,
+.pixel-positionning .resizable > table,
+.pixel-positionning .resizable textarea.noresize {
+  position: relative;
+  height: 100%;
+  margin: 0;
+}
+
+.pixel-positionning .field-content > table.layout > tbody > tr > td {
+  padding: 1px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.pixel-positionning .input-label {
+  white-space: nowrap;
+}
+
+.pixel-positionning .no-size .input-label + div {
+  position: static !important;
+}
+
+.pixel-positionning .resizable textarea.noresize {
+  resize: none;
+  min-width: 20px;
+  min-height: 16px;
+}
+
+.pixel-positionning .resizable fieldset {
+  margin: 1px;
+  padding: 1px;
+}
+
+.pixel-positionning .resizable fieldset legend {
+  padding: 0.05em 0.4em;
+  line-height: 1;
+}
+
+.pixel-positionning .resizable fieldset .wrapper {
+  overflow-y: auto;
+  position: static;
+  margin-top: -2px;
+}
+
+fieldset > div.overlayed.reset {
+  position: absolute;
+  top: -2px;
+  right: 3px;
+  left: auto;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+}
+
+/*.pixel-positionning .subgroup > fieldset > .resizable,*/
+/*.pixel-positionning .subgroup > fieldset > .wrapper,*/
+/*!* for the editor *!*/
+/*.pixel-positionning .subgroup > .overlayed > fieldset > .resizable,*/
+/*.pixel-positionning .subgroup > .overlayed > fieldset > .wrapper {*/
+/*  margin-top: 15px; !* Hack for everything but Firefox and Chrome 88 *!*/
+/*}*/
+/*.ua-firefox .pixel-positionning .subgroup > fieldset.with-label > .resizable,*/
+/*.ua-chrome-88 .pixel-positionning .subgroup > fieldset.with-label > .resizable,*/
+/*.ua-firefox .pixel-positionning .subgroup > fieldset.with-label > .wrapper,*/
+/*.ua-chrome-88 .pixel-positionning .subgroup > fieldset.with-label > .wrapper,*/
+/*  !* for the editor *!*/
+/*.ua-firefox .pixel-positionning .subgroup > .overlayed > fieldset.with-label > .resizable,*/
+/*.ua-chrome-88 .pixel-positionning .subgroup > .overlayed > fieldset.with-label > .resizable,*/
+/*.ua-firefox .pixel-positionning .subgroup > .overlayed > fieldset.with-label > .wrapper,*/
+/*.ua-chrome-88 .pixel-positionning .subgroup > .overlayed > fieldset.with-label > .wrapper {*/
+/*  margin-top: 1px; !* Un-Hack for Firefox and Chrome 88*!*/
+/*}*/
+
+/** Same as a fieldset **/
+.pixel-positionning .subgroup.subgroup-widgets {
+  border: 1px solid transparent;
+  padding: 1px;
+}
+
+.pixel-positionning .subgroup.subgroup-widgets .with-label {
+  top: 15px; /* same as above */
+  position: relative;
+}
+
+.pixel-positionning .resizable.no-size > *,
+.pixel-positionning .resizable.no-size fieldset,
+.pixel-positionning .resizable.no-size fieldset .wrapper {
+  position: static;
+}
+
+.pixel-positionning .resizable fieldset.no-label > .wrapper {
+  top: 2px;
+}
+
+.pixel-positionning input[type=checkbox],
+.pixel-positionning input[type=radio] {
+  margin: 0;
+  line-height: 10px;
+  vertical-align: top;
+}
+
+.pixel-positionning input.str,
+.pixel-positionning input.num,
+.pixel-positionning input.float,
+.pixel-positionning input.pct,
+.pixel-positionning select {
+  width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.pixel-positionning .hostfield button.compact {
+  padding: 0 1px 0 0;
+}
+
+/** fill box **/
+.pixel-positionning select.set[multiple],
+.pixel-positionning .resizable fieldset {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.pixel-positionning .drawable .area {
+  outline: 1px solid #aaa;
+}
+
+.ua-msie .pixel-positionning select.set[multiple] {
+  height: 100%;
+}
+
+.pixel-positionning .handle {
+  display: none;
+}
+
+.pixel-positionning .overlayed {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.pixel-positionning .pixel-grid .resizable:focus > .handle,
+.pixel-positionning .pixel-grid .resizable.handle-focus > .handle  {
+  display: block;
+  position: absolute;
+  border: 1px solid #000;
+  background: #fff;
+  width: 5px;
+  height: 5px;
+  z-index: 100;
+}
+
+.pixel-positionning .handle.rotate {
+  cursor: crosshair;
+  bottom: -15px;
+  right: -15px;
+
+  border-radius: 50%;
+  width: 7px !important;
+  height: 7px !important;
+}
+
+.pixel-positionning .handle.top-left,
+.pixel-positionning .handle.top-center,
+.pixel-positionning .handle.top-right {
+  top: 0;
+  margin-top: -4px;
+}
+
+.pixel-positionning .handle.bottom-left,
+.pixel-positionning .handle.bottom-center,
+.pixel-positionning .handle.bottom-right {
+  bottom: 0;
+  margin-bottom: -4px;
+}
+
+.pixel-positionning .handle.top-left,
+.pixel-positionning .handle.middle-left,
+.pixel-positionning .handle.bottom-left {
+  left: 0;
+  margin-left: -4px;
+}
+
+.pixel-positionning .handle.top-right,
+.pixel-positionning .handle.middle-right,
+.pixel-positionning .handle.bottom-right {
+  right: 0;
+  margin-right: -4px;
+}
+
+.pixel-positionning .handle.top-center,
+.pixel-positionning .handle.bottom-center {
+  left: 50%;
+  margin-left: -4px;
+}
+
+.pixel-positionning .handle.middle-left,
+.pixel-positionning .handle.middle-right {
+  top: 50%;
+  margin-top: -4px;
+}
+
+.pixel-positionning .handle.top-left {
+  cursor: nw-resize;
+}
+.pixel-positionning .handle.top-center {
+  cursor: n-resize;
+}
+.pixel-positionning .handle.top-right {
+  cursor: ne-resize;
+}
+.pixel-positionning .handle.middle-right {
+  cursor: e-resize;
+}
+.pixel-positionning .handle.bottom-right {
+  cursor: se-resize;
+}
+.pixel-positionning .handle.bottom-center {
+  cursor: s-resize;
+}
+.pixel-positionning .handle.bottom-left {
+  cursor: sw-resize;
+}
+.pixel-positionning .handle.middle-left {
+  cursor: w-resize;
+}
+
+.pixel-positionning input.date-toggle {
+  line-height: 16px;
+  vertical-align: middle;
+  margin-right: -3px;
+}
+
+.pixel-positionning.pixel-positionning-widgets {
+  position: absolute;
+  top: 25px; /* Control tab height */
+}
+
+.pixel-positionning.pixel-positionning-widgets .pixel-grid {
+  border: none;
+  background: none;
+  height: 0;
+}
+
+ul.ac-native-fields {
+  display: table;
+  width: 100%;
+}
+
+ul.ac-native-fields li {
+  display: table-row !important;
+}
+
+ul.ac-native-fields small,
+ul.ac-native-fields span {
+  display: table-cell !important;
+  white-space: nowrap !important;
+  padding: 2px;
+}
+
+ul.ac-native-fields .col-class,
+ul.ac-native-fields .col-type {
+  color: #666;
+}
+
+ul.ac-native-fields .col-class {
+  text-align: right;
+  padding-right: 3px;
+  max-width: 130px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  background-color: rgba(127,127,127,0.1);
+}
+
+.spec-type {
+  font-size: 0.7em;
+  color: #999;
+}
+
+.spec-type-enum:before {
+  content: "LCU";
+}
+.spec-type-set:before {
+  content: "LCM";
+}
+.spec-type-str:before {
+  content: "TXC";
+}
+.spec-type-text:before {
+  content: "TXL";
+}
+.spec-type-num:before {
+  content: "ENT";
+}
+.spec-type-float:before {
+  content: "FLO";
+}
+.spec-type-date:before {
+  content: "DAT";
+}
+.spec-type-time:before {
+  content: "HRE";
+}
+.spec-type-dateTime:before {
+  content: "DTH";
+}
+.spec-type-bool:before {
+  content: "BLN";
+}
+.spec-type-pct:before {
+  content: "PCT";
+}
+.spec-type-birthDate:before {
+  content: "NAI";
+}
+.spec-type-phone:before {
+  content: "TEL";
+}
+.spec-type-currency:before {
+  content: "MON";
+}
+.spec-type-email:before {
+  content: "EML";
+}
+
+#exclass-permission-editor .tbl td.checkbox,
+#exclass-permission-editor .tbl th {
+  padding: 0;
+}
+
+#exclass-permission-editor label {
+  display: inline-block;
+  padding: 2px;
+}
+
+#exclass-permission-editor td.title {
+  border-left-width: 6px;
+}
+
+#exclass-permission-editor tr.active td.title {
+  border-left: 6px solid black;
+  font-weight: bold;
+}
+
+#exclass-permission-editor tr.denied td.title {
+  border-left-color: red;
+}
+
+.form-picture-trigger {
+  background: black;
+  color: white;
+  padding: 1px;
+  display: inline-block;
+  line-height: 1;
+  width: 11px;
+  height: 11px;
+  font-size: 10px;
+  opacity: 0.3;
+  border-radius: 3px;
+}
+
+.overlayed:hover .form-picture-trigger {
+  opacity: 1;
+}
+
+.formula-result {
+  font-weight: bold; 
+  background-color: #aaff56 !important;
+}
+.formula-result.threshold-low {
+  background-color: cornflowerblue !important;
+}
+.formula-result.threshold-high {
+  background-color: red !important;
+}
+
+ul.control_tabs li.form-tab a,
+ul.control_tabs li.form-tab span {
+  background-color: #96bfb0;
+  border-color: #283e37;
+}
+ul.control_tabs li.form-tab a.active,
+ul.control_tabs li.form-tab span.active {
+  background-color: #c9d7c1;
+  border-bottom-color: #fff;
+}
+
+.ex-link-dates {
+  display: inline-block;
+  margin: 2px;
+}
+.ex-link-dates a {
+  padding: 2px;
+  vertical-align: middle;
+  display: inline-block;
+}
+.ex-link-dates button.ex-link-date-selected, 
+.ex-link-dates a.ex-link-date-selected, 
+.ex-link-dates select.ex-link-date-selected {
+  background: #edb;
+}
+
+.action-button button {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  margin: 0;
+  text-align: center;
+  line-height: 0;
+}
+
+.action-button-wrapper,
+.action-button.no-size {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+}
+.pixel-positionning .pixel-grid .action-button:focus {
+  outline: none;
+}
+
+.action-button .action-warning {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  display: none;
+  font-size: 0.8em;
+}
+.action-button .action-copy {
+  color: rgba(10, 131, 14, 0.64);
+}
+.action-button .action-empty {
+  color: rgba(208, 131, 88, 0.76);
+}
+.action-button[data-action='copy'][data-ex_class_field_source_id=''] .action-warning.action-copy,
+.action-button[data-action='copy'][data-ex_class_field_target_id=''] .action-warning.action-copy {
+  display: inline;
+}
+
+.action-button[data-action='empty'][data-ex_class_field_target_id=''] .action-warning.action-empty {
+  display: inline;
+}
+
+.highlight-action {
+  outline: 2px solid;
+}
+.highlight-source {
+  outline-color: rgba(10, 131, 14, 0.64);
+}
+.highlight-target {
+  outline-color: rgba(208, 131, 88, 0.76);
+}
+.highlight-action:after {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: rgba(255,255,255,0.9);
+  padding: 1px;
+  line-height: 1;
+  font-size: 0.9em;
+}
+.highlight-source:after {
+  content: "Source \279C";
+}
+.highlight-target:after {
+  content: "\279C Cible";
+}
+
+.form-widget {
+  overflow-y: auto;
+}
+.form-widget.overlayed {
+  overflow: hidden;
+}
+.form-widget.resizable {
+  overflow: visible;
+}
+.form-widget-wrapper {
+  max-width: 240px;
+  max-height: 100px;
+  overflow: hidden;
+  margin: 0.8em;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+.form-widget-wrapper .clonable {
+  opacity: 0.5;
+}
+.form-widget-wrapper:hover .clonable {
+  opacity: 1;
+}
+.form-widget-wrapper:hover:after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  padding: 3px;
+}
+
+.ex-picture-canvas > .ex-picture-tools {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -1px;
+  z-index: 2;
+  border-radius: 0 5px 5px 0;
+  margin: 0;
+  padding: 1px 2px;
+  border: solid 2px darkgrey;
+  border-left: none;
+  box-sizing: border-box;
+}
+
+.ex-picture-canvas:hover > .ex-picture-tools {
+  display: inline-block;
+}
+
+.ex-picture-tools.ex-picture-tools-fixed {
+  display: inline-block;
+}
+
+/**
+ * FF hack because CExClassMessage-title divs are in absolute position without relative parent during printing,
+ * positioning them at the top left of the first page if they don't initially appear on it.
+ */
+@media print {
+  .ua-firefox .CExClassMessage-container {
+    position: relative;
+  }
+}
+
+ul.ex-object_fields > li {
+  white-space: normal;
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+    <name>REG</name>
+    <description>Payment</description>
+    <elements>
+        <field minOccurs="1" maxOccurs="0" length="4">
+            <name>REG.1</name>
+            <description>Segment Row</description>
+            <datatype>NM</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="0" length="16">
+            <name>REG.2</name>
+            <description>NDA</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="10">
+            <name>REG.3</name>
+            <description>Amount Paid</description>
+            <datatype>AM</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="0" length="1">
+            <name>REG.4</name>
+            <description>Direction (+/-)</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="1" maxOccurs="0" length="26">
+            <name>REG.5</name>
+            <description>Date Of Payment</description>
+            <datatype>TS</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="60">
+            <name>REG.6</name>
+            <description>Payment Mode</description>
+            <datatype>ST</datatype>
+        </field>
+        <field minOccurs="0" maxOccurs="0" length="10">
+            <name>REG.7</name>
+            <description>Numero de dossier executant concerne par le reglement</description>
+            <datatype>ST</datatype>
+        </field>
+    </elements>
+</segment>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<segment>
+  <name>IDS</name>
+  <description>Identifiers</description>
+  <elements>
+    <field minOccurs="1" maxOccurs="0" length="50">
+      <name>IDS.1</name>
+      <description>Identifier 1</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="50">
+      <name>IDS.2</name>
+      <description>Identifier 2</description>
+      <datatype>NM</datatype>
+    </field>
+    <field minOccurs="0" maxOccurs="0" length="50">
+      <name>IDS.3</name>
+      <description>Identifier 3</description>
+      <datatype>NM</datatype>
+    </field>
+  </elements>
+</segment>

@@ -1,0 +1,90 @@
+mediuser_mediusers:
+  path: /api/mediuser/mediusers
+  controller: Ox\Mediboard\Mediusers\Controllers\MediusersController::listMediusers
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: |
+      Return a list of mediusers.
+      Parameter establishment will filter the list on the current function.
+    parameters:
+      type: prat|anesth
+      establishment: 0|1
+      name: '\w+'
+    accept:
+      - application/json
+
+mediuser_mediusers_import:
+  path: /api/mediuser/mediusers
+  controller: Ox\Mediboard\Mediusers\Controllers\MediusersController::importMediusers
+  methods: POST
+  defaults:
+    permission: edit
+  options:
+    description: Create or update mediusers using a CSV file uploaded with the name import_file
+    accept:
+      - application/json
+    body:
+      required: true
+      content-type:
+        - multipart/form-data
+    parameters:
+      update_found_users: bool
+      dry_run: bool
+    responses:
+      default: 'A successfull response will contains the attributes "created" (messages for created users), "found" (messages for already existing users) and "errors" (errors that happened prefixed with the line number)'
+      200: 'Ok no creation'
+      201: 'Ok one or more creations'
+
+mediuser_mediuser:
+  path: /api/mediuser/mediusers/{user_id}
+  controller: Ox\Mediboard\Mediusers\Controllers\MediusersController::showMediuser
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    user_id: '\d+'
+  options:
+    description: Return a mediuser
+    accept:
+      - application/json
+
+mediuser_mediuser_by_rpps:
+  path: /api/mediuser/mediuser_by_rpps/{rpps}
+  controller: Ox\Mediboard\Mediusers\Controllers\MediusersController::showMediuserByRPPS
+  requirements:
+    rpps: '\w+'
+  methods: GET
+  defaults:
+    permission: read
+  options:
+    description: Return a mediuser by rpps
+    accept:
+      - application/json
+
+mediuser_mediuser_functions:
+  path: /api/mediuser/mediusers/{user_id}/functions
+  controller: Ox\Mediboard\Mediusers\Controllers\MediusersController::listFunctions
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    user_id: '\d+'
+  options:
+    description: Return a list of functions
+    accept:
+      - application/json
+
+mediuser_mediuser_hit_list:
+  path: api/mediuser/mediusers/{user_id}/hits
+  controller: Ox\Mediboard\Mediusers\Controllers\MediusersController::listHits
+  methods: GET
+  defaults:
+    permission: read
+  requirements:
+    user_id: '\d+'
+  options:
+    description: List the 4 most called tabs for the user
+    accept:
+      - application/json

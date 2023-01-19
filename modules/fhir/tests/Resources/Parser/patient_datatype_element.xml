@@ -1,0 +1,7 @@
+<Patient xmlns="http://hl7.org/fhir">
+  <active id="1" value="true">
+    <extension url="extension">
+      <valueString value="value"/>
+    </extension>
+  </active>
+</Patient>

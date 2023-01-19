@@ -1,0 +1,10 @@
+<Patient xmlns='http://hl7.org/fhir'>
+  <maritalStatus>
+    <coding>
+      <system value='input system'/>
+      <code value='input code'/>
+      <display value='input display'/>
+    </coding>
+    <text value='text coding'/>
+  </maritalStatus>
+</Patient>

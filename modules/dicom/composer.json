@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Ox\\Interop\\Dicom\\": "classes",
+      "Ox\\Interop\\Dicom\\Tests\\": "tests"
+    }
+  }
+}
